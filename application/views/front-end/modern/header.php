@@ -132,22 +132,23 @@ if (!empty($is_app)) {
                 </li>
             </ul>
             <div class="d-flex">
-                <div class="btn-group">
-                    <a class="text-decoration-none dropdown-toggle py-0 align-self-center" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php if ($cookie_lang) { ?>
-                            <span class="font-weight-bold"><?= ucfirst($language[$language_index]['code']) ?></span>
-                        <?php } else { ?>
-                            <span class="font-weight-bold">En</span>
-                        <?php } ?>
-                    </a>
-                    <ul class="dropdown-menu pointer">
-                        <?php foreach ($language as $row) { ?>
-                            <li class="dropdown-item"><a
-                                    href="<?= base_url('home/lang/' . strtolower($row['language'])) ?>"><?= strtoupper($row['code']) . ' - ' . ucfirst($row['language']) ?></a>
-                            </li>
-                        <?php } ?>
-                    </ul>
+<?php /*                 <div class="btn-group">
+<?php /*                     <a class="text-decoration-none dropdown-toggle py-0 align-self-center" href="#" role="button"
+<?php /*                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<?php /*                         <?php if ($cookie_lang) { ?>
+<?php /*                             <span class="font-weight-bold"><?= ucfirst($language[$language_index]['code']) ?></span>
+<?php /*                         <?php } else { ?>
+<?php /*                             <span class="font-weight-bold">En</span>
+<?php /*                         <?php } ?>
+<?php /*                     </a>
+<?php /*                     <ul class="dropdown-menu pointer">
+<?php /*                         <?php foreach ($language as $row) { ?>
+<?php /*                             <li class="dropdown-item"><a
+<?php /*                                     href="<?= base_url('home/lang/' . strtolower($row['language'])) ?>"><?= strtoupper($row['code']) . ' - ' . ucfirst($row['language']) ?></a>
+<?php /*                             </li>
+<?php /*                         <?php } ?>
+<?php /*                     </ul>
+*/ ?>
                 </div>
                 <ul class="d-flex align-items-center margin0 list-style">
                     <a href="<?= base_url('compare') ?>">

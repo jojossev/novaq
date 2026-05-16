@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Languages</h4>
+                    <h4>Langues</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Languages</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Langues</li>
                     </ol>
                 </div>
             </div>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-right m-2">
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#language-modal">Add Language</a>
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#language-modal">Ajouter Language</a>
                     </div>
                     <div class="card card-info">
                         <!-- form start -->
@@ -27,7 +27,7 @@
                             <div class="col-md-12">
                                 <div class="msg_error p-3 mb-3">Select the Language to add labels.</div>
                                 <div class="form-group">
-                                    <label class="mb-2" for="">Languages</label>
+                                    <label class="mb-2" for="">Langues</label>
                                     <select name="selected_language" id="selected_language" class="form-control mb-2">
                                         <?php foreach ($languages as $row) { ?>
                                             <option value="<?= $row['id'] ?>" <?= (isset($_GET['id']) && $_GET['id'] == $row['id']) ? 'selected' : '' ?>><?= $row['language'] ?></option>
@@ -57,8 +57,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="products" class="control-checkbox">Products</label>
-                                            <input type="text" name="products" class="form-control mb-2" value="<?= (isset($lang_labels['products']) && !empty($lang_labels['products'])) ? $lang_labels['products'] : 'Products'; ?>" />
+                                            <label class="mb-2" for="products" class="control-checkbox">Produits</label>
+                                            <input type="text" name="products" class="form-control mb-2" value="<?= (isset($lang_labels['products']) && !empty($lang_labels['products'])) ? $lang_labels['products'] : 'Produits'; ?>" />
                                         </div>
                                     </div>
                                       <div class="col-md-6">
@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="product" class="control-checkbox">Product</label>
+                                            <label class="mb-2" for="product" class="control-checkbox">Produit</label>
                                             <input type="text" name="product" class="form-control mb-2" value="<?= (isset($lang_labels['product']) && !empty($lang_labels['product'])) ? $lang_labels['product'] : 'Product'; ?>" />
                                         </div>
                                     </div>
@@ -81,14 +81,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="my_orders" class="control-checkbox">My Orders</label>
-                                            <input type="text" name="my_orders" class="form-control mb-2" value="<?= (isset($lang_labels['my_orders']) && !empty($lang_labels['my_orders'])) ? $lang_labels['my_orders'] : 'My Orders'; ?>" />
+                                            <label class="mb-2" for="my_orders" class="control-checkbox">My Commandes</label>
+                                            <input type="text" name="my_orders" class="form-control mb-2" value="<?= (isset($lang_labels['my_orders']) && !empty($lang_labels['my_orders'])) ? $lang_labels['my_orders'] : 'My Commandes'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="order_tracking" class="control-checkbox">Order Tracking</label>
-                                            <input type="text" name="order_tracking" class="form-control mb-2" value="<?= (isset($lang_labels['order_tracking']) && !empty($lang_labels['order_tracking'])) ? $lang_labels['order_tracking'] : 'Order Tracking'; ?>" />
+                                            <label class="mb-2" for="order_tracking" class="control-checkbox">Suivi de commande</label>
+                                            <input type="text" name="order_tracking" class="form-control mb-2" value="<?= (isset($lang_labels['order_tracking']) && !empty($lang_labels['order_tracking'])) ? $lang_labels['order_tracking'] : 'Suivi de commande'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -123,8 +123,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="logout" class="control-checkbox">Logout</label>
-                                            <input type="text" name="logout" class="form-control mb-2" value="<?= (isset($lang_labels['logout']) && !empty($lang_labels['logout'])) ? $lang_labels['logout'] : 'Logout'; ?>" />
+                                            <label class="mb-2" for="logout" class="control-checkbox">Déconnexion</label>
+                                            <input type="text" name="logout" class="form-control mb-2" value="<?= (isset($lang_labels['logout']) && !empty($lang_labels['logout'])) ? $lang_labels['logout'] : 'Déconnexion'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -141,7 +141,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="close" class="control-checkbox">Close</label>
+                                            <label class="mb-2" for="close" class="control-checkbox">Fermer</label>
                                             <input type="text" name="close" class="form-control mb-2" value="<?= (isset($lang_labels['close']) && !empty($lang_labels['close'])) ? $lang_labels['close'] : 'Close'; ?>" />
                                         </div>
                                     </div>
@@ -183,8 +183,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="social_media" class="control-checkbox">Social Media</label>
-                                            <input type="text" name="social_media" class="form-control mb-2" value="<?= (isset($lang_labels['social_media']) && !empty($lang_labels['social_media'])) ? $lang_labels['social_media'] : 'Social Media'; ?>" />
+                                            <label class="mb-2" for="social_media" class="control-checkbox">Social Médias</label>
+                                            <input type="text" name="social_media" class="form-control mb-2" value="<?= (isset($lang_labels['social_media']) && !empty($lang_labels['social_media'])) ? $lang_labels['social_media'] : 'Social Médias'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -207,20 +207,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="add_to_cart" class="control-checkbox">Add to Cart</label>
-                                            <input type="text" name="add_to_cart" class="form-control mb-2" value="<?= (isset($lang_labels['add_to_cart']) && !empty($lang_labels['add_to_cart'])) ? $lang_labels['add_to_cart'] : 'Add to Cart'; ?>" />
+                                            <label class="mb-2" for="add_to_cart" class="control-checkbox">Ajouter to Cart</label>
+                                            <input type="text" name="add_to_cart" class="form-control mb-2" value="<?= (isset($lang_labels['add_to_cart']) && !empty($lang_labels['add_to_cart'])) ? $lang_labels['add_to_cart'] : 'Ajouter to Cart'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="add_to_favorite" class="control-checkbox">Add to Favorite</label>
-                                            <input type="text" name="add_to_favorite" class="form-control mb-2" value="<?= (isset($lang_labels['add_to_favorite']) && !empty($lang_labels['add_to_favorite'])) ? $lang_labels['add_to_favorite'] : 'Add to Favorite'; ?>" />
+                                            <label class="mb-2" for="add_to_favorite" class="control-checkbox">Ajouter to Favorite</label>
+                                            <input type="text" name="add_to_favorite" class="form-control mb-2" value="<?= (isset($lang_labels['add_to_favorite']) && !empty($lang_labels['add_to_favorite'])) ? $lang_labels['add_to_favorite'] : 'Ajouter to Favorite'; ?>" />
                                         </div>
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="No Favorite" class="control-checkbox">No Favorite Products Found.</label>
-                                            <input type="text" name="no_favorite" class="form-control mb-2" value="<?= (isset($lang_labels['no_favorite']) && !empty($lang_labels['no_favorite'])) ? $lang_labels['no_favorite'] : 'No Favorite Products Found.'; ?>" />
+                                            <label class="mb-2" for="No Favorite" class="control-checkbox">No Favorite Produits Found.</label>
+                                            <input type="text" name="no_favorite" class="form-control mb-2" value="<?= (isset($lang_labels['no_favorite']) && !empty($lang_labels['no_favorite'])) ? $lang_labels['no_favorite'] : 'No Favorite Produits Found.'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -231,14 +231,14 @@
                                     </div>
                                      <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="send" class="control-checkbox">Send</label>
+                                            <label class="mb-2" for="send" class="control-checkbox">Envoyer</label>
                                             <input type="text" name="send" class="form-control mb-2" value="<?= (isset($lang_labels['send']) && !empty($lang_labels['send'])) ? $lang_labels['send'] : 'Send'; ?>" />
                                         </div>
                                     </div>
                                       <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="send_bank_payment_receipt" class="control-checkbox">Send Bank Payment Receipt</label>
-                                            <input type="text" name="send_bank_payment_receipt" class="form-control mb-2" value="<?= (isset($lang_labels['send_bank_payment_receipt']) && !empty($lang_labels['send_bank_payment_receipt'])) ? $lang_labels['send_bank_payment_receipt'] : 'Send Bank Payment Receipt'; ?>" />
+                                            <label class="mb-2" for="send_bank_payment_receipt" class="control-checkbox">Send Bank Paiement Receipt</label>
+                                            <input type="text" name="send_bank_payment_receipt" class="form-control mb-2" value="<?= (isset($lang_labels['send_bank_payment_receipt']) && !empty($lang_labels['send_bank_payment_receipt'])) ? $lang_labels['send_bank_payment_receipt'] : 'Send Bank Paiement Receipt'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -249,37 +249,37 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="submit" class="control-checkbox">Submit</label>
+                                            <label class="mb-2" for="submit" class="control-checkbox">Soumettre</label>
                                             <input type="text" name="submit" class="form-control mb-2" value="<?= (isset($lang_labels['submit']) && !empty($lang_labels['submit'])) ? $lang_labels['submit'] : 'Submit'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="home" class="control-checkbox">Home</label>
-                                            <input type="text" name="home" class="form-control mb-2" value="<?= (isset($lang_labels['home']) && !empty($lang_labels['home'])) ? $lang_labels['home'] : 'Home'; ?>" />
+                                            <label class="mb-2" for="home" class="control-checkbox">Accueil</label>
+                                            <input type="text" name="home" class="form-control mb-2" value="<?= (isset($lang_labels['home']) && !empty($lang_labels['home'])) ? $lang_labels['home'] : 'Accueil'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="name" class="control-checkbox">Name</label>
-                                            <input type="text" name="name" class="form-control mb-2" value="<?= (isset($lang_labels['name']) && !empty($lang_labels['name'])) ? $lang_labels['name'] : 'Name'; ?>" />
+                                            <label class="mb-2" for="name" class="control-checkbox">Nom</label>
+                                            <input type="text" name="name" class="form-control mb-2" value="<?= (isset($lang_labels['name']) && !empty($lang_labels['name'])) ? $lang_labels['name'] : 'Nom'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="mobile_number" class="control-checkbox">Mobile Number</label>
-                                            <input type="text" name="mobile_number" class="form-control mb-2" value="<?= (isset($lang_labels['mobile_number']) && !empty($lang_labels['mobile_number'])) ? $lang_labels['mobile_number'] : 'Mobile Number'; ?>" />
+                                            <label class="mb-2" for="mobile_number" class="control-checkbox">Mobile N°|Numéro</label>
+                                            <input type="text" name="mobile_number" class="form-control mb-2" value="<?= (isset($lang_labels['mobile_number']) && !empty($lang_labels['mobile_number'])) ? $lang_labels['mobile_number'] : 'Mobile N°|Numéro'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="address" class="control-checkbox">Address</label>
-                                            <input type="text" name="address" class="form-control mb-2" value="<?= (isset($lang_labels['address']) && !empty($lang_labels['address'])) ? $lang_labels['address'] : 'Address'; ?>" />
+                                            <label class="mb-2" for="address" class="control-checkbox">Adresse</label>
+                                            <input type="text" name="address" class="form-control mb-2" value="<?= (isset($lang_labels['address']) && !empty($lang_labels['address'])) ? $lang_labels['address'] : 'Adresse'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="city" class="control-checkbox">City</label>
+                                            <label class="mb-2" for="city" class="control-checkbox">Ville</label>
                                             <input type="text" name="city" class="form-control mb-2" value="<?= (isset($lang_labels['city']) && !empty($lang_labels['city'])) ? $lang_labels['city'] : 'City'; ?>" />
                                         </div>
                                     </div>
@@ -297,25 +297,25 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="area" class="control-checkbox">Area</label>
+                                            <label class="mb-2" for="area" class="control-checkbox">Zone</label>
                                             <input type="text" name="area" class="form-control mb-2" value="<?= (isset($lang_labels['area']) && !empty($lang_labels['area'])) ? $lang_labels['area'] : 'Area'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="pincode" class="control-checkbox">Pincode</label>
+                                            <label class="mb-2" for="pincode" class="control-checkbox">Code postal</label>
                                             <input type="text" name="pincode" class="form-control mb-2" value="<?= (isset($lang_labels['pincode']) && !empty($lang_labels['pincode'])) ? $lang_labels['pincode'] : 'Pincode'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="state" class="control-checkbox">State</label>
+                                            <label class="mb-2" for="state" class="control-checkbox">État</label>
                                             <input type="text" name="state" class="form-control mb-2" value="<?= (isset($lang_labels['state']) && !empty($lang_labels['state'])) ? $lang_labels['state'] : 'State'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="country" class="control-checkbox">Country</label>
+                                            <label class="mb-2" for="country" class="control-checkbox">Pays</label>
                                             <input type="text" name="country" class="form-control mb-2" value="<?= (isset($lang_labels['country']) && !empty($lang_labels['country'])) ? $lang_labels['country'] : 'Country'; ?>" />
                                         </div>
                                     </div>
@@ -333,8 +333,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="other" class="control-checkbox">Other</label>
-                                            <input type="text" name="other" class="form-control mb-2" value="<?= (isset($lang_labels['other']) && !empty($lang_labels['other'])) ? $lang_labels['other'] : 'Other'; ?>" />
+                                            <label class="mb-2" for="other" class="control-checkbox">Autre</label>
+                                            <input type="text" name="other" class="form-control mb-2" value="<?= (isset($lang_labels['other']) && !empty($lang_labels['other'])) ? $lang_labels['other'] : 'Autre'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -345,7 +345,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="landmark" class="control-checkbox">Landmark</label>
+                                            <label class="mb-2" for="landmark" class="control-checkbox">Point de repère</label>
                                             <input type="text" name="landmark" class="form-control mb-2" value="<?= (isset($lang_labels['landmark']) && !empty($lang_labels['landmark'])) ? $lang_labels['landmark'] : 'Landmark'; ?>" />
                                         </div>
                                     </div>
@@ -357,8 +357,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="edit_address" class="control-checkbox">Edit Address</label>
-                                            <input type="text" name="edit_address" class="form-control mb-2" value="<?= (isset($lang_labels['edit_address']) && !empty($lang_labels['edit_address'])) ? $lang_labels['edit_address'] : 'Edit Address'; ?>" />
+                                            <label class="mb-2" for="edit_address" class="control-checkbox">Modifier Adresse</label>
+                                            <input type="text" name="edit_address" class="form-control mb-2" value="<?= (isset($lang_labels['edit_address']) && !empty($lang_labels['edit_address'])) ? $lang_labels['edit_address'] : 'Modifier Adresse'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -369,14 +369,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="price" class="control-checkbox">Price</label>
-                                            <input type="text" name="price" class="form-control mb-2" value="<?= (isset($lang_labels['price']) && !empty($lang_labels['price'])) ? $lang_labels['price'] : 'Price'; ?>" />
+                                            <label class="mb-2" for="price" class="control-checkbox">Prix</label>
+                                            <input type="text" name="price" class="form-control mb-2" value="<?= (isset($lang_labels['price']) && !empty($lang_labels['price'])) ? $lang_labels['price'] : 'Prix'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="quantity" class="control-checkbox">Quantity</label>
-                                            <input type="text" name="quantity" class="form-control mb-2" value="<?= (isset($lang_labels['quantity']) && !empty($lang_labels['quantity'])) ? $lang_labels['quantity'] : 'Quantity'; ?>" />
+                                            <label class="mb-2" for="quantity" class="control-checkbox">Quantité</label>
+                                            <input type="text" name="quantity" class="form-control mb-2" value="<?= (isset($lang_labels['quantity']) && !empty($lang_labels['quantity'])) ? $lang_labels['quantity'] : 'Quantité'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -387,8 +387,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="save_for_later" class="control-checkbox">Save For Later</label>
-                                            <input type="text" name="save_for_later" class="form-control mb-2" value="<?= (isset($lang_labels['save_for_later']) && !empty($lang_labels['save_for_later'])) ? $lang_labels['save_for_later'] : 'Save For Later'; ?>" />
+                                            <label class="mb-2" for="save_for_later" class="control-checkbox">Enregistrer For Later</label>
+                                            <input type="text" name="save_for_later" class="form-control mb-2" value="<?= (isset($lang_labels['save_for_later']) && !empty($lang_labels['save_for_later'])) ? $lang_labels['save_for_later'] : 'Enregistrer For Later'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -405,14 +405,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="tax" class="control-checkbox">Tax</label>
+                                            <label class="mb-2" for="tax" class="control-checkbox">Taxes</label>
                                             <input type="text" name="tax" class="form-control mb-2" value="<?= (isset($lang_labels['tax']) && !empty($lang_labels['tax'])) ? $lang_labels['tax'] : 'Tax'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="delivery_charge" class="control-checkbox">Delivery Charge</label>
-                                            <input type="text" name="delivery_charge" class="form-control mb-2" value="<?= (isset($lang_labels['delivery_charge']) && !empty($lang_labels['delivery_charge'])) ? $lang_labels['delivery_charge'] : 'Delivery Charge'; ?>" />
+                                            <label class="mb-2" for="delivery_charge" class="control-checkbox">Livraison Charge</label>
+                                            <input type="text" name="delivery_charge" class="form-control mb-2" value="<?= (isset($lang_labels['delivery_charge']) && !empty($lang_labels['delivery_charge'])) ? $lang_labels['delivery_charge'] : 'Livraison Charge'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -435,8 +435,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="category" class="control-checkbox">Category</label>
-                                            <input type="text" name="category" class="form-control mb-2" value="<?= (isset($lang_labels['category']) && !empty($lang_labels['category'])) ? $lang_labels['category'] : 'Category'; ?>" />
+                                            <label class="mb-2" for="category" class="control-checkbox">Catégorie</label>
+                                            <input type="text" name="category" class="form-control mb-2" value="<?= (isset($lang_labels['category']) && !empty($lang_labels['category'])) ? $lang_labels['category'] : 'Catégorie'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -477,56 +477,56 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="preferred_delivery_date_time" class="control-checkbox">Preferred Delivery Date / Time</label>
-                                            <input type="text" name="preferred_delivery_date_time" class="form-control mb-2" value="<?= (isset($lang_labels['preferred_delivery_date_time']) && !empty($lang_labels['preferred_delivery_date_time'])) ? $lang_labels['preferred_delivery_date_time'] : 'Preferred Delivery Date / Time'; ?>" />
+                                            <label class="mb-2" for="preferred_delivery_date_time" class="control-checkbox">Preferred Livraison Date / Time</label>
+                                            <input type="text" name="preferred_delivery_date_time" class="form-control mb-2" value="<?= (isset($lang_labels['preferred_delivery_date_time']) && !empty($lang_labels['preferred_delivery_date_time'])) ? $lang_labels['preferred_delivery_date_time'] : 'Preferred Livraison Date / Time'; ?>" />
                                         </div>
                                     </div>
                                      
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="select_payment_method" class="control-checkbox">Select Payment Method</label>
-                                            <input type="text" name="select_payment_method" class="form-control mb-2" value="<?= (isset($lang_labels['select_payment_method']) && !empty($lang_labels['select_payment_method'])) ? $lang_labels['select_payment_method'] : 'Select Payment Method'; ?>" />
+                                            <label class="mb-2" for="select_payment_method" class="control-checkbox">Select Méthode de paiement</label>
+                                            <input type="text" name="select_payment_method" class="form-control mb-2" value="<?= (isset($lang_labels['select_payment_method']) && !empty($lang_labels['select_payment_method'])) ? $lang_labels['select_payment_method'] : 'Select Méthode de paiement'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="cash_on_delivery" class="control-checkbox">Cash On Delivery</label>
-                                            <input type="text" name="cash_on_delivery" class="form-control mb-2" value="<?= (isset($lang_labels['cash_on_delivery']) && !empty($lang_labels['cash_on_delivery'])) ? $lang_labels['cash_on_delivery'] : 'Cash On Delivery'; ?>" />
+                                            <label class="mb-2" for="cash_on_delivery" class="control-checkbox">Paiement à la livraison</label>
+                                            <input type="text" name="cash_on_delivery" class="form-control mb-2" value="<?= (isset($lang_labels['cash_on_delivery']) && !empty($lang_labels['cash_on_delivery'])) ? $lang_labels['cash_on_delivery'] : 'Paiement à la livraison'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="create_a_new_address" class="control-checkbox">Create a New Address</label>
-                                            <input type="text" name="create_a_new_address" class="form-control mb-2" value="<?= (isset($lang_labels['create_a_new_address']) && !empty($lang_labels['create_a_new_address'])) ? $lang_labels['create_a_new_address'] : 'Create a New Address'; ?>" />
+                                            <label class="mb-2" for="create_a_new_address" class="control-checkbox">Créer a New Adresse</label>
+                                            <input type="text" name="create_a_new_address" class="form-control mb-2" value="<?= (isset($lang_labels['create_a_new_address']) && !empty($lang_labels['create_a_new_address'])) ? $lang_labels['create_a_new_address'] : 'Créer a New Adresse'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="shipping_address" class="control-checkbox">Shipping Address</label>
-                                            <input type="text" name="shipping_address" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_address']) && !empty($lang_labels['shipping_address'])) ? $lang_labels['shipping_address'] : 'Shipping Address'; ?>" />
+                                            <label class="mb-2" for="shipping_address" class="control-checkbox">Livraison Adresse</label>
+                                            <input type="text" name="shipping_address" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_address']) && !empty($lang_labels['shipping_address'])) ? $lang_labels['shipping_address'] : 'Livraison Adresse'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="save" class="control-checkbox">Save</label>
+                                            <label class="mb-2" for="save" class="control-checkbox">Enregistrer</label>
                                             <input type="text" name="save" class="form-control mb-2" value="<?= (isset($lang_labels['save']) && !empty($lang_labels['save'])) ? $lang_labels['save'] : 'Save'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="username" class="control-checkbox">Username</label>
-                                            <input type="text" name="username" class="form-control mb-2" value="<?= (isset($lang_labels['username']) && !empty($lang_labels['username'])) ? $lang_labels['username'] : 'Username'; ?>" />
+                                            <label class="mb-2" for="username" class="control-checkbox">Nom d'utilisateur</label>
+                                            <input type="text" name="username" class="form-control mb-2" value="<?= (isset($lang_labels['username']) && !empty($lang_labels['username'])) ? $lang_labels['username'] : "Nom d'utilisateur"; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="email" class="control-checkbox">Email</label>
-                                            <input type="text" name="email" class="form-control mb-2" value="<?= (isset($lang_labels['email']) && !empty($lang_labels['email'])) ? $lang_labels['email'] : 'Email'; ?>" />
+                                            <label class="mb-2" for="email" class="control-checkbox">E-mail</label>
+                                            <input type="text" name="email" class="form-control mb-2" value="<?= (isset($lang_labels['email']) && !empty($lang_labels['email'])) ? $lang_labels['email'] : 'E-mail'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="subject" class="control-checkbox">Subject</label>
+                                            <label class="mb-2" for="subject" class="control-checkbox">Sujet</label>
                                             <input type="text" name="subject" class="form-control mb-2" value="<?= (isset($lang_labels['subject']) && !empty($lang_labels['subject'])) ? $lang_labels['subject'] : 'Subject'; ?>" />
                                         </div>
                                     </div>
@@ -544,20 +544,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="dashboard" class="control-checkbox">Dashboard</label>
-                                            <input type="text" name="dashboard" class="form-control mb-2" value="<?= (isset($lang_labels['dashboard']) && !empty($lang_labels['dashboard'])) ? $lang_labels['dashboard'] : 'Dashboard'; ?>" />
+                                            <label class="mb-2" for="dashboard" class="control-checkbox">Tableau de bord</label>
+                                            <input type="text" name="dashboard" class="form-control mb-2" value="<?= (isset($lang_labels['dashboard']) && !empty($lang_labels['dashboard'])) ? $lang_labels['dashboard'] : 'Tableau de bord'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="profile" class="control-checkbox">Profile</label>
-                                            <input type="text" name="profile" class="form-control mb-2" value="<?= (isset($lang_labels['profile']) && !empty($lang_labels['profile'])) ? $lang_labels['profile'] : 'Profile'; ?>" />
+                                            <label class="mb-2" for="profile" class="control-checkbox">Profil</label>
+                                            <input type="text" name="profile" class="form-control mb-2" value="<?= (isset($lang_labels['profile']) && !empty($lang_labels['profile'])) ? $lang_labels['profile'] : 'Profil'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="orders" class="control-checkbox">Orders</label>
-                                            <input type="text" name="orders" class="form-control mb-2" value="<?= (isset($lang_labels['orders']) && !empty($lang_labels['orders'])) ? $lang_labels['orders'] : 'Orders'; ?>" />
+                                            <label class="mb-2" for="orders" class="control-checkbox">Commandes</label>
+                                            <input type="text" name="orders" class="form-control mb-2" value="<?= (isset($lang_labels['orders']) && !empty($lang_labels['orders'])) ? $lang_labels['orders'] : 'Commandes'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -574,8 +574,8 @@
                                     </div>
                                       <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="Add money to wallet" class="control-checkbox">Add money to wallet</label>
-                                            <input type="text" name="add_money_to_wallet" class="form-control mb-2" value="<?= (isset($lang_labels['add_money_to_wallet']) && !empty($lang_labels['add_money_to_wallet'])) ? $lang_labels['add_money_to_wallet'] : 'Add money to wallet'; ?>" />
+                                            <label class="mb-2" for="Ajouter money to wallet" class="control-checkbox">Ajouter money to wallet</label>
+                                            <input type="text" name="add_money_to_wallet" class="form-control mb-2" value="<?= (isset($lang_labels['add_money_to_wallet']) && !empty($lang_labels['add_money_to_wallet'])) ? $lang_labels['add_money_to_wallet'] : 'Ajouter money to wallet'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -586,14 +586,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="no_favorite_product_message" class="control-checkbox">No Favorite Products Found</label>
-                                            <input type="text" name="no_favorite_product_message" class="form-control mb-2" value="<?= (isset($lang_labels['no_favorite_product_message']) && !empty($lang_labels['no_favorite_product_message'])) ? $lang_labels['no_favorite_product_message'] : 'No Favorite Products Found'; ?>" />
+                                            <label class="mb-2" for="no_favorite_product_message" class="control-checkbox">No Favorite Produits Found</label>
+                                            <input type="text" name="no_favorite_product_message" class="form-control mb-2" value="<?= (isset($lang_labels['no_favorite_product_message']) && !empty($lang_labels['no_favorite_product_message'])) ? $lang_labels['no_favorite_product_message'] : 'No Favorite Produits Found'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="amazing_categories" class="control-checkbox">Amazing Categories</label>
-                                            <input type="text" name="amazing_categories" class="form-control mb-2" value="<?= (isset($lang_labels['amazing_categories']) && !empty($lang_labels['amazing_categories'])) ? $lang_labels['amazing_categories'] : 'Amazing Categories'; ?>" />
+                                            <label class="mb-2" for="amazing_categories" class="control-checkbox">Amazing Catégories</label>
+                                            <input type="text" name="amazing_categories" class="form-control mb-2" value="<?= (isset($lang_labels['amazing_categories']) && !empty($lang_labels['amazing_categories'])) ? $lang_labels['amazing_categories'] : 'Amazing Catégories'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -610,8 +610,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="order_id" class="control-checkbox">Order ID</label>
-                                            <input type="text" name="order_id" class="form-control mb-2" value="<?= (isset($lang_labels['order_id']) && !empty($lang_labels['order_id'])) ? $lang_labels['order_id'] : 'Order ID'; ?>" />
+                                            <label class="mb-2" for="order_id" class="control-checkbox">ID Commande</label>
+                                            <input type="text" name="order_id" class="form-control mb-2" value="<?= (isset($lang_labels['order_id']) && !empty($lang_labels['order_id'])) ? $lang_labels['order_id'] : 'ID Commande'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -640,14 +640,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="shipping_details" class="control-checkbox">Shipping Details</label>
-                                            <input type="text" name="shipping_details" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_details']) && !empty($lang_labels['shipping_details'])) ? $lang_labels['shipping_details'] : 'Shipping Details'; ?>" />
+                                            <label class="mb-2" for="shipping_details" class="control-checkbox">Livraison Details</label>
+                                            <input type="text" name="shipping_details" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_details']) && !empty($lang_labels['shipping_details'])) ? $lang_labels['shipping_details'] : 'Livraison Details'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="total_order_price" class="control-checkbox">Total Order Price</label>
-                                            <input type="text" name="total_order_price" class="form-control mb-2" value="<?= (isset($lang_labels['total_order_price']) && !empty($lang_labels['total_order_price'])) ? $lang_labels['total_order_price'] : 'Total Order Price'; ?>" />
+                                            <label class="mb-2" for="total_order_price" class="control-checkbox">Total Order Prix</label>
+                                            <input type="text" name="total_order_price" class="form-control mb-2" value="<?= (isset($lang_labels['total_order_price']) && !empty($lang_labels['total_order_price'])) ? $lang_labels['total_order_price'] : 'Total Order Prix'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -658,8 +658,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="bulk_discount" class="control-checkbox">Bulk Discount</label>
-                                            <input type="text" name="bulk_discount" class="form-control mb-2" value="<?= (isset($lang_labels['bulk_discount']) && !empty($lang_labels['bulk_discount'])) ? $lang_labels['bulk_discount'] : 'Bulk Discount'; ?>" />
+                                            <label class="mb-2" for="bulk_discount" class="control-checkbox">Remise en gros</label>
+                                            <input type="text" name="bulk_discount" class="form-control mb-2" value="<?= (isset($lang_labels['bulk_discount']) && !empty($lang_labels['bulk_discount'])) ? $lang_labels['bulk_discount'] : 'Remise en gros'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -688,44 +688,44 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="register_with_email" class="control-checkbox">Register with Email?</label>
-                                            <input type="text" name="register_with_email" class="form-control mb-2" value="<?= (isset($lang_labels['register_with_email']) && !empty($lang_labels['register_with_email'])) ? $lang_labels['register_with_email'] : 'Register with Email?'; ?>" />
+                                            <label class="mb-2" for="register_with_email" class="control-checkbox">Register with E-mail?</label>
+                                            <input type="text" name="register_with_email" class="form-control mb-2" value="<?= (isset($lang_labels['register_with_email']) && !empty($lang_labels['register_with_email'])) ? $lang_labels['register_with_email'] : 'Register with E-mail?'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="register_with_phone" class="control-checkbox">Register with Phone?</label>
-                                            <input type="text" name="register_with_phone" class="form-control mb-2" value="<?= (isset($lang_labels['register_with_phone']) && !empty($lang_labels['register_with_phone'])) ? $lang_labels['register_with_phone'] : 'Register with Phone?'; ?>" />
+                                            <label class="mb-2" for="register_with_phone" class="control-checkbox">Register with Téléphone?</label>
+                                            <input type="text" name="register_with_phone" class="form-control mb-2" value="<?= (isset($lang_labels['register_with_phone']) && !empty($lang_labels['register_with_phone'])) ? $lang_labels['register_with_phone'] : 'Register with Téléphone?'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="enter_mobile_number" class="control-checkbox">Enter Mobile Number</label>
-                                            <input type="text" name="enter_mobile_number" class="form-control mb-2" value="<?= (isset($lang_labels['enter_mobile_number']) && !empty($lang_labels['enter_mobile_number'])) ? $lang_labels['enter_mobile_number'] : 'Enter Mobile Number'; ?>" />
+                                            <label class="mb-2" for="enter_mobile_number" class="control-checkbox">Entrez le mobile N°|Numéro</label>
+                                            <input type="text" name="enter_mobile_number" class="form-control mb-2" value="<?= (isset($lang_labels['enter_mobile_number']) && !empty($lang_labels['enter_mobile_number'])) ? $lang_labels['enter_mobile_number'] : 'Entrez le mobile N°|Numéro'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="enter_mobile_number_optional" class="control-checkbox">Enter Mobile Number (Optional)</label>
-                                            <input type="text" name="enter_mobile_number_optional" class="form-control mb-2" value="<?= (isset($lang_labels['enter_mobile_number_optional']) && !empty($lang_labels['enter_mobile_number_optional'])) ? $lang_labels['enter_mobile_number_optional'] : 'Enter Mobile Number (Optional)'; ?>" />
+                                            <label class="mb-2" for="enter_mobile_number_optional" class="control-checkbox">Entrez le mobile N°|Numéro (Optional)</label>
+                                            <input type="text" name="enter_mobile_number_optional" class="form-control mb-2" value="<?= (isset($lang_labels['enter_mobile_number_optional']) && !empty($lang_labels['enter_mobile_number_optional'])) ? $lang_labels['enter_mobile_number_optional'] : 'Entrez le mobile N°|Numéro (Optional)'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="login_with_phone" class="control-checkbox">Login with Phone?</label>
-                                            <input type="text" name="login_with_phone" class="form-control mb-2" value="<?= (isset($lang_labels['login_with_phone']) && !empty($lang_labels['login_with_phone'])) ? $lang_labels['login_with_phone'] : 'Login with Phone?'; ?>" />
+                                            <label class="mb-2" for="login_with_phone" class="control-checkbox">Login with Téléphone?</label>
+                                            <input type="text" name="login_with_phone" class="form-control mb-2" value="<?= (isset($lang_labels['login_with_phone']) && !empty($lang_labels['login_with_phone'])) ? $lang_labels['login_with_phone'] : 'Login with Téléphone?'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="email_address" class="control-checkbox">Email address</label>
-                                            <input type="text" name="email_address" class="form-control mb-2" value="<?= (isset($lang_labels['email_address']) && !empty($lang_labels['email_address'])) ? $lang_labels['email_address'] : 'Email address'; ?>" />
+                                            <label class="mb-2" for="email_address" class="control-checkbox">E-mail address</label>
+                                            <input type="text" name="email_address" class="form-control mb-2" value="<?= (isset($lang_labels['email_address']) && !empty($lang_labels['email_address'])) ? $lang_labels['email_address'] : 'E-mail address'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="mb-2" for="login_description" class="control-checkbox">Login Description</label>
-                                            <input type="text" name="login_description" class="form-control mb-2" value="<?= (isset($lang_labels['login_description']) && !empty($lang_labels['login_description'])) ? $lang_labels['login_description'] : 'To access your account and enjoy a seamless shopping experience, simply enter your registered Mobile Number and password in the designated fields. Once logged in, you\'ll have access to your personalized dashboard, order history, saved payment methods, and more.'; ?>" />
+                                            <input type="text" name="login_description" class="form-control mb-2" value="<?= (isset($lang_labels['login_description']) && !empty($lang_labels['login_description'])) ? $lang_labels['login_description'] : 'To access your account and enjoy a seamless shopping experience, simply enter your registered Mobile N°|Numéro and password in the designated fields. Once logged in, you\'ll have access to your personalized dashboard, order history, saved payment methods, and more.'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -736,37 +736,37 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="forgot_password_with_email" class="control-checkbox">Forgot password with Email?</label>
-                                            <input type="text" name="forgot_password_with_email" class="form-control mb-2" value="<?= (isset($lang_labels['forgot_password_with_email']) && !empty($lang_labels['forgot_password_with_email'])) ? $lang_labels['forgot_password_with_email'] : 'Forgot password with Email?'; ?>" />
+                                            <label class="mb-2" for="forgot_password_with_email" class="control-checkbox">Forgot password with E-mail?</label>
+                                            <input type="text" name="forgot_password_with_email" class="form-control mb-2" value="<?= (isset($lang_labels['forgot_password_with_email']) && !empty($lang_labels['forgot_password_with_email'])) ? $lang_labels['forgot_password_with_email'] : 'Forgot password with E-mail?'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="forgot_password_with_phone" class="control-checkbox">Forgot password with Phone Number?</label>
-                                            <input type="text" name="forgot_password_with_phone" class="form-control mb-2" value="<?= (isset($lang_labels['forgot_password_with_phone']) && !empty($lang_labels['forgot_password_with_phone'])) ? $lang_labels['forgot_password_with_phone'] : 'Forgot password with Phone Number?'; ?>" />
+                                            <label class="mb-2" for="forgot_password_with_phone" class="control-checkbox">Forgot password with Téléphone N°|Numéro?</label>
+                                            <input type="text" name="forgot_password_with_phone" class="form-control mb-2" value="<?= (isset($lang_labels['forgot_password_with_phone']) && !empty($lang_labels['forgot_password_with_phone'])) ? $lang_labels['forgot_password_with_phone'] : 'Forgot password with Téléphone N°|Numéro?'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="new_password" class="control-checkbox">New Password</label>
-                                            <input type="text" name="new_password" class="form-control mb-2" value="<?= (isset($lang_labels['new_password']) && !empty($lang_labels['new_password'])) ? $lang_labels['new_password'] : 'New Password'; ?>" />
+                                            <label class="mb-2" for="new_password" class="control-checkbox">New Mot de passe</label>
+                                            <input type="text" name="new_password" class="form-control mb-2" value="<?= (isset($lang_labels['new_password']) && !empty($lang_labels['new_password'])) ? $lang_labels['new_password'] : 'New Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="send_reset_email" class="control-checkbox">Send Reset Email</label>
-                                            <input type="text" name="send_reset_email" class="form-control mb-2" value="<?= (isset($lang_labels['send_reset_email']) && !empty($lang_labels['send_reset_email'])) ? $lang_labels['send_reset_email'] : 'Send Reset Email'; ?>" />
+                                            <label class="mb-2" for="send_reset_email" class="control-checkbox">Send Réinitialiser E-mail</label>
+                                            <input type="text" name="send_reset_email" class="form-control mb-2" value="<?= (isset($lang_labels['send_reset_email']) && !empty($lang_labels['send_reset_email'])) ? $lang_labels['send_reset_email'] : 'Send Réinitialiser E-mail'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="reset_password" class="control-checkbox">Reset Password</label>
-                                            <input type="text" name="reset_password" class="form-control mb-2" value="<?= (isset($lang_labels['reset_password']) && !empty($lang_labels['reset_password'])) ? $lang_labels['reset_password'] : 'Reset Password'; ?>" />
+                                            <label class="mb-2" for="reset_password" class="control-checkbox">Réinitialiser Mot de passe</label>
+                                            <input type="text" name="reset_password" class="form-control mb-2" value="<?= (isset($lang_labels['reset_password']) && !empty($lang_labels['reset_password'])) ? $lang_labels['reset_password'] : 'Réinitialiser Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="reset_password_description" class="control-checkbox">Reset Password Description</label>
+                                            <label class="mb-2" for="reset_password_description" class="control-checkbox">Réinitialiser Mot de passe Description</label>
                                             <input type="text" name="reset_password_description" class="form-control mb-2" value="<?= (isset($lang_labels['reset_password_description']) && !empty($lang_labels['reset_password_description'])) ? $lang_labels['reset_password_description'] : 'Enter your new password below to reset your account access.'; ?>" />
                                         </div>
                                     </div>
@@ -784,20 +784,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="create_new_account" class="control-checkbox">Create New Account</label>
-                                            <input type="text" name="create_new_account" class="form-control mb-2" value="<?= (isset($lang_labels['create_new_account']) && !empty($lang_labels['create_new_account'])) ? $lang_labels['create_new_account'] : 'Create New Account'; ?>" />
+                                            <label class="mb-2" for="create_new_account" class="control-checkbox">Créer New Account</label>
+                                            <input type="text" name="create_new_account" class="form-control mb-2" value="<?= (isset($lang_labels['create_new_account']) && !empty($lang_labels['create_new_account'])) ? $lang_labels['create_new_account'] : 'Créer New Account'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="wallet_used" class="control-checkbox">Wallet Used</label>
-                                            <input type="text" name="wallet_used" class="form-control mb-2" value="<?= (isset($lang_labels['wallet_used']) && !empty($lang_labels['wallet_used'])) ? $lang_labels['wallet_used'] : 'Wallet Used'; ?>" />
+                                            <label class="mb-2" for="wallet_used" class="control-checkbox">Portefeuille utilisé</label>
+                                            <input type="text" name="wallet_used" class="form-control mb-2" value="<?= (isset($lang_labels['wallet_used']) && !empty($lang_labels['wallet_used'])) ? $lang_labels['wallet_used'] : 'Portefeuille utilisé'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="final_total" class="control-checkbox">Final Total</label>
-                                            <input type="text" name="final_total" class="form-control mb-2" value="<?= (isset($lang_labels['final_total']) && !empty($lang_labels['final_total'])) ? $lang_labels['final_total'] : 'Final Total'; ?>" />
+                                            <label class="mb-2" for="final_total" class="control-checkbox">Total final</label>
+                                            <input type="text" name="final_total" class="form-control mb-2" value="<?= (isset($lang_labels['final_total']) && !empty($lang_labels['final_total'])) ? $lang_labels['final_total'] : 'Total final'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -808,8 +808,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="payment_cancelled" class="control-checkbox">Payment Cancelled / Failed</label>
-                                            <input type="text" name="payment_cancelled" class="form-control mb-2" value="<?= (isset($lang_labels['payment_cancelled']) && !empty($lang_labels['payment_cancelled'])) ? $lang_labels['payment_cancelled'] : 'Payment Cancelled / Failed'; ?>" />
+                                            <label class="mb-2" for="payment_cancelled" class="control-checkbox">Paiement Annulé / Failed</label>
+                                            <input type="text" name="payment_cancelled" class="form-control mb-2" value="<?= (isset($lang_labels['payment_cancelled']) && !empty($lang_labels['payment_cancelled'])) ? $lang_labels['payment_cancelled'] : 'Paiement Annulé / Failed'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -820,14 +820,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="payment_completed" class="control-checkbox">Payment Complete</label>
-                                            <input type="text" name="payment_completed" class="form-control mb-2" value="<?= (isset($lang_labels['payment_completed']) && !empty($lang_labels['payment_completed'])) ? $lang_labels['payment_completed'] : 'Payment Complete'; ?>" />
+                                            <label class="mb-2" for="payment_completed" class="control-checkbox">Paiement Complete</label>
+                                            <input type="text" name="payment_completed" class="form-control mb-2" value="<?= (isset($lang_labels['payment_completed']) && !empty($lang_labels['payment_completed'])) ? $lang_labels['payment_completed'] : 'Paiement Complete'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="payment_completed_message" class="control-checkbox">Payment Completed Successfully</label>
-                                            <input type="text" name="payment_completed_message" class="form-control mb-2" value="<?= (isset($lang_labels['payment_completed_message']) && !empty($lang_labels['payment_completed_message'])) ? $lang_labels['payment_completed_message'] : 'Payment Completed Successfully'; ?>" />
+                                            <label class="mb-2" for="payment_completed_message" class="control-checkbox">Paiement Completed Successfully</label>
+                                            <input type="text" name="payment_completed_message" class="form-control mb-2" value="<?= (isset($lang_labels['payment_completed_message']) && !empty($lang_labels['payment_completed_message'])) ? $lang_labels['payment_completed_message'] : 'Paiement Completed Successfully'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -868,14 +868,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="price_low_to_high" class="control-checkbox">Price - Low To High</label>
-                                            <input type="text" name="price_low_to_high" class="form-control mb-2" value="<?= (isset($lang_labels['price_low_to_high']) && !empty($lang_labels['price_low_to_high'])) ? $lang_labels['price_low_to_high'] : 'Price - Low To High'; ?>" />
+                                            <label class="mb-2" for="price_low_to_high" class="control-checkbox">Prix - Low To High</label>
+                                            <input type="text" name="price_low_to_high" class="form-control mb-2" value="<?= (isset($lang_labels['price_low_to_high']) && !empty($lang_labels['price_low_to_high'])) ? $lang_labels['price_low_to_high'] : 'Prix - Low To High'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="price_high_to_low" class="control-checkbox">Price - High To Low</label>
-                                            <input type="text" name="price_high_to_low" class="form-control mb-2" value="<?= (isset($lang_labels['price_high_to_low']) && !empty($lang_labels['price_high_to_low'])) ? $lang_labels['price_high_to_low'] : 'Price - High To Low'; ?>" />
+                                            <label class="mb-2" for="price_high_to_low" class="control-checkbox">Prix - High To Low</label>
+                                            <input type="text" name="price_high_to_low" class="form-control mb-2" value="<?= (isset($lang_labels['price_high_to_low']) && !empty($lang_labels['price_high_to_low'])) ? $lang_labels['price_high_to_low'] : 'Prix - High To Low'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -940,38 +940,38 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="related_products" class="control-checkbox">Related Products</label>
-                                            <input type="text" name="related_products" class="form-control mb-2" value="<?= (isset($lang_labels['related_products']) && !empty($lang_labels['related_products'])) ? $lang_labels['related_products'] : 'Related Products'; ?>" />
+                                            <label for="related_products" class="control-checkbox">Related Produits</label>
+                                            <input type="text" name="related_products" class="form-control mb-2" value="<?= (isset($lang_labels['related_products']) && !empty($lang_labels['related_products'])) ? $lang_labels['related_products'] : 'Related Produits'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="old_password" class="control-checkbox">Old Password</label>
-                                            <input type="text" name="old_password" class="form-control mb-2" value="<?= (isset($lang_labels['old_password']) && !empty($lang_labels['old_password'])) ? $lang_labels['old_password'] : 'Old Password'; ?>" />
+                                            <label class="mb-2" for="old_password" class="control-checkbox">Old Mot de passe</label>
+                                            <input type="text" name="old_password" class="form-control mb-2" value="<?= (isset($lang_labels['old_password']) && !empty($lang_labels['old_password'])) ? $lang_labels['old_password'] : 'Old Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="new_password" class="control-checkbox">New Password</label>
-                                            <input type="text" name="new_password" class="form-control mb-2" value="<?= (isset($lang_labels['new_password']) && !empty($lang_labels['new_password'])) ? $lang_labels['new_password'] : 'New Password'; ?>" />
+                                            <label for="new_password" class="control-checkbox">New Mot de passe</label>
+                                            <input type="text" name="new_password" class="form-control mb-2" value="<?= (isset($lang_labels['new_password']) && !empty($lang_labels['new_password'])) ? $lang_labels['new_password'] : 'New Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="confirm_new_password" class="control-checkbox">Confirm New Password</label>
-                                            <input type="text" name="confirm_new_password" class="form-control mb-2" value="<?= (isset($lang_labels['confirm_new_password']) && !empty($lang_labels['confirm_new_password'])) ? $lang_labels['confirm_new_password'] : 'Confirm New Password'; ?>" />
+                                            <label class="mb-2" for="confirm_new_password" class="control-checkbox">Confirm New Mot de passe</label>
+                                            <input type="text" name="confirm_new_password" class="form-control mb-2" value="<?= (isset($lang_labels['confirm_new_password']) && !empty($lang_labels['confirm_new_password'])) ? $lang_labels['confirm_new_password'] : 'Confirm New Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="reset" class="control-checkbox">Reset</label>
-                                            <input type="text" name="reset" class="form-control mb-2" value="<?= (isset($lang_labels['reset']) && !empty($lang_labels['reset'])) ? $lang_labels['reset'] : 'Reset'; ?>" />
+                                            <label class="mb-2" for="reset" class="control-checkbox">Réinitialiser</label>
+                                            <input type="text" name="reset" class="form-control mb-2" value="<?= (isset($lang_labels['reset']) && !empty($lang_labels['reset'])) ? $lang_labels['reset'] : 'Réinitialiser'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="update_profile" class="control-checkbox">Update Profile</label>
-                                            <input type="text" name="update_profile" class="form-control mb-2" value="<?= (isset($lang_labels['update_profile']) && !empty($lang_labels['update_profile'])) ? $lang_labels['update_profile'] : 'Update Profile'; ?>" />
+                                            <label class="mb-2" for="update_profile" class="control-checkbox">Mettre à jour Profil</label>
+                                            <input type="text" name="update_profile" class="form-control mb-2" value="<?= (isset($lang_labels['update_profile']) && !empty($lang_labels['update_profile'])) ? $lang_labels['update_profile'] : 'Mettre à jour Profil'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1030,8 +1030,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="wallet" class="control-checkbox">Forgot Password</label>
-                                            <input type="text" name="forgot_password" class="form-control mb-2" value="<?= (isset($lang_labels['forgot_password']) && !empty($lang_labels['forgot_password'])) ? $lang_labels['forgot_password'] : 'Forgot Password'; ?>" />
+                                            <label class="mb-2" for="wallet" class="control-checkbox">Forgot Mot de passe</label>
+                                            <input type="text" name="forgot_password" class="form-control mb-2" value="<?= (isset($lang_labels['forgot_password']) && !empty($lang_labels['forgot_password'])) ? $lang_labels['forgot_password'] : 'Forgot Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1072,7 +1072,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="balance" class="control-checkbox">Balance</label>
+                                            <label class="mb-2" for="balance" class="control-checkbox">Solde</label>
                                             <input type="text" name="balance" class="form-control mb-2" value="<?= (isset($lang_labels['balance']) && !empty($lang_labels['balance'])) ? $lang_labels['balance'] : 'Balance'; ?>" />
                                         </div>
                                     </div>
@@ -1096,20 +1096,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="payment_method" class="control-checkbox">Payment Method</label>
-                                            <input type="text" name="payment_method" class="form-control mb-2" value="<?= (isset($lang_labels['payment_method']) && !empty($lang_labels['payment_method'])) ? $lang_labels['payment_method'] : 'Payment Method'; ?>" />
+                                            <label class="mb-2" for="payment_method" class="control-checkbox">Méthode de paiement</label>
+                                            <input type="text" name="payment_method" class="form-control mb-2" value="<?= (isset($lang_labels['payment_method']) && !empty($lang_labels['payment_method'])) ? $lang_labels['payment_method'] : 'Méthode de paiement'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="place_order" class="control-checkbox">Place Order</label>
-                                            <input type="text" name="place_order" class="form-control mb-2" value="<?= (isset($lang_labels['place_order']) && !empty($lang_labels['place_order'])) ? $lang_labels['place_order'] : 'Place Order'; ?>" />
+                                            <label class="mb-2" for="place_order" class="control-checkbox">Passer la commande</label>
+                                            <input type="text" name="place_order" class="form-control mb-2" value="<?= (isset($lang_labels['place_order']) && !empty($lang_labels['place_order'])) ? $lang_labels['place_order'] : 'Passer la commande'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="promocode" class="control-checkbox">Promo Code</label>
-                                            <input type="text" name="promocode" class="form-control mb-2" value="<?= (isset($lang_labels['promocode']) && !empty($lang_labels['promocode'])) ? $lang_labels['promocode'] : 'Promo Code'; ?>" />
+                                            <label class="mb-2" for="promocode" class="control-checkbox">Code promo</label>
+                                            <input type="text" name="promocode" class="form-control mb-2" value="<?= (isset($lang_labels['promocode']) && !empty($lang_labels['promocode'])) ? $lang_labels['promocode'] : 'Code promo'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1120,8 +1120,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="top_offer" class="control-checkbox">Top Offer</label>
-                                            <input type="text" name="top_offer" class="form-control mb-2" value="<?= (isset($lang_labels['top_offer']) && !empty($lang_labels['top_offer'])) ? $lang_labels['top_offer'] : 'Top Offer'; ?>" />
+                                            <label class="mb-2" for="top_offer" class="control-checkbox">Top Offre</label>
+                                            <input type="text" name="top_offer" class="form-control mb-2" value="<?= (isset($lang_labels['top_offer']) && !empty($lang_labels['top_offer'])) ? $lang_labels['top_offer'] : 'Top Offre'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1138,8 +1138,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="shipping_policy" class="control-checkbox">Shipping Policy</label>
-                                            <input type="text" name="shipping_policy" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_policy']) && !empty($lang_labels['shipping_policy'])) ? $lang_labels['shipping_policy'] : 'Shipping Policy'; ?>" />
+                                            <label class="mb-2" for="shipping_policy" class="control-checkbox">Livraison Policy</label>
+                                            <input type="text" name="shipping_policy" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_policy']) && !empty($lang_labels['shipping_policy'])) ? $lang_labels['shipping_policy'] : 'Livraison Policy'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1162,8 +1162,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="customer_reviews" class="control-checkbox">Customer Reviews</label>
-                                            <input type="text" name="customer_reviews" class="form-control mb-2" value="<?= (isset($lang_labels['customer_reviews']) && !empty($lang_labels['customer_reviews'])) ? $lang_labels['customer_reviews'] : 'Customer Reviews'; ?>" />
+                                            <label class="mb-2" for="customer_reviews" class="control-checkbox">Client Reviews</label>
+                                            <input type="text" name="customer_reviews" class="form-control mb-2" value="<?= (isset($lang_labels['customer_reviews']) && !empty($lang_labels['customer_reviews'])) ? $lang_labels['customer_reviews'] : 'Client Reviews'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1174,14 +1174,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="order_from_whatsapp" class="control-checkbox">Order From Whatsapp</label>
-                                            <input type="text" name="order_from_whatsapp" class="form-control mb-2" value="<?= (isset($lang_labels['order_from_whatsapp']) && !empty($lang_labels['order_from_whatsapp'])) ? $lang_labels['order_from_whatsapp'] : 'Order From Whatsapp'; ?>" />
+                                            <label class="mb-2" for="order_from_whatsapp" class="control-checkbox">Order From WhatsApp</label>
+                                            <input type="text" name="order_from_whatsapp" class="form-control mb-2" value="<?= (isset($lang_labels['order_from_whatsapp']) && !empty($lang_labels['order_from_whatsapp'])) ? $lang_labels['order_from_whatsapp'] : 'Order From WhatsApp'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="add_in_cart" class="control-checkbox">Add in Cart</label>
-                                            <input type="text" name="add_in_cart" class="form-control mb-2" value="<?= (isset($lang_labels['add_in_cart']) && !empty($lang_labels['add_in_cart'])) ? $lang_labels['add_in_cart'] : 'Add in Cart'; ?>" />
+                                            <label class="mb-2" for="add_in_cart" class="control-checkbox">Ajouter in Cart</label>
+                                            <input type="text" name="add_in_cart" class="form-control mb-2" value="<?= (isset($lang_labels['add_in_cart']) && !empty($lang_labels['add_in_cart'])) ? $lang_labels['add_in_cart'] : 'Ajouter in Cart'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1219,8 +1219,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="customer_support" class="control-checkbox">Customer Support</label>
-                                            <input type="text" name="customer_support" class="form-control mb-2" value="<?= (isset($lang_labels['customer_support']) && !empty($lang_labels['customer_support'])) ? $lang_labels['customer_support'] : 'Customer Support'; ?>" />
+                                            <label class="mb-2" for="customer_support" class="control-checkbox">Client Support</label>
+                                            <input type="text" name="customer_support" class="form-control mb-2" value="<?= (isset($lang_labels['customer_support']) && !empty($lang_labels['customer_support'])) ? $lang_labels['customer_support'] : 'Client Support'; ?>" />
                                         </div>
                                     </div>
 
@@ -1232,8 +1232,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="delete_account" class="control-checkbox">Delete Account</label>
-                                            <input type="text" name="delete_account" class="form-control mb-2" value="<?= (isset($lang_labels['delete_account']) && !empty($lang_labels['delete_account'])) ? $lang_labels['delete_account'] : 'Delete Account'; ?>" />
+                                            <label class="mb-2" for="delete_account" class="control-checkbox">Supprimer Account</label>
+                                            <input type="text" name="delete_account" class="form-control mb-2" value="<?= (isset($lang_labels['delete_account']) && !empty($lang_labels['delete_account'])) ? $lang_labels['delete_account'] : 'Supprimer Account'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1245,8 +1245,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="title" class="control-checkbox">Title</label>
-                                            <input type="text" name="title" class="form-control mb-2" value="<?= (isset($lang_labels['title']) && !empty($lang_labels['title'])) ? $lang_labels['title'] : 'Title'; ?>" />
+                                            <label class="mb-2" for="title" class="control-checkbox">Titre</label>
+                                            <input type="text" name="title" class="form-control mb-2" value="<?= (isset($lang_labels['title']) && !empty($lang_labels['title'])) ? $lang_labels['title'] : 'Titre'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1257,14 +1257,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="password_change" class="control-checkbox">Password Change</label>
-                                            <input type="text" name="password_change" class="form-control mb-2" value="<?= (isset($lang_labels['password_change']) && !empty($lang_labels['password_change'])) ? $lang_labels['password_change'] : 'Password Change'; ?>" />
+                                            <label class="mb-2" for="password_change" class="control-checkbox">Mot de passe Change</label>
+                                            <input type="text" name="password_change" class="form-control mb-2" value="<?= (isset($lang_labels['password_change']) && !empty($lang_labels['password_change'])) ? $lang_labels['password_change'] : 'Mot de passe Change'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="current_password" class="control-checkbox">Current Password</label>
-                                            <input type="text" name="current_password" class="form-control mb-2" value="<?= (isset($lang_labels['current_password']) && !empty($lang_labels['current_password'])) ? $lang_labels['current_password'] : 'Current Password'; ?>" />
+                                            <label class="mb-2" for="current_password" class="control-checkbox">Current Mot de passe</label>
+                                            <input type="text" name="current_password" class="form-control mb-2" value="<?= (isset($lang_labels['current_password']) && !empty($lang_labels['current_password'])) ? $lang_labels['current_password'] : 'Current Mot de passe'; ?>" />
                                         </div>
                                     </div>
 
@@ -1276,20 +1276,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="user_name" class="control-checkbox">User Name</label>
-                                            <input type="text" name="user_name" class="form-control mb-2" value="<?= (isset($lang_labels['user_name']) && !empty($lang_labels['user_name'])) ? $lang_labels['user_name'] : 'User Name'; ?>" />
+                                            <label class="mb-2" for="user_name" class="control-checkbox">Nom utilisateur</label>
+                                            <input type="text" name="user_name" class="form-control mb-2" value="<?= (isset($lang_labels['user_name']) && !empty($lang_labels['user_name'])) ? $lang_labels['user_name'] : 'Nom utilisateur'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="amount" class="control-checkbox">Amount</label>
+                                            <label class="mb-2" for="amount" class="control-checkbox">Montant</label>
                                             <input type="text" name="amount" class="form-control mb-2" value="<?= (isset($lang_labels['amount']) && !empty($lang_labels['amount'])) ? $lang_labels['amount'] : 'Amount'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="status" class="control-checkbox">Status</label>
-                                            <input type="text" name="status" class="form-control mb-2" value="<?= (isset($lang_labels['status']) && !empty($lang_labels['status'])) ? $lang_labels['status'] : 'Status'; ?>" />
+                                            <label class="mb-2" for="status" class="control-checkbox">Statut</label>
+                                            <input type="text" name="status" class="form-control mb-2" value="<?= (isset($lang_labels['status']) && !empty($lang_labels['status'])) ? $lang_labels['status'] : 'Statut'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1300,8 +1300,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="payment_address" class="control-checkbox">Payment Address</label>
-                                            <input type="text" name="payment_address" class="form-control mb-2" value="<?= (isset($lang_labels['payment_address']) && !empty($lang_labels['payment_address'])) ? $lang_labels['payment_address'] : 'Payment Address'; ?>" />
+                                            <label class="mb-2" for="payment_address" class="control-checkbox">Adresse de paiement</label>
+                                            <input type="text" name="payment_address" class="form-control mb-2" value="<?= (isset($lang_labels['payment_address']) && !empty($lang_labels['payment_address'])) ? $lang_labels['payment_address'] : 'Adresse de paiement'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1312,20 +1312,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="wallet_transaction" class="control-checkbox">Wallet Transaction</label>
-                                            <input type="text" name="wallet_transaction" class="form-control mb-2" value="<?= (isset($lang_labels['wallet_transaction']) && !empty($lang_labels['wallet_transaction'])) ? $lang_labels['wallet_transaction'] : 'Wallet Transaction'; ?>" />
+                                            <label class="mb-2" for="wallet_transaction" class="control-checkbox">Transaction portefeuille</label>
+                                            <input type="text" name="wallet_transaction" class="form-control mb-2" value="<?= (isset($lang_labels['wallet_transaction']) && !empty($lang_labels['wallet_transaction'])) ? $lang_labels['wallet_transaction'] : 'Transaction portefeuille'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="add_money" class="control-checkbox">Add Money</label>
-                                            <input type="text" name="add_money" class="form-control mb-2" value="<?= (isset($lang_labels['add_money']) && !empty($lang_labels['add_money'])) ? $lang_labels['add_money'] : 'Add Money'; ?>" />
+                                            <label class="mb-2" for="add_money" class="control-checkbox">Ajouter Money</label>
+                                            <input type="text" name="add_money" class="form-control mb-2" value="<?= (isset($lang_labels['add_money']) && !empty($lang_labels['add_money'])) ? $lang_labels['add_money'] : 'Ajouter Money'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="password" class="control-checkbox">Password</label>
-                                            <input type="text" name="password" class="form-control mb-2" value="<?= (isset($lang_labels['password']) && !empty($lang_labels['password'])) ? $lang_labels['password'] : 'Password'; ?>" />
+                                            <label class="mb-2" for="password" class="control-checkbox">Mot de passe</label>
+                                            <input type="text" name="password" class="form-control mb-2" value="<?= (isset($lang_labels['password']) && !empty($lang_labels['password'])) ? $lang_labels['password'] : 'Mot de passe'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1336,8 +1336,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="save_address" class="control-checkbox">Save Address</label>
-                                            <input type="text" name="save_address" class="form-control mb-2" value="<?= (isset($lang_labels['save_address']) && !empty($lang_labels['save_address'])) ? $lang_labels['save_address'] : 'Save Address'; ?>" />
+                                            <label class="mb-2" for="save_address" class="control-checkbox">Enregistrer Adresse</label>
+                                            <input type="text" name="save_address" class="form-control mb-2" value="<?= (isset($lang_labels['save_address']) && !empty($lang_labels['save_address'])) ? $lang_labels['save_address'] : 'Enregistrer Adresse'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1360,20 +1360,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="recent_orders" class="control-checkbox">Recent Orders</label>
-                                            <input type="text" name="recent_orders" class="form-control mb-2" value="<?= (isset($lang_labels['recent_orders']) && !empty($lang_labels['recent_orders'])) ? $lang_labels['recent_orders'] : 'Recent Orders'; ?>" />
+                                            <label class="mb-2" for="recent_orders" class="control-checkbox">Recent Commandes</label>
+                                            <input type="text" name="recent_orders" class="form-control mb-2" value="<?= (isset($lang_labels['recent_orders']) && !empty($lang_labels['recent_orders'])) ? $lang_labels['recent_orders'] : 'Recent Commandes'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="manage_your" class="control-checkbox">Manage your</label>
-                                            <input type="text" name="manage_your" class="form-control mb-2" value="<?= (isset($lang_labels['manage_your']) && !empty($lang_labels['manage_your'])) ? $lang_labels['manage_your'] : 'Manage your'; ?>" />
+                                            <label class="mb-2" for="manage_your" class="control-checkbox">Gérer your</label>
+                                            <input type="text" name="manage_your" class="form-control mb-2" value="<?= (isset($lang_labels['manage_your']) && !empty($lang_labels['manage_your'])) ? $lang_labels['manage_your'] : 'Gérer your'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="shipping_and_billing_addresses" class="control-checkbox">Shipping and Billing Addresses</label>
-                                            <input type="text" name="shipping_and_billing_addresses" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_and_billing_addresses']) && !empty($lang_labels['shipping_and_billing_addresses'])) ? $lang_labels['shipping_and_billing_addresses'] : 'Shipping and Billing Addresses'; ?>" />
+                                            <label class="mb-2" for="shipping_and_billing_addresses" class="control-checkbox">Livraison and Billing Adresses</label>
+                                            <input type="text" name="shipping_and_billing_addresses" class="form-control mb-2" value="<?= (isset($lang_labels['shipping_and_billing_addresses']) && !empty($lang_labels['shipping_and_billing_addresses'])) ? $lang_labels['shipping_and_billing_addresses'] : 'Livraison and Billing Adresses'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1384,8 +1384,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="edit_your_password_and_account_details" class="control-checkbox">Edit Your Password and Account Details.</label>
-                                            <input type="text" name="edit_your_password_and_account_details" class="form-control mb-2" value="<?= (isset($lang_labels['edit_your_password_and_account_details']) && !empty($lang_labels['edit_your_password_and_account_details'])) ? $lang_labels['edit_your_password_and_account_details'] : 'Edit Your Password and Account Details.'; ?>" />
+                                            <label class="mb-2" for="edit_your_password_and_account_details" class="control-checkbox">Modifier Your Mot de passe and Account Details.</label>
+                                            <input type="text" name="edit_your_password_and_account_details" class="form-control mb-2" value="<?= (isset($lang_labels['edit_your_password_and_account_details']) && !empty($lang_labels['edit_your_password_and_account_details'])) ? $lang_labels['edit_your_password_and_account_details'] : 'Modifier Your Mot de passe and Account Details.'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1396,14 +1396,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="delivery_charge_with_cod" class="control-checkbox">Delivery charge with COD</label>
-                                            <input type="text" name="delivery_charge_with_cod" class="form-control mb-2" value="<?= (isset($lang_labels['delivery_charge_with_cod']) && !empty($lang_labels['delivery_charge_with_cod'])) ? $lang_labels['delivery_charge_with_cod'] : 'Delivery charge with COD'; ?>" />
+                                            <label class="mb-2" for="delivery_charge_with_cod" class="control-checkbox">Livraison charge with COD</label>
+                                            <input type="text" name="delivery_charge_with_cod" class="form-control mb-2" value="<?= (isset($lang_labels['delivery_charge_with_cod']) && !empty($lang_labels['delivery_charge_with_cod'])) ? $lang_labels['delivery_charge_with_cod'] : 'Livraison charge with COD'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="delivery_charge_without_cod" class="control-checkbox">Delivery charge without COD</label>
-                                            <input type="text" name="delivery_charge_without_cod" class="form-control mb-2" value="<?= (isset($lang_labels['delivery_charge_without_cod']) && !empty($lang_labels['delivery_charge_without_cod'])) ? $lang_labels['delivery_charge_without_cod'] : 'Delivery charge without COD'; ?>" />
+                                            <label class="mb-2" for="delivery_charge_without_cod" class="control-checkbox">Livraison charge without COD</label>
+                                            <input type="text" name="delivery_charge_without_cod" class="form-control mb-2" value="<?= (isset($lang_labels['delivery_charge_without_cod']) && !empty($lang_labels['delivery_charge_without_cod'])) ? $lang_labels['delivery_charge_without_cod'] : 'Livraison charge without COD'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1426,20 +1426,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="see_all_offers" class="control-checkbox">See All Offers(%)</label>
-                                            <input type="text" name="see_all_offers" class="form-control mb-2" value="<?= (isset($lang_labels['see_all_offers']) && !empty($lang_labels['see_all_offers'])) ? $lang_labels['see_all_offers'] : 'See All Offers(%)'; ?>" />
+                                            <label class="mb-2" for="see_all_offers" class="control-checkbox">See All Offres(%)</label>
+                                            <input type="text" name="see_all_offers" class="form-control mb-2" value="<?= (isset($lang_labels['see_all_offers']) && !empty($lang_labels['see_all_offers'])) ? $lang_labels['see_all_offers'] : 'See All Offres(%)'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="door_step_delivery" class="control-checkbox">Door Step Delivery</label>
-                                            <input type="text" name="door_step_delivery" class="form-control mb-2" value="<?= (isset($lang_labels['door_step_delivery']) && !empty($lang_labels['door_step_delivery'])) ? $lang_labels['door_step_delivery'] : 'Door Step Delivery'; ?>" />
+                                            <label class="mb-2" for="door_step_delivery" class="control-checkbox">Livraison à domicile</label>
+                                            <input type="text" name="door_step_delivery" class="form-control mb-2" value="<?= (isset($lang_labels['door_step_delivery']) && !empty($lang_labels['door_step_delivery'])) ? $lang_labels['door_step_delivery'] : 'Livraison à domicile'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="pickup_from_store" class="control-checkbox">Pickup From Store</label>
-                                            <input type="text" name="pickup_from_store" class="form-control mb-2" value="<?= (isset($lang_labels['pickup_from_store']) && !empty($lang_labels['pickup_from_store'])) ? $lang_labels['pickup_from_store'] : 'Pickup From Store'; ?>" />
+                                            <label class="mb-2" for="pickup_from_store" class="control-checkbox">Retrait From Store</label>
+                                            <input type="text" name="pickup_from_store" class="form-control mb-2" value="<?= (isset($lang_labels['pickup_from_store']) && !empty($lang_labels['pickup_from_store'])) ? $lang_labels['pickup_from_store'] : 'Retrait From Store'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1482,14 +1482,14 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="popular_categories" class="control-checkbox">Popular Categories</label>
-                                            <input type="text" name="popular_categories" class="form-control mb-2" value="<?= (isset($lang_labels['popular_categories']) && !empty($lang_labels['popular_categories'])) ? $lang_labels['popular_categories'] : 'Popular Categories'; ?>" />
+                                            <label class="mb-2" for="popular_categories" class="control-checkbox">Popular Catégories</label>
+                                            <input type="text" name="popular_categories" class="form-control mb-2" value="<?= (isset($lang_labels['popular_categories']) && !empty($lang_labels['popular_categories'])) ? $lang_labels['popular_categories'] : 'Popular Catégories'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="brands" class="control-checkbox">Brands</label>
-                                            <input type="text" name="brands" class="form-control mb-2" value="<?= (isset($lang_labels['brands']) && !empty($lang_labels['brands'])) ? $lang_labels['brands'] : 'Brands'; ?>" />
+                                            <label class="mb-2" for="brands" class="control-checkbox">Marques</label>
+                                            <input type="text" name="brands" class="form-control mb-2" value="<?= (isset($lang_labels['brands']) && !empty($lang_labels['brands'])) ? $lang_labels['brands'] : 'Marques'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1527,8 +1527,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="flash_sale" class="control-checkbox">Flash Sale</label>
-                                            <input type="text" name="flash_sale" class="form-control mb-2" value="<?= (isset($lang_labels['flash_sale']) && !empty($lang_labels['flash_sale'])) ? $lang_labels['flash_sale'] : 'Flash Sale'; ?>" />
+                                            <label class="mb-2" for="flash_sale" class="control-checkbox">Vente Flash</label>
+                                            <input type="text" name="flash_sale" class="form-control mb-2" value="<?= (isset($lang_labels['flash_sale']) && !empty($lang_labels['flash_sale'])) ? $lang_labels['flash_sale'] : 'Vente Flash'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1545,8 +1545,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="clear_cart" class="control-checkbox">Clear Cart</label>
-                                            <input type="text" name="clear_cart" class="form-control mb-2" value="<?= (isset($lang_labels['clear_cart']) && !empty($lang_labels['clear_cart'])) ? $lang_labels['clear_cart'] : 'Clear Cart'; ?>" />
+                                            <label class="mb-2" for="clear_cart" class="control-checkbox">Vider le panier</label>
+                                            <input type="text" name="clear_cart" class="form-control mb-2" value="<?= (isset($lang_labels['clear_cart']) && !empty($lang_labels['clear_cart'])) ? $lang_labels['clear_cart'] : 'Vider le panier'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1557,19 +1557,19 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="mb-2" for="save_changes" class="control-checkbox">Save Changes</label>
-                                            <input type="text" name="save_changes" class="form-control mb-2" value="<?= (isset($lang_labels['save_changes']) && !empty($lang_labels['save_changes'])) ? $lang_labels['save_changes'] : 'Save Changes'; ?>" />
+                                            <label class="mb-2" for="save_changes" class="control-checkbox">Enregistrer Changes</label>
+                                            <input type="text" name="save_changes" class="form-control mb-2" value="<?= (isset($lang_labels['save_changes']) && !empty($lang_labels['save_changes'])) ? $lang_labels['save_changes'] : 'Enregistrer Changes'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="profile_image" class="control-checkbox">Profile Image</label>
-                                            <input type="text" name="profile_image" class="form-control" value="<?= (isset($lang_labels['profile_image']) && !empty($lang_labels['profile_image'])) ? $lang_labels['profile_image'] : 'Profile Image'; ?>" />
+                                            <label for="profile_image" class="control-checkbox">Profil Image</label>
+                                            <input type="text" name="profile_image" class="form-control" value="<?= (isset($lang_labels['profile_image']) && !empty($lang_labels['profile_image'])) ? $lang_labels['profile_image'] : 'Profil Image'; ?>" />
                                         </div>
                                     </div>
                                     <div class="col-md-12 mt-4">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-success" id="update_btn">Update</button>
+                                            <button type="submit" class="btn btn-success" id="update_btn">Mettre à jour</button>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center form-group">
@@ -1590,7 +1590,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Add Language</h5>
+                <h5 class="modal-title" id="exampleModalLongTitre">Ajouter Language</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                 </button>
@@ -1601,7 +1601,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Name <small>(Language name should be in english)<small> </label>
+                                    <label for="">Nom <small>(Language name should be in english)<small> </label>
                                     <input type="text" name="language" id="language" class="form-control" placeholder="Ex. English , Hindi" />
                                 </div>
                             </div>
@@ -1618,7 +1618,7 @@
                             <label for="is_rtl_create" class="control-checkbox">Enable RTL</label>
                         </div>
                         <div class="form-group mt-4">
-                            <button type="submit" class="btn btn-success" id="submit_btn">Save</button>
+                            <button type="submit" class="btn btn-success" id="submit_btn">Enregistrer</button>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form-group">

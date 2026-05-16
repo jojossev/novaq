@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>View Products</h4>
+                    <h4>View Produits</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">View Products</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">View Produits</li>
                     </ol>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     <hr>
                     <div class="col-12 col-sm-12 text-sm">
                         <h6 class="my-3">
-                            <?= 'Category : <span class="text-primary">' . ucfirst($product_details[0]['category_name']) . '</span>' ?>
+                            <?= 'Catégorie : <span class="text-primary">' . ucfirst($product_details[0]['category_name']) . '</span>' ?>
                         </h6>
                     </div>
                     <div class="py-2 px-3 mt-4">
@@ -97,8 +97,8 @@
                                         <tr>
                                             <th>Row Id</th>
                                             <th>Variants</th>
-                                            <th>Price</th>
-                                            <th>Sale Price</th>
+                                            <th>Prix</th>
+                                            <th>Sale Prix</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -144,12 +144,12 @@
                         }
                         if (!empty($product_details[0]['attributes'])) {
                             ?>
-                            <h3>Attributes</h3>
+                            <h3>Attributs</h3>
                             <table class="table table-sm">
                                 <thead class="thead-light">
                                     <tr>
                                         <th>Row</th>
-                                        <th>Attributes</th>
+                                        <th>Attributs</th>
                                         <th>Values</th>
                                     </tr>
                                 </thead>
@@ -207,14 +207,14 @@
                                 data-show-refresh="true" data-trim-on-search="false" data-sort-name="id"
                                 data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true"
                                 data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "products-rating-list",
+                        "fileNom": "products-rating-list",
                         "ignoreColumn": ["operate"] 
                         }' data-maintain-selected="true" data-query-params="product_rating_query_params">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
                                         <th data-field="username" data-width='500' data-sortable="false" class="col-md-6">
-                                            Username</th>
+                                            Nom d'utilisateur</th>
                                         <th data-field="rating" data-sortable="false">Rating</th>
                                         <th data-field="comment" data-sortable="false">Comment</th>
                                         <th data-field="images" data-sortable="true">Images</th>

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Zipcodes</h4>
+                    <h4>Gérer Codes postaux</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Zipcodes</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Codes postaux</li>
                     </ol>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                                 <div class="row mt-2">
                                     <div class="form-group col-md-4">
                                         <label for="minimum_free_delivery_order_amount" class="control-label">Minimum
-                                            Free Delivery Order Amount <span
+                                            Free Livraison Order Amount <span
                                                 class='text-danger text-xs'>*</span></label>
                                     </div>
                                     <div class="form-group col-md-8">
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <div class="form-group col-md-4">
-                                        <label for="delivery_charges" class="control-label">Delivery Charges <span
+                                        <label for="delivery_charges" class="control-label">Livraison Charges <span
                                                 class='text-danger text-xs'>*</span></label>
                                     </div>
                                     <div class="form-group col-md-8">
@@ -86,9 +86,9 @@
                                 </div>
                                 <div class="row ">
                                     <div class="form-group">
-                                        <button type="reset" class="btn btn-warning mt-3 me-3">Reset</button>
+                                        <button type="reset" class="btn btn-warning mt-3 me-3">Réinitialiser</button>
                                         <button type="submit" class="btn btn-success mt-3 me-3"
-                                            id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Zipcode' : 'Add Zipcode' ?></button>
+                                            id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Zipcode' : 'Ajouter Zipcode' ?></button>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Zipcode</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier Zipcode</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                 </button>
                             </div>
@@ -140,7 +140,7 @@
                                 data-sort-order="asc" data-mobile-responsive="true" data-toolbar=""
                                 data-show-export="true" data-maintain-selected="true"
                                 data-export-types='["txt","excel"]' data-export-options='{
-                            "fileName": "zipcodes-list",
+                            "fileNom": "zipcodes-list",
                             "ignoreColumn": ["operate"] 
                             }' data-query-params="queryParams">
 
@@ -149,10 +149,10 @@
                                         <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id" data-sortable="true">ID</th>
                                         <th data-field="zipcode" data-sortable="true">Zipcode</th>
-                                        <th data-field="city_name" data-sortable="true">City Name</th>
+                                        <th data-field="city_name" data-sortable="true">City Nom</th>
                                         <th data-field="minimum_free_delivery_order_amount" data-sortable="false">
-                                            Minimum Free Delivery Order Amount</th>
-                                        <th data-field="delivery_charges" data-sortable="false">Delivery Charges</th>
+                                            Minimum Free Livraison Order Amount</th>
+                                        <th data-field="delivery_charges" data-sortable="false">Livraison Charges</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

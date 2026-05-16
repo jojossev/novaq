@@ -3,13 +3,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Authentication Mode</h4>
+                    <h4>Mode d'authentification</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">Authentication Mode</li>
+                        <li class="breadcrumb-item active">Mode d'authentification</li>
                     </ol>
                 </div>
             </div>
@@ -29,13 +29,13 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="authentication_method" value="firebase" id="firebaseRadio" <?= (@$authentication_config['authentication_method']) == 'firebase' ? 'checked' : '' ?>>
                                             <label class="" for="firebaseRadio">
-                                                Firebase Authentication
+                                                Authentification Firebase
                                             </label>
                                         </div>
                                         <div class="form-check ml-5">
                                             <input class="form-check-input" type="radio" name="authentication_method" value="sms" id="smsRadio" <?= (@$authentication_config['authentication_method']) == 'sms' ? 'checked' : '' ?>>
                                             <label class="" for="smsRadio">
-                                                Custom SMS Gateway OTP based
+                                                Passerelle SMS personnalisée OTP based
                                             </label>
                                         </div>
                                     </div>
@@ -43,18 +43,18 @@
                                 <div class="d-flex mt-3">
                                     <div class="firebase_config d-none">
                                         <a href="<?= base_url('admin/web-setting/firebase') ?>">
-                                            <p class="text-danger">Please config firebase config here *</p>
+                                            <p class="text-danger">Veuillez configurer Firebase ici *</p>
                                         </a>
                                     </div>
                                     <div class="sms_gateway d-none">
                                         <a href="<?= base_url('admin/sms-gateway-settings') ?>">
-                                            <p class="text-danger">Please config SMS gateway config here * </p>
+                                            <p class="text-danger">Veuillez configurer la passerelle SMS ici * </p>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn">Update Authentication Settings</button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour les paramètres d'authentification</button>
                                 </div>
 
 

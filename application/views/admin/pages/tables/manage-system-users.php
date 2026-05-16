@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage System Users</h4>
+                    <h4>Gérer Utilisateurs système</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">System Users</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Utilisateurs système</li>
                     </ol>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit System User</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier Système User</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                 </button>
                             </div>
@@ -35,7 +35,7 @@
                         <?php if(has_permissions('system_user', 'create')){ ?>
                         <div class="card-header border-0">
                             <div class="card-tools">
-                                <a href="<?= base_url() . 'admin/system_users/add-system-users' ?>" class="btn btn-outline-primary btn-sm">Add System User </a>
+                                <a href="<?= base_url() . 'admin/system_users/add-system-users' ?>" class="btn btn-outline-primary btn-sm">Ajouter Système User </a>
                             </div>
                         </div>
                         <?php } ?>
@@ -45,10 +45,10 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="user_id" data-sortable="true">User ID</th>
-                                        <th data-field="username" data-sortable="false">Username</th>
+                                        <th data-field="user_id" data-sortable="true">ID utilisateur</th>
+                                        <th data-field="username" data-sortable="false">Nom d'utilisateur</th>
                                         <th data-field="mobile" data-sortable="false">Mobile</th>
-                                        <th data-field="email" data-sortable="false">Email</th>
+                                        <th data-field="email" data-sortable="false">E-mail</th>
                                         <th data-field="role" data-sortable="false">Role</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>

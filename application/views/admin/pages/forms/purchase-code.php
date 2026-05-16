@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Purchase Code</li>
                     </ol>
                 </div>
@@ -63,8 +63,8 @@
                             <div class="form-group row mt-2 pb-3">
                                 <label for="purchase_code" class="col-sm-2 col-form-label"></label>
                                 <div class="form-group col-sm-10">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success"><?= (isset($fetched_data[0]['id'])) ? 'Update Ticket Type' : 'Register Now' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Type de ticket' : 'Register Now' ?></button>
                                 </div>
                             </div>
                         </form>
@@ -83,7 +83,7 @@
                                         <input type="text" id="modalPurchaseCode" class="form-control" placeholder="Enter your purchase code">
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                         <button type="button" class="btn btn-primary" id="submitPurchaseCode">De-Register</button>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                         <input type="text" id="modalAppPurchaseCode" class="form-control" placeholder="Enter your purchase code">
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                         <button type="button" class="btn btn-primary" id="submitAppPurchaseCode">De-Register</button>
                                     </div>
                                 </div>

@@ -5,12 +5,12 @@
         <div class="container-fluid mt-4">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Orders</h4>
+                    <h4>Gérer Commandes</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Orders</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Commandes</li>
                     </ol>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Digital Order Mails</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">E-mails des commandes numériques</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -47,13 +47,13 @@
                                         <tr>
                                             <th data-field="id" data-sortable='true'
                                                 data-footer-formatter="totalFormatter">ID</th>
-                                            <th data-field="order_id" data-sortable='true'>Order ID</th>
-                                            <th data-field="order_item_id" data-sortable='true'>Order Item ID</th>
+                                            <th data-field="order_id" data-sortable='true'>ID Commande</th>
+                                            <th data-field="order_item_id" data-sortable='true'>ID de l'article commandé</th>
                                             <th data-field="subject" data-sortable='true' data-visible="true">Subject
                                             </th>
                                             <th data-field="message" data-sortable='true' data-visible="false">Message
                                             </th>
-                                            <th data-field="file_url" data-sortable='true' data-visible="true">File Url
+                                            <th data-field="file_url" data-sortable='true' data-visible="true">URL du fichier
                                             </th>
                                             <th data-field="mail_date" data-sortable='true' data-visible="false">Mail
                                                 Sent Date</th>
@@ -73,7 +73,7 @@
                     <div class="modal-dialog modal-lg ">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Manage Digital Product</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Gérer Produit numérique</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -93,7 +93,7 @@
                                         <div class="row form-group">
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="product_name">Customer Email-ID </label>
+                                                    <label for="product_name">Client E-mail-ID </label>
                                                     <input type="text" class="form-control" id="email" name="email"
                                                         value="<?= $fetched[0]['email'] ?>" readonly>
                                                 </div>
@@ -102,7 +102,7 @@
                                                 <div class="form-group">
                                                     <label for="product_name">Subject </label>
                                                     <input type="text" class="form-control" id="subject"
-                                                        placeholder="Enter Subject for email" name="subject" value="">
+                                                        placeholder="Saisir le sujet de l'e-mail" name="subject" value="">
                                                 </div>
                                             </div>
 
@@ -110,7 +110,7 @@
                                                 <div class="form-group">
                                                     <label for="product_name">Message </label>
                                                     <textarea type="text" class="form-control textarea addr_editor"
-                                                        rows="6" placeholder="Message for Email"
+                                                        lignes="6" placeholder="Message pour l'e-mail"
                                                         name="message"><?= isset($product_details[0]['short_description']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $product_details[0]['short_description'])) : ""; ?></textarea>
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@
                                                         data-input='pro_input_file' data-isremovable='1'
                                                         data-media_type='archive,document'
                                                         data-is-multiple-uploads-allowed='0' data-toggle="modal"
-                                                        data-target="#media-upload-modal" value="Upload Photo"><i
+                                                        data-target="#media-upload-modal" value="Téléverser une photo"><i
                                                             class='fa fa-upload'></i> Upload</a></div>
                                                 <div class="container-fluid row image-upload-section">
                                                     <div
@@ -133,7 +133,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-success mt-3" id="submit_btn"
-                                            value="Save"><?= labels('send_mail', 'Send Mail') ?></button>
+                                            value="Enregistrer"><?= labels('send_mail', "Envoyer l'e-mail") ?></button>
                                     </div>
                                 </form>
                             </div>
@@ -147,7 +147,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="user_name">Order Tracking</h5>
+                                <h5 class="modal-title" id="user_name">Suivi de commande</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -162,14 +162,14 @@
                                             <input type="hidden" name="order_item_id" id="order_item_id">
                                             <div class="card-body pad p-0">
                                                 <div class="form-group mt-2 ">
-                                                    <label for="courier_agency">Courier Agency</label>
+                                                    <label for="courier_agency">Agence de transport</label>
                                                     <input type="text" class="form-control mt-2" name="courier_agency"
-                                                        id="courier_agency" placeholder="Courier Agency" />
+                                                        id="courier_agency" placeholder="Agence de transport" />
                                                 </div>
                                                 <div class="form-group mt-2 ">
-                                                    <label for="tracking_id">Tracking Id</label>
+                                                    <label for="tracking_id">ID de suivi</label>
                                                     <input type="text" class="form-control mt-2" name="tracking_id"
-                                                        id="tracking_id" placeholder="Tracking Id" />
+                                                        id="tracking_id" placeholder="ID de suivi" />
                                                 </div>
                                                 <div class="form-group mt-2 ">
                                                     <label for="url">URL</label>
@@ -177,9 +177,9 @@
                                                         placeholder="URL" />
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <button type="reset" class="btn btn-warning">Reset</button>
+                                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                                     <button type="submit" class="btn btn-success"
-                                                        id="submit_btn">Save</button>
+                                                        id="submit_btn">Enregistrer</button>
                                                 </div>
                                             </div>
                                             <!-- /.card-body -->
@@ -198,7 +198,7 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">View Order Tracking</h5>
+                                <h5 class="modal-title">Voir le suivi de commande</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -217,11 +217,11 @@
                                         <thead>
                                             <tr>
                                                 <th data-field="id" data-sortable="true">ID</th>
-                                                <th data-field="order_id" data-sortable="true">Order ID</th>
-                                                <th data-field="order_item_id" data-sortable="false">Order Item ID</th>
-                                                <th data-field="courier_agency" data-sortable="false">Courier agency
+                                                <th data-field="order_id" data-sortable="true">ID Commande</th>
+                                                <th data-field="order_item_id" data-sortable="false">ID de l'article commandé</th>
+                                                <th data-field="courier_agency" data-sortable="false">Agence de transport
                                                 </th>
-                                                <th data-field="tracking_id" data-sortable="false">Tracking id</th>
+                                                <th data-field="tracking_id" data-sortable="false">ID de suivi</th>
                                                 <th data-field="url" data-sortable="false">URL</th>
                                                 <th data-field="date" data-sortable="false">Date</th>
                                                 <th data-field="operate" data-sortable="true">Actions</th>
@@ -237,13 +237,13 @@
                     <div class="card content-area p-4">
                         <div class="card-innr">
                             <div class="gaps-1-5x row d-flex adjust-items-center">
-                                <h5 class="col">Order Outlines</h5>
+                                <h5 class="col">Aperçu des commandes</h5>
                                 <div class="row col-12 d-flex">
                                     <div class="col-md-3">
                                         <div class="card border border-secondary mt-4">
                                             <div class="card-body  d-flex align-items-center justify-content-between">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Awaiting</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">En attente</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['awaiting'] ?>
                                                     </h3>
                                                 </div>
@@ -260,7 +260,7 @@
                                         <div class="card border border-secondary mt-4">
                                             <div class="card-body  d-flex align-items-center justify-content-between">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Received</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Reçu</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['received'] ?>
                                                     </h3>
                                                 </div>
@@ -277,7 +277,7 @@
                                         <div class="card border border-secondary mt-4">
                                             <div class="card-body  d-flex align-items-center justify-content-between">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Processed</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Traité</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['processed'] ?>
                                                     </h3>
                                                 </div>
@@ -296,7 +296,7 @@
                                         <div class="card border border-secondary mt-4">
                                             <div class="card-body  d-flex align-items-center justify-content-between">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Shipped</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Expédié</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['shipped'] ?></h3>
                                                 </div>
                                                 <div
@@ -311,7 +311,7 @@
                                         <div class="card border border-secondary mt-4 ">
                                             <div class="card-body  d-flex align-items-center justify-content-between ">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Delivered</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Livré</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['delivered'] ?>
                                                     </h3>
                                                 </div>
@@ -327,7 +327,7 @@
                                         <div class="card border border-secondary mt-4">
                                             <div class="card-body  d-flex align-items-center justify-content-between">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Cancelled</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Annulé</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['cancelled'] ?>
                                                     </h3>
                                                 </div>
@@ -343,7 +343,7 @@
                                         <div class="card border border-secondary mt-4">
                                             <div class="card-body  d-flex align-items-center justify-content-between">
                                                 <div class="d-flex flex-column">
-                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Returned</span>
+                                                    <span class="fw-semibold d-block mb-1 col-md-12 h7">Retourné</span>
                                                     <h3 class="card-title mb-2 h8"><?= $status_counts['returned'] ?>
                                                     </h3>
                                                 </div>
@@ -358,7 +358,7 @@
                                 </div>
                                 <div class="row col-md-12 mt-4">
                                     <div class="form-group col-md-3">
-                                        <label>Date range:</label>
+                                        <label>Plage de dates:</label>
                                         <div class="input-group col-md-12">
 
                                             <input type="text" class="form-control float-right" id="datepicker">
@@ -369,26 +369,26 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <div>
-                                            <label>Status</label>
-                                            <select id="order_status" name="order_status" placeholder="Select Status"
+                                            <label>Statut</label>
+                                            <select id="order_status" name="order_status" placeholder="Sélectionner le statut"
                                                 required="" class="form-control">
-                                                <option value="">All Orders</option>
-                                                <option value="awaiting">Awaiting</option>
-                                                <option value="received">Received</option>
-                                                <option value="processed">Processed</option>
-                                                <option value="shipped">Shipped</option>
-                                                <option value="delivered">Delivered</option>
-                                                <option value="cancelled">Cancelled</option>
-                                                <option value="returned">Returned</option>
+                                                <option value="">Toutes les commandes</option>
+                                                <option value="awaiting">En attente</option>
+                                                <option value="received">Reçu</option>
+                                                <option value="processed">Traité</option>
+                                                <option value="shipped">Expédié</option>
+                                                <option value="delivered">Livré</option>
+                                                <option value="cancelled">Annulé</option>
+                                                <option value="returned">Retourné</option>
                                             </select>
                                         </div>
                                     </div>
                                     <!-- Filter By payment  -->
                                     <div class="form-group col-md-2">
                                         <div>
-                                            <label>Delivery Boy</label>
+                                            <label>Livreur</label>
                                             <select id="delivery_boy" class="form-control">
-                                                <option value="">All delivery boy</option>
+                                                <option value="">Tous les livreurs</option>
                                                 <?php
 
                                                 foreach ($delivery_res as $row) {
@@ -402,19 +402,19 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <div>
-                                            <label>Payment Method</label>
+                                            <label>Méthode de paiement</label>
                                             <select id="payment_method" name="payment_method"
-                                                placeholder="Select Payment Method" required="" class="form-control">
-                                                <option value="">All Payment Methods</option>
-                                                <option value="COD">Cash On Delivery</option>
+                                                placeholder="Select Méthode de paiement" required="" class="form-control">
+                                                <option value="">Toutes les méthodes de paiement</option>
+                                                <option value="COD">Paiement à la livraison</option>
                                                 <option value="Paypal">Paypal</option>
                                                 <option value="RazorPay">RazorPay</option>
                                                 <option value="Paystack">Paystack</option>
                                                 <option value="Flutterwave">Flutterwave</option>
                                                 <option value="Paytm">Paytm</option>
                                                 <option value="Stripe">Stripe</option>
-                                                <option value="Phonepe">PhonePe</option>
-                                                <option value="bank_transfer">Direct Bank Transfers</option>
+                                                <option value="Téléphonepe">TéléphonePe</option>
+                                                <option value="bank_transfer">Virement bancaire directs</option>
                                                 <option value="midtrans">Midtrans</option>
                                                 <option value="instamojo">Instamojo</option>
                                                 <option value="my_fatoorah">My Fatoorah</option>
@@ -424,12 +424,12 @@
                                     </div>
                                     <div class="form-group col-md-1">
                                         <div>
-                                            <label>Product Type</label>
-                                            <select id="order_type" name="order_type" placeholder="Select Order Type"
+                                            <label>Type de produit</label>
+                                            <select id="order_type" name="order_type" placeholder="Select Type de commande"
                                                 required="" class="form-control">
-                                                <option value="">All Orders</option>
-                                                <option value="physical_order">Physical Orders</option>
-                                                <option value="digital_order">Digital Orders</option>
+                                                <option value="">Toutes les commandes</option>
+                                                <option value="physical_order">Commandes physiques</option>
+                                                <option value="digital_order">Commandes numériques</option>
                                             </select>
                                         </div>
                                     </div>
@@ -440,7 +440,7 @@
                                             onclick="status_date_wise_search()">Filter</button>
 
                                         <button type="button" class="btn btn-outline-danger btn-sm"
-                                            onclick="reset_filters()">Reset</button>
+                                            onclick="reset_filters()">Réinitialiser</button>
 
                                     </div>
 
@@ -451,18 +451,18 @@
                                     <div class="row col-md-6">
                                         <div class="row col-md-4 p-4">
                                             <a href="#" class="btn btn-primary btn-sm add_promo_code_discount"
-                                                title="If you found Promo Code Discount not crediting using cron job you can update Promo Code Discount from here!">Settle
-                                                Promo Code Discount</a>
+                                                title="If you found Code promo Discount not crediting using cron job you can update Code promo Discount from here!">Settle
+                                                Code promo Discount</a>
                                         </div>
                                     </div>
                                 <?php } ?>
                                 <hr>
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#orders_table">Orders</a>
+                                        <a class="nav-link active" data-toggle="tab" href="#orders_table">Commandes</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#order_items_table">Order Items</a>
+                                        <a class="nav-link" data-toggle="tab" href="#order_items_table">Articles commandés</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
@@ -475,18 +475,18 @@
                                             data-trim-on-search="false" data-sort-name="o.id" data-sort-order="desc"
                                             data-mobile-responsive="true" data-toolbar="" data-show-export="true"
                                             data-maintain-selected="true" data-export-types='["txt","excel","csv"]'
-                                            data-export-options='{"fileName": "orders-list","ignoreColumn": ["state"] }'
+                                            data-export-options='{"fileNom": "orders-list","ignoreColumn": ["state"] }'
                                             data-query-params="orders_query_params">
                                             <thead>
                                                 <tr>
                                                     <th data-field="id" data-sortable='true'
-                                                        data-footer-formatter="totalFormatter">Order ID</th>
+                                                        data-footer-formatter="totalFormatter">ID Commande</th>
                                                     <th data-field="user_id" data-sortable='true' data-visible="false">
                                                         User
                                                         ID</th>
                                                     <th data-field="qty" data-sortable='true' data-visible="false">Qty
                                                     </th>
-                                                    <th data-field="name" data-sortable='true'>User Name</th>
+                                                    <th data-field="name" data-sortable='true'>Nom utilisateur</th>
                                                     <th data-field="mobile" data-sortable='true'>Mobile</th>
                                                     <th data-field="notes" data-sortable='false' data-visible='true'>O.
                                                         Notes</th>
@@ -496,24 +496,24 @@
                                                     <th data-field="total" data-sortable='true' data-visible="true">
                                                         Total(<?= $curreny ?>)</th>
                                                     <th data-field="delivery_charge" data-sortable='true'
-                                                        data-footer-formatter="delivery_chargeFormatter">D.Charge</th>
+                                                        data-footer-formatter="delivery_chargeFormatter">Frais livr.</th>
                                                     <th data-field="wallet_balance" data-sortable='true'
-                                                        data-visible="true">Wallet Used(<?= $curreny ?>)</th>
+                                                        data-visible="true">Portefeuille utilisé(<?= $curreny ?>)</th>
                                                     <th data-field="promo_code" data-sortable='true'
                                                         data-visible="false">
-                                                        Promo Code</th>
+                                                        Code promo</th>
                                                     <th data-field="promo_discount" data-sortable='true'
-                                                        data-visible="true">Promo disc.(<?= $curreny ?>)</th>
+                                                        data-visible="true">Remise promo(<?= $curreny ?>)</th>
                                                     <th data-field="bulk_discount" data-sortable='true'
                                                         data-visible="true">
                                                         Bulk disc.(<?= $curreny ?>)</th>
                                                     <th data-field="final_total" data-sortable='true'>Final
                                                         Total(<?= $curreny ?>)</th>
                                                     <th data-field="payment_method" data-sortable='true'
-                                                        data-visible="true">Payment Method</th>
+                                                        data-visible="true">Méthode de paiement</th>
                                                     <th data-field="address" data-sortable='true' data-visible='false'>
-                                                        Address</th>
-                                                    <th data-field="date_added" data-sortable='true'>Order Date</th>
+                                                        Adresse</th>
+                                                    <th data-field="date_added" data-sortable='true'>Date de commande</th>
                                                     <th data-field="operate">Action</th>
                                                 </tr>
                                             </thead>
@@ -528,15 +528,15 @@
                                             data-trim-on-search="false" data-sort-name="oi.id" data-sort-order="desc"
                                             data-mobile-responsive="true" data-toolbar="" data-show-export="true"
                                             data-maintain-selected="true" data-export-types='["txt","excel","csv"]'
-                                            data-export-options='{"fileName": "order-item-list","ignoreColumn": ["state"] }'
+                                            data-export-options='{"fileNom": "order-item-list","ignoreColumn": ["state"] }'
                                             data-query-params="orders_query_params">
                                             <thead>
                                                 <tr>
                                                     <th data-field="id" data-sortable='true'
                                                         data-footer-formatter="totalFormatter">ID</th>
-                                                    <th data-field="order_item_id" data-sortable='true'>Order Item ID
+                                                    <th data-field="order_item_id" data-sortable='true'>ID de l'article commandé
                                                     </th>
-                                                    <th data-field="order_id" data-sortable='true'>Order ID</th>
+                                                    <th data-field="order_id" data-sortable='true'>ID Commande</th>
                                                     <th data-field="user_id" data-sortable='true' data-visible="false">
                                                         User
                                                         ID</th>
@@ -544,9 +544,9 @@
                                                         data-visible="false">
                                                         Commission</th>
                                                     <th data-field="quantity" data-sortable='true' data-visible="false">
-                                                        Quantity</th>
-                                                    <th data-field="username" data-sortable='true'>User Name</th>
-                                                    <th data-field="product_name" data-sortable='true'>Product Name</th>
+                                                        Quantité</th>
+                                                    <th data-field="username" data-sortable='true'>Nom utilisateur</th>
+                                                    <th data-field="product_name" data-sortable='true'>Nom du produit</th>
                                                     <th data-field="mobile" data-sortable='true' data-visible='false'>
                                                         Mobile
                                                     </th>
@@ -554,25 +554,25 @@
                                                         Total(<?= $curreny ?>)</th>
                                                     <th data-field="delivery_boy" data-sortable='true'
                                                         data-visible='false'>
-                                                        Deliver By</th>
+                                                        Livré par</th>
                                                     <th data-field="delivery_boy_id" data-sortable='true'
-                                                        data-visible='false'>Delivery Boy Id</th>
+                                                        data-visible='false'>ID livreur</th>
                                                     <th data-field="product_variant_id" data-sortable='true'
-                                                        data-visible='false'>Product Variant Id</th>
+                                                        data-visible='false'>ID variante produit</th>
                                                     <th data-field="updated_by" data-sortable='true'
                                                         data-visible="false">
-                                                        Updated by</th>
+                                                        Mis à jour par</th>
                                                     <th data-field="status" data-sortable='true' data-visible='false'>
-                                                        Status
+                                                        Statut
                                                     </th>
                                                     <th data-field="active_status" data-sortable='true'
                                                         data-visible='true'>
-                                                        Active Status</th>
+                                                        Statut actif</th>
                                                     <th data-field="transaction_status" data-sortable='true'
-                                                        data-visible='true'>Transaction Status</th>
-                                                    <th data-field="date_added" data-sortable='true'>Order Date</th>
+                                                        data-visible='true'>Statut de la transaction</th>
+                                                    <th data-field="date_added" data-sortable='true'>Date de commande</th>
                                                     <th data-field="operate">Action</th>
-                                                    <th data-field="mail_status">Mail Status</th>
+                                                    <th data-field="mail_status">Statut e-mail</th>
                                                 </tr>
                                             </thead>
                                         </table>

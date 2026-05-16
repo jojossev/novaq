@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Blogs</h4>
+                    <h4>Gérer Blogues</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Blogs</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Blogues</li>
                     </ol>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Blog</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier Blogue</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -38,31 +38,31 @@
                         <div class="card-innr" id="list_view_html">
                             <div class="card-head d-flex justify-content-between align-items-center">
                                 <div class="col-md-3">
-                                    <label for="zipcode" class="col-form-label">Filter By Product Category</label>
+                                    <label for="zipcode" class="col-form-label">Filter By Product Catégorie</label>
                                     <select id="category_parent" name="category_parent">
-                                        <option value=""><?= (isset($categories) && empty($categories)) ? 'No Categories Exist' : 'Select Categories' ?>
+                                        <option value=""><?= (isset($categories) && empty($categories)) ? 'No Catégories Exist' : 'Sélectionner une catégorie' ?>
                                         </option>
                                         <?php foreach ($fetched_data as $categories) { ?>
                                             <option value="<?= $categories['id'] ?>" <?= (isset($categories[0]['id']) && $categories[0]['id'] == $categories['id']) ? 'selected' : "" ?>><?= $categories['name'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <a href="<?= base_url() . 'admin/blogs/create_blog' ?>" class="btn btn-block  btn-outline-primary btn-sm">Add Blogs</a>
+                                <a href="<?= base_url() . 'admin/blogs/create_blog' ?>" class="btn btn-block  btn-outline-primary btn-sm">Ajouter Blogues</a>
                             </div>
 
 
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' id='blog_table' data-toggle="table" data-url="<?= base_url('admin/blogs/view_blogs') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "category-list",
+                        "fileNom": "category-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="blog_category_query_params">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true" data-visible='false'>ID</th>
-                                        <th data-field="title" data-sortable="false">Title</th>
+                                        <th data-field="title" data-sortable="false">Titre</th>
                                         <th data-field="image" data-sortable="true">Image</th>
                                         <th data-field="description" data-sortable="true">Description</th>
-                                        <th data-field="status" data-sortable="true">Status</th>
+                                        <th data-field="status" data-sortable="true">Statut</th>
                                         <th data-field="operate" data-sortable="true">Action</th>
                                     </tr>
                                 </thead>

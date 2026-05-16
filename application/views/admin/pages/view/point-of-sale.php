@@ -3,12 +3,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-lg-10">
-                    <h4>Point Of Sale</h4>
+                    <h4>Point de vente</h4>
                 </div>
                 <div class="col-lg-2">
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Point Of Sale</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Point de vente</li>
                     </ol>
                 </div>
             </div>
@@ -17,18 +17,18 @@
                 <div class="card-body">
                     <div class="row">
                         <div id="get_categories" class="col-sm-4 dropdown mb-3">
-                            <h5 class="card-title">Filter Product By Category</h5>
+                            <h5 class="card-title">Filtrer les produits par catégorie</h5>
                             <select class="form-control" id="product_categories">
                                 <option value="" selected>
-                                    <?= (isset($categories) && empty($categories)) ? 'No Categories Exist' : 'Select Categories' ?>
+                                    <?= (isset($categories) && empty($categories)) ? 'No Catégories Exist' : 'Sélectionner une catégorie' ?>
                                 </option>
                                 <?= get_categories_option_html($categories); ?>
                             </select>
                         </div>
                         <div class="col-sm-4">
-                            <h5 class="card-title">Search Your Product</h5>
+                            <h5 class="card-title">Rechercher un produit</h5>
                             <input type="search" name="search_products" class="form-control" id="search_products"
-                                value="" placeholder="Search Products">
+                                value="" placeholder="Rechercher un produit">
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             <input type="hidden" name="bulk_discount" id="bulk_discount" value="0" />
 
 
-                            <!-- Custom Charges Data -->
+                            <!-- Frais personnalisés Data -->
                             <?php
                             $settings = get_settings('system_settings', true);
                             $custom_charges = get_settings('custom_charges', true);
@@ -65,9 +65,9 @@
                                 <form id="pos_form" method="post"
                                     action='<?= base_url('admin/point_of_sale/place_order') ?>'>
                                     <div class="d-flex justify-content-between align-items-center mb-2 mt-2">
-                                        <label class="mb-0">Select User </label>
+                                        <label class="mb-0">Sélectionner un utilisateur </label>
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#register">Register New User</button>
+                                            data-target="#register">Enregistrer un nouvel utilisateur</button>
                                     </div>
                                     <!-- select user -->
                                     <input type="hidden" name=" <?php echo $this->security->get_csrf_token_name(); ?>"
@@ -102,10 +102,10 @@
                                                 </span>
                                             </div>
 
-                                            <!-- Bulk Discount (hidden by default) -->
+                                            <!-- Remise en gros (hidden by default) -->
                                             <div class="invoice-detail-item d-flex justify-content-between align-items-center mb-2 text-success"
                                                 id="bulk-discount-section" style="display: none;">
-                                                <span class="cart-total font-weight-bold"><?= labels('bulk_discount', 'Bulk Discount') ?></span>
+                                                <span class="cart-total font-weight-bold"><?= labels('bulk_discount', 'Remise en gros') ?></span>
                                                 <span class="bulk-discount-amount font-weight-bold"
                                                     id="bulk-discount-amount" data-currency="<?= $currency ?>">
                                                     -
@@ -117,9 +117,9 @@
 
                                             <hr class="m-0 mb-2">
 
-                                            <!-- Final Total -->
+                                            <!-- Total final -->
                                             <div class="invoice-detail-item d-flex justify-content-between align-items-center">
-                                                <span class="cart-total h5 mb-0 font-weight-bold"><?= labels('final_total', 'Final Total') ?></span>
+                                                <span class="cart-total h5 mb-0 font-weight-bold"><?= labels('final_total', 'Total final') ?></span>
                                                 <span class="final-total-price h5 mb-0 font-weight-bold text-success"
                                                     id="final-total-price" data-currency="<?= $currency ?>">
                                                     <!-- filled by JS -->
@@ -129,25 +129,25 @@
                                         </div>
                                     </div>
                                     <div class="mt-4">
-                                        <p class="h5 text-primary mb-3">Delivery Type</p>
+                                        <p class="h5 text-primary mb-3">Type de livraison</p>
                                         <div class="bg-light p-3 rounded border mb-4">
                                             <div class="form-check mb-2 self_pickup">
                                                 <input id="local_pickup" type="radio" name="self_pickup[]" value="1"
                                                     class="form-check-input self_pickup" checked />
                                                 <label class="form-check-label" for="local_pickup">
-                                                    Local Pickup
+                                                    Retrait local
                                                 </label>
                                             </div>
                                             <div class="form-check self_pickup">
                                                 <input id="door_step_delivery" type="radio" name="self_pickup[]"
                                                     value="0" class="form-check-input self_pickup" />
                                                 <label class="form-check-label" for="door_step_delivery">
-                                                    Door Step Delivery
+                                                    Livraison à domicile
                                                 </label>
                                             </div>
                                         </div>
 
-                                        <p class="h5 text-primary mb-3">Payment Methods</p>
+                                        <p class="h5 text-primary mb-3">Méthode de paiement</p>
                                         <div class="bg-light p-3 rounded border">
                                             <div class="form-check mb-2 cash_payment">
                                                 <input id="cod" type="radio" name="payment_method[]" value="COD"
@@ -160,44 +160,44 @@
                                                 <input id="card_payment" type="radio" name="payment_method[]"
                                                     value="card_payment" class="form-check-input payment_method">
                                                 <label class="form-check-label" for="card_payment">
-                                                    Card Payment
+                                                    Paiement par carte
                                                 </label>
                                             </div>
                                             <div class="form-check mb-2 bar_code">
                                                 <input id="bar_code" type="radio" name="payment_method[]"
                                                     value="bar_code" class="form-check-input payment_method">
                                                 <label class="form-check-label" for="bar_code">
-                                                    Bar Code / QR Code Scan
+                                                    Code-barres / QR Code
                                                 </label>
                                             </div>
                                             <div class="form-check mb-2 net_banking">
                                                 <input id="net_banking" type="radio" name="payment_method[]"
                                                     value="net_banking" class="form-check-input payment_method">
                                                 <label class="form-check-label" for="net_banking">
-                                                    Net Banking
+                                                    Banque en ligne
                                                 </label>
                                             </div>
                                             <div class="form-check mb-2 online_payment">
                                                 <input id="online_payment" type="radio" name="payment_method[]"
                                                     value="online_payment" class="form-check-input payment_method">
                                                 <label class="form-check-label" for="online_payment">
-                                                    Online Payment
+                                                    Paiement en ligne
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3 other">
                                                 <input id="other" type="radio" name="payment_method[]" value="other"
                                                     class="form-check-input payment_method">
                                                 <label class="form-check-label" for="other">
-                                                    Other
+                                                    Autre
                                                 </label>
                                             </div>
                                             
                                             <div class="payment_method_name mt-3 form-group">
-                                                <label for="payment_method_name">Enter Payment method Name</label>
+                                                <label for="payment_method_name">Entrez la méthode de paiement</label>
                                                 <input type="text" class="form-control" name="payment_method_name" id="payment_method_name">
                                             </div>
                                             <div class="transaction_id mt-3 form-group">
-                                                <label for="transaction_id">Enter Transaction ID</label>
+                                                <label for="transaction_id">Entrez l'ID de transaction</label>
                                                 <input type="text" class="form-control" name="transaction_id" id="transaction_id">
                                             </div>
                                         </div>
@@ -205,9 +205,9 @@
 
                                     <div class="text-center mt-4">
                                         <button class="btn btn-sm btn-clear_cart btn-danger mb-2 mx-3" type="submit"
-                                            id="place_order_btn">Clear Cart</button>
+                                            id="place_order_btn">Vider le panier</button>
                                         <button class="btn btn-sm btn-purchase btn-primary mb-2" type="submit"
-                                            id="place_order_btn">Place Order</button>
+                                            id="place_order_btn">Passer la commande</button>
                                     </div>
                                 </form>
                             </section>
@@ -223,29 +223,29 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Register User</h4>
+                <h4 class="modal-title">Enregistrer un utilisateur</h4>
                 <button type="button" class="btn-close" data-dismiss="modal"></button>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
                 <form method="post" action='<?= base_url('admin/point_of_sale/register_user') ?>' id="register_form">
                     <div class="form-group">
-                        <label for="name">Name:</label>
+                        <label for="name">Nom:</label>
                         <input type="hidden" name=" <?php echo $this->security->get_csrf_token_name(); ?>"
                             value="<?php echo $this->security->get_csrf_hash(); ?>" />
-                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name">
+                        <input type="text" class="form-control" id="name" placeholder="Entrez votre nom" name="name">
                     </div>
                     <div class="form-group">
-                        <label for="mobile">Mobile:</label>
-                        <input type="text" maxlength="16" oninput="validateNumberInput(this)" class="form-control"
-                            id="mobile" placeholder="Enter Your Mobile Number" name="mobile">
+                        <label for="mobile">Mobile :</label>
+                        <input type="text" maxlength="16" oninput="validateN°|NuméroInput(this)" class="form-control"
+                            id="mobile" placeholder="Entrez votre numéro de mobile" name="mobile">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password:</label>
+                        <label for="password">Mot de passe :</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="password" value="12345678"
-                                placeholder="Enter Password" name="password">
-                            <span class="input-group-text togglePassword" style="cursor: pointer;">
+                                placeholder="Entrez le mot de passe" name="password">
+                            <span class="input-group-text toggleMot de passe" style="cursor: pointer;">
                                 <i class="fa fa-eye"></i>
                             </span>
 
@@ -258,9 +258,9 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                 <button type="submit" form="register_form" class="btn btn-primary" id="save-register-result-btn"
-                    name="register" value="Save">Register</button>
+                    name="register" value="Enregistrer">Enregistrer</button>
             </div>
         </div>
     </div>

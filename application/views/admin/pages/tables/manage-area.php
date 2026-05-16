@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Area</h4>
+                    <h4>Gérer Area</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Area</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Zone</li>
                     </ol>
                 </div>
             </div>
@@ -32,10 +32,10 @@
 
             <div class="card-body">
 
-                <!-- Area Name -->
+                <!-- Area Nom -->
                 <div class="form-group row mb-3">
                     <label for="area_name" class="col-md-3 col-form-label">
-                        Area Name <span class="text-danger">*</span>
+                        Area Nom <span class="text-danger">*</span>
                     </label>
                     <div class="col-md-6">
                         <input type="text"
@@ -88,11 +88,11 @@
                     </div>
                 </div>
 
-                <!-- Minimum Free Delivery -->
+                <!-- Minimum Free Livraison -->
                 <div class="form-group row mb-3">
                     <label for="minimum_free_delivery_order_amount"
                            class="col-md-3 col-form-label">
-                        Minimum Free Delivery Amount <span class="text-danger">*</span>
+                        Minimum Free Livraison Amount <span class="text-danger">*</span>
                     </label>
                     <div class="col-md-6">
                         <input type="number"
@@ -104,10 +104,10 @@
                     </div>
                 </div>
 
-                <!-- Delivery Charges -->
+                <!-- Livraison Charges -->
                 <div class="form-group row mb-4">
                     <label for="delivery_charges" class="col-md-3 col-form-label">
-                        Delivery Charges <span class="text-danger">*</span>
+                        Livraison Charges <span class="text-danger">*</span>
                     </label>
                     <div class="col-md-6">
                         <input type="number"
@@ -124,10 +124,10 @@
             <!-- Footer Buttons -->
             <div class="card-footer text-end">
                 <button type="reset" class="btn btn-warning me-2">
-                    Reset
+                    Réinitialiser
                 </button>
                 <button type="submit" class="btn btn-success" id="submit_btn">
-                    <?= isset($fetched_data[0]['id']) ? 'Update Area' : 'Add Area' ?>
+                    <?= isset($fetched_data[0]['id']) ? 'Mettre à jour Area' : 'Ajouter Area' ?>
                 </button>
             </div>
 
@@ -142,7 +142,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Edit Area</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitre">Modifier Area</h5>
                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                             </button>
@@ -166,18 +166,18 @@
                             data-show-refresh="true" data-trim-on-search="false" data-sort-name="id"
                             data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true"
                             data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "area-list",
+                        "fileNom": "area-list",
                         "ignoreColumn": ["operate"] 
                         }' data-maintain-selected="true" data-query-params="queryParams">
                             <thead>
                                 <tr>
                                     <th data-field="id" data-sortable="true">ID</th>
-                                    <th data-field="name" data-sortable="false">Name</th>
-                                    <th data-field="city_name" data-sortable="true">City Name</th>
+                                    <th data-field="name" data-sortable="false">Nom</th>
+                                    <th data-field="city_name" data-sortable="true">City Nom</th>
                                     <th data-field="zipcode" data-sortable="false">Zipcode</th>
                                     <th data-field="minimum_free_delivery_order_amount" data-sortable="false">
-                                        Minimum Free Delivery Order Amount</th>
-                                    <th data-field="delivery_charges" data-sortable="false">Delivery Charges</th>
+                                        Minimum Free Livraison Order Amount</th>
+                                    <th data-field="delivery_charges" data-sortable="false">Livraison Charges</th>
                                     <th data-field="operate" data-sortable="false">Actions</th>
                                 </tr>
                             </thead>

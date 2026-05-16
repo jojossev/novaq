@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-10">
-                    <h4>System Notifications</h4>
+                    <h4>Notifications système</h4>
                 </div>
                 <div class="col-lg-2">
                     <ol class="breadcrumb float-lg-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">System Notifications</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Notifications système</li>
                     </ol>
                 </div>
             </div>
@@ -37,11 +37,11 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="title" data-sortable="false">Title</th>
+                                        <th data-field="title" data-sortable="false">Titre</th>
                                         <th data-field="message" data-sortable="false">Message</th>
                                         <th data-field="type" data-sortable="false">Type</th>
                                         <th data-field="type_id" data-sortable="false">Type Id</th>
-                                       <th data-field="read_by" data-sortable="false">Notification Status</th>
+                                       <th data-field="read_by" data-sortable="false">Notification Statut</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

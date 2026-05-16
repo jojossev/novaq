@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Products</h4>
+                    <h4>Gérer les produits</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Produits</li>
                     </ol>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">View Products Faqs</h5>
+                                <h5 class="modal-title">View Produits Faqs</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                 </button>
                             </div>
@@ -41,13 +41,13 @@
                                                     data-sort-order="desc" data-mobile-responsive="true" data-toolbar=""
                                                     data-show-export="true" data-maintain-selected="true"
                                                     data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "product-faqs-list",
+                        "fileNom": "product-faqs-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="queryParams">
                                                     <thead>
                                                         <tr>
                                                             <th data-field="id" data-sortable="true">ID</th>
-                                                            <th data-field="user_id" data-sortable="false">User Id</th>
+                                                            <th data-field="user_id" data-sortable="false">ID utilisateur</th>
                                                             <th data-field="product_id" data-sortable="false">Product Id
                                                             </th>
                                                             <th data-field="question" data-sortable="false">Question
@@ -56,7 +56,7 @@
                                                             <th data-field="answered_by" data-sortable="false">Answered
                                                                 by</th>
                                                             <th data-field="username" data-width='500'
-                                                                data-sortable="false" class="col-md-6">Username</th>
+                                                                data-sortable="false" class="col-md-6">Nom d'utilisateur</th>
                                                             <th data-field="date_added" data-sortable="false">Date added
                                                             </th>
                                                             <th data-field="operate" data-sortable="false">Operate</th>
@@ -77,7 +77,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Product FAQs</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier FAQ des produits</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                 </button>
                             </div>
@@ -111,9 +111,9 @@
 
 
                                         <div class="form-group mt-3">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                             <button type="submit" class="btn btn-success"
-                                                id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Product Faq' : 'Add Product FAQ' ?></button>
+                                                id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Product Faq' : 'Ajouter un produit FAQ' ?></button>
                                         </div>
                                     </div>
 
@@ -141,7 +141,7 @@
                                         data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true"
                                         data-toolbar="" data-show-export="true" data-maintain-selected="true"
                                         data-export-types='["txt","excel"]' data-export-options='{
-                                         "fileName": "products-rating-list",
+                                         "fileNom": "products-rating-list",
                                          "ignoreColumn": ["operate"] 
                                          }' data-query-params="ratingParams">
                                         <thead>
@@ -153,7 +153,7 @@
 
                                                 <th data-field="id" data-sortable="true">ID</th>
                                                 <th data-field="username" data-width='500' data-sortable="false"
-                                                    class="col-md-6">Username</th>
+                                                    class="col-md-6">Nom d'utilisateur</th>
                                                 <th data-field="rating" data-sortable="false">Rating</th>
                                                 <th data-field="comment" data-sortable="false">Comment</th>
                                                 <th data-field="images" data-sortable="true">Images</th>
@@ -173,16 +173,16 @@
                     <div class="card content-area p-4">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title mb-0">Products</h3>
+                                <h3 class="card-title mb-0">Produits</h3>
 
                                 <div class="card-tools d-flex gap-2">
                                     <button id="bulk_delete_products" class="btn btn-outline-danger btn-sm">
-                                        <i class="fa fa-trash"></i> Delete Selected
+                                        <i class="fa fa-trash"></i> Supprimer Selected
                                     </button>
 
                                     <a href="<?= base_url('admin/product/create_product') ?>"
                                         class="btn btn-outline-primary btn-sm">
-                                        Add Product
+                                        Ajouter un produit
                                     </a>
                                 </div>
                             </div>
@@ -192,10 +192,10 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <label for="category_parent" class="col-form-label fs-6">Filter By Product
-                                        Category</label>
+                                        Catégorie</label>
                                     <select id="category_parent" name="category_parent">
                                         <option value="">
-                                            <?= (isset($categories) && empty($categories)) ? 'No Categories Exist' : 'Select Categories' ?>
+                                            <?= (isset($categories) && empty($categories)) ? 'No Catégories Exist' : 'Sélectionner une catégorie' ?>
                                         </option>
                                         <?php echo get_categories_option_html($categories); ?>
                                     </select>
@@ -204,11 +204,11 @@
                                     <label for="product_type_filter" class="col-form-label fs-6">Filter Product By Type
                                     </label>
                                     <select id="product_type_filter" name="product_type_filter"
-                                        placeholder="Select Type" required="" class="form-control">
-                                        <option value="">All</option>
+                                        placeholder="Sélectionner le type" required="" class="form-control">
+                                        <option value="">Tout</option>
                                         <option value="simple_product">Simple Product</option>
                                         <option value="variable_product">Variable Product</option>
-                                        <option value="digital_product">Digital Product</option>
+                                        <option value="digital_product">Produit numérique</option>
                                     </select>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
                                 data-show-refresh="true" data-trim-on-search="false" data-sort-name="id"
                                 data-sort-order="desc" data-mobile-responsive="true" data-show-export="true"
                                 data-export-types='["txt","excel","csv"]' data-export-options='{
-        "fileName": "products-list",
+        "fileNom": "products-list",
         "ignoreColumn": ["state"]
     }' data-query-params="product_query_params">
                                 <thead>
@@ -231,9 +231,9 @@
                                         <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id" data-visible="false">ID</th>
                                         <th data-field="image">Image</th>
-                                        <th data-field="name">Name</th>
+                                        <th data-field="name">Nom</th>
                                         <th data-field="rating">Rating</th>
-                                        <th data-field="status">Active</th>
+                                        <th data-field="status">Actif</th>
                                         <th data-field="variations" data-visible="false">Variations</th>
                                         <th data-field="operate">Action</th>
                                     </tr>

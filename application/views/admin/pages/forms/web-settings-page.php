@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Web Settings</h4>
+                    <h4>Paramètres Web</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">Web settings</li>
+                        <li class="breadcrumb-item active">Paramètres Web</li>
                     </ol>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                                         </div>
 
                                         <div class="d-flex flex-column ">
-                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">General setting <i class='bx bxs-right-arrow-circle'></i></span>
+                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">Paramètres généraux <i class='bx bxs-right-arrow-circle'></i></span>
                                         </div>
 
                                     </div>

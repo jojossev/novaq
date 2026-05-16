@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Attribute Value</h4>
+                    <h4>Attribut Value</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Attribute Value</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Attribut Value</li>
                     </ol>
                 </div>
             </div>
@@ -29,7 +29,7 @@
 
 
                                 <div class="form-group row">
-                                    <label for="attributes" class="col-sm-2 col-form-label">Select Attributes <span class='text-danger text-sm'>*</span></label>
+                                    <label for="attributes" class="col-sm-2 col-form-label">Select Attributs <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="attributes" name="attributes_id">
                                             <option value=""> None </option>
@@ -63,7 +63,7 @@
                                 }
                                 ?>
                                 <div class="form-group row mt-3">
-                                    <label for="attribute_value_type" class="col-sm-2 col-form-label">Select Attribute Swatche Type </label>
+                                    <label for="attribute_value_type" class="col-sm-2 col-form-label">Select Attribut Swatche Type </label>
                                     <div class="col-sm-10">
                                         <select class="form-control swatche_type" name="swatche_type">
                                             <option value="0" <?= (@$fetched_data[0]['swatche_type'] == "0") ? "selected" : ""; ?>> Default </option>
@@ -81,14 +81,14 @@
                                 <div class="form-group row" id="swatche_image" <?= $no_display_image  ?>>
                                     <label for="value" class="col-sm-2 col-form-label">Select Image </label>
                                     <div class="col-sm-10">
-                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='swatche_value' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='swatche_value' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                         <?php
                                         if (file_exists(FCPATH  . @$fetched_data[0]['swatche_value']) && !empty(@$fetched_data[0]['swatche_value']) && @$fetched_data[0]['swatche_type'] == "2") {
                                             $fetched_data[0]['swatche_value'] = get_image_url($fetched_data[0]['swatche_value']);
                                         ?>
                                             <div class="container-fluid row image-upload-section">
                                                 <div class="col-md-3 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
-                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= $fetched_data[0]['swatche_value'] ?>" alt="Image Not Found"></div>
+                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= $fetched_data[0]['swatche_value'] ?>" alt="Image non trouvée"></div>
                                                     <input type="hidden" name="swatche_value" value='<?= $fetched_data[0]['swatche_value'] ?>'>
                                                 </div>
                                             </div>
@@ -102,8 +102,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group d-flex flex-wrap gap-2 mt-3">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Attribute Value' : 'Add Attribute Value' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Attribut Value' : 'Ajouter Attribut Value' ?></button>
                                 </div>
                             </div>
                             

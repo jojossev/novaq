@@ -6,13 +6,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Payment Methods Settings</h4>
+                    <h4>Paramètres des méthodes de paiement</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">Payment Methods Settings</li>
+                        <li class="breadcrumb-item active">Paramètres des méthodes de paiement</li>
                     </ol>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div class="col-md-2">
                     <div class="card card-info">
                         <form class="form-horizontal form-submit-event"
-                            action="<?= base_url('admin/Payment_settings/update_payment_settings'); ?>" method="POST"
+                            action="<?= base_url('admin/Paiement_settings/update_payment_settings'); ?>" method="POST"
                             id="payment_setting_form">
                             <ul class="nav flex-column nav-pills  menu payment-sidebar">
 
@@ -60,10 +60,10 @@
                                     <a class="nav-link " data-toggle="tab" href="#instamojo">Instamojo</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " data-toggle="tab" href="#phonepe">PhonePe</a>
+                                    <a class="nav-link " data-toggle="tab" href="#phonepe">TéléphonePe</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " data-toggle="tab" href="#cash_on_delivery">Cash On Delivery</a>
+                                    <a class="nav-link " data-toggle="tab" href="#cash_on_delivery">Paiement à la livraison</a>
                                 </li>
                             </ul>
                             <!--/.card-->
@@ -76,7 +76,7 @@
                     <div id="paypal" class="tab-pane active">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Paypal Payments </h5>
+                                <h5>Paypal Paiements </h5>
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
                                         href="javascript:void(0)"> <input type="checkbox" class="form-check-input "
@@ -92,21 +92,21 @@
 
                                 <div class="form-group ">
                                     <b>
-                                        <label for="">Payment Mode
+                                        <label for="">Mode de paiement
 
-                                            <small>[ sandbox / live ]</small>
+                                            <small>[ sandbox / production ]</small>
                                         </label>
                                     </b>
                                 </div>
                                 <div class="form-group  mb-2 mb-2 mb-2 mb-2 col-md-12 mt-2">
                                     <select name="paypal_mode" class="form-control width">
-                                        <option value="">Select Mode</option>
+                                        <option value="">Sélectionner le mode</option>
                                         <option value="sandbox"
                                             <?= (isset($settings['paypal_mode']) && $settings['paypal_mode'] == 'sandbox') ? 'selected' : '' ?>>
-                                            Sandbox ( Testing )</option>
+                                            Sandbox ( Test )</option>
                                         <option value="production"
                                             <?= (isset($settings['paypal_mode']) && $settings['paypal_mode'] == 'production') ? 'selected' : '' ?>>
-                                            Production ( Live )</option>
+                                            Production ( En direct )</option>
                                     </select>
                                 </div>
                             </div>
@@ -115,13 +115,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paypal_business_email">Paypal Business Email</label>
+                                        <label for="paypal_business_email">E-mail professionnel Paypal</label>
                                     </b>
                                 </div>
                                 <div class="form-group  mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="paypal_business_email"
                                         value="<?= (isset($settings['paypal_mode'])) ? $settings['paypal_business_email'] : '' ?>"
-                                        placeholder="Paypal Business Email" />
+                                        placeholder="E-mail professionnel Paypal" />
                                 </div>
                             </div>
 
@@ -131,7 +131,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="currency_code">Currency code</label>
+                                        <label for="currency_code">Code devise</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 width mb-2 mb-2 mb-2 mb-2 mt-2">
@@ -222,7 +222,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label>Notification URL <small>(Set this as IPN notification URL in you PayPal
+                                        <label>URL de notification <small>(Set this as IPN notification URL in you PayPal
                                                 account)</small></label>
                                     </b>
                                 </div>
@@ -240,7 +240,7 @@
                     <div id="razorpay" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Razorpay Payments </h5>
+                                <h5>Razorpay Paiements </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -256,7 +256,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="razorpay_key_id">Razorpay key ID</label>
+                                        <label for="razorpay_key_id">ID clé Razorpay</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
@@ -268,13 +268,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="razorpay_secret_key">Secret Key</label>
+                                        <label for="razorpay_secret_key">Clé secrète</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="razorpay_secret_key"
                                         value="<?= @$settings['razorpay_secret_key'] ?>"
-                                        placeholder="Razorpay Secret Key " />
+                                        placeholder="Razorpay Clé secrète " />
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="razorpay_webhook_secret_key">Webhoook Secret Key</label>
+                                        <label for="razorpay_webhook_secret_key">Webhoook Clé secrète</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
@@ -295,7 +295,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12 ">
                                     <b>
-                                        <label for="razorpay__webhook_url">Payment Endpoint URL <small>(Set this as
+                                        <label for="razorpay__webhook_url">URL du point de terminaison de paiement <small>(Set this as
                                                 Endpoint URL in your Paystack account)</small></label>
                                     </b>
                                 </div>
@@ -310,7 +310,7 @@
                     <div id="midtrans" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Midtrans Payments </h5>
+                                <h5>Midtrans Paiements </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -326,13 +326,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="">Midtrans Mode <small>[ sandbox / live ]</small>
+                                        <label for="">Midtrans Mode <small>[ sandbox / production ]</small>
                                         </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <select name="midtrans_payment_mode" class="form-control">
-                                        <option value="">Select Mode</option>
+                                        <option value="">Sélectionner le mode</option>
                                         <option value="sandbox"
                                             <?= (isset($settings['midtrans_payment_mode']) && @$settings['midtrans_payment_mode'] == 'sandbox') ? 'selected' : '' ?>>
                                             Sandbox</option>
@@ -346,13 +346,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="midtrans_client_key">Midtrans Client Key </label>
+                                        <label for="midtrans_client_key">Clé client Midtrans </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="midtrans_client_key"
                                         value="<?= @$settings['midtrans_client_key'] ?>"
-                                        placeholder="Midtrans Client Key" />
+                                        placeholder="Clé client Midtrans" />
                                 </div>
                             </div>
                         </div>
@@ -361,26 +361,26 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="midtrans_merchant_id">Midtrans Merchant ID </label>
+                                        <label for="midtrans_merchant_id">ID marchand Midtrans </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="midtrans_merchant_id"
                                         value="<?= @$settings['midtrans_merchant_id'] ?>"
-                                        placeholder="Midtrans Merchant ID" />
+                                        placeholder="ID marchand Midtrans" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="midtrans_server_key">Midtrans Server Key </label>
+                                        <label for="midtrans_server_key">Clé serveur Midtrans </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="midtrans_server_key"
                                         value="<?= @$settings['midtrans_server_key'] ?>"
-                                        placeholder="Midtrans Server Key" />
+                                        placeholder="Clé serveur Midtrans" />
                                 </div>
                             </div>
                         </div>
@@ -389,7 +389,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12 width">
                                     <b>
-                                        <label>Notification URL <small>(Set this as Webhook URL in your Midtrans
+                                        <label>URL de notification <small>(Set this as Webhook URL in your Midtrans
                                                 account)</small></label>
                                     </b>
                                     <input type="text" class="form-control mt-2" readonly
@@ -399,7 +399,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2">
                                     <b>
-                                        <label>Payment Return URL <small>(Set this as Finish URL in your Midtrans
+                                        <label>URL de retour de paiement <small>(Set this as Finish URL in your Midtrans
                                                 account)</small></label>
                                     </b>
                                     <input type="text" class="form-control mt-2" readonly
@@ -412,7 +412,7 @@
                     <div id="paystack" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Paystack Payments </h5>
+                                <h5>Paystack Paiements </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -428,7 +428,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paystack_key_id">Paystack key ID</label>
+                                        <label for="paystack_key_id">ID clé Paystack</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
@@ -441,13 +441,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paystack_secret_key">Secret Key</label>
+                                        <label for="paystack_secret_key">Clé secrète</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="paystack_secret_key"
                                         value="<?= @$settings['paystack_secret_key'] ?>"
-                                        placeholder="Paystack Secret Key " />
+                                        placeholder="Paystack Clé secrète " />
                                 </div>
                             </div>
                         </div>
@@ -455,7 +455,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paystack_webhook_url">Payment Endpoint URL <small>(Set this as
+                                        <label for="paystack_webhook_url">URL du point de terminaison de paiement <small>(Set this as
                                                 Endpoint URL in your paystack account)</small></label>
                                     </b>
                                 </div>
@@ -466,11 +466,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- -------------------------------  InstaMojo Payments  -------------------------------- -->
+                    <!-- -------------------------------  InstaMojo Paiements  -------------------------------- -->
 
                     <div id="instamojo" class="tab-pane">
                         <div class="d-flex justify-content-between">
-                            <h5>Instamojo Payments Settings</h5>
+                            <h5>Instamojo Paramètres de paiement</h5>
                             <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                 <a class="toggle form-switch  mr-1 mb-1" title="Deactivate" href="javascript:void(0)">
                                     <input type="checkbox" class="form-check-input " role="switch"
@@ -481,12 +481,12 @@
                         <hr>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="">Instamojo Mode <small>[ sandbox / live ]</small>
+                                <label for="">Mode Instamojo <small>[ sandbox / production ]</small>
                                 </label>
                             </div>
                             <div class="form-group col-md-8">
                                 <select name="instamojo_payment_mode" class="form-control">
-                                    <option value="">Select Mode</option>
+                                    <option value="">Sélectionner le mode</option>
                                     <option value="sandbox"
                                         <?= (isset($settings['instamojo_payment_mode']) && $settings['instamojo_payment_mode'] == 'sandbox') ? 'selected' : '' ?>>
                                         Sandbox</option>
@@ -498,7 +498,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="form-group col-md-4">
-                                <label for="instamojo_client_id">Client ID </label>
+                                <label for="instamojo_client_id">ID client </label>
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" class="form-control" name="instamojo_client_id"
@@ -507,7 +507,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="form-group col-md-4">
-                                <label for="instamojo_client_secret">Client Secret </label>
+                                <label for="instamojo_client_secret">Secret client </label>
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" class="form-control" name="instamojo_client_secret"
@@ -517,7 +517,7 @@
 
                         <div class="row mt-3">
                             <div class="form-group col-md-4">
-                                <label for="instamojo_webhook_url">Payment Endpoint URL <small>(Set this as Endpoint URL
+                                <label for="instamojo_webhook_url">URL du point de terminaison de paiement <small>(Set this as Endpoint URL
                                         in your Instamojo account)</small></label>
                             </div>
                             <div class="form-group col-md-8">
@@ -530,7 +530,7 @@
                     <!-----------------------------------------------phone pe ------------------------------>
                     <div id="phonepe" class="tab-pane">
                         <div class="d-flex justify-content-between">
-                            <h5>PhonePe Payments Settings</h5>
+                            <h5>TéléphonePe Paramètres de paiement</h5>
                             <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                 <a class="toggle form-switch  mr-1 mb-1" title="Deactivate" href="javascript:void(0)">
                                     <input type="checkbox" class="form-check-input " role="switch"
@@ -541,12 +541,12 @@
                         <hr>
                         <div class="row">
                             <div class="form-group col-md-4">
-                                <label for="">PhonePe Mode <small>[ SANDBOX / UAT / PRODUCTION ]</small>
+                                <label for="">TéléphonePe Mode <small>[ SANDBOX / UAT / PRODUCTION ]</small>
                                 </label>
                             </div>
                             <div class="form-group col-md-8">
                                 <select name="phonepe_payment_mode" class="form-control">
-                                    <option value="">Select Mode</option>
+                                    <option value="">Sélectionner le mode</option>
                                     <option value="SANDBOX"
                                         <?= (isset($settings['phonepe_payment_mode']) && $settings['phonepe_payment_mode'] == 'SANDBOX') ? 'selected' : '' ?>>
                                         SANDBOX</option>
@@ -570,7 +570,7 @@
                         </div> -->
                         <div class="row mt-3">
                             <div class="form-group col-md-4">
-                                <label for="phonepe_client_id">Client ID</label>
+                                <label for="phonepe_client_id">ID client</label>
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" class="form-control" name="phonepe_client_id"
@@ -579,7 +579,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="form-group col-md-4">
-                                <label for="phonepe_client_secret">Client Secret</label>
+                                <label for="phonepe_client_secret">Secret client</label>
                             </div>
                             <div class="form-group col-md-8">
                                 <input type="text" class="form-control" name="phonepe_client_secret"
@@ -589,7 +589,7 @@
 
                         <div class="row mt-3">
                             <div class="form-group col-md-4">
-                                <label for="phonepe_webhook_url">Payment Endpoint URL <small>(Set this as Endpoint URL
+                                <label for="phonepe_webhook_url">URL du point de terminaison de paiement <small>(Set this as Endpoint URL
                                         in your phonepe account)</small></label>
                             </div>
                             <div class="form-group col-md-8">
@@ -604,7 +604,7 @@
                     <div id="stripe" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Stripe Payment </h5>
+                                <h5>Stripe Paiement </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -620,14 +620,14 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="">Payment Mode <small>[ sandbox / live ]</small>
+                                        <label for="">Mode de paiement <small>[ sandbox / production ]</small>
                                         </label>
                                     </b>
                                 </div>
 
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <select name="stripe_payment_mode" class="form-control">
-                                        <option value="">Select Mode</option>
+                                        <option value="">Sélectionner le mode</option>
                                         <option value="test"
                                             <?= (isset($settings['stripe_payment_mode']) && $settings['stripe_payment_mode'] == 'test') ? 'selected' : '' ?>>
                                             Test</option>
@@ -641,7 +641,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="stripe_webhook_url">Payment Endpoint URL <small>(Set this as
+                                        <label for="stripe_webhook_url">URL du point de terminaison de paiement <small>(Set this as
                                                 Endpoint URL in your Stripe account)</small></label>
                                     </b>
                                 </div>
@@ -656,26 +656,26 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="stripe_publishable_key">Stripe Publishable Key</label>
+                                        <label for="stripe_publishable_key">Clé publiable Stripe</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width">
                                     <input type="text" class="form-control mt-2" name="stripe_publishable_key"
                                         value="<?= @$settings['stripe_publishable_key'] ?>"
-                                        placeholder="Stripe Publishable Key" />
+                                        placeholder="Clé publiable Stripe" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="stripe_secret_key">Stripe Secret Key</label>
+                                        <label for="stripe_secret_key">Stripe Clé secrète</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2">
                                     <input type="text" class="form-control mt-2" name="stripe_secret_key"
                                         value="<?= @$settings['stripe_secret_key'] ?>"
-                                        placeholder="Stripe Secret Key" />
+                                        placeholder="Stripe Clé secrète" />
                                 </div>
                             </div>
                         </div>
@@ -684,27 +684,27 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="stripe_webhook_secret_key">Stripe Webhook Secret Key</label>
+                                        <label for="stripe_webhook_secret_key">Stripe Webhook Clé secrète</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width">
                                     <input type="text" class="form-control mt-2" name="stripe_webhook_secret_key"
                                         value="<?= @$settings['stripe_webhook_secret_key'] ?>"
-                                        placeholder="Stripe Webhook Secret Key" />
+                                        placeholder="Stripe Webhook Clé secrète" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="">Currency Code <small>[ Stripe supported ]</small> <a
+                                        <label for="">Code devise <small>[ Supporté par Stripe ]</small> <a
                                                 href="https://stripe.com/docs/currencies" target="_BLANK"><i
                                                     class="fa fa-link"></i></a></label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2">
                                     <select name="stripe_currency_code" class="form-control mt-2">
-                                        <option value="">Select Currency Code </option>
+                                        <option value="">Select Code devise </option>
                                         <option value="INR"
                                             <?= (isset($settings['stripe_currency_code']) && $settings['stripe_currency_code'] == 'INR') ? "selected" : "" ?>>
                                             Indian rupee </option>
@@ -1119,7 +1119,7 @@
                     <div id="flutterwave" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Flutterwave Payments </h5>
+                                <h5>Flutterwave Paiements </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -1135,27 +1135,27 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="flutterwave_public_key">Flutterwave Public Key</label>
+                                        <label for="flutterwave_public_key">Clé publique Flutterwave</label>
                                     </b>
                                 </div>
 
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="flutterwave_public_key"
                                         value="<?= @$settings['flutterwave_public_key'] ?>"
-                                        placeholder="Flutterwave Public Key" />
+                                        placeholder="Clé publique Flutterwave" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="flutterwave_secret_key">Secret Key</label>
+                                        <label for="flutterwave_secret_key">Clé secrète</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="flutterwave_secret_key"
                                         value="<?= @$settings['flutterwave_secret_key'] ?>"
-                                        placeholder="Flutterwave Secret Key " />
+                                        placeholder="Flutterwave Clé secrète " />
                                 </div>
                             </div>
                         </div>
@@ -1164,7 +1164,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="flutterwave_encryption_key">Flutterwave Encryption key</label>
+                                        <label for="flutterwave_encryption_key">Clé de chiffrement Flutterwave</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
@@ -1177,13 +1177,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="flutterwave_currency_code">Currency Code <small>[ Flutterwave
+                                        <label for="flutterwave_currency_code">Code devise <small>[ Flutterwave
                                                 supported ]</small> </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <select name="flutterwave_currency_code" class="form-control" required>
-                                        <option value="">Select Currency Code </option>
+                                        <option value="">Select Code devise </option>
                                         <option value="NGN"
                                             <?= (isset($settings['flutterwave_currency_code']) && $settings['flutterwave_currency_code'] == 'NGN') ? "selected" : "" ?>>
                                             Nigerian Naira</option>
@@ -1248,14 +1248,14 @@
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="flutterwave_webhook_secret_key"
                                         value="<?= @$settings['flutterwave_webhook_secret_key'] ?>"
-                                        placeholder="Flutterwave Webhook Secret Key" />
+                                        placeholder="Flutterwave Webhook Clé secrète" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="flutterwave_webhook_url">Payment Endpoint URL <small>(Set this as
+                                        <label for="flutterwave_webhook_url">URL du point de terminaison de paiement <small>(Set this as
                                                 Endpoint URL in your flutterwave account)</small></label>
                                     </b>
                                 </div>
@@ -1270,7 +1270,7 @@
                     <div id="paytm" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Paytm payment </h5>
+                                <h5>Paiement Paytm </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -1286,13 +1286,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="">Paytm Mode <small>[ sandbox / live ]</small>
+                                        <label for="">Mode Paytm <small>[ sandbox / production ]</small>
                                         </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <select name="paytm_payment_mode" class="form-control">
-                                        <option value="">Select Mode</option>
+                                        <option value="">Sélectionner le mode</option>
                                         <option value="sandbox"
                                             <?= (isset($settings['paytm_payment_mode']) && $settings['paytm_payment_mode'] == 'sandbox') ? 'selected' : '' ?>>
                                             Sandbox</option>
@@ -1306,13 +1306,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paytm_merchant_key">Paytm Merchant Key </label>
+                                        <label for="paytm_merchant_key">Clé marchand Paytm </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="paytm_merchant_key"
                                         value="<?= @$settings['paytm_merchant_key'] ?>"
-                                        placeholder="Paytm Merchant Key" />
+                                        placeholder="Clé marchand Paytm" />
                                 </div>
                             </div>
                         </div>
@@ -1321,13 +1321,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paytm_merchant_id">Paytm Merchant ID </label>
+                                        <label for="paytm_merchant_id">ID marchand Paytm </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="paytm_merchant_id"
                                         value="<?= @$settings['paytm_merchant_id'] ?>"
-                                        placeholder="Paytm Merchant ID" />
+                                        placeholder="ID marchand Paytm" />
                                 </div>
                             </div>
                         </div>
@@ -1340,20 +1340,20 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paytm_website">Paytm Website <small>[<a
+                                        <label for="paytm_website">Site web Paytm <small>[<a
                                                     href="https://dashboard.paytm.com/next/apikeys?src=dev"
                                                     target="_blank">click here</a> to know]</small></label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="paytm_website"
-                                        value="<?= @$settings['paytm_website'] ?>" placeholder="Paytm Website" />
+                                        value="<?= @$settings['paytm_website'] ?>" placeholder="Site web Paytm" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paytm_industry_type_id">Industry Type ID <small>[<a
+                                        <label for="paytm_industry_type_id">ID du type d'industrie <small>[<a
                                                     href="https://dashboard.paytm.com/next/apikeys?src=dev"
                                                     target="_blank">click here</a> to know]</small></label>
                                     </b>
@@ -1361,7 +1361,7 @@
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="paytm_industry_type_id"
                                         value="<?= @$settings['paytm_industry_type_id'] ?>"
-                                        placeholder="Industry Type ID" />
+                                        placeholder="ID du type d'industrie" />
                                 </div>
                             </div>
                         </div>
@@ -1370,28 +1370,28 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paytm_website">Paytm Website <small>[<a
+                                        <label for="paytm_website">Site web Paytm <small>[<a
                                                     href="https://dashboard.paytm.com/next/apikeys?src=dev"
                                                     target="_blank">click here</a> to know]</small></label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="paytm_website"
-                                        placeholder="Paytm Website" />
+                                        placeholder="Site web Paytm" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="paytm_industry_type_id">Industry Type ID <small>[<a
+                                        <label for="paytm_industry_type_id">ID du type d'industrie <small>[<a
                                                     href="https://dashboard.paytm.com/next/apikeys?src=dev"
                                                     target="_blank">click here</a> to know]</small></label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="paytm_industry_type_id"
-                                        placeholder="Industry Type ID" />
+                                        placeholder="ID du type d'industrie" />
                                 </div>
                             </div>
                         </div>
@@ -1401,7 +1401,7 @@
                     <div id="fatoorah" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>My Fatoorah Payment </h5>
+                                <h5>My Fatoorah Paiement </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -1417,11 +1417,11 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah_token">Myfatoorah Token </label>
+                                        <label for="myfatoorah_token">Jeton Myfatoorah </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
-                                    <textarea rows=5 name="myfatoorah_token"
+                                    <textarea lignes=5 name="myfatoorah_token"
                                         class="form-control"><?= @$settings['myfatoorah_token'] ?></textarea>
                                 </div>
                             </div>
@@ -1429,13 +1429,13 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="">Myfatoorah Mode <small>[ test / live ]</small>
+                                        <label for="">Mode Myfatoorah <small>[ test / live ]</small>
                                         </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <select name="myfatoorah_payment_mode" class="form-control">
-                                        <option value="">Select Mode</option>
+                                        <option value="">Sélectionner le mode</option>
                                         <option value="test"
                                             <?= (isset($settings['myfatoorah_payment_mode']) && $settings['myfatoorah_payment_mode'] == 'test') ? 'selected' : '' ?>>
                                             Test</option>
@@ -1451,12 +1451,12 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah_language">Myfatoorah Language </label>
+                                        <label for="myfatoorah_language">Langue Myfatoorah </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <select name="myfatoorah_language" class="form-control">
-                                        <option value="">Select Language</option>
+                                        <option value="">Sélectionner la langue</option>
                                         <option value="english"
                                             <?= (isset($settings['myfatoorah_language']) && $settings['myfatoorah_language'] == 'english') ? 'selected' : '' ?>>
                                             English</option>
@@ -1470,7 +1470,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah_webhook_url">Myfatoorah Payment Endpoint URL <small>(Set
+                                        <label for="myfatoorah_webhook_url">Myfatoorah URL du point de terminaison de paiement <small>(Set
                                                 this as Endpoint URL in your Myfatoorah account)</small></label>
                                     </b>
                                 </div>
@@ -1485,14 +1485,14 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah_country">Myfatoorah Country <small>[ test / live
+                                        <label for="myfatoorah_country">Pays Myfatoorah <small>[ test / live
                                                 ]</small>
                                         </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <select name="myfatoorah_country" class="form-control">
-                                        <option value="">Select country</option>
+                                        <option value="">Sélectionner le pays</option>
                                         <option value="Kuwait"
                                             <?= (isset($settings['myfatoorah_country']) && $settings['myfatoorah_country'] == 'Kuwait') ? 'selected' : '' ?>>
                                             Kuwait</option>
@@ -1521,7 +1521,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah__successUrl">Myfatoorah Payment success Url </label>
+                                        <label for="myfatoorah__successUrl">Myfatoorah URL de succès de paiement </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
@@ -1535,7 +1535,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah__errorUrl">Myfatoorah Payment error Url </label>
+                                        <label for="myfatoorah__errorUrl">Myfatoorah URL d'erreur de paiement </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
@@ -1547,7 +1547,7 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="myfatoorah__secret_key">Myfatoorah Secret Key </label>
+                                        <label for="myfatoorah__secret_key">Myfatoorah Clé secrète </label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
@@ -1561,7 +1561,7 @@
                     <div id="direct_bank_transfer" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Direct Bank Transfer</h5>
+                                <h5>Virement bancaire direct</h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 d-flex justify-content-end">
                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -1576,24 +1576,24 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="account_name">Account Name</label>
+                                        <label for="account_name">Nom du compte</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="account_name"
-                                        value="<?= @$settings['account_name'] ?>" placeholder="Account Name" />
+                                        value="<?= @$settings['account_name'] ?>" placeholder="Nom du compte" />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-4">
                                     <b>
-                                        <label for="account_number">Account Number</label>
+                                        <label for="account_number">Numéro de compte</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="number" step="any" class="form-control" name="account_number"
-                                        value="<?= @$settings['account_number'] ?>" placeholder="Account Number " />
+                                        value="<?= @$settings['account_number'] ?>" placeholder="Numéro de compte " />
                                 </div>
                             </div>
                         </div>
@@ -1602,33 +1602,33 @@
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="bank_name">Bank Name</label>
+                                        <label for="bank_name">Nom de la banque</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 width mt-2">
                                     <input type="text" class="form-control" name="bank_name"
-                                        value="<?= @$settings['bank_name'] ?>" placeholder="Bank Name " />
+                                        value="<?= @$settings['bank_name'] ?>" placeholder="Nom de la banque " />
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group col-md-12">
                                     <b>
-                                        <label for="bank_code">Bank Code</label>
+                                        <label for="bank_code">Code banque</label>
                                     </b>
                                 </div>
                                 <div class="form-group col-md-12 mb-2 mb-2 mb-2 mb-2 mt-2">
                                     <input type="text" class="form-control" name="bank_code"
-                                        value="<?= @$settings['bank_code'] ?>" placeholder="Bank Code " />
+                                        value="<?= @$settings['bank_code'] ?>" placeholder="Code banque " />
                                 </div>
                             </div>
                         </div>
 
                         <div class="row mt-4">
                             <div class="form-group col-md-12">
-                                <label for="notes">Extra Notes</label>
+                                <label for="notes">Notes supplémentaires</label>
                                 <textarea name="notes" class="textarea addr_editor "
-                                    placeholder="Extra Notes">  <?= output_escaping(str_replace('\r\n', '&#13;&#10;', @$settings['notes'])) ?></textarea>
+                                    placeholder="Notes supplémentaires">  <?= output_escaping(str_replace('\r\n', '&#13;&#10;', @$settings['notes'])) ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -1636,7 +1636,7 @@
                     <div id="cash_on_delivery" class="tab-pane">
                         <div>
                             <div class="d-flex justify-content-between">
-                                <h5>Cash On Delivery </h5>
+                                <h5>Paiement à la livraison </h5>
 
                                 <div class="form-group col-md-8 mb-2 mb-2 mb-2 mb-2 
                                        justify-content-end">
@@ -1650,8 +1650,8 @@
                     </div>
                     <hr>
                     <div class="form-group mt-2">
-                        <button type="reset" class="btn btn-secondary">Reset</button>
-                        <button type="submit" class="btn btn-primary payment_update" id="submit_btn">Update Payment Settings</button>
+                        <button type="reset" class="btn btn-secondary">Réinitialiser</button>
+                        <button type="submit" class="btn btn-primary payment_update" id="submit_btn">Mettre à jour les paramètres de paiement</button>
                     </div>
                 </div>
                 </form>

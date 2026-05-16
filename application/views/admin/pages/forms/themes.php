@@ -3,13 +3,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-md-8">
-                    <h4>Themes</h4>
+                    <h4>Thèmes</h4>
                 </div>
                 <div class="col-md-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">Themes</li>
+                        <li class="breadcrumb-item active">Thèmes</li>
                     </ol>
                 </div>
             </div>
@@ -25,10 +25,10 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">Id</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
                                         <th data-field="image" data-sortable="false">Image</th>
-                                        <th data-field="is_default" data-sortable="false">Default</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                        <th data-field="is_default" data-sortable="false">Défaut</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="created_on" data-sortable="false" data-visible="false">Created On</th>
                                         <th data-field="operate" data-sortable="false">Action</th>
                                     </tr>

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Attribute set</h4>
+                    <h4>Attribut set</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Attribute set</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Attribut set</li>
                     </ol>
                 </div>
             </div>
@@ -28,14 +28,14 @@
                                     <input type="hidden" name="edit_attribute_set" value="<?= @$fetched_data[0]['id'] ?>">
                                 <?php  } ?>
                                 <div class="form-group row">
-                                    <label for="name" class="col-sm-2 col-form-label">Name <span class='text-danger text-sm'>*</span></label>
+                                    <label for="name" class="col-sm-2 col-form-label">Nom <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="<?= @$fetched_data[0]['name'] ?>">
+                                        <input type="text" class="form-control" id="name" placeholder="Nom" name="name" value="<?= @$fetched_data[0]['name'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group mt-4">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Attribute Set' : 'Add Attribute Set' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Attribut Set' : 'Ajouter Attribut Set' ?></button>
                                 </div>
                             </div>
 

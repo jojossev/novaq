@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Section Order</h4>
+                    <h4>Gérer l'ordre des sections</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Section Order</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Ordre des sections</li>
                     </ol>
                 </div>
             </div>
@@ -26,13 +26,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6 col-12 offset-md-3">
-                                        <label for="subcategory_id" class="col-form-label fs-5">Section List </label><hr>
+                                        <label for="subcategory_id" class="col-form-label fs-5">Liste des sections </label><hr>
                                         <div class="card-body col-md-12">
                                             <div class="row fw-bold">
                                                 <div class="col-md-3">No.</div>
-                                                <div class="col-md-3">Display Order</div>
+                                                <div class="col-md-3">Ordre d'affichage</div>
                                                 <div class="col-md-3">Style</div>
-                                                <div class="col-md-3">Offer ids</div>
+                                                <div class="col-md-3">IDs d'offre</div>
                                             </div>
                                         </div>
                                         <ul class="list-group bg-grey move order-container" id="sortable">
@@ -57,10 +57,10 @@
                                         </ul>
                                         <?php if (empty($section_result)) { ?>
                                             <div class="text-center mt-3">
-                                                <p class="text-muted">No sections available. Please add sections to manage their order.</p>
+                                                <p class="text-muted">Aucune section disponible. Ajoutez des sections pour gérer leur ordre.</p>
                                             </div>
                                         <?php } else {?>
-                                            <button type="button" class="btn btn-block btn-success btn-lg mt-3" id="save_offer_section_order">Save</button>
+                                            <button type="button" class="btn btn-block btn-success btn-lg mt-3" id="save_offer_section_order">Enregistrer</button>
                                         <?php } ?>
                                     </div>
                                 </div>

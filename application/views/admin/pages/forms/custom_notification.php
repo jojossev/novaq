@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Custom message </h4>
+                    <h4>Message personnalisé </h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Custom message </li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Message personnalisé </li>
                     </ol>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                                     <label for="type" class="col-sm-2 control-label">Types <span class='text-danger text-sm'> * </span></label>
                                     <div class="col-sm-10">
                                         <select name="type" class="form-control mb-2 type">
-                                            <option value=" ">Select Types</option>
+                                            <option value=" ">Sélectionner le types</option>
                                             <?php foreach ($type as $row) { ?>
                                                 <option value="<?= $row ?>" <?= (isset($fetched_data[0]['id']) &&  $fetched_data[0]['type'] == $row) ? "Selected" : "" ?>><?= ucwords(str_replace('_', ' ', $row)) ?></option>
                                             <?php
@@ -49,9 +49,9 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="title" class="col-sm-2 col-form-label">Title <span class='text-danger text-sm'>*</span></label>
+                                    <label for="title" class="col-sm-2 col-form-label">Titre <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" id="update_title" class="form-control mb-2 update_title" placeholder="Title Name" value="<?= (isset($fetched_data[0]['title'])) ? $fetched_data[0]['title'] : ""; ?>" />
+                                        <input type="text" name="title" id="update_title" class="form-control mb-2 update_title" placeholder="Nom du titre" value="<?= (isset($fetched_data[0]['title'])) ? $fetched_data[0]['title'] : ""; ?>" />
                                     </div>
                                 </div>
                                 <div class="form-group row place_order <?= (isset($fetched_data[0]['id'])  && $fetched_data[0]['type'] == 'place_order') ? '' : 'd-none' ?>">
@@ -67,7 +67,7 @@
                                 <div class="form-group row">
                                     <label for="message" class="col-sm-2 col-form-label">Message<span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <textarea name="message" id="text-box" class="form-control mb-2 text-box" placeholder="Place some text here"><?= (isset($fetched_data[0]['id'])) ? $fetched_data[0]['message'] : ''; ?></textarea>
+                                        <textarea name="message" id="text-box" class="form-control mb-2 text-box" placeholder="Saisissez votre texte ici"><?= (isset($fetched_data[0]['id'])) ? $fetched_data[0]['message'] : ''; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row place_order <?= (isset($fetched_data[0]['id'])  && $fetched_data[0]['type'] == 'place_order') ? '' : 'd-none' ?>">
@@ -242,8 +242,8 @@
                                     <?php } ?>
                                 </div>
                                 <div class="form-group mt-4">
-                                    <button type="reset" class="btn btn-warning m-1">Reset</button>
-                                    <button type="submit" class="btn btn-success m-1" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Custom message ' : 'Add Custom message ' ?></button>
+                                    <button type="reset" class="btn btn-warning m-1">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success m-1" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Message personnalisé ' : 'Ajouter un message personnalisé ' ?></button>
                                 </div>
 
                         </form>
@@ -254,7 +254,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Custom message </h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Message personnalisé </h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -267,18 +267,18 @@
                 <div class="col-md-12 main-content mt-4">
                     <div class="card content-area p-4">
                         <div class="card-head">
-                            <h4 class="card-title">Custom message List</h4>
+                            <h4 class="card-title">Liste des messages personnalisés</h4>
                         </div>
                         <div class="card-innr">
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' data-toggle="table" data-url="<?= base_url('admin/custom_notification/view_notification') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "custom-notifications-list",
+                        "fileNom": "custom-notifications-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="queryParams">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="title" data-sortable="false">Title</th>
+                                        <th data-field="title" data-sortable="false">Titre</th>
                                         <th data-field="type" data-sortable="true">Type</th>
                                         <th data-field="message" data-sortable="true">Message</th>
                                         <th data-field="operate" data-sortable="false">Action</th>

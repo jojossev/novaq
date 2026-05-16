@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Send Notification</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Envoyer notification</li>
                     </ol>
                 </div>
             </div>
@@ -41,24 +41,24 @@
                             <?php } ?>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="type" class="control-label mt-2">Send to <span
+                                    <label for="type" class="control-label mt-2">Envoyer à <span
                                             class='text-danger text-sm'>*</span></label>
                                     <select name="send_to" id="send_to" class="form-control type_event_trigger mt-2"
                                         required="">
-                                        <option value="all_users">All Users</option>
-                                        <option value="specific_user">Specific User</option>
+                                        <option value="all_users">Tous les utilisateurs</option>
+                                        <option value="specific_user">Utilisateur spécifique</option>
                                     </select>
                                 </div>
 
                                 <!-- for users -->
-                                <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'users') ? '' : 'd-none' ?>
-                                <div class="form-group row notification-users <?= $hiddenStatus ?>">
+                                <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'users') ? '' : 'd-none' ?>
+                                <div class="form-group row notification-users <?= $hiddenStatut ?>">
                                     <label for="user_id" class="control-label mt-2"> Users <span
                                             class='text-danger text-sm'>*</span></label>
                                     <div class="col-md-12 mt-2">
                                         <input type="hidden" name="user_id" id="noti_user_id" value="">
                                         <select name="select_user_id[]" class="search_user w-100" multiple
-                                            data-placeholder=" Type to search and select users" onload="multiselect()">
+                                            data-placeholder=" Tapez pour rechercher et sélectionner des utilisateurs" onload="multiselect()">
                                             <?php
                                             if (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'users') {
                                                 $user_details = fetch_details('users', ['id' => $row['type_id']], 'id,name');
@@ -81,25 +81,25 @@
                                     <div class="col-md-12 mt-2">
                                         <select name="type" id="type" class="form-control type_event_trigger"
                                             required="">
-                                            <option value=" ">Select Type</option>
-                                            <option value="default" <?= (@$fetched_data[0]['type'] == "default") ? 'selected' : ' ' ?>>Default</option>
-                                            <option value="categories" <?= (@$fetched_data[0]['type'] == "categories") ? 'selected' : ' ' ?>>Category</option>
-                                            <option value="products" <?= (@$fetched_data[0]['type'] == "products") ? 'selected' : ' ' ?>>Product</option>
-                                            <option value="flash_sale" <?= (@$fetched_data[0]['type'] == "flash_sale") ? 'selected' : ' ' ?>>Flash Sale</option>
+                                            <option value=" ">Sélectionner le type</option>
+                                            <option value="default" <?= (@$fetched_data[0]['type'] == "default") ? 'selected' : ' ' ?>>Défaut</option>
+                                            <option value="categories" <?= (@$fetched_data[0]['type'] == "categories") ? 'selected' : ' ' ?>>Catégorie</option>
+                                            <option value="products" <?= (@$fetched_data[0]['type'] == "products") ? 'selected' : ' ' ?>>Produit</option>
+                                            <option value="flash_sale" <?= (@$fetched_data[0]['type'] == "flash_sale") ? 'selected' : ' ' ?>>Vente Flash</option>
                                             <option value="notification_url"
-                                                <?= (@$fetched_data[0]['type'] == "notification_url") ? 'selected' : ' ' ?>>Notification URL</option>
+                                                <?= (@$fetched_data[0]['type'] == "notification_url") ? 'selected' : ' ' ?>>URL de notification</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div id="type_add_html">
-                                    <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'categories') ? '' : 'd-none' ?>
+                                    <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'categories') ? '' : 'd-none' ?>
 
-                                    <div class="form-group notification-categories <?= $hiddenStatus ?>">
-                                        <label for="category_id">Categories <span
+                                    <div class="form-group notification-categories <?= $hiddenStatut ?>">
+                                        <label for="category_id">Catégories <span
                                                 class='text-danger text-sm'>*</span></label>
                                         <select name="category_id" id="category_id" class="form-control select2"
                                             style="width: 100%;">
-                                            <option value="">Select category</option>
+                                            <option value="">Sélectionner une catégorie</option>
                                             <?php
                                             if (!empty($categories)) {
                                                 foreach ($categories as $row) {
@@ -112,8 +112,8 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'notification_url') ? '' : 'd-none' ?>
-                                    <div class="form-group notification-url <?= $hiddenStatus ?> ">
+                                    <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'notification_url') ? '' : 'd-none' ?>
+                                    <div class="form-group notification-url <?= $hiddenStatut ?> ">
 
                                         <label for="notification_url" class="mt-2"> Link <span
                                                 class='text-danger text-sm'>*</span></label>
@@ -121,18 +121,18 @@
                                             name="link" id="link"
                                             value="<?= isset($fetched_data[0]['link']) ? output_escaping($fetched_data[0]['link']) : "" ?>"
                                             pattern="https?://.+"
-                                            title="Please enter a valid URL starting with http:// or https://">
+                                            title="Veuillez entrer une URL valide commençant par http:// ou https://">
                                         <small class="form-text text-muted">URL must start with http:// or
                                             https://</small>
                                     </div>
-                                    <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'products') ? '' : 'd-none' ?>
+                                    <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'products') ? '' : 'd-none' ?>
 
-                                    <div class="form-group row notification-products <?= $hiddenStatus ?>">
-                                        <label for="product_id" class="control-label">Products <span
+                                    <div class="form-group row notification-products <?= $hiddenStatut ?>">
+                                        <label for="product_id" class="control-label">Produits <span
                                                 class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-12">
                                             <select name="product_id" class="search_product w-100"
-                                                data-placeholder=" Type to search and select products"
+                                                data-placeholder=" Tapez pour rechercher et sélectionner un produits"
                                                 onload="multiselect()">
                                                 <?php
                                                 if (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'products') {
@@ -148,14 +148,14 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'flash_sale') ? '' : 'd-none' ?>
+                                    <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == 'flash_sale') ? '' : 'd-none' ?>
 
-                                    <div class="form-group row notification-flash-sale <?= $hiddenStatus ?>">
+                                    <div class="form-group row notification-flash-sale <?= $hiddenStatut ?>">
                                         <label for="sale_id" class="control-label">Flash sale <span
                                                 class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-12">
                                             <select name="sale_id" class="form-control">
-                                                <option value="">Select flash sale </option>
+                                                <option value="">Sélectionner une vente flash </option>
                                                 <?php
                                                 if (!empty($flash_sales)) {
                                                     foreach ($flash_sales as $flash_sale) {
@@ -171,7 +171,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="title" class="control-label mt-2">Title <span
+                                    <label for="title" class="control-label mt-2">Titre <span
                                             class='text-danger text-sm'>*</span></label>
                                     <div class="col-md-12">
                                         <input type="text" class="form-control mt-2" name="title" id="title"
@@ -188,17 +188,17 @@
                                 <div class="form-group">
                                     <div class="col-md-12 mt-2">
                                         <input type="checkbox" name="image_checkbox" id="image_checkbox">
-                                        <span>Include Image</span>
+                                        <span>Inclure une image</span>
                                     </div>
                                     <div class="col-md-12 d-none include_image">
-                                        <label for="message" class="control-label">Image <small>(Recommended Size : 80 x
+                                        <label for="message" class="control-label">Image <small>(Taille recommandée : 80 x
                                                 80 pixels)</small></label>
                                         <div class="col-sm-10">
                                             <div class='col-md-3'><a
                                                     class="uploadFile img btn btn-primary text-white btn-sm"
                                                     data-input='image' data-isremovable='1'
                                                     data-is-multiple-uploads-allowed='0' data-toggle="modal"
-                                                    data-target="#media-upload-modal" value="Upload Photo"><i
+                                                    data-target="#media-upload-modal" value="Téléverser une photo"><i
                                                         class='fa fa-upload'></i> Upload</a></div>
                                             <?php
                                             if (file_exists(FCPATH . @$fetched_data[0]['image']) && !empty(@$fetched_data[0]['image'])) {
@@ -208,7 +208,7 @@
                                                         class="col-md-3 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
                                                         <div class='image-upload-div'><img class="img-fluid mb-2"
                                                                 src="<?= BASE_URL() . $fetched_data[0]['image'] ?>"
-                                                                alt="Image Not Found"></div>
+                                                                alt="Image non trouvée"></div>
                                                         <input type="hidden" name="image"
                                                             value='<?= $fetched_data[0]['image'] ?>'>
                                                     </div>
@@ -225,7 +225,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                     <button type="submit" class="btn btn-success" id="submit_btn">Send
                                         Notification</button>
                                 </div>
@@ -239,13 +239,13 @@
                             <label for="send_notification_type_filter" class="col-form-label fs-6">Filter Send
                                 Notification By Type </label>
                             <select id="send_notification_type_filter" name="send_notification_type_filter"
-                                placeholder="Select Status" required="" class="form-control">
-                                <option value="">All</option>
-                                <option value="default">Default</option>
-                                <option value="categories">Category</option>
-                                <option value="products">Products</option>
-                                <option value="flash_sale">Flash Sale</option>
-                                <option value="notification_url">Notification Url</option>
+                                placeholder="Sélectionner le statut" required="" class="form-control">
+                                <option value="">Tout</option>
+                                <option value="default">Défaut</option>
+                                <option value="categories">Catégorie</option>
+                                <option value="products">Produits</option>
+                                <option value="flash_sale">Vente Flash</option>
+                                <option value="notification_url">URL de notification</option>
                             </select>
                         </div>
                         <div class="card-innr">
@@ -261,13 +261,13 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="users_id" data-sortable="false">users id</th>
-                                        <th data-field="title" data-sortable="false">Title</th>
+                                        <th data-field="users_id" data-sortable="false">ID utilisateur</th>
+                                        <th data-field="title" data-sortable="false">Titre</th>
                                         <th data-field="type" data-sortable="false">Type</th>
                                         <th data-field="image" data-sortable="false" class="col-md-5">Image</th>
-                                        <th data-field="link" data-sortable="false" class="col-md-5">Link</th>
+                                        <th data-field="link" data-sortable="false" class="col-md-5">Lien</th>
                                         <th data-field="message" data-sortable="false">Message</th>
-                                        <th data-field="send_to" data-sortable="false">Send to</th>
+                                        <th data-field="send_to" data-sortable="false">Envoyer à</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

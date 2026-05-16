@@ -8,7 +8,7 @@
                     </a>
                 </div>
 
-                <h4 class="text-center">Reset Your Password</h4>
+                <h4 class="text-center">Réinitialiser Your Mot de passe</h4>
                 <p class="text-muted text-center">
                     You are only one step away from your new password. Recover your password now.
                 </p>
@@ -17,12 +17,12 @@
                     <!-- CSRF Token -->
                     <input type="hidden" name="csrf_token" value="$csrf_token()"/>
                     
-                    <!-- User ID -->
+                    <!-- ID utilisateur -->
                     <input type="hidden" name="user_id" value="<?= $user->id ?>">
 
-                    <!-- New Password -->
+                    <!-- New Mot de passe -->
                     <div class="form-group">
-                        <label for="new_password">New Password</label>
+                        <label for="new_password">New Mot de passe</label>
                         <div class="input-group">
                             <input type="password" name="new" id="new_password" class="form-control" placeholder="Enter new password" required>
                             <div class="input-group-append">
@@ -34,9 +34,9 @@
                         <small class="text-danger"><?= isset($validation_errors['new']) ? $validation_errors['new'] : '' ?></small>
                     </div>
 
-                    <!-- Confirm Password -->
+                    <!-- Confirmer le mot de passe -->
                     <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
+                        <label for="confirm_password">Confirmer le mot de passe</label>
                         <div class="input-group">
                             <input type="password" name="new_confirm" id="confirm_password" class="form-control" placeholder="Confirm new password" required>
                             <div class="input-group-append">
@@ -48,9 +48,9 @@
                         <small class="text-danger"><?= isset($validation_errors['new_confirm']) ? $validation_errors['new_confirm'] : '' ?></small>
                     </div>
 
-                    <!-- Submit Button -->
+                    <!-- Soumettre Button -->
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+                        <button type="submit" class="btn btn-primary btn-block">Change Mot de passe</button>
                     </div>
                 </form>
 
@@ -64,7 +64,7 @@
 <script>
 document.querySelectorAll('.toggle-password').forEach(button => {
     button.addEventListener('click', function() {
-        let target = document.querySelector(this.getAttribute('data-target'));
+        let target = document.querySelector(this.getAttribut('data-target'));
         if (target.type === "password") {
             target.type = "text";
             this.innerHTML = '<i class="fas fa-eye-slash"></i>';

@@ -242,8 +242,8 @@
                      <div class="col-md-4 invoice-col">
                         <strong>From : </strong><br>
                         <strong><?= $settings['app_name'] ?></strong><br>
-                        Email: <?= $settings['support_email'] ?><br>
-                        Customer Care: <?= $settings['support_number'] ?><br>
+                        E-mail: <?= $settings['support_email'] ?><br>
+                        Client Care: <?= $settings['support_number'] ?><br>
                         Admin State: <?= $settings['admin_store_state'] ?><br>
                         <?php if (isset($settings['tax_name']) && !empty($settings['tax_name'])) { ?>
                            <b><?= $settings['tax_name'] ?></b>: <?= $settings['tax_number'] ?><br>
@@ -252,7 +252,7 @@
                         }
                         if ($row['type'] != 'digital_product') {
                         } ?>
-                        <?php if (!empty($items[0]['delivery_boy'])) { ?>Delivery By:
+                        <?php if (!empty($items[0]['delivery_boy'])) { ?>Livraison By:
                            <?= $items[0]['delivery_boy'] ?><?php } ?>
                      </div>
                      <!-- /.col -->
@@ -265,9 +265,9 @@
                         <strong><?= ($order_detls[0]['user_name'] != "") ? $order_detls[0]['user_name'] : $order_detls[0]['uname'] ?></strong><br>
                         <p>
                            <?php if (!isset($order_detls[0]['is_pos_order']) || $order_detls[0]['is_pos_order'] != 1) { ?>
-                              <strong> Username:</strong> <?= $order_detls[0]['user_name'] ?><br>
+                              <strong> Nom d'utilisateur:</strong> <?= $order_detls[0]['user_name'] ?><br>
                            <?php } ?>
-                           <strong>Address:</strong> <?= $order_detls[0]['address'] ?><br>
+                           <strong>Adresse:</strong> <?= $order_detls[0]['address'] ?><br>
                            <strong>State/UT Code:</strong> <?= $customer_address_state ?><br>
                            <strong>Place of Supply:</strong> <?= $settings['admin_store_state'] ?><br>
                            <?php $mobile = (defined('ALLOW_MODIFICATION') && ALLOW_MODIFICATION == 0) ? str_repeat("X", strlen($order_detls[0]['mobile']) - 3) . substr($order_detls[0]['mobile'], -3) : $order_detls[0]['mobile'];
@@ -281,7 +281,7 @@
                      <?php if (!empty($order_detls[0]['id'])) { ?>
                         <div class="col-md-4 invoice-col">
                            <br> <b>Retail Invoice</b>
-                           <br> <b>Order ID : </b>#
+                           <br> <b>ID Commande : </b>#
                            <?= $order_detls[0]['id'] ?>
                            <br> <b>Date: </b>
                            <?= $order_detls[0]['date_added'] ?>
@@ -299,19 +299,19 @@
                                  <th>Sr No.</th>
                                  <th>Product Code</th>
                                  <?= (isset($row['product_identity']) && !empty($row['product_identity'])) ? "<th>Product Identity</th>" : "" ?>
-                                 <th>Name</th>
+                                 <th>Nom</th>
                                  <?php if ($row['type'] != 'digital_product') { ?>
                                     <th>Variants</th>
                                  <?php } else { ?>
                                     <th></th>
                                  <?php } ?>
-                                 <th>Price</th>
+                                 <th>Prix</th>
                                  <th>Tax (%)</th>
                                  <th class="">Tax Amount (<?= $settings['currency'] ?>)</th>
                                  <th>Total price</th>
-                                 <th>Qty</th>
+                                 <th>Qté</th>
                                  <th>SubTotal (<?= $settings['currency'] ?>)</th>
-                                 <th class="d-none">Order Status</th>
+                                 <th class="d-none">Order Statut</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -405,7 +405,7 @@
                               <tbody>
 
                                  <tr>
-                                    <th class="text-start">Total Order Price (<?= $settings['currency'] ?>)</th>
+                                    <th class="text-start">Total Order Prix (<?= $settings['currency'] ?>)</th>
                                     <td class="text-end">+ <?= number_format($total, 2) ?></td>
                                  </tr>
 
@@ -413,7 +413,7 @@
                                  } ?>
                                  <?php if ($row['type'] != 'digital_product') { ?>
                                     <tr>
-                                       <th class="text-start">Delivery Charge (<?= $settings['currency'] ?>)</th>
+                                       <th class="text-start">Livraison Charge (<?= $settings['currency'] ?>)</th>
                                        <td class="text-end">
                                           + <?php
                                           $total += floatval($order_detls[0]['delivery_charge']);
@@ -429,7 +429,7 @@
                                  </tr>
 
                                  <tr>
-                                    <th class="text-start">Wallet Used (<?= $settings['currency'] ?>)</th>
+                                    <th class="text-start">Portefeuille utilisé (<?= $settings['currency'] ?>)</th>
                                     <td class="text-end">
                                        <?php
                                        $total -= floatval($order_detls[0]['wallet_balance']);
@@ -438,7 +438,7 @@
                                     </td>
                                  </tr>
                                  <tr>
-                                    <th class="text-start">Bulk Discount (<?= $settings['currency'] ?>)</th>
+                                    <th class="text-start">Remise en gros (<?= $settings['currency'] ?>)</th>
                                     <td class="text-end">
                                        <?php
                                        $total -= floatval($order_detls[0]['bulk_discount']);
@@ -505,7 +505,7 @@
                                  <?php endif; ?>
 
                                  <tr class="border-top fw-bold">
-                                    <th class="text-start">Final Total (<?= $settings['currency'] ?>)</th>
+                                    <th class="text-start">Total final (<?= $settings['currency'] ?>)</th>
                                     <td class="text-end">
                                        <?php
                                        $final_total_with_charges = floatval($final_sub_total);

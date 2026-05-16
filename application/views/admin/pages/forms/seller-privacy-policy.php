@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Privacy Policy And Terms & Conditions</li>
                     </ol>
                 </div>
@@ -27,7 +27,7 @@
                                 <label for="other_images"> Privacy Policy </label>
                                 <a href="<?= base_url('admin/seller-privacy-policy/privacy-policy-page') ?>" target='_blank' class="btn btn-primary btn-xs" title='View Privacy Policy'><i class='fa fa-eye'></i></a>
                                 <div class="mb-3">
-                                    <textarea name="privacy_policy_input_description" class="textarea" placeholder="Place some text here text_editor">
+                                    <textarea name="privacy_policy_input_description" class="textarea" placeholder="Saisissez votre texte ici text_editor">
                           <?= $privacy_policy ?>
                   </textarea>
                                 </div>
@@ -36,14 +36,14 @@
                                 <label for="other_images">Terms & Conditions </label>
                                 <a href="<?= base_url('admin/seller-privacy-policy/terms-and-conditions-page') ?>" target='_blank' class="btn btn-primary btn-xs" title='View Terms && Condition'><i class='fa fa-eye'></i></a>
                                 <div class="mb-3">
-                                    <textarea name="terms_n_conditions_input_description" class="textarea" placeholder="Place some text here text_editor">
+                                    <textarea name="terms_n_conditions_input_description" class="textarea" placeholder="Saisissez votre texte ici text_editor">
                           <?= $terms_n_condition ?>
                         </textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn">Update Privacy Policy And Terms & Conditions</button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour Privacy Policy And Terms & Conditions</button>
                                 </div>
                             </div>
 

@@ -9,7 +9,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="user_name">Update Transaction</h5>
+                                <h5 class="modal-title" id="user_name">Mettre à jour la transaction</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                 </button>
                             </div>
@@ -31,16 +31,16 @@
                                                             <label for="transaction" class="mb-2">Update
                                                                 Transaction</label>
                                                             <select class="form-control" name="status" id="t_status">
-                                                                <option value="awaiting">Awaiting</option>
-                                                                <option value="success">Success</option>
-                                                                <option value="Failed">Failed</option>
+                                                                <option value="awaiting">En attente</option>
+                                                                <option value="success">Succès</option>
+                                                                <option value="Failed">Échoué</option>
                                                             </select>
                                                         </div>
 
                                                         <div class="form-group col-md-12 mb-3">
-                                                            <label for="txn_id" class="mb-2">Txn ID</label>
+                                                            <label for="txn_id" class="mb-2">ID Transaction</label>
                                                             <input type="text" class="form-control" name="txn_id"
-                                                                id="txn_id" placeholder="Txn ID">
+                                                                id="txn_id" placeholder="ID Transaction">
                                                         </div>
 
                                                         <div class="form-group col-md-12 mb-3">
@@ -51,9 +51,9 @@
 
                                                         <div
                                                             class="form-group col-md-12 mt-3 d-flex justify-content-between">
-                                                            <button type="reset" class="btn btn-warning">Reset</button>
+                                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                                             <button type="submit" class="btn btn-success"
-                                                                id="submit_btn">Update Transaction</button>
+                                                                id="submit_btn">Mettre à jour la transaction</button>
                                                         </div>
 
                                                     </div>
@@ -79,11 +79,11 @@
             </div>
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4> View Transactions </h4>
+                    <h4> Voir les transactions </h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Transactions</li>
                     </ol>
                 </div>
@@ -96,12 +96,12 @@
                     <div class="card content-area p-4">
                         <div class="row mb-3">
                             <div class="col-md-3">
-                                <label>Status</label>
+                                <label>Statut</label>
                                 <select id="status_filter" class="form-control">
-                                    <option value="">All</option>
-                                    <option value="success">Success</option>
-                                    <option value="awaiting">Awaiting</option>
-                                    <option value="failed">Failed</option>
+                                    <option value="">Tout</option>
+                                    <option value="success">Succès</option>
+                                    <option value="awaiting">En attente</option>
+                                    <option value="failed">Échoué</option>
                                     
                                 </select>
                             </div>
@@ -121,14 +121,14 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">Id</th>
-                                        <th data-field="name" data-sortable="false">User Name</th>
-                                        <th data-field="order_id" data-sortable="false">Order Id</th>
-                                        <th data-field="txn_id" data-sortable="false">Transaction Id</th>
+                                        <th data-field="name" data-sortable="false">Nom utilisateur</th>
+                                        <th data-field="order_id" data-sortable="false">ID Commande</th>
+                                        <th data-field="txn_id" data-sortable="false">ID Transaction</th>
                                         <th data-field="type" data-sortable="false">Type</th>
                                         <th data-field="payu_txn_id" data-sortable="false" data-visible="false">Pay
-                                            Transaction Id</th>
-                                        <th data-field="amount" data-sortable="false">Amount</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                            ID Transaction</th>
+                                        <th data-field="amount" data-sortable="false">Montant</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="message" data-sortable="false" data-visible="false">Message</th>
                                         <th data-field="txn_date" data-sortable="false">Date</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>

@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Return Request</li>
                     </ol>
                 </div>
@@ -22,12 +22,12 @@
                 <div class="card-body main-content">
                     <div class="card content-area p-4">
                         <div class="col-sm-2">
-                            <label for="return_request_status_filter" class="col-form-label fs-6">Filter Return Request By Status </label>
-                            <select id="return_request_status_filter" name="return_request_status_filter" placeholder="Select Status" required="" class="form-control">
-                                <option value="">All</option>
-                                <option value="0">Pending</option>
-                                <option value="1">Approved</option>
-                                <option value="2">Rejected</option>
+                            <label for="return_request_status_filter" class="col-form-label fs-6">Filter Return Request By Statut </label>
+                            <select id="return_request_status_filter" name="return_request_status_filter" placeholder="Sélectionner le statut" required="" class="form-control">
+                                <option value="">Tout</option>
+                                <option value="0">En attente</option>
+                                <option value="1">Approuvé</option>
+                                <option value="2">Rejeté</option>
                             </select>
                         </div>
                         <div class="card-innr">
@@ -36,16 +36,16 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="order_id" data-sortable="true">Order ID</th>
+                                        <th data-field="order_id" data-sortable="true">ID Commande</th>
                                         <th data-field="order_item_id" data-sortable="true">Item ID</th>
-                                        <th data-field="user_name" data-sortable="false">Username</th>
-                                        <th data-field="product_name" data-sortable="false">Product Name</th>
+                                        <th data-field="user_name" data-sortable="false">Nom d'utilisateur</th>
+                                        <th data-field="product_name" data-sortable="false">Nom du produit</th>
                                         <th data-field="return_reason" data-sortable="false">Return Reason</th>
                                         <th data-field="return_item_image" data-sortable="false">Return item image</th>
-                                        <th data-field="price" data-sortable="false">Price</th>
-                                        <th data-field="quantity" data-sortable="false">Quantity</th>
+                                        <th data-field="price" data-sortable="false">Prix</th>
+                                        <th data-field="quantity" data-sortable="false">Quantité</th>
                                         <th data-field="sub_total" data-sortable="false">Sub Total</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>
@@ -60,7 +60,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Update Return Request</h5>
+                        <h5 class="modal-title">Mettre à jour Return Request</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                         </button>
                     </div>
@@ -71,7 +71,7 @@
                             <input type="hidden" name="order_item_id" id="order_item_id">
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Status <span class='text-danger text-sm'>*</span></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Statut <span class='text-danger text-sm'>*</span></label>
                                 <div class="col-md-7 col-sm-6 col-xs-12">
                                     <div id="status" class="btn-group">
                                         <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
@@ -85,21 +85,21 @@
                             </div>
                             <div class="col-md-5 d-none mt-3" id="return_request_delivery_by">
                                 <select id='deliver_by' name='deliver_by' class='form-control'>
-                                    <option value=''>Select Delivery Boy</option>
+                                    <option value=''>Select Livreur</option>
                                     <?php foreach ($delivery_res as $row) { ?>
                                         <option value="<?= $row['user_id'] ?>"><?= $row['username'] ?></option>
                                     <?php  } ?>
                                 </select>
                             </div>
                             <div class="form-group mt-3">
-                                <label class="" for="">Remark</label>
+                                <label class="" for="">Remarque</label>
                                 <textarea id="update_remarks" name="update_remarks" class="form-control col-12 "></textarea>
                             </div>
                             <input type="hidden" id="id" name="id">
                             <div class="ln_solid"></div>
                             <div class="form-group mt-3">
-                                <button type="reset" class="btn btn-warning">Reset</button>
-                                <button type="submit" class="btn btn-success" id="submit_btn">Update</button>
+                                <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour</button>
                             </div>
                         </form>
                     </div>

@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Sales Invoice</li>
                     </ol>
                 </div>
@@ -22,7 +22,7 @@
                         <div class="card-innr">
                             <div class="gaps-1-5x row d-flex adjust-items-center">
                                 <div class="form-group col-md-4">
-                                    <label>Date range:</label>
+                                    <label>Plage de dates:</label>
                                     <div class="input-group">
                                             <span class="input-group-text"><i class="far fa-clock"></i></span>
                                         <input type="text" class="form-control float-right" id="datepicker">
@@ -32,39 +32,39 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label>Filter By status</label>
-                                    <select id="order_status" name="order_status" placeholder="Select Status" required="" class="form-control">
-                                        <option value="">All Orders</option>
-                                        <option value="awaiting">Awaiting</option>
-                                        <option value="received">Received</option>
-                                        <option value="processed">Processed</option>
-                                        <option value="shipped">Shipped</option>
+                                    <select id="order_status" name="order_status" placeholder="Sélectionner le statut" required="" class="form-control">
+                                        <option value="">Toutes les commandes</option>
+                                        <option value="awaiting">En attente</option>
+                                        <option value="received">Reçu</option>
+                                        <option value="processed">Traité</option>
+                                        <option value="shipped">Expédié</option>
                                         <option value="delivered">delivered</option>
-                                        <option value="cancelled">Cancelled</option>
-                                        <option value="returned">Returned</option>
+                                        <option value="cancelled">Annulé</option>
+                                        <option value="returned">Retourné</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <div class="row mt-2">
                                         <div class="col-md-4 d-flex align-items-center pt-4">
-                                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="status_date_wise_search()">Search</button>
+                                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="status_date_wise_search()">Rechercher</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <table class='table-striped' data-toggle="table" data-url="<?= base_url('admin/Invoice/get_sales_list') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "sales-list",
+                        "fileNom": "sales-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="sales_invoice_query_params">
                                 <thead>
                                     <tr>
-                                        <th data-field="id" data-sortable='true'>Order ID</th>
-                                        <th data-field="name" data-sortable='true'>User Name</th>
+                                        <th data-field="id" data-sortable='true'>ID Commande</th>
+                                        <th data-field="name" data-sortable='true'>Nom utilisateur</th>
                                         <th data-field="mobile" data-sortable='true'>Mobile</th>
-                                        <th data-field="address" data-sortable='true'>Address</th>
-                                        <th data-field="final_total" data-sortable='true'>Final Total(₹)</th>
-                                        <th data-field="status" data-sortable='true'>Status</th>
-                                        <th data-field="date_added" data-sortable='true'>Order Date</th>
+                                        <th data-field="address" data-sortable='true'>Adresse</th>
+                                        <th data-field="final_total" data-sortable='true'>Total final(₹)</th>
+                                        <th data-field="status" data-sortable='true'>Statut</th>
+                                        <th data-field="date_added" data-sortable='true'>Date de commande</th>
                                         <th data-field="operate" data-sortable='true'>Actions</th>
                                     </tr>
                                 </thead>

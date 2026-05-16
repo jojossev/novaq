@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Add category for Blogs</h4>
+                    <h4>Ajouter category for Blogues</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Category for Blogs</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Catégorie for Blogues</li>
                     </ol>
                 </div>
             </div>
@@ -27,23 +27,23 @@
                             <?php } ?>
                             <div class="card-body">
                                 <div class="form-group row my-3">
-                                    <label for="category_input_name" class="col-sm-1 col-form-label">Name <span class='text-danger text-sm'>*</span></label>
+                                    <label for="category_input_name" class="col-sm-1 col-form-label">Nom <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="category_input_name" placeholder="Category Name" name="category_input_name" value="<?= isset($fetched_data[0]['name']) ? output_escaping($fetched_data[0]['name']) : "" ?>">
+                                        <input type="text" class="form-control" id="category_input_name" placeholder="Nom de la catégorie" name="category_input_name" value="<?= isset($fetched_data[0]['name']) ? output_escaping($fetched_data[0]['name']) : "" ?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group my-3">
-                                    <label for="image">Main Image <span class='text-danger text-sm'>*</span><small>(Recommended Size : 131 x 131 pixels)</small></label>
+                                    <label for="image">Image principale <span class='text-danger text-sm'>*</span><small>(Taille recommandée : 131 x 131 pixels)</small></label>
                                     <div class="col-sm-10">
-                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='category_input_image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='category_input_image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                         <?php
                                         if (file_exists(FCPATH . @$fetched_data[0]['image']) && !empty(@$fetched_data[0]['image'])) {
                                         ?>
-                                            <label class="text-danger mt-3">*Only Choose When Update is necessary</label>
+                                            <label class="text-danger mt-3">*Choisir uniquement lorsque la mise à jour est nécessaire</label>
                                             <div class="container-fluid row image-upload-section">
                                                 <div class="col-md-3 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
-                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_data[0]['image'] ?>" alt="Image Not Found"></div>
+                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_data[0]['image'] ?>" alt="Image non trouvée"></div>
                                                     <input type="hidden" name="category_input_image" value='<?= $fetched_data[0]['image'] ?>'>
                                                 </div>
                                             </div>
@@ -57,16 +57,16 @@
                                 </div>
 
                                 <div class="form-group my-3">
-                                    <label for="image">Banner Image </label>
+                                    <label for="image">Bannière </label>
                                     <div class="col-sm-10">
-                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='banner' data-isremovable='1' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='banner' data-isremovable='1' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                         <?php
                                         if (file_exists(FCPATH . @$fetched_data[0]['banner']) && !empty(@$fetched_data[0]['banner'])) {
                                         ?>
-                                            <label class="text-danger mt-3">*Only Choose When Update is necessary</label>
+                                            <label class="text-danger mt-3">*Choisir uniquement lorsque la mise à jour est nécessaire</label>
                                             <div class="container-fluid row image-upload-section">
                                                 <div class="col-md-3 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
-                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_data[0]['banner'] ?>" alt="Image Not Found"></div>
+                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_data[0]['banner'] ?>" alt="Image non trouvée"></div>
                                                     <input type="hidden" name="banner" value='<?= $fetched_data[0]['banner'] ?>'>
                                                 </div>
                                             </div>
@@ -80,8 +80,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group my-3">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Category' : 'Add Category' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Catégorie' : 'Ajouter Catégorie' ?></button>
                                 </div>
                             </div>
 

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Manage Attribute Set</h4>
+                    <h4>Gérer Attribut Set</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Attribute Set</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Attribut Set</li>
                     </ol>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Attribute Set</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier Attribut Set</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -37,23 +37,23 @@
                     <div class="card content-area p-4">
                         <div class="card-header border-0">
                             <div class="card-tools">
-                                <a href="<?= base_url() . 'admin/attribute_set/' ?>" class="btn btn-block  btn-outline-primary btn-sm">Add Attribute Set</a>
+                                <a href="<?= base_url() . 'admin/attribute_set/' ?>" class="btn btn-block  btn-outline-primary btn-sm">Ajouter Attribut Set</a>
                             </div>
                         </div>
                         <div class="card-innr">
                             <div class="card-head">
-                                <h4 class="card-title">Attribute Set</h4>
+                                <h4 class="card-title">Attribut Set</h4>
                             </div>
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' id='category_table' data-toggle="table" data-url="<?= base_url('admin/attribute_set/attribute_set_list') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel","csv"]' data-export-options='{
-                        "fileName": "attribute-set-list",
+                        "fileNom": "attribute-set-list",
                         "ignoreColumn": ["state"] 
                         }' data-query-params="queryParams">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="operate" data-sortable="false">Action</th>
                                     </tr>
                                 </thead>

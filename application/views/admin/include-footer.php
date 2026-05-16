@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Media</h5>
+                <h5 class="modal-title" id="exampleModalLongTitre">Médias</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -18,12 +18,12 @@
                                 <!-- Change /upload-target to your upload address -->
                                 <div id="dropzone" class="dropzone"></div>
                                 <br>
-                                <a href="" id="upload-files-btn" class="btn btn-success float-right ml-2">Upload</a>
+                                <a href="" id="upload-files-btn" class="btn btn-success float-right ml-2">Téléverser</a>
                             </div>
-                            <div class="alert alert-warning">Select media and click choose media</div>
+                            <div class="alert alert-warning">Sélectionnez un média et cliquez sur choisir</div>
                             <div id="toolbar">
                                 <button id='upload-media' class="btn btn-danger">
-                                    <i class="fa fa-plus"></i> Choose Media
+                                    <i class="fa fa-plus"></i> Choisir un média
                                 </button>
                             </div>
                             <table class='table-striped' data-toolbar="#toolbar" id='media-upload-table' data-page-size="5" data-toggle="table" data-url="<?= base_url('admin/media/fetch') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-query-params="mediaParams">
@@ -32,10 +32,10 @@
                                         <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id" data-sortable="true" data-visible='false'>ID</th>
                                         <th data-field="image" data-sortable="false">Image</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
-                                        <th data-field="size" data-sortable="false">Size</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
+                                        <th data-field="size" data-sortable="false">Taille</th>
                                         <th data-field="extension" data-sortable="false" data-visible='false'>Extension</th>
-                                        <th data-field="sub_directory" data-sortable="false" data-visible='false'>Sub directory</th>
+                                        <th data-field="sub_directory" data-sortable="false" data-visible='false'>Sous-dossier</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -52,12 +52,12 @@
     ?>
         <strong> <?= (isset($settings['copyright_details']) && !empty($settings['copyright_details'])) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['copyright_details'])) : " " ?> </strong>
     <?php } else { ?>
-        <strong>Copyright &copy; <?= date('Y') ?> - <?= date('Y') + 1 ?> <a target="_blank" href="<?= base_url('admin/home') ?>"><?php echo $settings['app_name']; ?></a>, All Right Reserved <a target="_blank" href="https://www.wrteam.in/">WRTeam</a>.</strong>
+        <strong>Copyright &copy; <?= date('Y') ?> - <?= date('Y') + 1 ?> <a target="_blank" href="<?= base_url('admin/home') ?>"><?php echo $settings['app_name']; ?></a>, Tous droits réservés <a target="_blank" href="https://www.wrteam.in/">WRTeam</a>.</strong>
     <?php } ?>
 </footer>
 
 <?php if (IS_ALLOWED_MODIFICATION == 0) { ?>
     <div class="buy-now-btn">
-        <a href="https://codecanyon.net/item/eshop-flutter-ecommerce-full-app/29880351" target="_blank" class="btn btn-danger"> <i class="fa fa-shopping-cart"></i> Buy Now</a>
+        <a href="https://codecanyon.net/item/eshop-flutter-ecommerce-full-app/29880351" target="_blank" class="btn btn-danger"> <i class="fa fa-shopping-cart"></i> Acheter maintenant</a>
     </div>
 <?php } ?>

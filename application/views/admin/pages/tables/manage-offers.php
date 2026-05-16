@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4> Offers Management </h4>
+                    <h4> Offres Management </h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Offers</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Offres</li>
                     </ol>
                 </div>
             </div>
@@ -19,10 +19,10 @@
     <section class="content">
         <ul class="nav nav-tabs mt-3 ml-3" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#offers_table">Offers</a>
+                <a class="nav-link active" data-toggle="tab" href="#offers_table">Offres</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#popup_offers_table">Popup offers</a>
+                <a class="nav-link" data-toggle="tab" href="#popup_offers_table">Offres popup</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -31,7 +31,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Edit Offer Details</h5>
+                                <h5 class="modal-title">Modifier les détails de l'offre</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -46,20 +46,20 @@
                         <div class="card-header border-0">
                             <div class="row mb-3">
                                 <div class="col-md-8">
-                                    <label for="offer_type_filter">Filter by Type:</label>
+                                    <label for="offer_type_filter">Filtrer par type:</label>
                                     <select id="offer_type_filter" class="form-control" onchange="$('.table-striped').bootstrapTable('refresh')">
-                                        <option value="">All Types</option>
-                                        <option value="default">Default</option>
-                                        <option value="categories">Categories</option>
-                                        <option value="all_products">All Products</option>
-                                        <option value="products">Specific Product</option>
-                                        <option value="brand">Brand</option>
-                                        <option value="offer_url">Offer URL</option>
+                                        <option value="">Tous les types</option>
+                                        <option value="default">Défaut</option>
+                                        <option value="categories">Catégories</option>
+                                        <option value="all_products">Tous les produits</option>
+                                        <option value="products">Produit spécifique</option>
+                                        <option value="brand">Marque</option>
+                                        <option value="offer_url">URL de l'offre</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="card-tools">
-                                <a href="<?= base_url() . 'admin/offer/' ?>" class="btn btn-block  btn-outline-primary btn-sm">Add Offer </a>
+                                <a href="<?= base_url() . 'admin/offer/' ?>" class="btn btn-block  btn-outline-primary btn-sm">Ajouter Offre </a>
                             </div>
                         </div>
                         <div class="card-innr">
@@ -69,12 +69,12 @@
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
                                         <th data-field="type" data-sortable="false">Type</th>
-                                        <th data-field="type_id" data-sortable="true">Type id</th>
-                                        <th data-field="min_discount" data-sortable="true">Min Discount(%)</th>
-                                        <th data-field="max_discount" data-sortable="true">Max Discount(%)</th>
+                                        <th data-field="type_id" data-sortable="true">ID du type</th>
+                                        <th data-field="min_discount" data-sortable="true">Min Remise(%)</th>
+                                        <th data-field="max_discount" data-sortable="true">Max Remise(%)</th>
                                         <th data-field="link" data-sortable="true">URL</th>
                                         <th data-field="image" data-sortable="false">Image</th>
-                                        <th data-field="date_added" data-sortable="false">Created at</th>
+                                        <th data-field="date_added" data-sortable="false">Créé le</th>
                                         <th data-field="operate" data-sortable="false">Action</th>
                                     </tr>
                                 </thead>
@@ -89,7 +89,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Edit Offer Details</h5>
+                                <h5 class="modal-title">Modifier les détails de l'offre</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -104,37 +104,37 @@
                         <div class="card-header border-0">
                             <div class="row mb-3">
                                 <div class="col-md-8">
-                                    <label for="popup_offer_type_filter">Filter by Type:</label>
+                                    <label for="popup_offer_type_filter">Filtrer par type:</label>
                                     <select id="popup_offer_type_filter" class="form-control">
-                                        <option value="">All Types</option>
-                                        <option value="default">Default</option>
-                                        <option value="categories">Categories</option>
-                                        <option value="all_products">All Products</option>
-                                        <option value="products">Specific Product</option>
-                                        <option value="brand">Brand</option>
-                                        <option value="offer_url">Offer URL</option>
+                                        <option value="">Tous les types</option>
+                                        <option value="default">Défaut</option>
+                                        <option value="categories">Catégories</option>
+                                        <option value="all_products">Tous les produits</option>
+                                        <option value="products">Produit spécifique</option>
+                                        <option value="brand">Marque</option>
+                                        <option value="offer_url">URL de l'offre</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="card-tools">
-                                <a href="<?= base_url() . 'admin/offer/' ?>" class="btn btn-block  btn-outline-primary btn-sm">Add Popup Offer </a>
+                                <a href="<?= base_url() . 'admin/offer/' ?>" class="btn btn-block  btn-outline-primary btn-sm">Ajouter Popup Offre </a>
                             </div>
 
                         </div>
                         <div class="card-innr">
                             <div class="gaps-1-5x"></div>
-                            <table class='table-striped' data-toggle="table" data-url="<?= base_url('admin/popup_offer/view_offers') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-query-params="popupOfferQueryParams">
+                            <table class='table-striped' data-toggle="table" data-url="<?= base_url('admin/popup_offer/view_offers') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-query-params="popupOffreQueryParams">
 
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
                                         <th data-field="type" data-sortable="false">Type</th>
-                                        <th data-field="type_id" data-sortable="true">Type id</th>
-                                        <th data-field="min_discount" data-sortable="true">Min Discount(%)</th>
-                                        <th data-field="max_discount" data-sortable="true">Max Discount(%)</th>
+                                        <th data-field="type_id" data-sortable="true">ID du type</th>
+                                        <th data-field="min_discount" data-sortable="true">Min Remise(%)</th>
+                                        <th data-field="max_discount" data-sortable="true">Max Remise(%)</th>
                                         <th data-field="link" data-sortable="true">URL</th>
                                         <th data-field="image" data-sortable="false">Image</th>
-                                        <th data-field="date_added" data-sortable="false">Created at</th>
+                                        <th data-field="date_added" data-sortable="false">Créé le</th>
                                         <th data-field="operate" data-sortable="false">Action</th>
                                     </tr>
                                 </thead>

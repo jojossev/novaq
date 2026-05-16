@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Produits</li>
                     </ol>
                 </div>
             </div>
@@ -38,8 +38,8 @@
                                         <label for="type" class="col-form-label">Type <small>[upload/update]</small> <span class='text-danger text-sm'>*</span></label></label>
                                         <select class='form-control mb-2' name='type' id='type'>
                                             <option value=''>Select</option>
-                                            <option value='upload'>Upload</option>
-                                            <option value='update'>Update</option>
+                                            <option value='upload'>Téléverser</option>
+                                            <option value='update'>Mettre à jour</option>
                                         </select>
                                     </div>
                                 </div>
@@ -53,8 +53,8 @@
                                 <div class="form-group row">
                                     <div class="card-body pad">
                                         <div class="form-group">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
-                                            <button type="submit" class="btn btn-success bulk_update" id="submit_btn">Submit</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                            <button type="submit" class="btn btn-success bulk_update" id="submit_btn">Soumettre</button>
                                         </div>
                                     </div>
                                 </div>

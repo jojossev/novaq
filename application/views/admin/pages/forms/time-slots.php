@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Time Slots</h4>
+                    <h4>Créneaux horaires</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Time Slots</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Créneaux horaires</li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="form-group col-md-4">
-                                            <label for="">Enable / Disable Time Slots</label>
+                                            <label for="">Enable / Disable Créneaux horaires</label>
                                         </div>
                                         <div class="form-group col-md-8 mb-2">
                                             <input type="checkbox" name="is_time_slots_enabled" <?= (@$time_slot_config['is_time_slots_enabled']) == '1' ? 'Checked' : '' ?> data-bootstrap-switch data-off-color="danger" data-on-color="success">
@@ -36,25 +36,25 @@
 
                                     <div class="row">
                                         <div class="form-group col-md-4">
-                                            <label for="">Delivery Starts From ?</label>
+                                            <label for="">Livraison Starts From ?</label>
                                         </div>
                                         <div class="form-group col-md-8 mb-2">
                                             <select class="form-control" name="delivery_starts_from">
                                                 <option value="">Select</option>
-                                                <option value="1" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '1') ? 'selected' : '' ?>>Today</option>
+                                                <option value="1" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '1') ? 'selected' : '' ?>>Aujourd'hui</option>
                                                 <option value="2" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '2') ? 'selected' : '' ?>>Tomorrow</option>
-                                                <option value="3" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '3') ? 'selected' : '' ?>>Third Day</option>
-                                                <option value="4" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '4') ? 'selected' : '' ?>>Fourth Day</option>
-                                                <option value="5" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '5') ? 'selected' : '' ?>>Fifth Day</option>
-                                                <option value="6" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '6') ? 'selected' : '' ?>>Sixth Day</option>
-                                                <option value="7" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '7') ? 'selected' : '' ?>>Seventh Day</option>
+                                                <option value="3" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '3') ? 'selected' : '' ?>>Third Jour</option>
+                                                <option value="4" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '4') ? 'selected' : '' ?>>Fourth Jour</option>
+                                                <option value="5" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '5') ? 'selected' : '' ?>>Fifth Jour</option>
+                                                <option value="6" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '6') ? 'selected' : '' ?>>Sixth Jour</option>
+                                                <option value="7" <?= (isset($time_slot_config['delivery_starts_from']) && $time_slot_config['delivery_starts_from'] == '7') ? 'selected' : '' ?>>Seventh Jour</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="form-group col-md-4">
-                                            <label for="">How many days you want to allow ?</label>
+                                            <label for="">Combien de jours souhaitez-vous autoriser ?</label>
                                         </div>
                                         <div class="form-group col-md-8 mb-2">
                                             <select class="form-control" name="allowed_days">
@@ -67,8 +67,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="reset" class="btn btn-warning">Reset</button>
-                                        <button type="submit" class="btn btn-success time_slot" id="submit_btn">Save</button>
+                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                        <button type="submit" class="btn btn-success time_slot" id="submit_btn">Enregistrer</button>
                                     </div>
                                 </div><!-- /.box-body -->
                             </form>
@@ -91,19 +91,19 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="form-group col-md-12 mb-3">
-                                        <label for="title"></i> Title</label>
-                                        <input type="text" class="form-control" name="title" id="title" value="<?= (isset($fetched_data[0]['title']) ? $fetched_data[0]['title'] : '') ?>" placeholder="e.g. Morning 09:00 AM to 12:00 PM">
+                                        <label for="title"></i> Titre</label>
+                                        <input type="text" class="form-control" name="title" id="title" value="<?= (isset($fetched_data[0]['title']) ? $fetched_data[0]['title'] : '') ?>" placeholder="ex. Matin 09:00 à 12:00">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-3">
-                                        <label for="from_time"> From Time</label>
+                                        <label for="from_time"> Heure de début</label>
                                         <input type="time" class="form-control" id="from_time" name="from_time" value="<?= (isset($fetched_data[0]['from_time']) ? $fetched_data[0]['from_time'] : '') ?>">
                                         <small class="form-text text-danger d-none" id="from_time_error">From time is required</small>
                                     </div>
                                     <div class="form-group col-md-6 mb-3">
-                                        <label for="to_time"> To Time</label>
+                                        <label for="to_time"> Heure de fin</label>
                                         <input type="time" class="form-control" id="to_time" name="to_time" value="<?= (isset($fetched_data[0]['to_time']) ? $fetched_data[0]['to_time'] : '') ?>">
                                         <small class="form-text text-danger d-none" id="to_time_error">To time must be greater than from time</small>
                                     </div>
@@ -111,22 +111,22 @@
 
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-3">
-                                        <label for="last_order_time"> Last Order Time</label>
+                                        <label for="last_order_time"> Dernière heure de commande</label>
                                         <input type="time" class="form-control" id="last_order_time" name="last_order_time" value="<?= (isset($fetched_data[0]['last_order_time']) ? $fetched_data[0]['last_order_time'] : '') ?>">
                                         <small class="form-text text-danger d-none" id="last_order_time_error">Must be between from/to time</small>
                                     </div>
                                     <div class="form-group col-md-6 mb-3">
-                                        <label for="status"> Status</label>
+                                        <label for="status"> Statut</label>
                                         <select name="status" id="status" class="form-control">
-                                            <option value="">Select Status</option>
-                                            <option value="1" <?= (isset($fetched_data[0]['status']) && $fetched_data[0]['status'] == 1) ? 'Selected' : '' ?>>Active</option>
-                                            <option value="0" <?= (isset($fetched_data[0]['status']) && $fetched_data[0]['status'] == 0) ? 'Selected' : '' ?>>Deactive</option>
+                                            <option value="">Sélectionner le statut</option>
+                                            <option value="1" <?= (isset($fetched_data[0]['status']) && $fetched_data[0]['status'] == 1) ? 'Selected' : '' ?>>Actif</option>
+                                            <option value="0" <?= (isset($fetched_data[0]['status']) && $fetched_data[0]['status'] == 0) ? 'Selected' : '' ?>>Inactif</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success time_slot" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Time Slot' : 'Save Time Slot' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success time_slot" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Time Slot' : 'Enregistrer Time Slot' ?></button>
                                 </div>
                         </form>
                     </div>
@@ -135,7 +135,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Fetured Section Details</h5>
+                                    <h5 class="modal-title" id="exampleModalLongTitre">Modifier la section en vedette</h5>
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -156,11 +156,11 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="title" data-sortable="false">Title</th>
-                                        <th data-field="from_time" data-sortable="true">From Time</th>
-                                        <th data-field="to_time" data-sortable="true">To Time</th>
-                                        <th data-field="last_order_time" data-sortable="true">Last Order Time</th>
-                                        <th data-field="status" data-sortable="true">Status</th>
+                                        <th data-field="title" data-sortable="false">Titre</th>
+                                        <th data-field="from_time" data-sortable="true">Heure de début</th>
+                                        <th data-field="to_time" data-sortable="true">Heure de fin</th>
+                                        <th data-field="last_order_time" data-sortable="true">Dernière heure de commande</th>
+                                        <th data-field="status" data-sortable="true">Statut</th>
                                         <th data-field="operate" data-sortable="false">Action</th>
                                     </tr>
                                 </thead>

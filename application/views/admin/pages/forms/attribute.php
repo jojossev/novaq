@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Attribute</h4>
+                    <h4>Attribut</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Attribute</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Attribut</li>
                     </ol>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                         <input type="hidden" name="edit_attribute" value="<?= @$fetched_data[0]['id'] ?>">
                                     <?php } ?>
                                     <div class="d-flex flex-wrap form-group gap-2">
-                                        <label for="attribute_set" class="col-sm-3 col-form-label">Select Attribute Set <span class='text-danger text-sm'>*</span></label>
+                                        <label for="attribute_set" class="col-sm-3 col-form-label">Select Attribut Set <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-sm-5">
                                             <select class="form-control" id="attribute_set" name="attribute_set">
                                                 <option value=""> None </option>
@@ -45,23 +45,23 @@
                                         <?php } ?>
                                     </div>
                                     <div class="form-group row mt-2">
-                                        <label for="name" class="col-sm-3 col-form-label">Attribute Name <span class='text-danger text-sm'>*</span></label>
+                                        <label for="name" class="col-sm-3 col-form-label">Attribut Nom <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="<?= @$fetched_data[0]['name'] ?>">
+                                            <input type="text" class="form-control" id="name" placeholder="Nom" name="name" value="<?= @$fetched_data[0]['name'] ?>">
                                         </div>
                                     </div> <!-- attribute value  -->
                                     <div class="form-group row mb-3">
-                                        <label for="name" class="col-sm-3 col-form-label mt-2">Attribute Values <span class='text-danger text-sm'>*</span></label>
+                                        <label for="name" class="col-sm-3 col-form-label mt-2">Attribut Values <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-4 mt-3">
-                                            <button type="button" id="add_attribute_value" class="btn btn-sm btn-primary">Attribute Values</button>
+                                            <button type="button" id="add_attribute_value" class="btn btn-sm btn-primary">Attribut Values</button>
                                         </div>
                                     </div>
                                     <div id="attribute_section"></div>
                                     <br>
 
                                     <div class="form-group">
-                                        <button type="reset" class="btn btn-warning">Reset</button>
-                                        <button type="submit" class="btn btn-success update_attri" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Attribute' : 'Add Attribute' ?></button>
+                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                        <button type="submit" class="btn btn-success update_attri" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Attribut' : 'Ajouter Attribut' ?></button>
                                     </div>
                                 </div>
                             </div>
@@ -74,19 +74,19 @@
                         </div>
                         <div class="card-innr">
                             <div class="card-head">
-                                <h4 class="card-title">Attributes</h4>
+                                <h4 class="card-title">Attributs</h4>
                             </div>
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' id='category_table' data-toggle="table" data-url="<?= base_url('admin/attribute_value/attribute_value_list') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel","csv"]' data-export-options='{
-                                "fileName": "attributes-list",
+                                "fileNom": "attributes-list",
                                 "ignoreColumn": ["operate"] 
                             }' data-query-params="queryParams">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="attributes" data-sortable="false">Attributes</th>
-                                        <th data-field="name" data-sortable="true">Name</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                        <th data-field="attributes" data-sortable="false">Attributs</th>
+                                        <th data-field="name" data-sortable="true">Nom</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="operate" data-sortable="false">Action</th>
                                     </tr>
                                 </thead>
@@ -97,12 +97,12 @@
             </div> <!-- /.row -->
         </div> <!-- /.container-fluid -->
 
-        <!-- Edit Attribute Modal -->
-        <div class="modal fade edit-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="UpdateAttributeModal">
+        <!-- Modifier Attribut Modal -->
+        <div class="modal fade edit-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="UpdateAttributModal">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ss">Edit Attribute here</h5>
+                        <h5 class="modal-title" id="ss">Modifier Attribut here</h5>
                         <button type="button" id="attribute_modal_close" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-0">
@@ -115,12 +115,12 @@
 
 <?php if (empty($fetched_data[0]['id'])) { ?>
 
-    <!-- Attribute Set Add Modal -->
+    <!-- Attribut Set Ajouter Modal -->
     <div class="modal fade" id="attributeSet_add" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add Attribute Set</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitre">Ajouter Attribut Set</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -135,14 +135,14 @@
                                                 <input type="hidden" name="edit_attribute_set" value="<?= @$fetched_data[0]['id'] ?>">
                                             <?php } ?>
                                             <div class="form-group row">
-                                                <label for="name" class="col-sm-2 col-form-label">Name <span class='text-danger text-sm'>*</span></label>
+                                                <label for="name" class="col-sm-2 col-form-label">Nom <span class='text-danger text-sm'>*</span></label>
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="<?= @$fetched_data[0]['name'] ?>">
+                                                    <input type="text" class="form-control" id="name" placeholder="Nom" name="name" value="<?= @$fetched_data[0]['name'] ?>">
                                                 </div>
                                             </div>
                                             <div class="d-flex flex-wrap form-group gap-2 mt-4">
-                                                <button type="reset" class="btn btn-warning">Reset</button>
-                                                <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Attribute Set' : 'Add Attribute Set' ?></button>
+                                                <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                                <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Attribut Set' : 'Ajouter Attribut Set' ?></button>
                                             </div>
                                         </div>
                                     </form>
@@ -155,12 +155,12 @@
         </div>
     </div>
 
-    <!-- Attribute Set List Modal -->
+    <!-- Attribut Set List Modal -->
     <div class="modal fade" id="attributeSet_list" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">List Of Attribute Set</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitre">List Of Attribut Set</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -171,18 +171,18 @@
                                     <div class="card-body content-area">
                                         <div class="card-innr">
                                             <div class="card-head">
-                                                <h4 class="card-title">Attribute Set</h4>
+                                                <h4 class="card-title">Attribut Set</h4>
                                             </div>
                                             <div class="gaps-1-5x"></div>
                                             <table class='table-striped' id='category_table' data-toggle="table" data-url="<?= base_url('admin/attribute_set/attribute_set_list') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel","csv"]' data-export-options='{
-                                                "fileName": "attribute-set-list", 
+                                                "fileNom": "attribute-set-list", 
                                                 "ignoreColumn": ["state"]  
                                             }' data-query-params="queryParams">
                                                 <thead>
                                                     <tr>
                                                         <th data-field="id" data-sortable="true">ID</th>
-                                                        <th data-field="name" data-sortable="false">Name</th>
-                                                        <th data-field="status" data-sortable="false">Status</th>
+                                                        <th data-field="name" data-sortable="false">Nom</th>
+                                                        <th data-field="status" data-sortable="false">Statut</th>
                                                         <th data-field="operate" data-sortable="false">Action</th>
                                                     </tr>
                                                 </thead>
@@ -198,12 +198,12 @@
         </div>
     </div>
 
-    <!-- New Edit Attribute Set Modal -->
-    <div class="modal fade" id="editAttributeSetModal" tabindex="-1" role="dialog" aria-labelledby="editAttributeSetLabel" aria-hidden="true">
+    <!-- New Modifier Attribut Set Modal -->
+    <div class="modal fade" id="editAttributSetModal" tabindex="-1" role="dialog" aria-labelledby="editAttributSetLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editAttributeSetLabel">Edit Attribute Set</h5>
+                    <h5 class="modal-title" id="editAttributSetLabel">Modifier Attribut Set</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">

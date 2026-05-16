@@ -450,7 +450,7 @@ function get_products(
     dataType: 'json',
     beforeSend: function () {
       $('#get_products').html(
-        `<div class="text-center" style='min-height:450px;' ><h4>Please wait.. . loading products..</h4></div>`
+        `<div class="text-center" style='min-height:450px;' ><h4>Chargement des produits...</h4></div>`
       )
     },
     success: function (data) {

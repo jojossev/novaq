@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>System Settings</h4>
+                    <h4>Paramètres système</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">System settings</li>
+                        <li class="breadcrumb-item active">Paramètres système</li>
                     </ol>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                             <div class="col-md-8 ">
                                 <div class="card">
                                     <b class="m-2">
-                                        System Settings
+                                        Paramètres système
                                     </b>
                                     <hr>
                                     <input type="hidden" id="system_configurations" name="system_configurations"
@@ -41,36 +41,36 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="app_name">App Name <span
+                                                <label class="mb-2" for="app_name">Nom de l'application <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <input type="text" class="form-control mb-2" name="app_name"
                                                     value="<?= (isset($settings['app_name'])) ? $settings['app_name'] : '' ?>"
-                                                    placeholder="Name of the App - used in whole system" />
+                                                    placeholder="Nom of the App - used in whole system" />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="support_number">Support Number <span
+                                                <label class="mb-2" for="support_number">Numéro de support <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <input type="number" min="0" class="form-control mb-2"
                                                     name="support_number"
                                                     value="<?= (isset($settings['support_number'])) ? $settings['support_number'] : '' ?>"
-                                                    placeholder="Customer support mobile number - used in whole system" />
+                                                    placeholder="Numéro de mobile du support client - used in whole system" />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="support_email">Support Email <span
+                                                <label class="mb-2" for="support_email">E-mail de support <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <input type="text" class="form-control mb-2" name="support_email"
                                                     value="<?= (isset($settings['support_email'])) ? $settings['support_email'] : '' ?>"
-                                                    placeholder="Customer support email - used in whole system" />
+                                                    placeholder="E-mail du support client - used in whole system" />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="address">Copyright Details <span
+                                                <label for="address">Détails du droit d'auteur <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <textarea name="copyright_details" id="copyright_details"
                                                     class="form-control" cols="10"
-                                                    rows="2"><?= (isset($settings['copyright_details'])) ? output_escaping($settings['copyright_details']) : '' ?></textarea>
+                                                    lignes="2"><?= (isset($settings['copyright_details'])) ? output_escaping($settings['copyright_details']) : '' ?></textarea>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" class="system_timezone" for="system_timezone">System
+                                                <label class="mb-2" class="system_timezone" for="system_timezone">Système
                                                     Timezone <span class='text-danger text-xs'>*</span></label>
                                                 <select id="system_timezone" name="system_timezone" required
                                                     class="form-control col-md-12">
@@ -87,20 +87,20 @@
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="tax_name">Tax Name <small>( This will be
+                                                <label class="mb-2" for="tax_name">Nom de la taxe <small>( This will be
                                                         visible on your invoice )</small></label>
                                                 <input type="text" class="form-control mb-2" name="tax_name"
                                                     value="<?= (isset($settings['tax_name'])) ? $settings['tax_name'] : '' ?>"
-                                                    placeholder='Example : GST Number / VAT / TIN Number' />
+                                                    placeholder='Example : GST N°|Numéro / VAT / TIN N°|Numéro' />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="tax_number">Tax Number </label>
+                                                <label class="mb-2" for="tax_number">Numéro de taxe </label>
                                                 <input type="text" class="form-control mb-2" name="tax_number"
                                                     value="<?= (isset($settings['tax_number'])) ? $settings['tax_number'] : '' ?>"
                                                     placeholder='Example : GSTIN240000120' />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="max_items_cart"> Low stock limit
+                                                <label class="mb-2" for="max_items_cart"> Limite de stock bas
                                                     <small>(Product will be considered as low stock)</small>
                                                 </label>
                                                 <input type="number" min="1" class="form-control mb-2"
@@ -109,14 +109,14 @@
                                                     placeholder='Product low stock limit' />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="address"> Address <span
+                                                <label class="mb-2" for="address"> Adresse <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <textarea type="text" class="form-control mb-2" id="address"
-                                                    placeholder="Address"
+                                                    placeholder="Adresse"
                                                     name="address"><?= isset($settings['address']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['address'])) : ""; ?></textarea>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="admin_store_state"> Admin Store State <span
+                                                <label class="mb-2" for="admin_store_state"> État de la boutique administrateur <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <textarea type="text" class="form-control mb-2" id="admin_store_state"
                                                     placeholder="admin_store_state"
@@ -137,11 +137,11 @@
                                                     placeholder="Longitude" />
                                             </div>
                                             <div class="form-group col-md-6 ml-1">
-                                                <label class="mb-2" for="">Max days to return item</label>
+                                                <label class="mb-2" for="">Nombre max de jours pour retourner un article</label>
                                                 <input type="number" min="0" class="form-control mb-2"
                                                     name="max_product_return_days"
                                                     value="<?= (isset($settings['max_product_return_days'])) ? $settings['max_product_return_days'] : '' ?>"
-                                                    placeholder='Max days to return item' />
+                                                    placeholder='Nombre max de jours pour retourner un article' />
                                             </div>
                                             <div class="form-group col-md-6 ">
                                                 <label class="mb-2" for="minimum_cart_amt">Minimum Cart
@@ -150,16 +150,16 @@
                                                 <input type="number" min="0" class="form-control mb-2"
                                                     name="minimum_cart_amt"
                                                     value="<?= (isset($settings['minimum_cart_amt'])) ? $settings['minimum_cart_amt'] : '' ?>"
-                                                    placeholder='Minimum Cart Amount' />
+                                                    placeholder='Montant minimum du panier' />
                                             </div>
                                             <div class="form-group col-md-6 ml-1">
-                                                <label class="mb-2" for="max_items_cart"> Maximum Items Allowed In Cart
+                                                <label class="mb-2" for="max_items_cart"> Nombre maximum d'articles autorisés dans le panier
                                                     <span class='text-danger text-xs'>*</span>
                                                 </label>
                                                 <input type="number" min="1" class="form-control mb-2"
                                                     name="max_items_cart"
                                                     value="<?= (isset($settings['max_items_cart'])) ? $settings['max_items_cart'] : '' ?>"
-                                                    placeholder='Maximum Items Allowed In Cart' />
+                                                    placeholder='Nombre maximum d'articles autorisés dans le panier' />
                                             </div>
                                             <!-- <div class="form-group col-md-6">
                                                 <label class="mb-2" for="platform_fees">Platform Fees (<?= $currency ?>)
@@ -171,7 +171,7 @@
                                                     placeholder='Platform Fees Amount' />
                                             </div> -->
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="min_cod_order_amount">Minimum COD Order Amount
+                                                <label class="mb-2" for="min_cod_order_amount">Montant minimum de commande en paiement à la livraison
                                                     (<?= $currency ?>)</label>
                                                 <input type="number" min="0" step="0.01" class="form-control mb-2"
                                                     name="min_cod_order_amount"
@@ -180,7 +180,7 @@
                                                 <small class="text-muted">Leave empty for no minimum limit</small>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="max_cod_order_amount">Maximum COD Order Amount
+                                                <label class="mb-2" for="max_cod_order_amount">Montant maximum de commande en paiement à la livraison
                                                     (<?= $currency ?>)</label>
                                                 <input type="number" min="0" step="0.01" class="form-control mb-2"
                                                     name="max_cod_order_amount"
@@ -200,7 +200,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <b>
-                                                Logo & Other Settings
+                                                Logo et autres paramètres
                                             </b>
                                             <hr>
                                             <div class="col-md-12 form-group">
@@ -211,9 +211,9 @@
                                                                 data-input='logo' data-isremovable='0'
                                                                 data-is-multiple-uploads-allowed='0' data-toggle="modal"
                                                                 data-target="#media-upload-modal"
-                                                                value="Upload Photo"><i
+                                                                value="Téléverser une photo"><i
                                                                     class='bx bx-image-add box-icon-height'></i> </a>
-                                                            <br><b>Drop your image here, or</b> browse<br> Larger than
+                                                            <br><b>Drop your image here, or</b> blignese<br> Larger than
                                                             120x120 & smaller than 150x150<br>
                                                         </div>
                                                         <?php
@@ -223,7 +223,7 @@
                                                                 <div
                                                                     class='upload-media-div shadow mx-2 bg-white rounded  text-center grow image'>
                                                                     <img class="img-fluid " src="<?= BASE_URL() . $logo ?>"
-                                                                        alt="Image Not Found">
+                                                                        alt="Image non trouvée">
                                                                 </div>
                                                                 <input type="hidden" name="logo" id='logo'
                                                                     value='<?= $logo ?>'>
@@ -245,9 +245,9 @@
                                                                 data-input='favicon' data-isremovable='0'
                                                                 data-is-multiple-uploads-allowed='0' data-toggle="modal"
                                                                 data-target="#media-upload-modal"
-                                                                value="Upload Photo"><i
+                                                                value="Téléverser une photo"><i
                                                                     class='bx bx-image-add box-icon-height'></i> </a>
-                                                            <br><b>Drop your image here, or</b> browse<br> Larger than
+                                                            <br><b>Drop your image here, or</b> blignese<br> Larger than
                                                             120x120 & smaller than 150x150<br>
                                                         </div>
                                                         <?php
@@ -258,7 +258,7 @@
                                                                     class='upload-media-div shadow mx-2 bg-white rounded  text-center grow image'>
                                                                     <img class="img-fluid "
                                                                         src="<?= BASE_URL() . $favicon ?>"
-                                                                        alt="Image Not Found">
+                                                                        alt="Image non trouvée">
                                                                 </div>
                                                                 <input type="hidden" name="favicon" id='favicon'
                                                                     value='<?= $favicon ?>'>
@@ -274,8 +274,8 @@
                                                 </div>
 
                                                 <div class="form-group col-md-12 d-flex justify-content-between mt-5">
-                                                    <label class="mb-2" for="cart_btn_on_list"> Enable Cart Button on
-                                                        Products List view? </label>
+                                                    <label class="mb-2" for="cart_btn_on_list"> Activer le bouton du panier sur
+                                                        Produits List view? </label>
                                                     <div>
                                                         <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
                                                             href="javascript:void(0)"> <input type="checkbox"
@@ -302,7 +302,7 @@
                                                 </div>
 
                                                 <div class="form-group col-md-12 d-flex justify-content-between mt-4">
-                                                    <label class="mb-2" for="local_pickup"> Enable Local / Store Pickup
+                                                    <label class="mb-2" for="local_pickup"> Enable Local / Store Retrait
                                                         ? </label>
                                                     <?php if (isset($shiprocket_settings['local_shipping_method']) && $shiprocket_settings['local_shipping_method'] == 1) { ?>
                                                         <div class="">
@@ -333,23 +333,23 @@
                             <div class="col-md-12">
                                 <div class="card card-body">
                                     <b class="m-2">
-                                        Custom Charges
+                                        Frais personnalisés
                                     </b>
                                     <hr>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="d-flex justify-content-between align-items-center mb-2">
-                                                    <label class="mb-0">Custom Charges</label>
+                                                    <label class="mb-0">Frais personnalisés</label>
 
                                                     <button type="button" id="add_custom_charge"
                                                         class="btn btn-sm btn-primary">
-                                                        <i class="fa fa-plus"></i> Add
+                                                        <i class="fa fa-plus"></i> Ajouter
                                                     </button>
                                                 </div>
                                                 <a href="javascript:void(0)" class="text-primary fw-bold"
                                                     data-toggle="modal" data-target="#refundableInstructionModal">
-                                                    <i class="fa fa-info-circle"></i> Refundable Charges Instruction
+                                                    <i class="fa fa-info-circle"></i> Instruction sur les frais remboursables
                                                 </a>
                                                 <div class="modal fade" id="refundableInstructionModal" tabindex="-1"
                                                     aria-labelledby="refundableInstructionLabel" aria-hidden="true">
@@ -358,7 +358,7 @@
 
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="refundableInstructionLabel">
-                                                                    Refundable Charges Instruction</h5>
+                                                                    Instruction sur les frais remboursables</h5>
                                                                 <button type="button" class="btn-close"
                                                                     data-dismiss="modal"></button>
                                                             </div>
@@ -370,7 +370,7 @@
                                                                         cancellation or return.</li>
 
                                                                     <li>Choose applicable order types (POS, Doorstep
-                                                                        Delivery, Pickup, Digital Product) carefully.
+                                                                        Livraison, Retrait, Produit numérique) carefully.
                                                                     </li>
 
                                                                     <li>If an order contains both returnable/cancellable
@@ -386,7 +386,7 @@
 
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close</button>
+                                                                    data-dismiss="modal">Fermer</button>
                                                             </div>
 
                                                         </div>
@@ -406,10 +406,10 @@
                                                             id="charge_row_0">
                                                             <div class="row align-items-center g-3">
 
-                                                                <!-- Name -->
+                                                                <!-- Nom -->
                                                                 <div class="col-md-3">
                                                                     <label
-                                                                        class="form-label small fw-bold mb-1">Title</label>
+                                                                        class="form-label small fw-bold mb-1">Titre</label>
                                                                     <input type="text" name="custom_charges[0][name]"
                                                                         class="form-control" value="platform fees" required>
                                                                 </div>
@@ -417,7 +417,7 @@
                                                                 <!-- Amount -->
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class="form-label small fw-bold mb-1">Amount</label>
+                                                                        class="form-label small fw-bold mb-1">Montant</label>
                                                                     <input type="number" name="custom_charges[0][amount]"
                                                                         class="form-control" step="0.01" min="0"
                                                                         value="<?= $settings['platform_fees'] ?>" required>
@@ -451,7 +451,7 @@
                                                                                 name="custom_charges[0][apply_pickup]"
                                                                                 checked>
                                                                             <label
-                                                                                class="form-check-label small">Pickup</label>
+                                                                                class="form-check-label small">Retrait</label>
                                                                         </div>
 
                                                                         <div class="form-check form-switch mb-0">
@@ -498,10 +498,10 @@
                                                                 id="charge_row_<?= $i ?>">
                                                                 <div class="row align-items-center g-3">
 
-                                                                    <!-- Name -->
+                                                                    <!-- Nom -->
                                                                     <div class="col-md-3">
                                                                         <label
-                                                                            class="form-label small fw-bold mb-1">Title</label>
+                                                                            class="form-label small fw-bold mb-1">Titre</label>
                                                                         <input type="text"
                                                                             name="custom_charges[<?= $i ?>][name]"
                                                                             class="form-control"
@@ -512,7 +512,7 @@
                                                                     <!-- Amount -->
                                                                     <div class="col-md-2">
                                                                         <label
-                                                                            class="form-label small fw-bold mb-1">Amount</label>
+                                                                            class="form-label small fw-bold mb-1">Montant</label>
                                                                         <input type="number"
                                                                             name="custom_charges[<?= $i ?>][amount]"
                                                                             class="form-control" step="0.01" min="0"
@@ -549,7 +549,7 @@
                                                                                     name="custom_charges[<?= $i ?>][apply_pickup]"
                                                                                     <?= !empty($charge['apply_pickup']) ? 'checked' : '' ?>>
                                                                                 <label
-                                                                                    class="form-check-label small">Pickup</label>
+                                                                                    class="form-check-label small">Retrait</label>
                                                                             </div>
 
                                                                             <div class="form-check form-switch mb-0">
@@ -590,7 +590,7 @@
                                                 </div>
 
                                                 <small class="text-muted">
-                                                    Add any additional charges (e.g., Packaging, Handling Fee, etc.)
+                                                    Ajouter any additional charges (e.g., Packaging, Handling Fee, etc.)
                                                 </small>
 
 
@@ -607,7 +607,7 @@
                             <div class="col-md-8 ">
                                 <div class="card card-body">
                                     <b class="m-2">
-                                        Delivery Settings
+                                        Livraison Paramètres
                                     </b>
                                     <hr>
                                     <div class="card-body">
@@ -617,7 +617,7 @@
                                                 <div
                                                     class="form-group area_wise_delivery_charge d-flex justify-content-between <?= $class ?>">
                                                     <label class="mb-2" for="area_wise_delivery_charge">Zipcode Wise
-                                                        Delivery Charge <small>( Enable / Disable )</small></label>
+                                                        Livraison Charge <small>( Enable / Disable )</small></label>
                                                     <!-- <input type="checkbox" class="form-check-input"
                                                         id="area_wise_delivery_charge" value="area_wise_delivery_charge"
                                                         role="switch" name="area_wise_delivery_charge"
@@ -634,32 +634,32 @@
                                             </div>
                                             <?php $d_none = isset($settings['area_wise_delivery_charge']) && $settings['area_wise_delivery_charge'] == '1' ? 'd-none' : '' ?>
                                             <div class="form-group col-md-6 delivery_charge <?= $d_none ?>">
-                                                <label class="mb-2" for="delivery_charge">Delivery Charge Amount
+                                                <label class="mb-2" for="delivery_charge">Livraison Charge Amount
                                                     (<?= $currency ?>) <span
                                                         class='text-danger text-xs'>*</span></label>
                                                 <input type="number" min="0" class="form-control mb-2"
                                                     name="delivery_charge"
                                                     value="<?= (isset($settings['delivery_charge'])) ? $settings['delivery_charge'] : '' ?>"
-                                                    placeholder='Delivery Charge on Shopping' />
+                                                    placeholder='Livraison Charge on Shopping' />
                                             </div>
                                             <div class="form-group col-md-6 min_amount <?= $d_none ?>">
-                                                <label class="mb-2" for="min_amount">Minimum Amount for Free Delivery
+                                                <label class="mb-2" for="min_amount">Minimum Amount for Free Livraison
                                                     (<?= $currency ?>) <span class='text-danger text-xs'>*</span>
                                                 </label>
                                                 <input type="number" min="0" class="form-control mb-2" name="min_amount"
                                                     value="<?= (isset($settings['min_amount'])) ? $settings['min_amount'] : '' ?>"
-                                                    placeholder='Minimum Order Amount for Free Delivery' />
+                                                    placeholder='Minimum Order Amount for Free Livraison' />
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label class="mb-2" for="">Delivery Boy Bonus (%)</label>
+                                                <label class="mb-2" for="">Livreur Bonus (%)</label>
                                                 <input type="number" min="0" class="form-control mb-2"
                                                     name="delivery_boy_bonus_percentage"
                                                     value="<?= (isset($settings['delivery_boy_bonus_percentage'])) ? $settings['delivery_boy_bonus_percentage'] : '' ?>"
-                                                    placeholder='Delivery Boy Bonus' />
+                                                    placeholder='Livreur Bonus' />
                                             </div>
                                             <div class="form-group col-md-6 mt-5 d-flex justify-content-between">
-                                                <label class="mb-2" for="is_delivery_boy_otp_setting_on"> Order Delivery
-                                                    OTP System</label>
+                                                <label class="mb-2" for="is_delivery_boy_otp_setting_on"> Order Livraison
+                                                    OTP Système</label>
                                                 <a class=" form-switch  mr-1 mb-1" title="Deactivate"
                                                     href="javascript:void(0)"> <input type="checkbox"
                                                         class="form-check-input " role="switch"
@@ -676,11 +676,11 @@
                                     <div class="row">
                                         <div class="col-md-12 form-group">
                                             <b class="m-2">
-                                                Application Versions
+                                                Versions de l'application
                                             </b>
                                             <hr>
                                             <div class="form-group col-md-12 d-flex justify-content-between mt-3">
-                                                <label class="mb-2" for="is_version_system_on">Version System Status
+                                                <label class="mb-2" for="is_version_system_on">Version Système Statut
                                                 </label>
                                                 <div>
                                                     <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -691,14 +691,14 @@
                                                 </div>
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <labelclass="mb-2" for="current_version">Current Version Of Android APP
+                                                <labelclass="mb-2" for="current_version">Version actuelle de l'application Android
                                                     <span class='text-danger text-xs'>*</span></label>
                                                     <input type="text" class="form-control mb-2" name="current_version"
                                                         value="<?= (isset($settings['current_version'])) ? $settings['current_version'] : '' ?>"
                                                         placeholder='Current For Version For Android APP' />
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <label class="mb-2" for="current_version">Current Version Of IOS APP
+                                                <label class="mb-2" for="current_version">Version actuelle de l'application iOS
                                                     <span class='text-danger text-xs'>*</span></label>
                                                 <input type="text" class="form-control mb-2" name="current_version_ios"
                                                     value="<?= (isset($settings['current_version_ios'])) ? $settings['current_version_ios'] : '' ?>"
@@ -714,15 +714,15 @@
                         <div class="card">
                             <div class="card-header bg-white d-flex align-items-center">
                                 <i class="bx bx-brain me-2"></i>
-                                <strong>AI Settings</strong>
+                                <strong>AI Paramètres</strong>
                             </div>
 
                             <div class="card-body">
                                 <div class="row g-4">
 
-                                    <!-- AI Status -->
+                                    <!-- AI Statut -->
                                     <div class="col-md-6 d-flex align-items-center justify-content-between">
-                                        <label class="fw-semibold mb-0">AI Settings Status</label>
+                                        <label class="fw-semibold mb-0">AI Paramètres Statut</label>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" name="ai_settings_status"
                                                 <?= (!empty($settings['ai_settings_status'])) ? 'checked' : '' ?>>
@@ -735,7 +735,7 @@
 
                                     <!-- AI Provider -->
                                     <div class="col-md-12">
-                                        <label class="fw-semibold mb-2 d-block">Select AI Provider</label>
+                                        <label class="fw-semibold mb-2 d-block">Sélectionner le fournisseur d'IA</label>
                                         <div class="btn-group" role="group">
                                             <input type="radio" class="btn-check" name="ai_provider"
                                                 id="provider_gemini" value="gemini" <?= (!isset($settings['ai_provider']) || $settings['ai_provider'] == 'gemini') ? 'checked' : '' ?>>
@@ -753,20 +753,20 @@
 
                                     </div>
 
-                                    <!-- Gemini API Key -->
+                                    <!-- Clé API Gemini -->
                                     <div class="col-md-12">
-                                        <label class="fw-semibold mb-2">Gemini API Key</label>
+                                        <label class="fw-semibold mb-2">Clé API Gemini</label>
                                         <input type="text" class="form-control" name="gemini_api_key"
                                             value="<?= $settings['gemini_api_key'] ?? '' ?>"
-                                            placeholder="Enter Gemini API Key">
+                                            placeholder="Enter Clé API Gemini">
                                     </div>
 
-                                    <!-- OpenRouter API Key -->
+                                    <!-- Clé API OpenRouter -->
                                     <div class="col-md-12">
-                                        <label class="fw-semibold mb-2">OpenRouter API Key</label>
+                                        <label class="fw-semibold mb-2">Clé API OpenRouter</label>
                                         <input type="text" class="form-control" name="openrouter_api_key"
                                             value="<?= $settings['openrouter_api_key'] ?? '' ?>"
-                                            placeholder="Enter OpenRouter API Key">
+                                            placeholder="Enter Clé API OpenRouter">
                                     </div>
 
                                 </div>
@@ -781,13 +781,13 @@
                             <div class="col-md-12 ">
                                 <div class="card card-body">
                                     <b class="m-2">
-                                        Refer & Earn Settings
+                                        Refer & Earn Paramètres
                                     </b>
                                     <hr>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-md-4 d-flex justify-content-between mt-5">
-                                                <label class="mb-2" for="is_refer_earn_on"> Refer & Earn Status?
+                                                <label class="mb-2" for="is_refer_earn_on"> Refer & Earn Statut?
                                                 </label>
                                                 <div class="">
 
@@ -801,7 +801,7 @@
                                             </div>
 
                                             <div class="form-group col-md-4 mt-3">
-                                                <label class="mb-2" for="refer_earn_method">Refer & Earn Method </label>
+                                                <label class="mb-2" for="refer_earn_method">Méthode de Parrainage et gains </label>
                                                 <select name="refer_earn_method" class="form-control mb-2">
                                                     <option value="">Select</option>
                                                     <option value="percentage" <?= (isset($settings['refer_earn_method']) && $settings['refer_earn_method'] == "percentage") ? "selected" : "" ?>>Percentage</option>
@@ -820,7 +820,7 @@
                                             </div>
 
                                             <div class="form-group col-md-4 mt-4">
-                                                <label class="mb-2" for="refer_earn_bonus">Refer & Earn Bonus
+                                                <label class="mb-2" for="refer_earn_bonus">Bonus de Parrainage
                                                     (<?= $currency ?> OR %)</label>
                                                 <input type="number" min="0" step="0.1" class="form-control mb-2"
                                                     name="refer_earn_bonus"
@@ -834,11 +834,11 @@
                                                 <input type="number" min="0" step="0.1" class="form-control mb-2"
                                                     name="max_refer_earn_amount"
                                                     value="<?= (isset($settings['max_refer_earn_amount'])) ? $settings['max_refer_earn_amount'] : '' ?>"
-                                                    placeholder='Maximum Refer & Earn Bonus Amount' />
+                                                    placeholder='Maximum Bonus de Parrainage Amount' />
                                             </div>
 
                                             <div class="form-group col-md-4 mt-4">
-                                                <label class="mb-2" for="refer_earn_bonus_times">Number of times Bonus
+                                                <label class="mb-2" for="refer_earn_bonus_times">N°|Numéro of times Bonus
                                                     to be given to the customer</label>
                                                 <input type="number" min="0" class="form-control mb-2"
                                                     name="refer_earn_bonus_times"
@@ -859,11 +859,11 @@
                                     <div class="row">
                                         <div class="col-md-12 form-group">
                                             <b class="m-2">
-                                                Country Currency
+                                                Devise du pays
                                             </b>
                                             <hr>
                                             <div class="form-group col-md-12">
-                                                <label class="mb-2" for="supported_locals">Country Currency Code</label>
+                                                <label class="mb-2" for="supported_locals">Devise du pays Code</label>
                                                 <select name="supported_locals" class="form-control mb-2">
                                                     <?php
                                                     $CI = &get_instance();
@@ -896,7 +896,7 @@
                                         <div class="row">
                                             <div class="col-md-12 form-group">
                                                 <b class="m-2">
-                                                    Welcome Wallet Balance </b>
+                                                    Solde du portefeuille de bienvenue </b>
                                                 <hr>
                                                 <div class="form-group col-md-12 d-flex justify-content-between">
                                                     <label class="mb-2" for="welcome_wallet_balance_on"> Enable Welcome
@@ -915,7 +915,7 @@
                                                     <input type="number" name="wallet_balance_amount"
                                                         class="form-control mb-2" min="0"
                                                         value="<?= (isset($settings['wallet_balance_amount']) && $settings['wallet_balance_amount'] != '') ? $settings['wallet_balance_amount'] : '' ?>"
-                                                        placeholder="Amount of Welcome Wallet Balance" />
+                                                        placeholder="Amount of Solde du portefeuille de bienvenue" />
                                                 </div>
                                             </div>
                                         </div>
@@ -930,21 +930,21 @@
                             <div class="col-md-12 ">
                                 <div class="card card-body">
                                     <b class="m-2">
-                                        Maintenance Mode
+                                        Mode maintenance
                                     </b>
-                                    <p class="text-danger"> [ If you enable Maintenance Mode of App then your App will
+                                    <p class="text-danger"> [ If you enable Mode maintenance of App then your App will
                                         be "Under Maintenance" ] </p>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-6 form-group">
                                             <b class="m-2">
-                                                Customer App
+                                                Client App
                                             </b>
                                             <hr>
                                             <div class="form-group col-md-12">
                                                 <div class="d-flex justify-content-between">
                                                     <label class="mb-2" for="is_customer_app_under_maintenance">
-                                                        Customer App</label>
+                                                        Client App</label>
                                                     <div class="">
                                                         <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
                                                             href="javascript:void(0)"> <input type="checkbox"
@@ -954,23 +954,23 @@
                                                     </div>
                                                 </div>
                                                 <label class="mb-2 mt-4" for="message_for_customer_app"> Message for
-                                                    Customer App</label>
+                                                    Client App</label>
                                                 <div class="card-body p-0">
                                                     <textarea type="text" class="form-control mb-2"
                                                         id="message_for_customer_app"
-                                                        placeholder="Message for Customer App"
+                                                        placeholder="Message for Client App"
                                                         name="message_for_customer_app"><?= isset($settings['message_for_customer_app']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['message_for_customer_app'])) : ""; ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 form-group">
                                             <b class="m-2">
-                                                Delivery Boy App</b>
+                                                Livreur App</b>
                                             <hr>
                                             <div class="form-group col-md-12">
                                                 <div class="d-flex justify-content-between">
                                                     <label class="mb-2" for="is_delivery_boy_app_under_maintenance">
-                                                        Delivery boy App</label>
+                                                        Livraison boy App</label>
                                                     <div class="">
 
                                                         <a class="toggle form-switch  mr-1 mb-1" title="Deactivate"
@@ -981,18 +981,18 @@
                                                     </div>
                                                 </div>
                                                 <label class="mb-2 mt-4" for="message_for_delivery_boy_app"> Message for
-                                                    Delivery boy App</label>
+                                                    Livraison boy App</label>
                                                 <div class="card-body p-0">
                                                     <textarea type="text" class="form-control mb-2"
                                                         id="message_for_delivery_boy_app"
-                                                        placeholder="Message for Delivery boy App"
+                                                        placeholder="Message for Livraison boy App"
                                                         name="message_for_delivery_boy_app"><?= isset($settings['message_for_delivery_boy_app']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['message_for_delivery_boy_app'])) : ""; ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 form-group mt-5">
                                             <b class="m-2">
-                                                Admin App</b>
+                                                Application administrateur</b>
                                             <hr>
                                             <div class="form-group col-md-12">
                                                 <div class="d-flex justify-content-between">
@@ -1011,14 +1011,14 @@
                                                     App</label>
                                                 <div class="card-body p-0">
                                                     <textarea type="text" class="form-control mb-2"
-                                                        id="message_for_admin_app" placeholder="Message for Admin App"
+                                                        id="message_for_admin_app" placeholder="Message for Application administrateur"
                                                         name="message_for_admin_app"><?= isset($settings['message_for_admin_app']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['message_for_admin_app'])) : ""; ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 form-group mt-5">
                                             <b class="m-2">
-                                                Web maintenance mode</b>
+                                                Mode maintenance web</b>
                                             <hr>
                                             <div class="form-group col-md-12">
                                                 <div class="d-flex justify-content-between">
@@ -1036,7 +1036,7 @@
                                                     maintenance mode </label>
                                                 <div class="card-body p-0">
                                                     <textarea type="text" class="form-control mb-2" id="message_for_web"
-                                                        placeholder="Message for Web maintenance mode"
+                                                        placeholder="Message for Mode maintenance web"
                                                         name="message_for_web"><?= isset($settings['message_for_web']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['message_for_web'])) : ""; ?></textarea>
                                                 </div>
                                             </div>
@@ -1050,22 +1050,22 @@
                         <div class="row">
                             <div class="col-md-12 ">
                                 <div class="card card-body">
-                                    <h3 class="m-2"> Cron URL for Discount Codes </h3>
+                                    <h3 class="m-2"> URL Cron pour les codes promo </h3>
                                     <hr>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label class="mb-2 col-md-6" for="app_name">Add Promo Code Discount URL
+                                            <label class="mb-2 col-md-6" for="app_name">Ajouter Code promo Discount URL
                                                 <span class='text-danger text-xs'>*</span> <small>(Set this URL at your
                                                     server cron job list for "once a day")</small></label>
                                             <a class="btn btn-xs btn-primary text-white h-fit" data-toggle="modal"
-                                                data-target="#howItWorksModal1" title="How it works">How Promo Code
+                                                data-target="#howItWorksModal1" title="How it works">How Code promo
                                                 Discount works?</a>
                                             <input type="text" class="form-control mb-2" name="app_name"
                                                 value="<?= base_url('admin/cron_job/settle_cashback_discount') ?>"
                                                 disabled />
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="mb-2 col-md-6" for="app_name">Add Flash Sale Active/Deactive
+                                            <label class="mb-2 col-md-6" for="app_name">Ajouter Vente Flash Active/Deactive
                                                 URL <span class='text-danger text-xs'>*</span> <small>(Set this URL at
                                                     your server cron job list for "every five minute")</small></label>
                                             <a class="btn btn-xs btn-primary text-white h-fit" data-toggle="modal"
@@ -1077,10 +1077,10 @@
                                         </div>
                                         <br>
                                         <hr>
-                                        <h4 class="mt-3">Cron Job URL for Remaining Item in cart</h4>
+                                        <h4 class="mt-3">URL de la tâche Cron pour les articles restants dans le panier</h4>
                                         <div class="row">
                                             <div class="form-group col-md-12">
-                                                <label for="app_name">Add Remaining Item in cart URL <span
+                                                <label for="app_name">Ajouter Remaining Item in cart URL <span
                                                         class='text-danger text-xs'>*</span> <small>(Set this URL at
                                                         your server cron job list for "once a day")</small></label>
                                                 <a class="btn btn-xs btn-primary text-white mb-2" data-toggle="modal"
@@ -1101,24 +1101,24 @@
                             <div class="col-md-12 ">
                                 <div class="card card-body">
                                     <b class="m-2">
-                                        Offer Popup</b>
+                                        Offre Popup</b>
                                     <hr>
                                     <div class="row">
                                         <div class="form-group col-md-6 d-flex justify-content-between">
-                                            <label class="mb-2" for="is_offer_popup_on"> Offer popup? </label>
+                                            <label class="mb-2" for="is_offer_popup_on"> Offre popup? </label>
                                             <a class=" form-switch  mr-1 mb-1" title="Deactivate"
                                                 href="javascript:void(0)"> <input type="checkbox"
                                                     class="form-check-input " role="switch" name="is_offer_popup_on"
                                                     <?= (isset($settings['is_offer_popup_on']) && $settings['is_offer_popup_on'] == true) ? 'Checked' : '' ?> /></a>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="mb-2" for="offer_popup_method">Offer popup Method </label>
+                                            <label class="mb-2" for="offer_popup_method">Offre popup Method </label>
                                             <select name="offer_popup_method" class="form-control mb-2">
                                                 <option value="">Select</option>
                                                 <option value="refresh" <?= (isset($settings['offer_popup_method']) && $settings['offer_popup_method'] == "refresh") ? "selected" : "" ?>>
-                                                    Appears upon refresh</option>
+                                                    Apparaît au rafraîchissement</option>
                                                 <option value="session_storage"
-                                                    <?= (isset($settings['offer_popup_method']) && $settings['offer_popup_method'] == "session_storage") ? "selected" : "" ?>>Appears once</option>
+                                                    <?= (isset($settings['offer_popup_method']) && $settings['offer_popup_method'] == "session_storage") ? "selected" : "" ?>>Apparaît une fois</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1130,38 +1130,38 @@
                         <div class="row">
                             <div class="col-md-12 ">
                                 <div class="card card-body">
-                                    <h4>Deeplink Settings For APP</h4>
+                                    <h4>Deeplink Paramètres For APP</h4>
                                     <hr>
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <label for="android_app_store_link">android App Store Link <span
+                                            <label for="android_app_store_link">Lien de l'application Android sur le Store <span
                                                     class='text-danger text-xs'>*</span></label>
                                             <input type="text" class="form-control mt-2" id="android_app_store_link"
                                                 name="android_app_store_link"
                                                 value="<?= (isset($settings['android_app_store_link'])) ? output_escaping($settings['android_app_store_link']) : '' ?>"
-                                                placeholder="android App Store Link" />
+                                                placeholder="Lien de l'application Android sur le Store" />
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="ios_app_store_link">ios App Store Link<span
+                                            <label for="ios_app_store_link">Lien de l'application iOS sur le Store<span
                                                     class='text-danger text-xs'>*</span></label>
                                             <input type="text" class="form-control mt-2" id="ios_app_store_link"
                                                 name="ios_app_store_link"
                                                 value="<?= (isset($settings['ios_app_store_link'])) ? output_escaping($settings['ios_app_store_link']) : '' ?>"
-                                                placeholder="ios App Store Link" />
+                                                placeholder="Lien de l'application iOS sur le Store" />
                                         </div>
                                         <div class="form-group col-md-6 mt-3">
-                                            <label for="scheme">Scheme For APP <span
+                                            <label for="scheme">Schéma pour l'application <span
                                                     class='text-danger text-xs'>*</span></label>
                                             <input type="text" class="form-control mt-2" id="scheme" name="scheme"
                                                 value="<?= (isset($settings['scheme'])) ? output_escaping($settings['scheme']) : '' ?>"
-                                                placeholder="Scheme For APP" />
+                                                placeholder="Schéma pour l'application" />
                                         </div>
                                         <div class="form-group col-md-6 mt-3">
-                                            <label for="host">Host For APP<span
+                                            <label for="host">Hôte pour l'application<span
                                                     class='text-danger text-xs'>*</span></label>
                                             <input type="text" class="form-control mt-2" id="host" name="host"
                                                 value="<?= (isset($settings['host'])) ? output_escaping($settings['host']) : '' ?>"
-                                                placeholder="Host For APP" />
+                                                placeholder="Hôte pour l'application" />
                                         </div>
                                     </div>
                                 </div>
@@ -1173,7 +1173,7 @@
                                     <div class="col-md-12 ">
                                         <div class="card card-body">
                                             <b class="m-2">
-                                                Social login ?</b>
+                                                Connexion sociale ?</b>
                                             <hr>
                                             <div class="row">
                                                 <div class="form-group col-md-12 d-flex justify-content-between">
@@ -1187,7 +1187,7 @@
                                                         href="javascript:void(0)"> <input type="checkbox"
                                                             class="form-check-input " role="switch" name="apple_login"
                                                             <?= (isset($settings['apple_login']) && $settings['apple_login'] == true) ? 'Checked' : '' ?> /></a>
-                                                    <label class="mb-2" for="email_login"> Email </label>
+                                                    <label class="mb-2" for="email_login"> E-mail </label>
                                                     <a class=" form-switch  mr-1 mb-1" title="Deactivate"
                                                         href="javascript:void(0)"> <input type="checkbox"
                                                             class="form-check-input " role="switch" name="email_login"
@@ -1203,11 +1203,11 @@
                                     <div class="col-md-12 ">
                                         <div class="card card-body">
                                             <b class="m-2">
-                                                Share Whatsapp Number</b>
+                                                Partager le numéro WhatsApp</b>
                                             <hr>
                                             <div class="row">
                                                 <div class="form-group col-md-12 d-flex justify-content-between">
-                                                    <label class="mb-2" for="social_login">Whatsapp</label>
+                                                    <label class="mb-2" for="social_login">WhatsApp</label>
                                                     <a class="form-switch mr-1 mb-1" title="Deactivate"
                                                         href="javascript:void(0)"> <input type="checkbox"
                                                             class="form-check-input " id="whatsapp_status" role="switch"
@@ -1218,7 +1218,7 @@
                                                     <input type="number" min="0"
                                                         class="form-control <?= (isset($settings['whatsapp_status']) && $settings['whatsapp_status'] == 1) ? '' : 'collapse' ?>"
                                                         name="whatsapp_number" id="whatapp_number_input"
-                                                        placeholder="Whatsapp Number"
+                                                        placeholder="WhatsApp N°|Numéro"
                                                         value="<?= isset($settings['whatsapp_number']) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $settings['whatsapp_number'])) : ""; ?>">
                                                 </div>
                                             </div>
@@ -1231,7 +1231,7 @@
                                     <div class="col-md-12 ">
                                         <div class="card card-body">
                                             <b class="m-2">
-                                                Product Deliverability</b>
+                                                Livrabilité des produits</b>
                                             <hr>
                                             <?php $shipping_settings = get_settings('shipping_method', true);
                                             ?>
@@ -1248,7 +1248,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="form-group col-md-12 d-flex justify-content-between">
-                                                    <label class="mb-2" for="social_login">City Wise Deliverability
+                                                    <label class="mb-2" for="social_login">Livrabilité par ville
                                                         <?php if ($shipping_settings['shiprocket_shipping_method'] == 1) { ?>
                                                             <small class="text-muted">(Disabled because standard shipping is
                                                                 on from shipping method)</small>
@@ -1266,17 +1266,17 @@
                                                 <div
                                                     class="form-group city-delivery-settings <?= (isset($settings['city_wise_deliverability']) && $settings['city_wise_deliverability'] == true && (!isset($settings['pincode_wise_deliverability']) || $settings['pincode_wise_deliverability'] == false)) ? 'd-block' : 'd-none' ?>;">
                                                     <label for="global_free_delivery_amount_on_city">Global Free
-                                                        Delivery Amount on City<span
+                                                        Livraison Amount on City<span
                                                             class='text-danger text-xs'>*</span></label>
                                                     <input type="number" min="0" class="form-control"
                                                         id="global_free_delivery_amount_on_city"
                                                         name="global_free_delivery_amount_on_city"
                                                         value="<?= (isset($settings['global_free_delivery_amount_on_city'])) ? output_escaping($settings['global_free_delivery_amount_on_city']) : '' ?>"
-                                                        placeholder="Global Free Delivery Amount on City" />
+                                                        placeholder="Global Free Livraison Amount on City" />
                                                 </div>
                                                 <div
                                                     class="form-group city-delivery-settings mt-2 <?= (isset($settings['city_wise_deliverability']) && $settings['city_wise_deliverability'] == true && (!isset($settings['pincode_wise_deliverability']) || $settings['pincode_wise_deliverability'] == false)) ? 'd-block' : 'd-none' ?>;">
-                                                    <label for="global_delivery_charge_on_city">Global Delivery Charge
+                                                    <label for="global_delivery_charge_on_city">Global Livraison Charge
                                                         on City<span class='text-danger text-xs'>*</span></label>
                                                     <input type="number" min="0" class="form-control"
                                                         id="global_delivery_charge_on_city"
@@ -1291,9 +1291,9 @@
                             </div>
                         </div>
                         <div class="form-group mt-4 d-flex justify-content-end gap-2">
-                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="reset" class="btn btn-secondary">Réinitialiser</button>
                             <button type="submit" class="btn btn-primary system_setting_form" id="submit_btn">Update
-                                Settings</button>
+                                Paramètres</button>
                         </div>
                 </form>
                 <!--/.col-md-12-->
@@ -1302,7 +1302,7 @@
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">How Promo Code Discount will get credited?
+                                <h4 class="modal-title" id="myModalLabel">How Code promo Discount will get credited?
                                 </h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -1310,24 +1310,24 @@
                             </div>
                             <div class="modal-body ">
                                 <ol>
-                                    <li>Cron job must be set on your server for Promo Code Discount to be work.</li>
+                                    <li>Cron job must be set on your server for Code promo Discount to be work.</li>
 
                                     <li> Cron job will run every mid night at 12:00 AM. </li>
 
-                                    <li> Formula for Add Promo Code Discount is <b>Sub total (Excluding delivery charge)
+                                    <li> Formula for Ajouter Code promo Discount is <b>Sub total (Excluding delivery charge)
                                             - promo code discount percentage / Amount</b> </li>
 
                                     <li> For example sub total is 1300 and promo code discount is 100 then 1300 - 100 =
                                         1200 so 100 will get credited into Users's wallet </li>
 
                                     <li> If Order status is delivered And Return Policy is expired then only users will
-                                        get Promo Code Discount. </li>
+                                        get Code promo Discount. </li>
 
                                     <li> Ex - 1. Order placed on 10-Sep-22 and return policy days are set to 1 so 10-Sep
                                         + 1 days = 11-Sep Promo code discount will get credited on 11-Sep-22 at 12:00 AM
                                         (Mid night) </li>
 
-                                    <li> If Promo Code Discount doesn't works make sure cron job is set properly and it
+                                    <li> If Code promo Discount doesn't works make sure cron job is set properly and it
                                         is working. If you don't know how to set cron job for once in a day please take
                                         help of server support or do search for it. </li>
                                 </ol>
@@ -1340,14 +1340,14 @@
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">How Flash Sale Works?</h4>
+                                <h4 class="modal-title" id="myModalLabel">How Vente Flash Works?</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body ">
                                 <ol>
-                                    <li>Cron job must be set on your server for Flash Sale to work.</li>
+                                    <li>Cron job must be set on your server for Vente Flash to work.</li>
 
                                     <li>Cron job will run every five minutes to check and activate/deactivate flash
                                         sales based on their scheduled time.</li>
@@ -1358,14 +1358,14 @@
                                     <li>For example, if a flash sale is scheduled from 10:00 AM to 2:00 PM, the cron job
                                         will automatically activate it at 10:00 AM and deactivate it at 2:00 PM.</li>
 
-                                    <li>Products included in an active flash sale will display the discounted price
+                                    <li>Produits included in an active flash sale will display the discounted price
                                         during the flash sale period.</li>
 
                                     <li>Make sure the cron job URL is set to run every 5 minutes:
                                         <code><?= base_url('admin/cron_job/fetch_active_flash_sale') ?></code>
                                     </li>
 
-                                    <li>If Flash Sale doesn't work, make sure cron job is set properly and is running
+                                    <li>If Vente Flash doesn't work, make sure cron job is set properly and is running
                                         every 5 minutes. If you don't know how to set cron job, please take help of
                                         server support or search for it.</li>
                                 </ol>

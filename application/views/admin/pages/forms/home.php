@@ -7,7 +7,7 @@
                     <div class="modal-dialog ">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="user_name">Order Tracking</h5>
+                                <h5 class="modal-title" id="user_name">Suivi de commande</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -23,15 +23,15 @@
                                                 <input type="hidden" name="order_id" id="order_id">
                                                 <div class="card-body pad">
                                                     <div class="form-group mt-2">
-                                                        <label for="courier_agency">Courier Agency</label>
+                                                        <label for="courier_agency">Agence de transport</label>
                                                         <input type="text" class="form-control mt-2"
                                                             name="courier_agency" id="courier_agency"
-                                                            placeholder="Courier Agency" />
+                                                            placeholder="Agence de transport" />
                                                     </div>
                                                     <div class="form-group mt-2">
-                                                        <label for="tracking_id">Tracking Id</label>
+                                                        <label for="tracking_id">ID de suivi</label>
                                                         <input type="text" class="form-control mt-2" name="tracking_id"
-                                                            id="tracking_id" placeholder="Tracking Id" />
+                                                            id="tracking_id" placeholder="ID de suivi" />
                                                     </div>
                                                     <div class="form-group mt-2">
                                                         <label for="url">URL</label>
@@ -39,9 +39,9 @@
                                                             placeholder="URL" />
                                                     </div>
                                                     <div class="form-group mt-2">
-                                                        <button type="reset" class="btn btn-warning">Reset</button>
+                                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                                         <button type="submit" class="btn btn-success"
-                                                            id="submit_btn">Save</button>
+                                                            id="submit_btn">Enregistrer</button>
                                                     </div>
                                                 </div>
                                                 <!-- /.card-body -->
@@ -68,7 +68,7 @@
                                         <i class="ion-icon-cart4-outline display-4"></i>
                                     </div>
                                     <div class="media-body text-end <?= ($current_url == base_url('admin/orders')) ?>">
-                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Orders</span>
+                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Commandes</span>
                                         <h3 class="text-bold-600 m-4 card-h3-style"><?= $order_counter ?></h3>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
 
                                     <div
                                         class="media-body text-end <?= ($current_url == base_url('admin/system-users')) ?>">
-                                        <span class="text-muted text-bold-500 card-h5-style mx-2">New Sign Up</span>
+                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Nouvelles inscriptions</span>
                                         <h3 class="text-bold-600 m-4 card-h3-style"><?= $user_counter ?></h3>
                                     </div>
 
@@ -112,7 +112,7 @@
 
                                     <div
                                         class="media-body text-end <?= ($current_url == base_url('admin/system-users')) ?>">
-                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Delivery Boys</span>
+                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Livreurs</span>
                                         <h3 class="text-bold-600 m-4 card-h3-style"><?= $delivery_boy_counter ?></h3>
                                     </div>
 
@@ -134,7 +134,7 @@
 
                                     <div
                                         class="media-body text-end <?= ($current_url == base_url('admin/system-users')) ?>">
-                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Products</span>
+                                        <span class="text-muted text-bold-500 card-h5-style mx-2">Produits</span>
                                         <h3 class="text-bold-600 m-4 card-h3-style"><?= $product_counter ?></h3>
                                     </div>
 
@@ -146,28 +146,28 @@
 
                 <div class="col-xl-6 col-12" id="ecommerceChartView">
                     <div class="card chart-height mt-3 h-100">
-                        <h3 class="card-title m-3 mb-0">Product Sales</h3>
+                        <h3 class="card-title m-3 mb-0">Ventes de produits</h3>
                         <div class="card-header card-header-transparent py-20 border-0 p-2">
                             <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
                                 <li class="nav-item"><a class="nav-link active" data-toggle="tab"
-                                        href="#scoreLineToDay">Day</a></li>
+                                        href="#scoreLineToJour">Jour</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab"
-                                        href="#scoreLineToWeek">Week</a></li>
+                                        href="#scoreLineToSemaine">Semaine</a></li>
                                 <li class="nav-item"><a class="nav-link" data-toggle="tab"
-                                        href="#scoreLineToMonth">Month</a></li>
+                                        href="#scoreLineToMois">Mois</a></li>
                             </ul>
                         </div>
                         <div class="widget-content tab-content bg-white p-20">
-                            <div class="ct-chart tab-pane active scoreLine" id="scoreLineToDay"></div>
-                            <div class="ct-chart tab-pane scoreLine" id="scoreLineToWeek"></div>
-                            <div class="ct-chart tab-pane scoreLine" id="scoreLineToMonth"></div>
+                            <div class="ct-chart tab-pane active scoreLine" id="scoreLineToJour"></div>
+                            <div class="ct-chart tab-pane scoreLine" id="scoreLineToSemaine"></div>
+                            <div class="ct-chart tab-pane scoreLine" id="scoreLineToMois"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <!-- Category Wise Product's Sales -->
+                    <!-- Catégorie Wise Product's Sales -->
                     <div class="card mt-3 h-100">
-                        <h3 class="card-title m-3">Category Wise Product's Count</h3>
+                        <h3 class="card-title m-3">Produits par catégorie</h3>
                         <div class="card-body">
                             <div id="piechart_3d" class='piechat_height'></div>
                         </div>
@@ -183,7 +183,7 @@
                         <h6><i class="icon fa fa-info"></i> <?= $count_products_availability_status ?> Product(s) sold
                             out!</h6>
                         <a href="<?= base_url('admin/product/?flag=sold') ?>"
-                            class="text-decoration-none small-box-footer">More info <i
+                            class="text-decoration-none small-box-footer">Plus d'infos <i
                                 class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -194,16 +194,16 @@
                             <button type="button" class="btn-close" data-dismiss="alert" aria-hidden="true"></button>
                         </div>
                         <h6><i class="icon fa fa-info"></i> <?= $count_products_low_status ?> Product(s) low in
-                            stock!<small> (Low stock limit
+                            stock!<small> (Limite de stock bas
                                 <?= isset($settings['low_stock_limit']) ? $settings['low_stock_limit'] : '5' ?>)</small>
                         </h6>
                         <a href="<?= base_url('admin/product/?flag=low') ?>"
-                            class="text-decoration-none small-box-footer">More info <i
+                            class="text-decoration-none small-box-footer">Plus d'infos <i
                                 class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <div class="col-12 mt-4">
-                    <h5 class="fw-bold">Order Outlines</h5>
+                    <h5 class="fw-bold">Aperçu des commandes</h5>
                 </div>
                 <div class="col-12">
                     <div class="row">
@@ -212,7 +212,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Pending</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">En attente</span>
 
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['draft'] ?></h3>
                                     </div>
@@ -229,7 +229,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Ready To Pickup</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Prêt à être retiré</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['ready_to_pickup'] ?></h3>
                                     </div>
                                     <div
@@ -246,7 +246,7 @@
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
                                         <span class="fw-semibold d-block mb-1 col-md-12 h7">Return Request
-                                            Pending</span>
+                                            En attente</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['return_request_pending'] ?>
                                         </h3>
                                     </div>
@@ -264,7 +264,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Awaiting</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">En attente</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['awaiting'] ?></h3>
                                     </div>
                                     <div
@@ -281,7 +281,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Received</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Reçu</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['received'] ?></h3>
                                     </div>
                                     <div
@@ -298,7 +298,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Processed</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Traité</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['processed'] ?></h3>
                                     </div>
                                     <div
@@ -317,7 +317,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Shipped</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Expédié</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['shipped'] ?></h3>
                                     </div>
                                     <div
@@ -333,7 +333,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Delivered</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Livré</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['delivered'] ?></h3>
                                     </div>
                                     <div
@@ -349,7 +349,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Cancelled</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Annulé</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['cancelled'] ?></h3>
                                     </div>
                                     <div
@@ -365,7 +365,7 @@
                                 <div
                                     class="card-body  d-flex align-items-center justify-content-between order-outline-card">
                                     <div class="d-flex flex-column">
-                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Returned</span>
+                                        <span class="fw-semibold d-block mb-1 col-md-12 h7">Retourné</span>
                                         <h3 class="card-title mb-2 h8"><?= $status_counts['returned'] ?></h3>
                                     </div>
                                     <div
@@ -380,12 +380,12 @@
                 </div>
                 <div class="col-md-12 main-content mt-3">
                     <div class="card content-area p-4">
-                        <h5 class="col">Order Details</h5>
+                        <h5 class="col">Détails de la commande</h5>
                         <div class="card-innr">
                             <div class="gaps-1-5x row d-flex adjust-items-center">
                                 <div class="row col-md-12 mt-4">
                                     <div class="form-group col-md-3">
-                                        <label>Date range:</label>
+                                        <label>Plage de dates:</label>
                                         <div class="input-group col-md-12">
 
                                             <input type="text" class="form-control float-right" id="datepicker">
@@ -396,26 +396,26 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <div>
-                                            <label>Status</label>
-                                            <select id="order_status" name="order_status" placeholder="Select Status"
+                                            <label>Statut</label>
+                                            <select id="order_status" name="order_status" placeholder="Sélectionner le statut"
                                                 required="" class="form-control">
-                                                <option value="">All Orders</option>
-                                                <option value="awaiting">Awaiting</option>
-                                                <option value="received">Received</option>
-                                                <option value="processed">Processed</option>
-                                                <option value="shipped">Shipped</option>
-                                                <option value="delivered">Delivered</option>
-                                                <option value="cancelled">Cancelled</option>
-                                                <option value="returned">Returned</option>
+                                                <option value="">Toutes les commandes</option>
+                                                <option value="awaiting">En attente</option>
+                                                <option value="received">Reçu</option>
+                                                <option value="processed">Traité</option>
+                                                <option value="shipped">Expédié</option>
+                                                <option value="delivered">Livré</option>
+                                                <option value="cancelled">Annulé</option>
+                                                <option value="returned">Retourné</option>
                                             </select>
                                         </div>
                                     </div>
                                     <!-- Filter By payment  -->
                                     <div class="form-group col-md-2">
                                         <div>
-                                            <label>Delivery Boy</label>
+                                            <label>Livreur</label>
                                             <select id="delivery_boy" class="form-control">
-                                                <option value="">All delivery boy</option>
+                                                <option value="">Tous les livreurs</option>
                                                 <?php
 
                                                 foreach ($delivery_res as $row) {
@@ -429,19 +429,19 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <div>
-                                            <label>Payment Method</label>
+                                            <label>Méthode de paiement</label>
                                             <select id="payment_method" name="payment_method"
-                                                placeholder="Select Payment Method" required="" class="form-control">
-                                                <option value="">All Payment Methods</option>
-                                                <option value="COD">Cash On Delivery</option>
+                                                placeholder="Select Méthode de paiement" required="" class="form-control">
+                                                <option value="">Toutes les méthodes de paiement</option>
+                                                <option value="COD">Paiement à la livraison</option>
                                                 <option value="Paypal">Paypal</option>
                                                 <option value="RazorPay">RazorPay</option>
                                                 <option value="Paystack">Paystack</option>
                                                 <option value="Flutterwave">Flutterwave</option>
                                                 <option value="Paytm">Paytm</option>
                                                 <option value="Stripe">Stripe</option>
-                                                <option value="Phonepe">PhonePe</option>
-                                                <option value="bank_transfer">Direct Bank Transfers</option>
+                                                <option value="Téléphonepe">TéléphonePe</option>
+                                                <option value="bank_transfer">Virement bancaire directs</option>
                                                 <option value="midtrans">Midtrans</option>
                                                 <option value="instamojo">Instamojo</option>
                                                 <option value="my_fatoorah">My Fatoorah</option>
@@ -451,12 +451,12 @@
                                     </div>
                                     <div class="form-group col-md-1">
                                         <div>
-                                            <label>Product Type</label>
-                                            <select id="order_type" name="order_type" placeholder="Select Order Type"
+                                            <label>Type de produit</label>
+                                            <select id="order_type" name="order_type" placeholder="Select Type de commande"
                                                 required="" class="form-control">
-                                                <option value="">All Orders</option>
-                                                <option value="physical_order">Physical Orders</option>
-                                                <option value="digital_order">Digital Orders</option>
+                                                <option value="">Toutes les commandes</option>
+                                                <option value="physical_order">Commandes physiques</option>
+                                                <option value="digital_order">Commandes numériques</option>
                                             </select>
                                         </div>
                                     </div>
@@ -467,7 +467,7 @@
                                             onclick="status_date_wise_search()">Filter</button>
 
                                         <button type="button" class="btn btn-outline-danger btn-sm"
-                                            onclick="reset_filters()">Reset</button>
+                                            onclick="reset_filters()">Réinitialiser</button>
 
                                     </div>
 
@@ -481,50 +481,50 @@
                                 data-sort-order="desc" data-mobile-responsive="true" data-toolbar=""
                                 data-show-export="true" data-maintain-selected="true"
                                 data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "orders-list",
+                        "fileNom": "orders-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="home_query_params">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable='true' data-footer-formatter="totalFormatter">
-                                            Order ID</th>
-                                        <th data-field="user_id" data-sortable='true' data-visible="false">User ID</th>
-                                        <th data-field="qty" data-sortable='true' data-visible="false">Qty</th>
-                                        <th data-field="name" data-sortable='true'>User Name</th>
+                                            ID Commande</th>
+                                        <th data-field="user_id" data-sortable='true' data-visible="false">ID utilisateur</th>
+                                        <th data-field="qty" data-sortable='true' data-visible="false">Qté</th>
+                                        <th data-field="name" data-sortable='true'>Nom utilisateur</th>
                                         <th data-field="mobile" data-sortable='true' data-visible="false">Mobile</th>
                                         <th data-field="items" data-sortable='true' data-visible="false">Items</th>
                                         <th data-field="total" data-sortable='true' data-visible="true">
                                             Total(<?= $curreny ?>)</th>
                                         <th data-field="delivery_charge" data-sortable='true'
                                             data-footer-formatter="delivery_chargeFormatter" data-visible="true">
-                                            D.Charge</th>
+                                            Frais livr.</th>
                                         <th data-field="wallet_balance" data-sortable='true' data-visible="true">Wallet
                                             Used(<?= $curreny ?>)</th>
-                                        <th data-field="promo_code" data-sortable='true' data-visible="false">Promo Code
+                                        <th data-field="promo_code" data-sortable='true' data-visible="false">Code promo
                                         </th>
                                         <th data-field="promo_discount" data-sortable='true' data-visible="true">Promo
                                             disc.(<?= $curreny ?>)</th>
                                         <th data-field="discount" data-sortable='true' data-visible="false">Discount
                                             <?= $curreny ?>(%)
                                         </th>
-                                        <th data-field="final_total" data-sortable='true'>Final Total(<?= $curreny ?>)
+                                        <th data-field="final_total" data-sortable='true'>Total final(<?= $curreny ?>)
                                         </th>
-                                        <th data-field="deliver_by" data-sortable='true' data-visible='false'>Deliver By
+                                        <th data-field="deliver_by" data-sortable='true' data-visible='false'>Livré par
                                         </th>
-                                        <th data-field="payment_method" data-sortable='true' data-visible="true">Payment
+                                        <th data-field="payment_method" data-sortable='true' data-visible="true">Paiement
                                             Method</th>
-                                        <th data-field="address" data-sortable='true'>Address</th>
-                                        <th data-field="notes" data-sortable='false' data-visible='false'>O. Notes</th>
+                                        <th data-field="address" data-sortable='true'>Adresse</th>
+                                        <th data-field="notes" data-sortable='false' data-visible='false'>Notes cmd.</th>
                                         <th data-field="delivery_date" data-sortable='true' data-visible='false'>
-                                            Delivery Date</th>
+                                            Livraison Date</th>
                                         <th data-field="delivery_time" data-sortable='true' data-visible='false'>
-                                            Delivery Time</th>
-                                        <th data-field="status" data-sortable='true' data-visible='false'>Status</th>
+                                            Livraison Time</th>
+                                        <th data-field="status" data-sortable='true' data-visible='false'>Statut</th>
                                         <th data-field="active_status" data-sortable='true' data-visible='true'>Active
-                                            Status</th>
-                                        <th data-field="local_pickup" data-sortable='true' data-visible='true'>Pickup
+                                            Statut</th>
+                                        <th data-field="local_pickup" data-sortable='true' data-visible='true'>Retrait
                                         </th>
-                                        <th data-field="date_added" data-sortable='true'>Order Date</th>
+                                        <th data-field="date_added" data-sortable='true'>Date de commande</th>
                                         <th data-field="operate">Action</th>
                                     </tr>
                                 </thead>

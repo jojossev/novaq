@@ -56,23 +56,16 @@ function delete_msg($from_id, $msg_id)
     }
 
     function get_supporters()
-    {
-        $sql =
-            "SELECT up.user_id as user_permission_id, up.role as user_role, u.id as userto_id, u.username, u.last_online, 
-                m.* FROM users u
-                LEFT JOIN user_permissions up ON up.user_id = u.id
-                LEFT JOIN messages m ON m.to_id = u.id OR m.from_id = u.id
-                WHERE up.user_id = u.id AND up.role = 3
-                GROUP BY u.id";
+{
+$query = $this->db->select('up.user_id as user_permission_id, up.role as user_role, u.id as userto_id, u.username, u.last_online, m.id as message_id, m.from_id, m.to_id, m.message, m.type, m.is_read')
+->from('users u')
+->join('user_permissions up', 'up.user_id = u.id AND up.role = 3', 'inner')
+->join('messages m', 'm.id = (SELECT MAX(m2.id) FROM messages m2 WHERE m2.to_id = u.id OR m2.from_id = u.id)', 'left', false)
+->get();
+return $query->result_array();
+}
 
-        $query = $this->db->query($sql);
-        $supporters =  $query->result_array();
-
-        return $supporters;
-    }
-
-
-    function get_unread_msg_count($type, $from_id, $to_id)
+function get_unread_msg_count($type, $from_id, $to_id)
     {
         $query1 = "SELECT count(id) as total FROM messages WHERE type='$type' AND is_read=1 AND from_id=$from_id AND to_id=$to_id";
         $query1 = $this->db->query($query1);

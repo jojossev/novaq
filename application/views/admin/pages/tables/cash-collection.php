@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Cash Collection</li>
                     </ol>
                 </div>
@@ -29,7 +29,7 @@
                                         <div class="form-group row">
                                             <label for="name" class="col-sm-3 col-form-label">Details <span class='text-danger text-sm'>*</span></label>
                                             <div class="col-sm-9">
-                                                <textarea class="form-control" rows="2" id="details" disabled></textarea>
+                                                <textarea class="form-control" lignes="2" id="details" disabled></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row mt-2">
@@ -47,11 +47,11 @@
                                         <div class="form-group row mt-2">
                                             <label for="name" class="col-sm-3 col-form-label">Message </label>
                                             <div class="col-sm-9">
-                                                <textarea class="form-control" rows="3" name="message" id="message"></textarea>
+                                                <textarea class="form-control" lignes="3" name="message" id="message"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group mt-4">
-                                            <button type="reset" class="btn btn-warning ">Reset</button>
+                                            <button type="reset" class="btn btn-warning ">Réinitialiser</button>
                                             <button type="submit" class="btn btn-success" id="submit_btn"> Collect </button>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-md-6 ">
                             <div class="card content-area p-4">
-                                <div class="card-header bg-white border-0 h5">Select Delivery Boy</div>
+                                <div class="card-header bg-white border-0 h5">Select Livreur</div>
                                 <div class="card-innr">
                                     <div class="gaps-1-5x"></div>
                                     <table class='table table-striped' id="delivery_boys_details" data-toggle="table" data-url="<?= base_url('admin/delivery_boys/view_delivery_boys') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-query-params="transaction_query_params">
@@ -68,7 +68,7 @@
                                             <tr>
                                                 <th data-field="state" data-radio="true"></th>
                                                 <th data-field="id" data-sortable="true">Id</th>
-                                                <th data-field="name" data-sortable="false">User Name</th>
+                                                <th data-field="name" data-sortable="false">Nom utilisateur</th>
                                                 <th data-field="cash_received" data-sortable="false">Cash To Collect(<?= $curreny ?>)</th>
 
                                             </tr>
@@ -86,7 +86,7 @@
                             <div class="gaps-1-5x"></div>
                             <div class="row col-md-12">
                                 <div class="form-group col-md-3">
-                                    <label>Date range:</label>
+                                    <label>Plage de dates:</label>
                                     <div class="input-group col-md-12">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-clock"></i></span>
@@ -100,9 +100,9 @@
                                 <div class="form-group col-md-3">
                                     <div>
                                         <label>Filter By status</label>
-                                        <select id="filter_status" name="filter_status" placeholder="Select Status" class="form-control">
-                                            <option value="">Select Status</option>
-                                            <option value="delivery_boy_cash">Delivery Boy Cash Received</option>
+                                        <select id="filter_status" name="filter_status" placeholder="Sélectionner le statut" class="form-control">
+                                            <option value="">Sélectionner le statut</option>
+                                            <option value="delivery_boy_cash">Livreur Cash Reçu</option>
                                             <option value="delivery_boy_cash_collection">Cash Collected by Admin</option>
                                         </select>
                                     </div>
@@ -110,9 +110,9 @@
                                 <?php if (isset($delivery_boys) && !empty($delivery_boys)) { ?>
                                     <div class="form-group col-md-3">
                                         <div>
-                                            <label>Filter By Delivery boy</label>
+                                            <label>Filter By Livraison boy</label>
                                             <select id="filter_d_boy" name="filter_d_boy" class="form-control">
-                                                <option value="">Select Delivery Boy</option>
+                                                <option value="">Select Livreur</option>
                                                 <?php foreach ($delivery_boys as $row) { ?>
                                                     <option value="<?= $row['user_id'] ?>"><?= $row['username'] ?></option>
                                                 <?php } ?>
@@ -127,17 +127,17 @@
                             <input type="hidden" value="<?= $curreny ?>" name="store_currency">
 
                             <table class='table table-striped' data-toggle="table" data-show-footer="true" data-url="<?= base_url('admin/delivery_boys/get_cash_collection') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "delivery-boy-cash-collection-list",
+                        "fileNom": "delivery-boy-cash-collection-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="cash_collection_query_params">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">Id</th>
-                                        <th data-field="name" data-sortable="false">User Name</th>
+                                        <th data-field="name" data-sortable="false">Nom utilisateur</th>
                                         <th data-field="mobile" data-sortable="false">Mobile</th>
-                                        <th data-field="order_id" data-sortable="false" data-footer-formatter="idFormatter">Order Id</th>
+                                        <th data-field="order_id" data-sortable="false" data-footer-formatter="idFormatter">ID Commande</th>
                                         <th data-field="amount" data-sortable="false" data-footer-formatter="priceFormatter">Amount(<?= $curreny ?>)</th>
-                                        <th data-field="type" data-sortable="false">Status</th>
+                                        <th data-field="type" data-sortable="false">Statut</th>
                                         <th data-field="message" data-sortable="false" data-visible="false">Message</th>
                                         <th data-field="txn_date" data-sortable="false">Date</th>
                                         <!-- <th data-field="action" data-sortable="false">Action</th>x -->

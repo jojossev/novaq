@@ -32,12 +32,12 @@
                         <input type="hidden" id="web_fcm" name="web_fcm" value="">
 
                         <div class="input-group mb-3">
-                            <input type="text" id="number_input" class="form-control" name="identity" maxlength="15" placeholder="<?= ucfirst($identity_column) ?>" <?= (ALLOW_MODIFICATION == 0) ? 'value="9876543210"' : ""; ?> onkeypress="return isValidPhoneChar(event)" required>
+                            <input type="text" id="number_input" class="form-control" name="identity" maxlength="15" placeholder="<?= ucfirst($identity_column) ?>" <?= (ALLOW_MODIFICATION == 0) ? 'value="9876543210"' : ""; ?> onkeypress="return isValidTéléphoneChar(event)" required>
 
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" name="password" placeholder="Password" <?= (ALLOW_MODIFICATION == 0) ? 'value="12345678"' : ""; ?>>
-                            <span class="input-group-text togglePassword" style="cursor: pointer;">
+                            <input type="password" class="form-control" name="password" placeholder="Mot de passe" <?= (ALLOW_MODIFICATION == 0) ? 'value="12345678"' : ""; ?>>
+                            <span class="input-group-text toggleMot de passe" style="cursor: pointer;">
                                 <i class="fa fa-eye"></i>
                             </span>
                         </div>
@@ -47,7 +47,7 @@
                                 <label for="remember"> Remember Me </label>
                             </div>
                             <div class="text-right">
-                                <a href="<?= base_url('/admin/login/forgot_password') ?>" class="forgot-btn"><?= !empty($this->lang->line('forgot_password')) ? $this->lang->line('forgot_password') : 'Forgot Password' ?> ?</a>
+                                <a href="<?= base_url('/admin/login/forgot_password') ?>" class="forgot-btn"><?= !empty($this->lang->line('forgot_password')) ? $this->lang->line('forgot_password') : 'Forgot Mot de passe' ?> ?</a>
                             </div>
                         </div>
 

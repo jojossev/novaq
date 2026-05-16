@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Seller Wallet Transactions </h4>
+                    <h4>Seller Transactions du portefeuille </h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Seller Wallet</li>
                     </ol>
                 </div>
@@ -27,10 +27,10 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="name" data-sortable="false">User Name</th>
+                                        <th data-field="name" data-sortable="false">Nom utilisateur</th>
                                         <th data-field="type" data-sortable="false">Type</th>
-                                        <th data-field="amount" data-sortable="false">Amount</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                        <th data-field="amount" data-sortable="false">Montant</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="message" data-sortable="false">Message</th>
                                         <th data-field="date" data-sortable="false">Date</th>
                                     </tr>

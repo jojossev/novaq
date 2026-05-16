@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Contact Us</li>
                     </ol>
                 </div>
@@ -25,12 +25,12 @@
                             <div class="card-body pad">
                                 <label for="other_images">Contact Us </label>
                                 <div class="mt-2">
-                                    <textarea name="contact_input_description" class="textarea addr_editor" placeholder="Place some text here text_editor">  <?= output_escaping(str_replace('\r\n', '&#13;&#10;', $contact_info)) ?></textarea>
+                                    <textarea name="contact_input_description" class="textarea addr_editor" placeholder="Saisissez votre texte ici text_editor">  <?= output_escaping(str_replace('\r\n', '&#13;&#10;', $contact_info)) ?></textarea>
                                 </div>
                                
                                 <div class="form-group mt-4">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn">Update Contact Info</button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour Contact Info</button>
                                 </div>
                             </div>
                         </form>

@@ -918,7 +918,7 @@ $(document).on('click', '#add_to_favorite_btn', function (e) {
         dataType: 'json',
         beforeSend: function () {
             fav_btn.attr('disabled', true)
-            fav_btn.find('span').text('Please wait')
+            fav_btn.find('span').text('Patientez')
         },
         success: function (result) {
             csrfName = result.csrfName
@@ -4969,7 +4969,7 @@ $('#load-user-ratings').on('click', function (e) {
         url: base_url + 'products/get-rating',
         dataType: 'json',
         beforeSend: function () {
-            $(this).html('Please wait..').attr('disabled', true)
+            $(this).html('Patientez..').attr('disabled', true)
         },
         success: function (result) {
             $(this).html(btn_html).attr('disabled', false)
@@ -5853,7 +5853,7 @@ $(document).on('submit', '#ticket_form', function (e) {
             [csrfName]: csrfHash
         },
         beforeSend: function () {
-            $('.ask_question').prop('disabled', true).text('Please wait...');
+            $('.ask_question').prop('disabled', true).text('Patientez...');
         },
         success: function (result) {
 

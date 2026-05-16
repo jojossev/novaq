@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?= $title ?></title>
-    <!-- Tell the browser to be responsive to screen width -->
+    <!-- Tell the bligneser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?= base_url() . get_settings('favicon') ?>" type="image/gif" sizes="16x16">
     <!-- Bootstrap Switch -->
@@ -83,7 +83,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/admin_old/css/tagify.min.css') ?>">
     <script type="text/javascript">
         base_url = "<?= base_url() ?>";
-        csrfName = "<?= $this->security->get_csrf_token_name() ?>";
+        csrfNom = "<?= $this->security->get_csrf_token_name() ?>";
         csrfHash = "<?= $this->security->get_csrf_hash() ?>";
         form_name = '<?= '#' . $main_page . '_form' ?>';
     </script>

@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-lg-2">
                         <ol class="breadcrumb float-right">
-                            <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                             <li class="breadcrumb-item active">Chat</li>
                         </ol>
                     </div>
@@ -19,7 +19,7 @@
                             <div class="navbar-nav nav__list js-nav__list col-12 col-sm-4 col-lg-3">
                                 <div class="card chat-theme-light chat-scroll chat-min">
                                     <select name="select_user_id[]" id="chat_user" class="search_user w-100" multiple
-                                        data-placeholder=" Type to search and select users" onload="multiselect()">
+                                        data-placeholder=" Tapez pour rechercher et sélectionner des utilisateurs" onload="multiselect()">
                                         <?php
                                         $user_details = fetch_details('users', ['active' => 1]);
 
@@ -34,7 +34,7 @@
                                     </select>
                                     <div id="add-scroll-js">
                                         <div class="card-header chat-card-header d-flex text-color">
-                                            <h4>Personal Chat</h4>
+                                            <h4>Chat personnel</h4>
                                         </div>
                                         <div class="chat-card-body">
                                             <ul class="list-unstyled list-unstyled-border chat-list-unstyled-border">
@@ -126,9 +126,9 @@
                                 <div class="card chat-box chat-theme-light chat-min">
                                     <div class="card-header chat-card-header d-flex justify-content-center align-items-center" style="height: 200px;">
                                         <div class="media-body text-center">
-                                            <div class="mt-0 mb-1 font-weight-bold text-color" id="chat_title">Chat Area</div>
+                                            <div class="mt-0 mb-1 font-weight-bold text-color" id="chat_title">Zone de chat</div>
                                             <div class="text-small font-600-bold" id="chat_online_status">
-                                                Please select a user to start chat.
+                                                Veuillez sélectionner un utilisateur pour démarrer le chat.
                                             </div>
                                         </div>
                                     </div>
@@ -139,10 +139,10 @@
                                 <div class="pricing pricing-highlight chat-min">
                                     <div class="pricing-padding">
                                         <div class="pricing-price">
-                                            <div>You are not in this group</div>
-                                            <div>Join group and access all the details.</div>
+                                            <div>Vous n'êtes pas dans ce groupe</div>
+                                            <div>Rejoignez le groupe pour accéder à tous les détails.</div>
                                         </div>
-                                        <a class="btn btn-success text-white" id="you_not_in_group_btn">Join Group</a>
+                                        <a class="btn btn-success text-white" id="you_not_in_group_btn">Rejoindre le groupe</a>
                                     </div>
                                 </div>
 
@@ -158,7 +158,7 @@
 
                                     </div>
                                     <div id="chat-box-content" class="chat-bg card-body chat-scroll chat-content">
-                                        <div class="chat_loader">Loading...</div>
+                                        <div class="chat_loader">Chargement...</div>
                                     </div>
                                     <div class="card-body d-none" id="chat-dropbox">
                                         <div class="dropzone " id="myAlbum"></div>
@@ -179,7 +179,7 @@
                                                         value="<?= $_SESSION['user_id'] ?>" data-picture="">
                                                     <input type="hidden" id="chat_type" name="chat_type" value="">
                                                     <textarea class="form-control theme-inputs" id="chat-input-textarea"
-                                                        rows="1" name="chat-input-textarea"></textarea>
+                                                        lignes="1" name="chat-input-textarea"></textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
@@ -215,7 +215,7 @@
         </section>    </div>
 </div><!-- /.container-fluid -->
 
-<!-- Connection Status Indicator -->
+<!-- Connection Statut Indicator -->
 <!-- <div id="chat-connection-status" class="chat-connection-status">
     <i class="fas fa-circle"></i> <span id="connection-text">Connected</span>
 </div> -->
@@ -226,7 +226,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Search</h5>
+                <h5 class="modal-title">Rechercher</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -234,7 +234,7 @@
             <div class="modal-body">
                 <form class="modal-part" id="modal-search-msg-part">
                     <div id="modal-title" class="d-none">
-                        <?= !empty($this->lang->line('label_search')) ? $this->lang->line('label_search') : 'Search'; ?>
+                        <?= !empty($this->lang->line('label_search')) ? $this->lang->line('label_search') : 'Rechercher'; ?>
                     </div>
                     <div class="row">
                         <div class="col-md-12 form-group">
@@ -251,7 +251,7 @@
                         <div class="col-md-12 d-none" id="show-search-result">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4><?= !empty($this->lang->line('label_search_result')) ? $this->lang->line('label_search_result') : 'Search Result'; ?>
+                                    <h4><?= !empty($this->lang->line('label_search_result')) ? $this->lang->line('label_search_result') : 'Rechercher Result'; ?>
                                     </h4>
                                 </div>
                                 <div class="card-body">
@@ -287,7 +287,7 @@
 <script defer type="text/babel" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging.js"></script>
 <!-- chat -->
 <script>
-    var csrfName = "<?= $this->security->get_csrf_token_name(); ?>";
+    var csrfNom = "<?= $this->security->get_csrf_token_name(); ?>";
     var csrfHash = "<?= $this->security->get_csrf_hash(); ?>";
     var base_url = "<?= base_url(); ?>";
 </script>

@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Manage Seller</h4>
+                    <h4>Gérer Seller</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Seller</li>
                     </ol>
                 </div>
@@ -23,8 +23,8 @@
                     <div class="card content-area p-4">
                         <div class="card-header border-0">
                             <div class="card-tools row ">
-                                <a href="<?= base_url() . 'admin/sellers/manage-seller' ?>" class="btn btn-block  btn-outline-primary btn-sm">Add Seller </a>
-                                <a href="#" id="create-slug" class="btn btn-block  btn-outline-primary btn-sm">Create Seller Slug </a>
+                                <a href="<?= base_url() . 'admin/sellers/manage-seller' ?>" class="btn btn-block  btn-outline-primary btn-sm">Ajouter Seller </a>
+                                <a href="#" id="create-slug" class="btn btn-block  btn-outline-primary btn-sm">Créer Seller Slug </a>
                             </div>
 
                         </div>
@@ -36,29 +36,29 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
-                                        <th data-field="email" data-sortable="false">Email</th>
-                                        <th data-field="mobile" data-sortable="true">Mobile No</th>
-                                        <th data-field="address" data-sortable="true" data-visible="false">Address</th>
-                                        <th data-field="balance" data-sortable="true">Balance</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
+                                        <th data-field="email" data-sortable="false">E-mail</th>
+                                        <th data-field="mobile" data-sortable="true">N° mobile</th>
+                                        <th data-field="address" data-sortable="true" data-visible="false">Adresse</th>
+                                        <th data-field="balance" data-sortable="true">Solde</th>
                                         <th data-field="rating" data-sortable="true">Rating</th>
-                                        <th data-field="store_name" data-sortable="true">Store Name</th>
+                                        <th data-field="store_name" data-sortable="true">Store Nom</th>
                                         <th data-field="store_url" data-sortable="true">Store URL</th>
                                         <th data-field="store_description" data-sortable="true" data-visible="false">Store Description</th>
-                                        <th data-field="account_number" data-sortable="true" data-visible="false">Account Number</th>
-                                        <th data-field="account_name" data-sortable="true" data-visible="false">Account Name</th>
-                                        <th data-field="bank_code" data-sortable="true" data-visible="false">Bank Code</th>
-                                        <th data-field="bank_name" data-sortable="true" data-visible="false">Bank Name</th>
+                                        <th data-field="account_number" data-sortable="true" data-visible="false">Numéro de compte</th>
+                                        <th data-field="account_name" data-sortable="true" data-visible="false">Nom du compte</th>
+                                        <th data-field="bank_code" data-sortable="true" data-visible="false">Code banque</th>
+                                        <th data-field="bank_name" data-sortable="true" data-visible="false">Nom de la banque</th>
                                         <th data-field="latitude" data-sortable="true" data-visible="false">Latitude</th>
                                         <th data-field="longitude" data-sortable="true" data-visible="false">Longitude</th>
-                                        <th data-field="tax_name" data-sortable="true" data-visible="false">Tax Name</th>
-                                        <th data-field="tax_number" data-sortable="true" data-visible="false">Tax Number</th>
-                                        <th data-field="pan_number" data-sortable="true" data-visible="false">Pan Number</th>
-                                        <th data-field="status" data-sortable="true">Status</th>
-                                        <th data-field="category_ids" data-sortable="true" data-visible="false">Category Ids</th>
+                                        <th data-field="tax_name" data-sortable="true" data-visible="false">Nom de la taxe</th>
+                                        <th data-field="tax_number" data-sortable="true" data-visible="false">Numéro de taxe</th>
+                                        <th data-field="pan_number" data-sortable="true" data-visible="false">Pan N°|Numéro</th>
+                                        <th data-field="status" data-sortable="true">Statut</th>
+                                        <th data-field="category_ids" data-sortable="true" data-visible="false">Catégorie Ids</th>
                                         <th data-field="logo" data-sortable="true">Logo</th>
                                         <th data-field="national_identity_card" data-sortable="true" data-visible="false">National Identity Card</th>
-                                        <th data-field="address_proof" data-sortable="true" data-visible="false">Address Proof</th>
+                                        <th data-field="address_proof" data-sortable="true" data-visible="false">Adresse Proof</th>
                                         <th data-field="permissions" data-sortable="true" data-visible="false">Permissions</th>
                                         <th data-field="date" data-sortable="true" data-visible="false">Date</th>
                                         <th data-field="operate">Actions</th>

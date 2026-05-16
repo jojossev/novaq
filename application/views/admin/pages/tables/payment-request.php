@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-4">
-                    <h4>Payment Requests</h4>
+                    <h4>Demandes de paiement</h4>
                 </div>
                 <div class="col-sm-8 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Payment Requests</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Demandes de paiement</li>
                     </ol>
                 </div>
 
@@ -24,7 +24,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Update Payment Request</h5>
+                                <h5 class="modal-title">Mettre à jour la demande de paiement</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                 </button>
                             </div>
@@ -34,14 +34,14 @@
                                     method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="payment_request_id" id="payment_request_id">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Status <span
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Statut <span
                                                 class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-7 col-sm-6 col-xs-12">
                                             <div id="status" class="btn-group">
                                                 <label class="btn btn-warning pending-label"
                                                     data-toggle-class="btn-primary"
                                                     data-toggle-passive-class="btn-default">
-                                                    <input type="radio" name="status" value="0" class='pending'> Pending
+                                                    <input type="radio" name="status" value="0" class='pending'> En attente
                                                 </label>
                                                 <label class="btn btn-primary approved-label"
                                                     data-toggle-class="btn-primary"
@@ -59,15 +59,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="" for="">Remark</label>
+                                        <label class="" for="">Remarque</label>
                                         <textarea id="update_remarks" name="update_remarks"
                                             class="form-control col-12 "></textarea>
                                     </div>
                                     <input type="hidden" id="id" name="id">
                                     <div class="ln_solid"></div>
                                     <div class="form-group mt-3">
-                                        <button type="reset" class="btn btn-warning">Reset</button>
-                                        <button type="submit" class="btn btn-success" id="submit_btn">Update</button>
+                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                        <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour</button>
                                     </div>
 
                             </div>
@@ -81,27 +81,27 @@
                         <div class="card content-area p-4">
                             <div class="row mb-3">
                                 <div class="col-md-3">
-                                    <label>Status</label>
+                                    <label>Statut</label>
                                     <select id="status_filter" class="form-control">
-                                        <option value="">All</option>
-                                        <option value="0">Pending</option>
-                                        <option value="1">Approved</option>
-                                        <option value="2">Rejected</option>
+                                        <option value="">Tout</option>
+                                        <option value="0">En attente</option>
+                                        <option value="1">Approuvé</option>
+                                        <option value="2">Rejeté</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label>User Type</label>
+                                    <label>Type d'utilisateur</label>
                                     <select id="type_filter" class="form-control">
-                                        <option value="">All</option>
-                                        <option value="customer">Customer</option>
-                                        <option value="delivery_boy">Delivery Boy</option>
+                                        <option value="">Tout</option>
+                                        <option value="customer">Client</option>
+                                        <option value="delivery_boy">Livreur</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-2 align-self-end">
                                     <button type="button" id="reset_filters" class="btn btn-secondary w-100">
-                                        Reset
+                                        Réinitialiser
                                     </button>
                                 </div>
                             </div>
@@ -118,13 +118,13 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="user_name" data-sortable="false">Username</th>
+                                        <th data-field="user_name" data-sortable="false">Nom d'utilisateur</th>
                                         <th data-field="payment_type" data-sortable="true">Type</th>
-                                        <th data-field="payment_address" data-sortable="false">Payment Address</th>
-                                        <th data-field="amount_requested" data-sortable="false">Amount Requested</th>
-                                        <th data-field="remarks" data-sortable="false">Remarks</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
-                                        <th data-field="date_created" data-sortable="false">Date Created</th>
+                                        <th data-field="payment_address" data-sortable="false">Adresse de paiement</th>
+                                        <th data-field="amount_requested" data-sortable="false">Montant demandé</th>
+                                        <th data-field="remarks" data-sortable="false">Remarques</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
+                                        <th data-field="date_created" data-sortable="false">Date de création</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

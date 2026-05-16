@@ -1776,7 +1776,7 @@ $(document).ready(() => {
     if (question === "") {
       Toast.fire({
         icon: "error",
-        title: "Please enter a question.",
+        title: "Veuillez entrer a question.",
       });
       return false; // Stop form submit
     }
@@ -4211,7 +4211,7 @@ $(document).ready(() => {
     if (!email || !password) {
       Toast.fire({
         icon: "error",
-        title: "Please enter both email and password",
+        title: "Veuillez entrer both email and password",
       });
       return;
     }
@@ -6645,7 +6645,7 @@ $(document).ready(() => {
     var email = $("#forgot_password_email").val();
     if (!email) {
       $("#forgot_pass_email_error_box").html(
-        '<span class="text-danger">Please enter your email.</span>',
+        '<span class="text-danger">Veuillez entrer your email.</span>',
       );
       return;
     }

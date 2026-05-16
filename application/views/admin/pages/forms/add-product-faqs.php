@@ -3,12 +3,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Add Product FAQs</h4>
+                    <h4>Ajouter un produit FAQs</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Add Product FAQs</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Ajouter un produit FAQs</li>
                     </ol>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                                 <div class="form-group row">
                                     <label for="attributes" class="col-sm-2 col-form-label">Select Product <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <select name="product_id" class="search_product w-100" data-placeholder=" Type to search and select products">
+                                        <select name="product_id" class="search_product w-100" data-placeholder=" Tapez pour rechercher et sélectionner un produits">
                                             <?php
                                             if (isset($fetched_data[0]['id'])) {
                                                 $product_id = explode(",", $fetched_data[0]['product_ids']);
@@ -52,8 +52,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn">Add Product FAQs</button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn">Ajouter un produit FAQs</button>
                                 </div>
                             </div>
                             

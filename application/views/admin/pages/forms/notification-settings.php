@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Notification Settings</h4>
+                    <h4>Paramètres de notification</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">Notification Settings</li>
+                        <li class="breadcrumb-item active">Paramètres de notification</li>
                     </ol>
                 </div>
             </div>
@@ -26,19 +26,19 @@
                                 <div class="form-group">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="vap_id_Key">Vap Id Key : </label>
-                                            <textarea class="form-control" name="vap_id_Key" placeholder='Vap Id Key ' rows="5"><?= $vap_id_Key ?></textarea>
+                                            <label for="vap_id_Key">Clé Vap ID : </label>
+                                            <textarea class="form-control" name="vap_id_Key" placeholder='Clé Vap ID ' lignes="5"><?= $vap_id_Key ?></textarea>
                                         </div>
 
                                         <div class="form-group mt-3">
-                                            <label for="firebase_project_id">Firebase Project ID : </label>
-                                            <input type="text" id="firebase_project_id" class="form-control" name="firebase_project_id" placeholder='Firebase Project ID' value="<?= (isset($firebase_project_id) && !empty($firebase_project_id)) ? $firebase_project_id : '' ?>">
+                                            <label for="firebase_project_id">ID du projet Firebase : </label>
+                                            <input type="text" id="firebase_project_id" class="form-control" name="firebase_project_id" placeholder='ID du projet Firebase' value="<?= (isset($firebase_project_id) && !empty($firebase_project_id)) ? $firebase_project_id : '' ?>">
                                         </div>
 
                                         <div class="form-group mt-3">
     <label for="service_account_file" class="font-weight-bold">
-        Service Account File 
-        <span class="text-danger fs-12">*(Only JSON File is allowed)</span> :
+        Fichier du compte de service 
+        <span class="text-danger fs-12">*(Seul le fichier JSON est autorisé)</span> :
     </label>
     <input type="file" name="service_account_file" id="service_account_file" class="form-control" accept=".json">
 
@@ -47,15 +47,15 @@
         <span class="<?= (!empty($service_account_file) && $service_account_file !== '[]') ? 'text-primary' : 'text-danger' ?>">
             <?= (!empty($service_account_file) && $service_account_file !== '[]') 
                 ? '<strong>Uploaded File:</strong> ' . htmlspecialchars($service_account_file) 
-                : '<strong>No Service Account File Uploaded</strong>'; ?>
+                : '<strong>No Fichier du compte de service Uploaded</strong>'; ?>
         </span>
     </div>
 </div>
 
 
                                         <div class="form-group mt-4">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
-                                            <button type="submit" class="btn btn-success update_notification" id="submit_btn">Update Notification Settings</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                            <button type="submit" class="btn btn-success update_notification" id="submit_btn">Mettre à jour les paramètres de notification</button>
                                         </div>
                                     </div>
                                 </div>

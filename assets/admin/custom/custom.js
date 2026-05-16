@@ -3463,7 +3463,7 @@ $(document).on('click', '.update_order', function () {
     } else {
         Swal.fire({
             title: 'Processing...',
-            text: 'Please wait while we update the order',
+            text: 'Patientez while we update the order',
             allowOutsideClick: false,
             showConfirmButton: false,
             didOpen: () => {

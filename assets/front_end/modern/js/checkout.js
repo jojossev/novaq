@@ -1016,7 +1016,7 @@ $(document).ready(function () {
       beforeSend: function () {
         $("#checkout_form > .row").show({
           message:
-            "<h2>Please wait... Checking serviceability in your area</h2>",
+            "<h2>Patientez... Checking serviceability in your area</h2>",
           css: {
             border: "none",
             padding: "16px",

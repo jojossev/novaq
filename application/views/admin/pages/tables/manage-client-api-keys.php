@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage Client Api Keys</h4>
+                    <h4>Gérer Client Api Keys</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Client Api Keys</li>
                     </ol>
                 </div>
@@ -32,27 +32,27 @@
                             ?>
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="name" class="control-label col-md-12 mb-2">Client Name <span class='text-danger text-xs'>*</span></label>
+                                    <label for="name" class="control-label col-md-12 mb-2">Client Nom <span class='text-danger text-xs'>*</span></label>
                                     <div class="col-md-6">
                                         <input type="text" class="form-control" name="name" id="name" value="<?= (isset($fetched_data[0]['name']) ? $fetched_data[0]['name'] : '') ?>">
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Client Api ' : 'Add Client Api' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Client Api ' : 'Ajouter Client Api' ?></button>
                                 </div>
                             </div>
 
                         </form>
                         <div class="row mb-4">
                             <div class="form-group px-5 col-md-6">
-                                <label for="name" class="control-label col-md-12">API link for Customer App <small>( Use this link as your API link in App's code )</small></label>
+                                <label for="name" class="control-label col-md-12">API link for Client App <small>( Use this link as your API link in App's code )</small></label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control mt-2" id="api_link" value="<?= base_url('app/v1/api/'); ?>" disabled>
                                 </div>
                             </div>
                             <div class="form-group px-5 col-md-6">
-                                <label for="name" class="control-label col-md-12 ">Delivery boy API Link</label>
+                                <label for="name" class="control-label col-md-12 ">Livraison boy API Link</label>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" value="<?= base_url('delivery_boy/app/v1/api/'); ?>" disabled>
                                 </div>
@@ -77,7 +77,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Client Api</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier Client Api</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body"></div>
@@ -95,9 +95,9 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
                                         <th data-field="secret" data-sortable="false">Secret</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage FAQ</h4>
+                    <h4>Gérer FAQ</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">FAQ</li>
                     </ol>
                 </div>
@@ -22,7 +22,7 @@
                         <div class="modal-content">
                             <form class="form-horizontal form-submit-event" action="<?= base_url('admin/faq/add_faq'); ?>" method="POST" enctype="multipart/form-data">
                                 <div class="modal-header mb-1">
-                                    <h5 class="modal-title">Add FAQ</h5>
+                                    <h5 class="modal-title">Ajouter FAQ</h5>
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                     </button>
@@ -41,15 +41,15 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success" id="add_faq">Add Faq</button>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Fermer</button>
+                                    <button type="submit" class="btn btn-success" id="add_faq">Ajouter Faq</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 text-right mb-2">
-                    <button class="btn btn-success" data-toggle="modal" data-target="#faqModal">Add FAQ</button>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#faqModal">Ajouter FAQ</button>
                 </div>
                 <div class="col-12 mx-auto">
                     <div class="accordion" id="faqExample">
@@ -57,7 +57,7 @@
                             <div class="card shadow-sm border-0 mx-auto my-5">
                                 <div class="card-body text-center p-4">
                                     <h5 class="card-title text-muted">No FAQs Available</h5>
-                                    <p class="card-text text-secondary">Please add a new FAQ using the <strong>"Add FAQ"</strong> button above.</p>
+                                    <p class="card-text text-secondary">Please add a new FAQ using the <strong>"Ajouter FAQ"</strong> button above.</p>
                                 </div>
                             </div>
                         <?php } else { ?>

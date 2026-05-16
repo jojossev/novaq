@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4><?= isset($product_details[0]['id']) ? 'Update' : 'Add' ?> Product</h4>
+                    <h4><?= isset($product_details[0]['id']) ? 'Update' : 'Ajouter' ?> Product</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Produits</li>
                     </ol>
                 </div>
             </div>
@@ -45,11 +45,11 @@
                                                     <div class="form-group col-md-6">
                                                         <input type="hidden" name="csrf_token"
                                                             value="<?= $this->security->get_csrf_hash() ?>" />
-                                                        <label for="pro_input_text" class="col-form-label">Name <span
+                                                        <label for="pro_input_text" class="col-form-label">Nom <span
                                                                 class='text-danger text-sm'>*</span> </label>
                                                         <div class="">
                                                             <input type="text" class="form-control" id="pro_input_text"
-                                                                placeholder="Product Name" name="pro_input_name"
+                                                                placeholder="Nom du produit" name="pro_input_name"
                                                                 value="<?= (isset($product_details[0]['name'])) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $product_details[0]['name'])) : "" ?>">
                                                         </div>
                                                     </div>
@@ -60,7 +60,7 @@
                                                         <div class="">
                                                             <input type="text" class="form-control"
                                                                 id="product_identity"
-                                                                placeholder="Product Identification Number"
+                                                                placeholder="Product Identification N°|Numéro"
                                                                 name="product_identity"
                                                                 value="<?= (isset($product_details[0]['product_identity'])) ? $product_details[0]['product_identity'] : "" ?>">
                                                         </div>
@@ -81,7 +81,7 @@
                                                     </div>
 
                                                     <div class="form-group col-md-6">
-                                                        <label for="brand" class="col-form-label">Brand</label>
+                                                        <label for="brand" class="col-form-label">Marque</label>
                                                         <select class=" col-md-12  form-control brand_list"
                                                             id="brand_list" name="brand">
                                                             <?php
@@ -105,18 +105,18 @@
                                                     <div class="form-group col-md-6 mt-1">
                                                         <?php if (empty($product_details[0]['id'])) { ?>
 
-                                                            <label for="seller" class="col-form-label">Product Type </label>
+                                                            <label for="seller" class="col-form-label">Type de produit </label>
                                                             <select class='form-control' name='product_type_menu'
                                                                 id="product_type_menu">
                                                                 <option value="physical_product"> Physical Product </option>
-                                                                <option value="digital_product"> Digital Product </option>
+                                                                <option value="digital_product"> Produit numérique </option>
                                                             </select>
                                                         <?php } ?>
                                                     </div>
 
                                                     <div class="form-group col-md-12 mt-1">
                                                         <label for="short_description" class="col-form-label">
-                                                            Short Description <span class="text-danger">*</span>
+                                                            Description courte <span class="text-danger">*</span>
 
                                                             <!-- AI Buttons -->
                                                             <button type="button"
@@ -159,8 +159,8 @@
 
                                                         <!-- Textarea -->
                                                         <textarea class="form-control" id="short_description"
-                                                            name="short_description" rows="4"
-                                                            placeholder="Product Short Description"><?= isset($product_details[0]['short_description'])
+                                                            name="short_description" lignes="4"
+                                                            placeholder="Product Description courte"><?= isset($product_details[0]['short_description'])
                                                                 ? output_escaping(str_replace('\r\n', '&#13;&#10;', $product_details[0]['short_description']))
                                                                 : "" ?></textarea>
                                                     </div>
@@ -172,7 +172,7 @@
                                 </div>
                             </div>
                             <div id="attributes_values_json_data" class="d-none">
-                                <select class="select_single" data-placeholder=" Type to search and select attributes">
+                                <select class="select_single" data-placeholder=" Tapez pour rechercher and select attributes">
                                     <option value=""></option>
                                     <?php
                                     foreach ($attributes_refind as $key => $value) {
@@ -194,13 +194,13 @@
                                         <div class="row">
                                             <div class="col-md-12 form-group">
                                                 <b class="m-2">
-                                                    Categories
+                                                    Catégories
                                                 </b>
                                                 <hr>
                                                 <div class="card-body">
                                                     <div class="row">
                                                         <label for="pro_input_tax" class="col-form-label">Select
-                                                            Category <span class='text-danger text-sm'>*</span></label>
+                                                            Catégorie <span class='text-danger text-sm'>*</span></label>
                                                         <div id="product_category_tree_view_html"
                                                             class='category-tree-container'>
                                                         </div>
@@ -225,11 +225,11 @@
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label for="pro_input_tax"
-                                                                class="col-form-label">Tax</label>
+                                                                class="col-form-label">Taxes</label>
                                                             <select class="col-md-12 form-control"
                                                                 name="pro_input_tax[]" multiple id="multiple_tax">
                                                                 <?php if (empty($taxes)) { ?>
-                                                                    <option value="0" selected> No Taxes Are Added </option>
+                                                                    <option value="0" selected> No Taxes Are Ajoutered </option>
                                                                 <?php } else { ?>
                                                                     <?php foreach ($taxes as $row) {
                                                                         $selected = '';
@@ -286,7 +286,7 @@
                                                                     <option value='youtube'
                                                                         <?= (isset($product_details[0]['video_type']) && $product_details[0]['video_type'] == 'youtube') ? 'selected' : ''; ?>>Youtube</option>
                                                                     <option value='vimeo'
-                                                                        <?= (isset($product_details[0]['video_type']) && $product_details[0]['video_type'] == 'vimeo') ? 'selected' : ''; ?>>Video</option>
+                                                                        <?= (isset($product_details[0]['video_type']) && $product_details[0]['video_type'] == 'vimeo') ? 'selected' : ''; ?>>Vidéo</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-md-12 <?= (isset($product_details[0]['video_type']) && ($product_details[0]['video_type'] == 'youtube' || $product_details[0]['video_type'] == 'vimeo')) ? '' : 'd-none'; ?>"
@@ -308,9 +308,9 @@
                                                                         data-is-multiple-uploads-allowed='0'
                                                                         data-toggle="modal"
                                                                         data-target="#media-upload-modal"
-                                                                        value="Upload Photo"><i
+                                                                        value="Téléverser une photo"><i
                                                                             class='bx bx-image-add box-icon-height'></i>
-                                                                    </a> <br><b>Drop your Video here, or</b> browse<br>
+                                                                    </a> <br><b>Drop your Video here, or</b> blignese<br>
                                                                 </div>
                                                                 <?php if (isset($product_details[0]['id']) && !empty($product_details[0]['id']) && isset($product_details[0]['video_type']) && $product_details[0]['video_type'] == 'self_hosted') { ?>
                                                                     <label class="text-danger mt-3">*Only Choose When Update
@@ -357,7 +357,7 @@
                                                 <hr>
                                                 <div class="col-md-12 form-group">
                                                     <div class="col-md-12 form-group mt-4">
-                                                        <b>Main Image</b><span class='text-danger text-xs'>*</span>
+                                                        <b>Image principale</b><span class='text-danger text-xs'>*</span>
                                                         <div class="">
                                                             <div class='col-md-12 border refer_and_earn_border'><a
                                                                     class="" data-input='pro_input_image'
@@ -365,14 +365,14 @@
                                                                     data-is-multiple-uploads-allowed='0'
                                                                     data-toggle="modal"
                                                                     data-target="#media-upload-modal"
-                                                                    value="Upload Photo"><i
+                                                                    value="Téléverser une photo"><i
                                                                         class='bx bx-image-add box-icon-height'></i>
-                                                                </a> <br><b>Drop your image here, or</b> browse<br>
-                                                                Recommended Size : 180 x 180 pixels<br></div>
+                                                                </a> <br><b>Drop your image here, or</b> blignese<br>
+                                                                Taille recommandée : 180 x 180 pixels<br></div>
                                                             <?php
                                                             if (isset($product_details[0]['id']) && !empty($product_details[0]['id'])) {
                                                                 ?>
-                                                                <label class="text-danger mt-3">*Only Choose When Update is
+                                                                <label class="text-danger mt-3">*Only Choose When Mettre à jour is
                                                                     necessary</label>
                                                                 <div class="container-fluid row image-upload-section ">
                                                                     <div
@@ -380,7 +380,7 @@
                                                                         <div class='image-upload-div'><img
                                                                                 class="img-fluid mb-2"
                                                                                 src="<?= BASE_URL() . $product_details[0]['image'] ?>"
-                                                                                alt="Image Not Found"></div>
+                                                                                alt="Image non trouvée"></div>
                                                                         <input type="hidden" name="pro_input_image"
                                                                             value='<?= $product_details[0]['image'] ?>'>
                                                                     </div>
@@ -397,7 +397,7 @@
                                                     </div>
 
                                                     <div class="col-md-12 form-group mt-4">
-                                                        <b>Other Images</b>
+                                                        <b>Autre Images</b>
                                                         <div class="">
                                                             <div class='col-md-12 border refer_and_earn_border'><a
                                                                     class="" data-input='other_images[]'
@@ -405,10 +405,10 @@
                                                                     data-is-multiple-uploads-allowed='1'
                                                                     data-toggle="modal"
                                                                     data-target="#media-upload-modal"
-                                                                    value="Upload Photo"><i
+                                                                    value="Téléverser une photo"><i
                                                                         class='bx bx-image-add box-icon-height'></i>
-                                                                </a> <br><b>Drop your image here, or</b> browse<br>
-                                                                Recommended Size : 180 x 180 pixels<br></div>
+                                                                </a> <br><b>Drop your image here, or</b> blignese<br>
+                                                                Taille recommandée : 180 x 180 pixels<br></div>
                                                             <?php
                                                             if (isset($product_details[0]['id']) && !empty($product_details[0]['id'])) {
                                                                 ?>
@@ -422,7 +422,7 @@
                                                                                 class="col-md-3 col-sm-12 shadow bg-white rounded m-3 p-3 text-center grow">
                                                                                 <div class='image-upload-div'><img
                                                                                         src="<?= BASE_URL() . $row ?>"
-                                                                                        alt="Image Not Found"></div>
+                                                                                        alt="Image non trouvée"></div>
                                                                                 <a href="javascript:void(0)" class="delete-img m-3"
                                                                                     data-id="<?= $product_details[0]['id'] ?>"
                                                                                     data-field="other_images" data-img="<?= $row ?>"
@@ -464,7 +464,7 @@
                                         <div class="col-md-12 ">
                                             <div class="card card-body">
                                                 <b class="m-2">
-                                                    Product Quantity & Other
+                                                    Product Quantité & Autre
                                                 </b>
                                                 <hr>
                                                 <div class="card-body">
@@ -489,13 +489,13 @@
                                                                 class=" total_allowed_quantity <?= (isset($product_details[0]['type']) && $product_details[0]['type'] == 'digital_product') ? 'd-none' : '' ?>">
                                                                 <label for="total_allowed_quantity"
                                                                     class="col-form-label">Total Allowed
-                                                                    Quantity</label>
+                                                                    Quantité</label>
                                                                 <input type="number" min="1"
                                                                     class="col-md-12 form-control"
                                                                     id="total_allowed_quantity"
                                                                     name="total_allowed_quantity"
                                                                     value="<?= (isset($product_details[0]['total_allowed_quantity'])) ? $product_details[0]['total_allowed_quantity'] : '1'; ?>"
-                                                                    placeholder='Total Allowed Quantity'>
+                                                                    placeholder='Total Allowed Quantité'>
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6 ">
@@ -504,12 +504,12 @@
                                                                 class="minimum_order_quantity <?= (isset($product_details[0]['type']) && $product_details[0]['type'] == 'digital_product') ? 'd-none' : '' ?>">
                                                                 <label for="minimum_order_quantity"
                                                                     class="col-form-label">Minimum Order
-                                                                    Quantity</label>
+                                                                    Quantité</label>
                                                                 <input type="number" class="col-md-12 form-control"
                                                                     id="minimum_order_quantity"
                                                                     name="minimum_order_quantity" min="1"
                                                                     value="<?= (isset($product_details[0]['minimum_order_quantity'])) ? $product_details[0]['minimum_order_quantity'] : 1; ?>"
-                                                                    placeholder="Minimum Order Quantity">
+                                                                    placeholder="Minimum Order Quantité">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6 ">
@@ -538,12 +538,12 @@
                                                             <div
                                                                 class="quantity_step_size <?= (isset($product_details[0]['type']) && $product_details[0]['type'] == 'digital_product') ? 'd-none' : '' ?>">
                                                                 <label for="quantity_step_size"
-                                                                    class="col-form-label">Quantity Step Size</label>
+                                                                    class="col-form-label">Quantité Step Size</label>
                                                                 <input type="number" class="col-md-12 form-control"
                                                                     id="quantity_step_size" name="quantity_step_size"
                                                                     min="1"
                                                                     value="<?= (isset($product_details[0]['quantity_step_size'])) ? $product_details[0]['quantity_step_size'] : 1; ?>"
-                                                                    placeholder="Quantity Step Size">
+                                                                    placeholder="Quantité Step Size">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6 ">
@@ -563,7 +563,7 @@
                                                             <div
                                                                 class="bulk_discount_amount <?= (isset($product_details[0]['type']) && $product_details[0]['type'] == 'digital_product') ? 'd-none' : '' ?>">
                                                                 <label for="bulk_discount_amount"
-                                                                    class="col-form-label">Bulk Discount Amount</label>
+                                                                    class="col-form-label">Remise en gros Amount</label>
                                                                 <input type="number" class="col-md-12 form-control"
                                                                     id="bulk_discount_amount"
                                                                     name="bulk_discount_amount" min="0" step="0.01"
@@ -587,7 +587,7 @@
                                         <div class="col-md-12 ">
                                             <div class="card card-body">
                                                 <b class="m-2">
-                                                    Delivery & Shipping Settings
+                                                    Livraison & Livraison Paramètres
                                                 </b>
                                                 <hr>
                                                 <div class="card-body">
@@ -614,7 +614,7 @@
                                                                                     </option>
                                                                                 <?php } else { ?>
                                                                                     <option value="<?= ALL ?>"
-                                                                                        <?= (isset($product_details[0]['deliverable_type']) && $product_details[0]['deliverable_type'] == ALL) ? 'selected' : ''; ?>>All</option>
+                                                                                        <?= (isset($product_details[0]['deliverable_type']) && $product_details[0]['deliverable_type'] == ALL) ? 'selected' : ''; ?>>Tout</option>
                                                                                 <?php } ?>
                                                                                 <option value="<?= INCLUDED ?>"
                                                                                     <?= (isset($product_details[0]['deliverable_type']) && $product_details[0]['deliverable_type'] == INCLUDED) ? 'selected' : ''; ?>>Included</option>
@@ -625,7 +625,7 @@
                                                                         <div class="form-group col-md-6">
                                                                             <label for="deliverable_zipcodes"
                                                                                 class="col-form-label">Deliverable
-                                                                                Zipcodes</label>
+                                                                                Codes postaux</label>
                                                                             <select name="deliverable_zipcodes[]"
                                                                                 class="search_zipcode form-control w-100"
                                                                                 multiple onload="multiselect()"
@@ -660,7 +660,7 @@
                                                                                     </option>
                                                                                 <?php } else { ?>
                                                                                     <option value="<?= ALL ?>"
-                                                                                        <?= (isset($product_details[0]['deliverable_city_type']) && $product_details[0]['deliverable_city_type'] == ALL) ? 'selected' : ''; ?>>All</option>
+                                                                                        <?= (isset($product_details[0]['deliverable_city_type']) && $product_details[0]['deliverable_city_type'] == ALL) ? 'selected' : ''; ?>>Tout</option>
                                                                                 <?php } ?>
                                                                                 <option value="<?= INCLUDED ?>"
                                                                                     <?= (isset($product_details[0]['deliverable_city_type']) && $product_details[0]['deliverable_city_type'] == INCLUDED) ? 'selected' : ''; ?>>Included</option>
@@ -769,11 +769,11 @@
                                                                         class='text-danger text-sm'>*</span></label>
                                                                 <select class='form-control' name="cancelable_till">
                                                                     <option value='received'
-                                                                        <?= (isset($product_details[0]['cancelable_till']) && $product_details[0]['cancelable_till'] == 'received') ? 'selected' : '' ?>>Received</option>
+                                                                        <?= (isset($product_details[0]['cancelable_till']) && $product_details[0]['cancelable_till'] == 'received') ? 'selected' : '' ?>>Reçu</option>
                                                                     <option value='processed'
-                                                                        <?= (isset($product_details[0]['cancelable_till']) && $product_details[0]['cancelable_till'] == 'processed') ? 'selected' : '' ?>>Processed</option>
+                                                                        <?= (isset($product_details[0]['cancelable_till']) && $product_details[0]['cancelable_till'] == 'processed') ? 'selected' : '' ?>>Traité</option>
                                                                     <option value='shipped'
-                                                                        <?= (isset($product_details[0]['cancelable_till']) && $product_details[0]['cancelable_till'] == 'shipped') ? 'selected' : '' ?>>Shipped</option>
+                                                                        <?= (isset($product_details[0]['cancelable_till']) && $product_details[0]['cancelable_till'] == 'shipped') ? 'selected' : '' ?>>Expédié</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -792,13 +792,13 @@
                                     <div class="row">
                                         <div class="col-md-12 ">
                                             <div class="card card-body">
-                                                Product Additional Info
+                                                Product Ajouteritional Info
                                                 <hr>
                                                 <div class="row">
                                                     <div class="form-group col-md-12">
                                                         <?php
                                                         if (isset($product_details)) {
-                                                            $HideStatus = ((isset($product_details[0]['id']) && $product_details[0]['stock_type'] == NULL) || $product_details[0]['type'] == "digital_product") ? 'collapse' : '';
+                                                            $HideStatut = ((isset($product_details[0]['id']) && $product_details[0]['stock_type'] == NULL) || $product_details[0]['type'] == "digital_product") ? 'collapse' : '';
                                                             ?>
                                                             <div
                                                                 class="col-12 row additional-info existing-additional-settings">
@@ -815,7 +815,7 @@
                                                                                 id="tab-for-attributes" data-toggle="tab"
                                                                                 href="#product-attributes" role="tab"
                                                                                 aria-controls="product-attributes"
-                                                                                aria-selected="false">Attributes</a>
+                                                                                aria-selected="false">Attributs</a>
                                                                             <a class="nav-item nav-link <?= ($product_details[0]['type'] == 'simple_product') ? 'disabled d-none' : 'edit-variants'; ?>""  id="
                                                                                 tab-for-variations" data-toggle="tab"
                                                                                 href="#product-variants" role="tab"
@@ -847,9 +847,9 @@
                                                                                     <?= isset($product_details[0]['stock_type']) && !empty($product_details[0]['stock_type']) && $product_details[0]['type'] == 'variable_product' ? 'value="0"' : '' ?>>
                                                                                 <select name="type" id="product-type"
                                                                                     class="form-control"
-                                                                                    data-placeholder=" Type to search and select type"
+                                                                                    data-placeholder=" Tapez pour rechercher and select type"
                                                                                     <?= isset($product_details[0]['id']) ? 'disabled' : '' ?>>
-                                                                                    <option value=" ">Select Type</option>
+                                                                                    <option value=" ">Sélectionner le type</option>
                                                                                     <option value="simple_product"
                                                                                         <?= ($product_details[0]['type'] == "simple_product") ? 'selected' : '' ?>>Simple Product
                                                                                     </option>
@@ -857,7 +857,7 @@
                                                                                         <?= ($product_details[0]['type'] == "variable_product") ? 'selected' : '' ?>>Variable
                                                                                         Product</option>
                                                                                     <option value="digital_product"
-                                                                                        <?= ($product_details[0]['type'] == "digital_product") ? 'selected' : '' ?>>Digital Product
+                                                                                        <?= ($product_details[0]['type'] == "digital_product") ? 'selected' : '' ?>>Produit numérique
                                                                                     </option>
                                                                                 </select>
                                                                             </div>
@@ -869,7 +869,7 @@
                                                                                 <div id="general_price_section">
                                                                                     <div class="form-group">
                                                                                         <label for="type"
-                                                                                            class="col-md-2 mt-2">Price: <span
+                                                                                            class="col-md-2 mt-2">Prix: <span
                                                                                                 class='text-danger text-xs'>*</span></label>
                                                                                         <div class="col-md-12 mt-2">
                                                                                             <input id="" type="number"
@@ -881,7 +881,7 @@
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <label for="type"
-                                                                                            class="col-md-2 mt-2">Special Price:
+                                                                                            class="col-md-2 mt-2">Special Prix:
                                                                                             <span
                                                                                                 class='text-danger text-xs'>*</span></label>
                                                                                         <div class="col-md-12 mt-2">
@@ -955,7 +955,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    class="form-group simple-product-level-stock-management <?= $HideStatus ?>">
+                                                                                    class="form-group simple-product-level-stock-management <?= $HideStatut ?>">
                                                                                     <div class="col col-xs-12">
                                                                                         <label class="control-label mt-2">SKU
                                                                                             :</label>
@@ -971,7 +971,7 @@
                                                                                             class="col form-control stock-simple-mustfill-field mt-2"
                                                                                             <?= (isset($product_details[0]['id']) && $product_details[0]['stock_type'] != NULL) ? ' value="' . $product_details[0]['stock'] . '" ' : '' ?>>
                                                                                         <label class="control-label mt-2">Stock
-                                                                                            Status :</label>
+                                                                                            Statut :</label>
                                                                                         <select type="text"
                                                                                             class="col form-control stock-simple-mustfill-field mt-2"
                                                                                             id="simple_product_stock_status">
@@ -1016,7 +1016,7 @@
                                                                                                         <?= (isset($product_details[0]['download_type']) && $product_details[0]['download_type'] == 'self_hosted') ? 'selected' : '' ?>>Self
                                                                                                         Hosted</option>
                                                                                                     <option value='add_link'
-                                                                                                        <?= (isset($product_details[0]['download_type']) && $product_details[0]['download_type'] == 'add_link') ? 'selected' : '' ?>>Add
+                                                                                                        <?= (isset($product_details[0]['download_type']) && $product_details[0]['download_type'] == 'add_link') ? 'selected' : '' ?>>Ajouter
                                                                                                         Link</option>
                                                                                                 </select>
                                                                                             </div>
@@ -1046,13 +1046,13 @@
                                                                                                         data-is-multiple-uploads-allowed='0'
                                                                                                         data-toggle="modal"
                                                                                                         data-target="#media-upload-modal"
-                                                                                                        value="Upload Photo"><i
+                                                                                                        value="Téléverser une photo"><i
                                                                                                             class='fa fa-upload'></i>
                                                                                                         Upload</a></div>
                                                                                                 <?php if (isset($product_details[0]['id']) && !empty($product_details[0]['id']) && isset($product_details[0]['download_type']) && $product_details[0]['download_type'] == 'self_hosted') { ?>
                                                                                                     <label
                                                                                                         class="text-danger mt-3">*Only
-                                                                                                        Choose When Update is
+                                                                                                        Choose When Mettre à jour is
                                                                                                         necessary</label>
                                                                                                     <div
                                                                                                         class="container-fluid row image-upload-section">
@@ -1062,7 +1062,7 @@
                                                                                                                 class='image-upload-div'>
                                                                                                                 <img class="img-fluid mb-2"
                                                                                                                     src="<?= base_url('assets/admin/images/archive-file.png') ?>"
-                                                                                                                    alt="Image Not Found">
+                                                                                                                    alt="Image non trouvée">
                                                                                                             </div>
                                                                                                             <input type="hidden"
                                                                                                                 name="pro_input_zip"
@@ -1085,8 +1085,8 @@
                                                                                     <div class="col mt-4">
                                                                                         <a href="javascript:void(0);"
                                                                                             class="btn btn-primary save-settings">Save
-                                                                                            Settings</a>
-                                                                                        <!-- <a href="javascript:void(0);" class="btn btn-warning reset-settings">Reset Settings</a> -->
+                                                                                            Paramètres</a>
+                                                                                        <!-- <a href="javascript:void(0);" class="btn btn-warning reset-settings">Réinitialiser Paramètres</a> -->
                                                                                     </div>
                                                                                 </div>
                                                                             <?php } else { ?>
@@ -1109,7 +1109,7 @@
                                                                                         <div class="col-md-12">
                                                                                             <select id="stock_level_type"
                                                                                                 class="form-control variant-stock-level-type"
-                                                                                                data-placeholder=" Type to search and select type">
+                                                                                                data-placeholder=" Tapez pour rechercher and select type">
                                                                                                 <option value=" ">Select Stock
                                                                                                     Type</option>
                                                                                                 <option value="product_level"
@@ -1146,7 +1146,7 @@
                                                                                                 <div class="col col-xs-12">
                                                                                                     <label
                                                                                                         class="control-label mt-2">Stock
-                                                                                                        Status :</label>
+                                                                                                        Statut :</label>
                                                                                                     <select type="text"
                                                                                                         id="stock_status_variant_type"
                                                                                                         name="variant_status"
@@ -1165,8 +1165,8 @@
                                                                                         <div class="col mt-2">
                                                                                             <a href="javascript:void(0);"
                                                                                                 class="btn btn-primary save-variant-general-settings">Save
-                                                                                                Settings</a>
-                                                                                            <!-- <a href="javascript:void(0);" class="btn btn-warning reset-settings">Reset Settings</a> -->
+                                                                                                Paramètres</a>
+                                                                                            <!-- <a href="javascript:void(0);" class="btn btn-warning reset-settings">Réinitialiser Paramètres</a> -->
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -1193,18 +1193,18 @@
                                                                             <a href="javascript:void(0);"
                                                                                 id="save_attributes"
                                                                                 class="btn btn-block btn-outline-primary float-right m-2  d-none">Save
-                                                                                Attributes</a>
+                                                                                Attributs</a>
                                                                             <a href="javascript:void(0);"
                                                                                 id="add_attributes"
-                                                                                class="btn btn-block btn-outline-primary float-right m-2">Add
-                                                                                Attributes</a>
+                                                                                class="btn btn-block btn-outline-primary float-right m-2">Ajouter
+                                                                                Attributs</a>
                                                                         </div>
                                                                         <div class="clearfix"></div>
                                                                         <div id="attributes_process">
                                                                             <div
                                                                                 class="form-group text-center row my-auto p-2 border rounded bg-gray-light col-md-12 no-attributes-added">
                                                                                 <div class="col-md-12 text-center">No
-                                                                                    Product Attribures Are Added ! </div>
+                                                                                    Product Attribures Are Ajoutered ! </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1214,14 +1214,14 @@
                                                                         <div class="col-md-12">
                                                                             <a href="javascript:void(0);"
                                                                                 id="reset_variants"
-                                                                                class="btn btn-block btn-outline-primary col-md-2 float-right m-2 btn-sm collapse">Reset
+                                                                                class="btn btn-block btn-outline-primary col-md-2 float-right m-2 btn-sm collapse">Réinitialiser
                                                                                 Variants</a>
                                                                         </div>
                                                                         <div class="clearfix"></div>
                                                                         <div
                                                                             class="form-group text-center row my-auto p-2 border rounded bg-gray-light col-md-12 no-variants-added">
                                                                             <div class="col-md-12 text-center"> No Product
-                                                                                Variations Are Added ! </div>
+                                                                                Variations Are Ajoutered ! </div>
                                                                         </div>
                                                                         <div id="variants_process" class="ui-sortable">
 
@@ -1254,7 +1254,7 @@
                                                                                         href="#product-attributes"
                                                                                         role="tab"
                                                                                         aria-controls="product-attributes"
-                                                                                        aria-selected="false">Attributes</a>
+                                                                                        aria-selected="false">Attributs</a>
                                                                                     <a class="nav-item nav-link disabled product-variants d-none w-auto"
                                                                                         id="tab-for-variations"
                                                                                         data-toggle="tab"
@@ -1285,7 +1285,7 @@
                                                                                             <select name="type"
                                                                                                 id="product-type"
                                                                                                 class="form-control product-type"
-                                                                                                data-placeholder=" Type to search and select type">
+                                                                                                data-placeholder=" Tapez pour rechercher and select type">
                                                                                                 <option value=" ">Select
                                                                                                     Type</option>
                                                                                                 <option
@@ -1304,7 +1304,7 @@
                                                                                             class="collapse">
                                                                                             <div class="form-group">
                                                                                                 <label for="type"
-                                                                                                    class="col-md-2 mt-2">Price:<span
+                                                                                                    class="col-md-2 mt-2">Prix:<span
                                                                                                         class='text-danger text-xs'>*</span></label>
                                                                                                 <div class="col-md-12 mt-2">
                                                                                                     <input id="base_price"
@@ -1317,7 +1317,7 @@
                                                                                             <div class="form-group">
                                                                                                 <label for="type"
                                                                                                     class="col-md-2 mt-2">Special
-                                                                                                    Price:<span
+                                                                                                    Prix:<span
                                                                                                         class='text-danger text-xs'>*</span></label>
                                                                                                 <div class="col-md-12 mt-2">
                                                                                                     <input
@@ -1422,7 +1422,7 @@
                                                                                             <div class="col col-xs-12">
                                                                                                 <label
                                                                                                     class="control-label">Stock
-                                                                                                    Status :</label>
+                                                                                                    Statut :</label>
                                                                                                 <select type="text"
                                                                                                     class="col form-control stock-simple-mustfill-field"
                                                                                                     id="simple_product_stock_status">
@@ -1438,7 +1438,7 @@
                                                                                             <div class="col mt-2"> <a
                                                                                                     href="javascript:void(0);"
                                                                                                     class="btn btn-primary save-settings">Save
-                                                                                                    Settings</a>
+                                                                                                    Paramètres</a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -1464,7 +1464,7 @@
                                                                                                 <select
                                                                                                     id="stock_level_type"
                                                                                                     class="form-control variant-stock-level-type"
-                                                                                                    data-placeholder=" Type to search and select type">
+                                                                                                    data-placeholder=" Tapez pour rechercher and select type">
                                                                                                     <option value=" ">Select
                                                                                                         Stock Type</option>
                                                                                                     <option
@@ -1505,7 +1505,7 @@
                                                                                                         class="col col-xs-12">
                                                                                                         <label
                                                                                                             class="control-label">Stock
-                                                                                                            Status :</label>
+                                                                                                            Statut :</label>
                                                                                                         <select type="text"
                                                                                                             id="stock_status_variant_type"
                                                                                                             name="variant_status"
@@ -1527,7 +1527,7 @@
                                                                                             <div class="col mt-2"> <a
                                                                                                     href="javascript:void(0);"
                                                                                                     class="btn btn-primary save-variant-general-settings">Save
-                                                                                                    Settings</a>
+                                                                                                    Paramètres</a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -1565,7 +1565,7 @@
                                                                                                         value='self_hosted'>
                                                                                                         Self Hosted</option>
                                                                                                     <option
-                                                                                                        value='add_link'>Add
+                                                                                                        value='add_link'>Ajouter
                                                                                                         Link</option>
                                                                                                 </select>
                                                                                             </div>
@@ -1595,7 +1595,7 @@
                                                                                                         data-is-multiple-uploads-allowed='0'
                                                                                                         data-toggle="modal"
                                                                                                         data-target="#media-upload-modal"
-                                                                                                        value="Upload Photo"><i
+                                                                                                        value="Téléverser une photo"><i
                                                                                                             class='fa fa-upload'></i>
                                                                                                         Upload</a></div>
                                                                                                 <div
@@ -1612,7 +1612,7 @@
                                                                                                 <div class="col mt-2"> <a
                                                                                                         href="javascript:void(0);"
                                                                                                         class="btn btn-primary save-digital-product-settings">Save
-                                                                                                        Settings</a></div>
+                                                                                                        Paramètres</a></div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -1640,11 +1640,11 @@
                                                                                         <a href="javascript:void(0);"
                                                                                             id="save_attributes"
                                                                                             class="btn btn-block btn-outline-primary float-right m-2 d-none">Save
-                                                                                            Attributes</a>
+                                                                                            Attributs</a>
                                                                                         <a href="javascript:void(0);"
                                                                                             id="add_attributes"
-                                                                                            class="btn btn-block btn-outline-primary float-right m-2">Add
-                                                                                            Attributes</a>
+                                                                                            class="btn btn-block btn-outline-primary float-right m-2">Ajouter
+                                                                                            Attributs</a>
                                                                                     </div>
                                                                                     <div class="clearfix"></div>
                                                                                     <div id="attributes_process">
@@ -1653,7 +1653,7 @@
                                                                                             <div
                                                                                                 class="col-md-12 text-center">
                                                                                                 No Product Attribures Are
-                                                                                                Added !</div>
+                                                                                                Ajoutered !</div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -1663,14 +1663,14 @@
                                                                                     <div class="col-md-12">
                                                                                         <a href="javascript:void(0);"
                                                                                             id="reset_variants"
-                                                                                            class="btn btn-block btn-outline-primary float-right m-2 btn-sm">Reset
+                                                                                            class="btn btn-block btn-outline-primary float-right m-2 btn-sm">Réinitialiser
                                                                                             Variants</a>
                                                                                     </div>
                                                                                     <div class="clearfix"></div>
                                                                                     <div
                                                                                         class="form-group text-center row my-auto p-2 border rounded bg-gray-light col-md-12 no-variants-added">
                                                                                         <div class="col-md-12 text-center">
-                                                                                            No Product Variations Are Added
+                                                                                            No Product Variations Are Ajoutered
                                                                                             !</div>
                                                                                     </div>
                                                                                     <div id="variants_process"
@@ -1748,7 +1748,7 @@
                                                                 <textarea name="pro_input_description"
                                                                     id="pro_input_description"
                                                                     class="textarea addr_editor"
-                                                                    placeholder="Place some text here"><?= (isset($product_details[0]['description']) && !empty($product_details[0]['description'])) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $product_details[0]['description'])) : ''; ?></textarea>
+                                                                    placeholder="Saisissez votre texte ici"><?= (isset($product_details[0]['description']) && !empty($product_details[0]['description'])) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $product_details[0]['description'])) : ''; ?></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1757,9 +1757,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group mt-4 d-flex justify-content-end">
-                                        <button type="reset" class="btn btn-warning reset-btn">Reset</button>
+                                        <button type="reset" class="btn btn-warning reset-btn">Réinitialiser</button>
                                         <button type="submit" class="btn btn-success ml-2"
-                                            id="submit_btn"><?= (isset($product_details[0]['id'])) ? 'Update Product' : 'Add Product' ?></button>
+                                            id="submit_btn"><?= (isset($product_details[0]['id'])) ? 'Mettre à jour Product' : 'Ajouter un produit' ?></button>
                                     </div>
                                 </div>
                             </div>

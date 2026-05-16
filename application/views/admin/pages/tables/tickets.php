@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Ticket System</h4>
+                    <h4>Ticket Système</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Ticket System</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Ticket Système</li>
                     </ol>
                 </div>
 
@@ -43,11 +43,11 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <select class="form-control-sm w-100 change_ticket_status">
-                                                        <option value="">Change Ticket Status</option>
-                                                        <option value=<?= OPENED ?>>OPEN</option>
-                                                        <option value=<?= RESOLVED ?>>RESOLVE</option>
-                                                        <option value=<?= CLOSED ?>>CLOSE</option>
-                                                        <option value=<?= REOPEN ?>>REOPEN</option>
+                                                        <option value="">Changer le statut du ticket</option>
+                                                        <option value=<?= OPENED ?>>OUVERT</option>
+                                                        <option value=<?= RESOLVED ?>>RÉSOLU</option>
+                                                        <option value=<?= CLOSED ?>>FERMÉ</option>
+                                                        <option value=<?= REOPEN ?>>RÉOUVERT</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -71,7 +71,7 @@
                                                     <input type="hidden" name="user_id" id="user_id">
                                                     <input type="hidden" name="user_type" id="user_type">
                                                     <input type="hidden" name="ticket_id" id="ticket_id">
-                                                    <input type="text" name="message" id="message_input" placeholder="Type Message ..." class="form-control">
+                                                    <input type="text" name="message" id="message_input" placeholder="Tapez votre message..." class="form-control">
                                                 </div>
                                             </div>
                                             <div class="row mt-2">
@@ -83,7 +83,7 @@
                                                         ?>
                                                             <div class="container-fluid row image-upload-section ">
                                                                 <div class="col-md-3 col-sm-12 shadow bg-white rounded m-3 p-3 text-center grow">
-                                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= $fetched_data[0]['attachments'] ?>" alt="Image Not Found"></div>
+                                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= $fetched_data[0]['attachments'] ?>" alt="Image non trouvée"></div>
                                                                     <input type="hidden" name="attachments[]" value='<?= $fetched_data[0]['attachments'] ?>'>
                                                                 </div>
                                                             </div>
@@ -92,8 +92,8 @@
                                                             <div class="container-fluid row image-upload-section">
                                                             </div>
                                                         <?php } ?>
-                                                        <a class="uploadFile img btn btn-primary text-white" data-input='attachments[]' data-isremovable='1' data-is-multiple-uploads-allowed='1' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"> <i class="fa fa-paperclip"></i></a>
-                                                        <button type="submit" class="btn btn-primary" id="submit_btn">Send</button>
+                                                        <a class="uploadFile img btn btn-primary text-white" data-input='attachments[]' data-isremovable='1' data-is-multiple-uploads-allowed='1' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"> <i class="fa fa-paperclip"></i></a>
+                                                        <button type="submit" class="btn btn-primary" id="submit_btn">Envoyer</button>
                                                     </div>
                                                 </span>
                                             </div>
@@ -110,14 +110,14 @@
                 <div class="col-md-12 main-content">
                     <div class="card content-area p-4">
                         <div class="col-sm-2">
-                        <label for="ticket_status_filter" class="col-form-label fs-6">Filter Ticket By Status </label>
-                        <select id="ticket_status_filter" name="ticket_status_filter" placeholder="Select Status" required="" class="form-control">
-                            <option value="">All</option>
-                            <option value="1">Pending</option>
-                            <option value="2">Opened</option>
-                            <option value="3">Resolved</option>
-                            <option value="4">Closed</option>
-                            <option value="5">Reopened</option>
+                        <label for="ticket_status_filter" class="col-form-label fs-6">Filtrer les tickets par statut </label>
+                        <select id="ticket_status_filter" name="ticket_status_filter" placeholder="Sélectionner le statut" required="" class="form-control">
+                            <option value="">Tout</option>
+                            <option value="1">En attente</option>
+                            <option value="2">Ouvert</option>
+                            <option value="3">Résolu</option>
+                            <option value="4">Fermé</option>
+                            <option value="5">Réouvert</option>
                         </select>
                         </div>
                         <div class="card-innr">
@@ -127,16 +127,16 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="ticket_type_id" data-sortable="false" data-visible="false">Ticket Type Id</th>
-                                        <th data-field="ticket_type" data-sortable="false">Ticket Type</th>
-                                        <th data-field="user_id" data-sortable="true" data-visible="false">User Id</th>
-                                        <th data-field="username" data-sortable="true">User Name</th>
-                                        <th data-field="subject" data-sortable="false">subject</th>
+                                        <th data-field="ticket_type_id" data-sortable="false" data-visible="false">ID du type de ticket</th>
+                                        <th data-field="ticket_type" data-sortable="false">Type de ticket</th>
+                                        <th data-field="user_id" data-sortable="true" data-visible="false">ID utilisateur</th>
+                                        <th data-field="username" data-sortable="true">Nom utilisateur</th>
+                                        <th data-field="subject" data-sortable="false">sujet</th>
                                         <th data-field="email" data-sortable="false">email</th>
                                         <th data-field="description" data-sortable="false">description</th>
-                                        <th data-field="status" data-sortable="false">Status</th>
-                                        <th data-field="last_updated" data-sortable="false" data-visible="false">last updated</th>
-                                        <th data-field="date_created" data-sortable="false">Date Created</th>
+                                        <th data-field="status" data-sortable="false">Statut</th>
+                                        <th data-field="last_updated" data-sortable="false" data-visible="false">dernière mise à jour</th>
+                                        <th data-field="date_created" data-sortable="false">Date de création</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

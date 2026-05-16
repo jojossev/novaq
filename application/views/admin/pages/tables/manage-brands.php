@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Manage Brands</h4>
+                    <h4>Gérer les marques</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="<?= base_url('admin/brand/') ?>">Brands</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active"><a href="<?= base_url('admin/brand/') ?>">Marques</a></li>
                     </ol>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                             <li>Admin will have to upload the picture of the brand.</li>
                             <li>Admin will be have two options, either to upload a new image or to select from existing images.</li>
                             <li>Once image is chosen, Admin will then have to click on choose media.</li>
-                            <li>Then the last step is to click on Add Brand.</li>
+                            <li>Then the last step is to click on Ajouter Brand.</li>
                             <li>If all steps are followed then brand will be added succesfully!!!.</li>
                         </ol>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Brand</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier Brand</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -66,24 +66,24 @@
                     <div class="card content-area p-4">
                         <div class="card-header border-0">
                             <div class="card-tools">
-                                <a href="<?= base_url() . 'admin/brand/create-brand' ?>" class="btn btn-block  btn-outline-primary btn-sm">Add Brand</a>
+                                <a href="<?= base_url() . 'admin/brand/create-brand' ?>" class="btn btn-block  btn-outline-primary btn-sm">Ajouter Brand</a>
                             </div>
                         </div>
                         <div class="card-innr" id="list_view_html">
                             <div class="card-head">
-                                <h4 class="card-title">Brands</h4>
+                                <h4 class="card-title">Marques</h4>
                             </div>
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' id='brand_table' data-toggle="table" data-url="brand_list" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel","csv"]' data-export-options='{
-                        "fileName": "brand-list",
+                        "fileNom": "brand-list",
                         "ignoreColumn": ["state"] 
                         }' data-query-params="brand_query_params">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true" data-visible='false'>ID</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
                                         <th data-field="image" data-sortable="true">Image</th>
-                                        <th data-field="status" data-sortable="true">Status</th>
+                                        <th data-field="status" data-sortable="true">Statut</th>
                                         <th data-field="operate" data-sortable="true">Action</th>
                                     </tr>
                                 </thead>

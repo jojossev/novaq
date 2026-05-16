@@ -3,13 +3,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Firebase Settings</h4>
+                    <h4>Firebase Paramètres</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">Firebase Settings</li>
+                        <li class="breadcrumb-item active">Firebase Paramètres</li>
                     </ol>
                 </div>
             </div>
@@ -54,8 +54,8 @@
                                         <input type="text" class="form-control mb-2" name="measurementId" value="<?= (isset($firebase_settings['measurementId'])) ? $firebase_settings['measurementId'] : '' ?>" placeholder="measurementId" />
                                     </div>
                                     <div class="form-group mt-4">
-                                        <button type="reset" class="btn btn-warning">Reset</button>
-                                        <button type="submit" class="btn btn-success update_firebase_setting" id="submit_btn">Update Settings</button>
+                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                        <button type="submit" class="btn btn-success update_firebase_setting" id="submit_btn">Mettre à jour les paramètres</button>
                                     </div>
                                 </div>
                                 <hr>

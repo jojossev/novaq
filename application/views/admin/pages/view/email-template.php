@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
     <link rel="icon" type="image/ico" href="#">
-    <title>Email - <?= $settings['app_name'] ?></title>
+    <title>E-mail - <?= $settings['app_name'] ?></title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
 
@@ -378,7 +378,7 @@
                                                         <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center" style="padding:0;Margin:0">
-                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><strong>Name</strong></p>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><strong>Nom</strong></p>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -429,7 +429,7 @@
                                             <!--[if mso]></td></tr></table><![endif]-->
                                         </td>
                                     </tr>
-                                    <?php foreach ($cart_data as $rows) {
+                                    <?php foreach ($cart_data as $lignes) {
                                       
                                     ?>
                                         <tr style="border-collapse:collapse">
@@ -441,7 +441,7 @@
                                                             <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="center" style="padding:0;Margin:0">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><small><?= $rows['name'] ?></small></p>
+                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><small><?= $lignes['name'] ?></small></p>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -456,7 +456,7 @@
                                                             <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="center" style="padding:0;Margin:0">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><?= (isset($rows['quantity'])) ? $rows['quantity'] : $rows['qty'] ?></p>
+                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><?= (isset($lignes['quantity'])) ? $lignes['quantity'] : $lignes['qty'] ?></p>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -470,7 +470,7 @@
                                                             <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="left" style="padding:0;Margin:0">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><?= $settings['currency'] . ' ' . strval($rows['tax_amount']) ?></p>
+                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><?= $settings['currency'] . ' ' . strval($lignes['tax_amount']) ?></p>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -484,7 +484,7 @@
                                                             <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="left" style="padding:0;Margin:0">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><?= $settings['currency'] . ' ' . $rows['sub_total'] ?></p>
+                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333"><?= $settings['currency'] . ' ' . $lignes['sub_total'] ?></p>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -525,7 +525,7 @@
                                                                     <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left" role="presentation">
                                                                         <tr style="border-collapse:collapse">
                                                                             <td width="80%" style="padding:0;Margin:0">
-                                                                                <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif"><b>Delivery Charge (+)</b></h4>
+                                                                                <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif"><b>Livraison Charge (+)</b></h4>
                                                                             </td>
                                                                             <td width="20%" style="padding:0;Margin:0">
                                                                                 <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<?= $settings['currency'] . ' ' . $order_data['delivery_charge'] ?></h4>
@@ -581,7 +581,7 @@
                                                                     <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left" role="presentation">
                                                                         <tr style="border-collapse:collapse">
                                                                             <td width="80%" style="padding:0;Margin:0">
-                                                                                <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif"><b>Final Total</b></h4>
+                                                                                <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif"><b>Total final</b></h4>
                                                                             </td>
                                                                             <td width="20%" style="padding:0;Margin:0">
                                                                                 <h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">&nbsp; &nbsp; &nbsp; &nbsp;<?= $settings['currency'] . ' ' . (isset($order_data['final_total'])&&!empty($order_data['final_total']))?$order_data['final_total']:''?></h4>
@@ -611,9 +611,9 @@
                                                                 </tr>
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:10px">
-                                                                        <p style="Margin:0;font-size:16px;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#333333"><b><small>Email:</small></b></p>
+                                                                        <p style="Margin:0;font-size:16px;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#333333"><b><small>E-mail:</small></b></p>
                                                                         <p style="Margin:0;font-size:16px;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#333333"><small><?= $system_settings['support_email'] ?></small></p>
-                                                                        <p style="Margin:0;font-size:16px;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#333333"><b><small>Customer Care:</small></b></p>
+                                                                        <p style="Margin:0;font-size:16px;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#333333"><b><small>Client Care:</small></b></p>
                                                                         <p style="Margin:0;font-size:16px;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif;line-height:24px;color:#333333"><small><?= $system_settings['support_number'] ?></small></p>
                                                                     </td>
                                                                 </tr>
@@ -625,7 +625,7 @@
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:15px">
-                                                                        <h4 style="Margin:0;line-height:120%;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif">Delivery Address</h4>
+                                                                        <h4 style="Margin:0;line-height:120%;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif">Livraison Adresse</h4>
                                                                     </td>
                                                                 </tr>
                                                                 <tr style="border-collapse:collapse">
@@ -642,7 +642,7 @@
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:15px">
-                                                                        <h4 style="Margin:0;line-height:120%;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif">Payment Method</h4>
+                                                                        <h4 style="Margin:0;line-height:120%;font-family:'open sans','helvetica neue',helvetica,arial,sans-serif">Méthode de paiement</h4>
                                                                     </td>
                                                                 </tr>
                                                                 <tr style="border-collapse:collapse">

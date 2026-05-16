@@ -102,16 +102,11 @@ class MyConfig
     }
 
     function language()
-    {
-        $ci = &get_instance();
-        $ci->load->helper(['language']);
-        $siteLang = $ci->input->cookie('language', TRUE);
-        if ($siteLang) {
-            $ci->lang->load('web_labels_lang', $siteLang);
-        } else {
-            $ci->lang->load('web_labels_lang', 'english');
-        }
-    }
+{
+    $ci = &get_instance();
+    $ci->load->helper(['language']);
+    $ci->lang->load('web_labels_lang', 'french');
+}
 
     function verify_doctor_brown()
     {

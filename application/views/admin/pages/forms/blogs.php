@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4><?= isset($fetched_data[0]['id']) ? 'Update' : 'Add' ?> Blog</h4>
+                    <h4><?= isset($fetched_data[0]['id']) ? 'Update' : 'Ajouter' ?> Blogue</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Add Blog</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Ajouter Blogue</li>
                     </ol>
                 </div>
             </div>
@@ -27,10 +27,10 @@
                             <?php } ?>
                             <div class="card-body">
                                 <div class="form-group row my-3">
-                                    <label for="blog_title" class="col-sm-2 col-form-label">Title <span class='text-danger text-sm'>*</span></label>
+                                    <label for="blog_title" class="col-sm-2 col-form-label">Titre <span class='text-danger text-sm'>*</span></label>
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" id="blog_title" placeholder="Title" name="blog_title" value="<?= isset($fetched_data[0]['title']) ? output_escaping($fetched_data[0]['title']) : "" ?>">
+                                        <input type="text" class="form-control" id="blog_title" placeholder="Titre" name="blog_title" value="<?= isset($fetched_data[0]['title']) ? output_escaping($fetched_data[0]['title']) : "" ?>">
                                     </div>
                                 </div>
 
@@ -38,9 +38,9 @@
                                 $category_id = (isset($fetched_data[0]['category_id']) && !empty($fetched_data[0]['category_id']) ? $fetched_data[0]['category_id'] : '');
                                 ?>
                                 <div class="form-group row my-3">
-                                    <label for="blog_category" class="col-sm-2 col-form-label">Select Categories <span class='text-danger text-sm'>*</span></label>
+                                    <label for="blog_category" class="col-sm-2 col-form-label">Sélectionner une catégorie <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-md-6 ">
-                                        <select name="blog_category" class="get_blog_category w-100" data-placeholder=" Type to search and select products">
+                                        <select name="blog_category" class="get_blog_category w-100" data-placeholder=" Tapez pour rechercher et sélectionner un produits">
 
                                             <?php
                                             $category_name =  fetch_details('blog_categories', "", 'name,id', "", "", "", "", "id", $category_id);
@@ -63,16 +63,16 @@
 
                                 <br>
                                 <div class="form-group my-3">
-                                    <label name='blog_category' for="image">Main Image <span class='text-danger text-sm'>*</span><small>(Recommended Size : larger than 400 x 260 & smaller than 600 x 300 pixels.)</small></label>
+                                    <label name='blog_category' for="image">Image principale <span class='text-danger text-sm'>*</span><small>(Taille recommandée : larger than 400 x 260 & smaller than 600 x 300 pixels.)</small></label>
                                     <div class="col-sm-10">
-                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='blog_image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='blog_image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                         <?php
                                         if (file_exists(FCPATH . @$fetched_data[0]['image']) && !empty(@$fetched_data[0]['image'])) {
                                         ?>
-                                            <label class="text-danger mt-3">*Only Choose When Update is necessary</label>
+                                            <label class="text-danger mt-3">*Choisir uniquement lorsque la mise à jour est nécessaire</label>
                                             <div class="container-fluid row image-upload-section">
                                                 <div class="col-md-3 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
-                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_data[0]['image'] ?>" alt="Image Not Found"></div>
+                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_data[0]['image'] ?>" alt="Image non trouvée"></div>
                                                     <input type="hidden" name="blog_image" value='<?= $fetched_data[0]['image'] ?>'>
                                                 </div>
                                             </div>
@@ -85,10 +85,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group my-3">
-                                    <textarea name="blog_description" class="textarea addr_editor" placeholder="Place some text here"><?= (isset($fetched_data[0]['description'])) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $fetched_data[0]['description'])) : ''; ?></textarea>
+                                    <textarea name="blog_description" class="textarea addr_editor" placeholder="Saisissez votre texte ici"><?= (isset($fetched_data[0]['description'])) ? output_escaping(str_replace('\r\n', '&#13;&#10;', $fetched_data[0]['description'])) : ''; ?></textarea>
                                     <div class="form-group my-3">
-                                        <button type="reset" class="btn btn-warning">Reset</button>
-                                        <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Blog' : 'Add Blog' ?></button>
+                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                        <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Blogue' : 'Ajouter Blogue' ?></button>
                                     </div>
                                 </div>
                             </div>

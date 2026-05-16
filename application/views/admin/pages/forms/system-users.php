@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>System Users</h4>
+                    <h4>Utilisateurs système</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">System Users</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Utilisateurs système</li>
                     </ol>
                 </div>
             </div>
@@ -34,7 +34,7 @@
 
                                     <!-- form start -->
                                     <div class="form-group ">
-                                        <label for="username" class="control-label">Username <span class='text-danger text-sm'>*</span></label>
+                                        <label for="username" class="control-label">Nom d'utilisateur <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-12 mt-2">
                                             <input type="text" class="form-control" name="username" id="username" value="<?= (isset($fetched_data[0]['username'])) ?  $fetched_data[0]['username'] : ' ' ?>">
                                         </div>
@@ -42,23 +42,23 @@
                                     <div class="form-group">
                                         <label for="mobile" class="control-label mt-2">Mobile <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-12">
-                                            <input type="text" maxlength="16" oninput="validateNumberInput(this)" class="form-control mt-2" name="mobile" id="mobile" value="<?= (isset($fetched_data[0]['mobile'])) ?  $fetched_data[0]['mobile'] : ' ' ?>">
+                                            <input type="text" maxlength="16" oninput="validateN°|NuméroInput(this)" class="form-control mt-2" name="mobile" id="mobile" value="<?= (isset($fetched_data[0]['mobile'])) ?  $fetched_data[0]['mobile'] : ' ' ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email" class="control-label mt-2">Email <span class='text-danger text-sm'>*</span></label>
+                                        <label for="email" class="control-label mt-2">E-mail <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-12">
                                             <input type="email" class="form-control mt-2" name="email" id="email" value="<?= (isset($fetched_data[0]['email'])) ?  $fetched_data[0]['email'] : ' ' ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="password" class="control-label mt-2">Password <span class='text-danger text-sm'>*</span></label>
+                                        <label for="password" class="control-label mt-2">Mot de passe <span class='text-danger text-sm'>*</span></label>
                                         <?php if (isset($fetched_data[0]['id'])) { ?>
                                             <span class='text-danger'>*Leave blank if there is no change</span>
                                         <?php } ?>
  <div class="col-md-12 input-group">
     <input type="password" class="form-control" name="password" id="password">
-    <span class="input-group-text togglePassword" style="cursor: pointer;">
+    <span class="input-group-text toggleMot de passe" style="cursor: pointer;">
         <i class="fa fa-eye"></i>
     </span>
 </div>
@@ -66,10 +66,10 @@
                                     </div>
                                     <?php if (!isset($fetched_data[0]['id'])) { ?>
                                         <div class="form-group">
-                                            <label for="confirm_password" class="control-label mt-2">Confirm Password <span class='text-danger text-sm'>*</span></label>
+                                            <label for="confirm_password" class="control-label mt-2">Confirmer le mot de passe <span class='text-danger text-sm'>*</span></label>
                                             <div class="col-md-12 input-group">
                                                 <input type="password" class="form-control" name="confirm_password" id="confirm_password">
-                                                <span class="input-group-text togglePassword" style="cursor: pointer;">
+                                                <span class="input-group-text toggleMot de passe" style="cursor: pointer;">
                                                     <i class="fa fa-eye"></i>
                                                 </span>
                                             </div>
@@ -91,8 +91,8 @@
                                     <?php if (!isset($fetched_data[0]['id'])) { ?>
 
                                         <div class="form-group mt-4">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
-                                            <button type="submit" class="btn btn-success" id="submit_btn">Add User</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                            <button type="submit" class="btn btn-success" id="submit_btn">Ajouter User</button>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -175,7 +175,7 @@
                                     <?php if (isset($fetched_data[0]['id'])) { ?>
 
                                         <div class="form-group px-3">
-                                            <button type="submit" class="btn btn-success" id="submit_btn">Update User</button>
+                                            <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour User</button>
                                         </div>
                                     <?php } ?>
 

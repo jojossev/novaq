@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Offer slider</h4>
+                    <h4>Offre slider</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Slider</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Diaporama</li>
                     </ol>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Media</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Médias</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -43,19 +43,19 @@
                                     <?php } ?>
                                     <label for="slider_type">Type <span class='text-danger text-sm'>*</span> </label>
                                     <select name="slider_type" id="slider_type" class="form-control type_event_trigger" required="">
-                                        <option value=" ">Select Type</option>
-                                        <option value="default" <?= (@$fetched_data[0]['type'] == "default") ? 'selected' : ' ' ?>>Default</option>
-                                        <option value="categories" <?= (@$fetched_data[0]['type'] == "categories") ? 'selected' : ' ' ?>>Category</option>
-                                        <option value="products" <?= (@$fetched_data[0]['type'] == "products") ? 'selected' : ' ' ?>>Product</option>
+                                        <option value=" ">Sélectionner le type</option>
+                                        <option value="default" <?= (@$fetched_data[0]['type'] == "default") ? 'selected' : ' ' ?>>Défaut</option>
+                                        <option value="categories" <?= (@$fetched_data[0]['type'] == "categories") ? 'selected' : ' ' ?>>Catégorie</option>
+                                        <option value="products" <?= (@$fetched_data[0]['type'] == "products") ? 'selected' : ' ' ?>>Produit</option>
                                     </select>
                                 </div>
                                 <div id="type_add_html">
-                                    <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type']  == 'categories') ? '' : 'd-none' ?>
-                                    <div class="form-group slider-categories <?= $hiddenStatus ?> ">
+                                    <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type']  == 'categories') ? '' : 'd-none' ?>
+                                    <div class="form-group slider-categories <?= $hiddenStatut ?> ">
 
-                                        <label for="category_id"> Categories <span class='text-danger text-sm'>*</span></label>
+                                        <label for="category_id"> Catégories <span class='text-danger text-sm'>*</span></label>
                                         <select name="category_id" class="form-control">
-                                            <option value="">Select category </option>
+                                            <option value="">Sélectionner une catégorie </option>
                                             <?php
                                             if (!empty($categories)) {
                                                 foreach ($categories as $row) {
@@ -68,11 +68,11 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <?php $hiddenStatus = (isset($fetched_data[0]['id']) && $fetched_data[0]['type']  == 'products') ? '' : 'd-none' ?>
-                                    <div class="form-group row slider-products <?= $hiddenStatus ?>">
-                                        <label for="product_id" class="control-label">Products <span class='text-danger text-sm'>*</span></label>
+                                    <?php $hiddenStatut = (isset($fetched_data[0]['id']) && $fetched_data[0]['type']  == 'products') ? '' : 'd-none' ?>
+                                    <div class="form-group row slider-products <?= $hiddenStatut ?>">
+                                        <label for="product_id" class="control-label">Produits <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-md-12">
-                                            <select name="product_id" class="search_product w-100" data-placeholder=" Type to search and select products" onload="multiselect()">
+                                            <select name="product_id" class="search_product w-100" data-placeholder=" Tapez pour rechercher et sélectionner un produits" onload="multiselect()">
                                                 <?php
                                                 if (isset($fetched_data[0]['id']) && $fetched_data[0]['type']  == 'products') {
                                                     $product_details = fetch_details('products', ['id' => $fetched_data[0]['type_id']], 'id,name');
@@ -89,18 +89,18 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <div><label for="image">Slider Image <span class='text-danger text-sm'>*</span> </label></div>
+                                    <div><label for="image">Image du diaporama <span class='text-danger text-sm'>*</span> </label></div>
                                     <div class="col-sm-10">
-                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                        <div class='col-md-3'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                         <?php
                                         if (file_exists(FCPATH  . @$fetched_data[0]['image']) && !empty(@$fetched_data[0]['image'])) {  ?>
                                             <input type="hidden" name="image" value='<?= $fetched_data[0]['image'] ?>'>
                                             <?php $fetched_data[0]['image'] = get_image_url($fetched_data[0]['image'], 'thumb', 'sm');
                                             ?>
-                                            <label class="text-danger mt-3">*Only Choose When Update is necessary</label>
+                                            <label class="text-danger mt-3">*Choisir uniquement lorsque la mise à jour est nécessaire</label>
                                             <div class="container-fluid row image-upload-section">
                                                 <div class="col-md-3 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
-                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= $fetched_data[0]['image'] ?>" alt="Image Not Found"></div>
+                                                    <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= $fetched_data[0]['image'] ?>" alt="Image non trouvée"></div>
                                                 </div>
                                             </div>
                                         <?php
@@ -113,8 +113,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Slider' : 'Add Slider' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Diaporama' : 'Ajouter un diaporama' ?></button>
                                 </div>
                                 
                             </div>

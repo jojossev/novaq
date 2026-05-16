@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active"><a href="<?= base_url('admin/flash_sale/') ?>">View Sale</a>
                         </li>
                     </ol>
@@ -63,20 +63,20 @@
                     <div class="row mb-4 p-3 bg-light rounded mx-1">
                         <div class="col-sm-6 border-right">
                             <p class="mb-1 text-muted text-uppercase font-weight-bold" style="font-size: 0.8rem;">
-                               Start Date
+                               Date de début
                             </p>
                             <h5 class="font-weight-bold text-dark mb-0"><?= $sale_details['start_date'] ?></h5>
                         </div>
                         <div class="col-sm-6">
                             <p class="mb-1 text-muted text-uppercase font-weight-bold" style="font-size: 0.8rem;">
-                              </i>End Date
+                              </i>Date de fin
                             </p>
                             <h5 class="font-weight-bold text-dark mb-0"><?= $sale_details['end_date'] ?></h5>
                         </div>
                     </div>
 
                     <h5 class="font-weight-bold mb-3 border-bottom pb-2">
-                        Included Products
+                        Included Produits
                     </h5>
                     <ul class="list-unstyled row pl-2">
                         <?php foreach ($products as $product): ?>

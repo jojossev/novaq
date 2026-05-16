@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Location</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Emplacement</li>
                     </ol>
                 </div>
             </div>
@@ -36,17 +36,17 @@
                                         <label for="type" class="col-form-label">Type <small>[upload/update]</small> <span class='text-danger text-sm'>*</span></label></label>
                                         <select class='form-control mb-2' name='type' id='type'>
                                             <option value=''>Select</option>
-                                            <option value='upload'>Upload</option>
-                                            <option value='update'>Update</option>
+                                            <option value='upload'>Téléverser</option>
+                                            <option value='update'>Mettre à jour</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="type" class="col-form-label">Location Type <small>[Zipcodes/Cities/Areas]</small> <span class='text-danger text-sm'>*</span></label></label>
+                                        <label for="type" class="col-form-label">Emplacement Type <small>[Codes postaux/Cities/Areas]</small> <span class='text-danger text-sm'>*</span></label></label>
                                         <select class='form-control mb-2' name='location_type' id='location_type'>
                                             <option value=''>Select</option>
-                                            <option value='zipcode'>Zipcodes</option>
+                                            <option value='zipcode'>Codes postaux</option>
                                             <option value='city'>Cities</option>
                                             <option value='area'>Areas</option>
                                         </select>
@@ -62,8 +62,8 @@
                                 <div class="form-group row">
                                     <div class="card-body pad">
                                         <div class="form-group">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
-                                            <button type="submit" class="btn btn-success bulk_update" id="submit_btn">Submit</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                            <button type="submit" class="btn btn-success bulk_update" id="submit_btn">Soumettre</button>
                                         </div>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                                 <a href="<?= base_url('uploads/zipcodes-bulk-upload-sample.csv') ?>" class="btn btn-primary col-md-3 m-2" download="zipcodes-bulk-upload-sample.csv">Zipcode Bulk upload sample file <i class="fas fa-download"></i></a>
                                                 <a href="<?= base_url('uploads/zipcodes-bulk-update-sample.csv') ?>" class="btn btn-primary col-md-3 m-2" download="zipcodes-bulk-update-sample.csv">Zipcode Bulk update sample file <i class="fas fa-download"></i></a>
                                                 <a href="<?= base_url('admin/area/zipcode_bulk_dowload') ?>" class="btn btn-primary col-sm-3 m-2" download="">Zipcode Bulk Download file <i class="fas fa-download"></i></a>
-                                                <a href="<?= base_url('uploads/location-bulk-instructions.txt') ?>" class="btn btn-primary m-2" download="location-bulk-instructions.txt">Location Bulk instructions <i class="fas fa-download"></i></a>
+                                                <a href="<?= base_url('uploads/location-bulk-instructions.txt') ?>" class="btn btn-primary m-2" download="location-bulk-instructions.txt">Emplacement Bulk instructions <i class="fas fa-download"></i></a>
                                             </div>
                                         </div>
                                         <div class="row">

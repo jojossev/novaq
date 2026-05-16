@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>System Settings</h4>
+                    <h4>Paramètres système</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">System settings</li>
+                        <li class="breadcrumb-item active">Paramètres système</li>
                     </ol>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                                                     class="fas fa-store nav-icon  link-color fa-lg d-flex justify-content-center text-white circle-icon"></i>
                                             </div>
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Store Setting <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Paramètres boutique <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
                                         </div>
@@ -51,7 +51,7 @@
                                                 class="fas fa-heartbeat nav-icon  link-color fa-lg d-flex justify-content-center text-white circle-icon"></i>
                                         </div>
                                         <div class="d-flex flex-column ">
-                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">System Health <i
+                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">Santé système <i
                                                     class='bx bxs-right-arrow-circle'></i></span>
                                         </div>
 
@@ -72,7 +72,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Email setting <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Paramètres e-mail <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -94,7 +94,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Payment methods <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Méthodes de paiement <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -116,7 +116,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Shipping methods <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Méthodes de livraison <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -138,7 +138,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Time slots <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Créneaux horaires <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -160,7 +160,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Notification settings <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Paramètres de notification <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -182,7 +182,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Authentication settings
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Paramètres d'authentification
                                                     <i class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -204,7 +204,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">SMS Gateway settings <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Paramètres passerelle SMS <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -226,7 +226,7 @@
                                         </div>
 
                                         <div class="d-flex flex-column ">
-                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">Contact us <i
+                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">Nous contacter <i
                                                     class='bx bxs-right-arrow-circle'></i></span>
                                         </div>
 
@@ -246,7 +246,7 @@
                                         </div>
 
                                         <div class="d-flex flex-column ">
-                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">About us <i
+                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">À propos <i
                                                     class='bx bxs-right-arrow-circle'></i></span>
                                         </div>
 
@@ -267,7 +267,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Privacy policy <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Politique de confidentialité <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -289,7 +289,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Return policy <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Politique de retour <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -311,7 +311,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Shipping policy <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Politique de livraison <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -334,7 +334,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Admin policies <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Politiques administrateur <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -356,7 +356,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Delivery boy policies<i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Politiques livreur<i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -378,7 +378,7 @@
                                             </div>
 
                                             <div class="d-flex flex-column ">
-                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Client API Keys <i
+                                                <span class="fw-semibold d-block col-md-12 h7 mt-4">Clés API client <i
                                                         class='bx bxs-right-arrow-circle'></i></span>
                                             </div>
 
@@ -400,7 +400,7 @@
                                         </div>
 
                                         <div class="d-flex flex-column ">
-                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">System Updater <i
+                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">Mise à jour système <i
                                                     class='bx bxs-right-arrow-circle'></i></span>
                                         </div>
 
@@ -421,7 +421,7 @@
                                         </div>
 
                                         <div class="d-flex flex-column ">
-                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">System Registeration <i
+                                            <span class="fw-semibold d-block col-md-12 h7 mt-4">Enregistrement système <i
                                                     class='bx bxs-right-arrow-circle'></i></span>
                                         </div>
 

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8 mt-2">
-                    <h4>Add Promo Code</h4>
+                    <h4>Ajouter Code promo</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Promo Code</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Code promo</li>
                     </ol>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                                 ?>
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="">Promo Code <span class='text-danger text-sm'>*</span></label>
+                                        <label class="mb-2" for="">Code promo <span class='text-danger text-sm'>*</span></label>
                                         <input type="text" class="form-control" name="promo_code" value="<?= @$fetched_details[0]['promo_code'] ?>">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -41,11 +41,11 @@
                                         <input type="text" class="form-control" name="message" value="<?= @$fetched_details[0]['message'] ?>">
                                     </div>
                                     <div class="form-group col-md-6 mt-2">
-                                        <label class="mb-2" for="">Start Date <span class='text-danger text-sm'>*</span></label>
+                                        <label class="mb-2" for="">Date de début <span class='text-danger text-sm'>*</span></label>
                                         <input type="date" class="form-control" name="start_date" id="start_date" value="<?= @$fetched_details[0]['start_date'] ?>">
                                     </div>
                                     <div class="form-group col-md-6 mt-2">
-                                        <label class="mb-2" for="">End Date <span class='text-danger text-sm'>*</span></label>
+                                        <label class="mb-2" for="">Date de fin <span class='text-danger text-sm'>*</span></label>
                                         <input type="date" class="form-control" name="end_date" id="end_date" min="<?= date('Y-m-d\TH:i') ?>" value="<?= @$fetched_details[0]['end_date'] ?>">
                                     </div>
 
@@ -89,7 +89,7 @@
                                         <select name="discount_type" id="discount_type" class="form-control">
                                             <option value="">Select</option>
                                             <option value="percentage" <?= (isset($fetched_details[0]['discount_type']) && $fetched_details[0]['discount_type'] == 'percentage') ? 'selected' : '' ?>>Percentage</option>
-                                            <option value="amount" <?= (isset($fetched_details[0]['discount_type']) && $fetched_details[0]['discount_type'] == 'amount') ? 'selected' : '' ?>>Amount</option>
+                                            <option value="amount" <?= (isset($fetched_details[0]['discount_type']) && $fetched_details[0]['discount_type'] == 'amount') ? 'selected' : '' ?>>Montant</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6 mt-2<?= (isset($fetched_details[0]['discount_type']) && $fetched_details[0]['discount_type'] == 'amount') ? ' d-none' : '' ?>" id="max_discount_amount_html">
@@ -110,25 +110,25 @@
                                     </div>
                                     
                                     <div class="form-group col-md-6 mt-2">
-                                        <label class="mb-2" for="">Status <span class='text-danger text-sm'>*</span></label>
+                                        <label class="mb-2" for="">Statut <span class='text-danger text-sm'>*</span></label>
                                         <select name="status" id="status" class="form-control">
                                             <option value="">Select</option>
-                                            <option value="1" <?= (isset($fetched_details[0]['status']) && $fetched_details[0]['status'] == '1') ? 'selected' : '' ?>>Active</option>
-                                            <option value="0" <?= (isset($fetched_details[0]['status']) && $fetched_details[0]['status'] == '0') ? 'selected' : '' ?>>Deactive</option>
+                                            <option value="1" <?= (isset($fetched_details[0]['status']) && $fetched_details[0]['status'] == '1') ? 'selected' : '' ?>>Actif</option>
+                                            <option value="0" <?= (isset($fetched_details[0]['status']) && $fetched_details[0]['status'] == '0') ? 'selected' : '' ?>>Inactif</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-md-6 mt-2">
-                                        <label class="mb-2" for="image">Main Image <span class='text-danger text-sm'>*</span><small>(Recommended Size : 80 x 80 pixels)</small></label>
+                                        <label class="mb-2" for="image">Image principale <span class='text-danger text-sm'>*</span><small>(Taille recommandée : 80 x 80 pixels)</small></label>
                                         <div class="col-sm-10">
-                                            <div class='col-md-5'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                            <div class='col-md-5'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                             <?php
                                             if (file_exists(FCPATH . @$fetched_details[0]['image']) && !empty(@$fetched_details[0]['image'])) {
                                             ?>
-                                                <label class="text-danger mt-3">*Only Choose When Update is necessary</label>
+                                                <label class="text-danger mt-3">*Choisir uniquement lorsque la mise à jour est nécessaire</label>
                                                 <div class="container-fluid row image-upload-section">
                                                     <div class="col-md-12 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
-                                                        <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_details[0]['image'] ?>" alt="Image Not Found"></div>
+                                                        <div class='image-upload-div'><img class="img-fluid mb-2" src="<?= BASE_URL() . $fetched_details[0]['image'] ?>" alt="Image non trouvée"></div>
                                                         <input type="hidden" name="image" value='<?= $fetched_details[0]['image'] ?>'>
                                                     </div>
                                                 </div>
@@ -152,8 +152,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success update_promo" id="submit_btn"><?= (isset($fetched_details[0]['id'])) ? 'Update Promo Code' : 'Add Promo Code' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success update_promo" id="submit_btn"><?= (isset($fetched_details[0]['id'])) ? 'Mettre à jour Code promo' : 'Ajouter Code promo' ?></button>
                                 </div>
                             </div>
 

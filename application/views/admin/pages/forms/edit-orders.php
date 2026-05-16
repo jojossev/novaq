@@ -10,8 +10,8 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Orders</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Commandes</li>
                     </ol>
 
                 </div>
@@ -27,7 +27,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="user_name">Order Tracking</h5>
+                                <h5 class="modal-title" id="user_name">Suivi de commande</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -44,15 +44,15 @@
                                                 <input type="hidden" name="order_item_id" id="order_item_id">
                                                 <div class="card-body pad">
                                                     <div class="form-group mt-2 ">
-                                                        <label for="courier_agency">Courier Agency</label>
+                                                        <label for="courier_agency">Agence de transport</label>
                                                         <input type="text" class="form-control mt-2"
                                                             name="courier_agency" id="courier_agency"
-                                                            placeholder="Courier Agency" />
+                                                            placeholder="Agence de transport" />
                                                     </div>
                                                     <div class="form-group mt-2 ">
-                                                        <label for="tracking_id">Tracking Id</label>
+                                                        <label for="tracking_id">ID de suivi</label>
                                                         <input type="text" class="form-control mt-2" name="tracking_id"
-                                                            id="tracking_id" placeholder="Tracking Id" />
+                                                            id="tracking_id" placeholder="ID de suivi" />
                                                     </div>
                                                     <div class="form-group mt-2 ">
                                                         <label for="url">URL</label>
@@ -60,9 +60,9 @@
                                                             placeholder="URL" />
                                                     </div>
                                                     <div class="form-group mt-2">
-                                                        <button type="reset" class="btn btn-warning">Reset</button>
+                                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                                         <button type="submit" class="btn btn-success"
-                                                            id="submit_btn">Save</button>
+                                                            id="submit_btn">Enregistrer</button>
                                                     </div>
                                                 </div>
                                                 <!-- /.card-body -->
@@ -124,13 +124,13 @@
                                     <td><?= $order_detls[0]['id']; ?></td>
                                 </tr>
                                 <tr>
-                                    <th class="w-10px">Name</th>
+                                    <th class="w-10px">Nom</th>
                                     <td><?= "Account Holder Person : " . $order_detls[0]['uname'] . " | Order Recipient Person :  " . $order_detls[0]['user_name']; ?>
                                     </td>
                                 </tr>
                                 <?php if (isset($order_detls[0]['email']) && !empty($order_detls[0]['email']) && $order_detls[0]['email'] != '' && $order_detls[0]['email'] != ' ') { ?>
                                     <tr>
-                                        <th class="w-10px">Email</th>
+                                        <th class="w-10px">E-mail</th>
                                         <td><?= (defined('ALLOW_MODIFICATION') && ALLOW_MODIFICATION == 0) ? str_repeat("X", strlen($order_detls[0]['email']) - 3) . substr($order_detls[0]['email'], -3) : $order_detls[0]['email']; ?>
                                         </td>
                                     </tr>
@@ -199,11 +199,11 @@
                                 <?php if (isset($order_tracking) && !empty($order_tracking) && isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] != 'awaiting') { ?>
                                     <?php if (isset($shiprocket_settings['local_shipping_method']) && $shiprocket_settings['local_shipping_method'] == 1) { ?>
                                         <tr>
-                                            <th class="w-10px">Order Tracking</th>
+                                            <th class="w-10px">Suivi de commande</th>
                                             <td>
                                                 <a href="javascript:void(0)"
                                                     class="edit_order_tracking btn btn-success btn-xs mr-1 "
-                                                    title="Order Tracking" data-order_id=' <?= $order_detls[0]['id']; ?>'
+                                                    title="Suivi de commande" data-order_id=' <?= $order_detls[0]['id']; ?>'
                                                     data-courier_agency=' <?= $order_tracking[0]['courier_agency'] ?> '
                                                     data-tracking_id=' <?= $order_tracking[0]['tracking_id'] ?> '
                                                     data-url=' <?= $order_tracking[0]['url'] ?> '
@@ -290,12 +290,12 @@
                                                                         class="btn btn-primary btn-xs mr-1 generate_awb" id=<?php print_r($order_tracking_data[0]['shipment_id']); ?>>AWB</a>
                                                                 <?php } else { ?>
                                                                     <?php if (empty($order_tracking_data[0]['pickup_scheduled_date'])) { ?>
-                                                                        <a href="" title="Send Pickup Request"
+                                                                        <a href="" title="Send Retrait Request"
                                                                             class="btn btn-primary btn-xs mr-1 send_pickup_request"
                                                                             name=<?php print_r($order_tracking_data[0]['shipment_id']); ?>><i class="fas fa-shipping-fast "></i></a>
                                                                     <?php }
                                                                     if (isset($order_tracking_data[0]['is_canceled']) && $order_tracking_data[0]['is_canceled'] == 0) { ?>
-                                                                        <a href="" title="Cancel Order"
+                                                                        <a href="" title="Annuler Order"
                                                                             class="btn btn-primary btn-xs mr-1 cancel_shiprocket_order"
                                                                             name=<?php print_r($order_tracking_data[0]['shiprocket_order_id']); ?>><i
                                                                                 class="fas fa-sync-alt"></i></a>
@@ -350,7 +350,7 @@
                                                             $user_email = fetch_details('orders', ['id' => $user_details[0]['order_id']], 'email');
                                                             ?>
                                                             <div class="col-md-5  d-flex align-items-center">
-                                                                <a href="javascript:void(0);" title="Update status"
+                                                                <a href="javascript:void(0);" title="Mettre à jour status"
                                                                     data-id='<?= $item['id'] ?>'
                                                                     class="btn btn-primary btn-xs update_mail_status_admin mr-1"><i
                                                                         class="far fa-arrow-alt-circle-up"></i></a>
@@ -378,16 +378,16 @@
                                                                     <?php } else { ?>
                                                                         <option value="processed"
                                                                             <?= (strtolower($item['active_status']) == 'processed') ? 'selected' : '' ?>>
-                                                                            Processed</option>
+                                                                            Traité</option>
 
                                                                         <?php if ($order_detls[0]['is_local_pickup'] == 0) { ?>
                                                                             <option value="shipped"
                                                                                 <?= (strtolower($item['active_status']) == 'shipped') ? 'selected' : '' ?>>
-                                                                                Shipped</option>
+                                                                                Expédié</option>
                                                                         <?php } else { ?>
                                                                             <option value="ready_to_pickup"
                                                                                 <?= (strtolower($item['active_status']) == 'ready_to_pickup') ? 'selected' : '' ?>>
-                                                                                Ready To Pickup</option>
+                                                                                Prêt à être retiré</option>
                                                                         <?php } ?>
                                                                         <option value="delivered"
                                                                             <?= (strtolower($item['active_status']) == 'delivered') ? 'selected' : '' ?>>
@@ -403,7 +403,7 @@
                                                             </div>
                                                             <div class="col-md-5 d-flex align-items-center">
 
-                                                                <a href="javascript:void(0);" title="Update status"
+                                                                <a href="javascript:void(0);" title="Mettre à jour status"
                                                                     data-id='<?= $item['id'] ?>'
                                                                     class="btn btn-primary btn-xs update_status_admin mr-1"><i
                                                                         class="far fa-arrow-alt-circle-up"></i></a>
@@ -437,7 +437,7 @@
                                                        <img src="<?= $image ?>" class="h-75">
                                                    </a>
                                                </div>
-                                                <div><span class="text-bold">Product Type :
+                                                <div><span class="text-bold">Type de produit :
                                                     </span><small><?= ucwords(str_replace('_', ' ', $item['product_type'])); ?>
                                                     </small></div>
                                                 <div><span class="text-bold">Variant ID :
@@ -447,19 +447,19 @@
                                                         </span><?= str_replace(',', ' | ', $item['product_variants'][0]['variant_values']) ?>
                                                     </div>
                                                 <?php } ?>
-                                                <div><span class="text-bold">Name : </span><small><?= $item['pname'] ?>
+                                                <div><span class="text-bold">Nom : </span><small><?= $item['pname'] ?>
                                                     </small></div>
-                                                <div><span class="text-bold">Quantity : </span><?= $item['quantity'] ?>
+                                                <div><span class="text-bold">Quantité : </span><?= $item['quantity'] ?>
                                                 </div>
-                                                <div><span class="text-bold">Price : </span><?= $item['price'] ?></div>
-                                                <div><span class="text-bold">Discounted Prices : </span>
+                                                <div><span class="text-bold">Prix : </span><?= $item['price'] ?></div>
+                                                <div><span class="text-bold">Discounted Prixs : </span>
                                                     <?= $item['discounted_price'] ?> </div>
                                                 <div><span class="text-bold">Subtotal :
                                                     </span><?= $item['price'] * $item['quantity'] ?> </div>
                                                 <?php
                                                 if (isset($item['product_type']) && ($item['product_type'] != 'digital_product')) { ?>
                                                     <?php if (isset($item['pickup_location']) && !empty($item['pickup_location'])) { ?>
-                                                        <div><span class="text-bold">Pickup Location :
+                                                        <div><span class="text-bold">Point de retrait :
                                                             </span><?= $item['pickup_location'] ?> </div>
                                                     <?php } ?>
                                                     <?php if (isset($order_tracking_data[0]['shipment_id'])) { ?>
@@ -491,7 +491,7 @@
                                                     <div><span class="text-bold">Updated By : </span><?= $item['updated_by'] ?>
                                                     </div>
                                                 <?php } ?>
-                                                <div><span class="text-bold">Active Status : </span> <span
+                                                <div><span class="text-bold">Statut actif : </span> <span
                                                         class="badge badge-<?= $badges[$item['active_status']] ?>"> <small
                                                             class="text-white active_class_badge"><?php print_r(str_replace('_', ' ', $item['active_status'])) ?></small></span>
                                                 </div>
@@ -534,7 +534,7 @@
                                 if (isset($item['product_type']) && ($item['product_type'] != 'digital_product')) { ?>
                                     <?php if ($order_detls[0]['is_local_pickup'] == 0) { ?>
                                         <tr>
-                                            <th class="w-10px">Delivery Charge(<?= $settings['currency'] ?>)</th>
+                                            <th class="w-10px">Livraison Charge(<?= $settings['currency'] ?>)</th>
                                             <td id='delivery_charge'>
                                                 <?= $order_detls[0]['delivery_charge'];
                                                 $total = $total + (float) $order_detls[0]['delivery_charge']; ?>
@@ -562,20 +562,20 @@
                                     value="<?php echo $order_detls[0]['final_total']; ?>">
 
                                 <tr>
-                                    <th class="w-10px">Promo Code Discount (<?= $settings['currency'] ?>)</th>
+                                    <th class="w-10px">Code promo Discount (<?= $settings['currency'] ?>)</th>
                                     <td><?php echo $order_detls[0]['promo_discount'];
                                         $total = ($total > 0) ? floatval($total - floatval($order_detls[0]['promo_discount'])) : $total; ?>
                                         <?= (!empty(trim($order_detls[0]['promo_code']))) ? "(" . $order_detls[0]['promo_code'] . ")" : ""; ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="w-10px">Bulk Discount (<?= $settings['currency'] ?>)</th>
+                                    <th class="w-10px">Remise en gros (<?= $settings['currency'] ?>)</th>
                                     <td><?php echo $order_detls[0]['bulk_discount'];
                                         $total = ($total > 0) ? floatval($total - floatval($order_detls[0]['bulk_discount'])) : $total; ?>
                                     </td>
                                 </tr>
                                
-                                <!-- Custom Charges -->
+                                <!-- Frais personnalisés -->
                                 
                              
                                 
@@ -593,7 +593,7 @@
                                         <td>
                                             <?= number_format($c['amount'], 2) ?>
                                             <?php
-                                            // Add custom charge to total
+                                            // Ajouter custom charge to total
                                             $total = floatval($total) + floatval($c['amount']);
                                             ?>
                                         </td>
@@ -617,13 +617,13 @@
                                 <?php if (isset($shiprocket_settings['local_shipping_method']) && $shiprocket_settings['local_shipping_method'] == 1 && $items[0]['product_type'] != 'digital_product') { ?>
                                     <?php if ($order_detls[0]['is_local_pickup'] == 0) { ?>
                                         <tr>
-                                            <th>Deliver By</th>
+                                            <th>Livré par</th>
                                             <td>
                                                 <select id="deliver_by" name="deliver_by"
                                                     class="form-control col-md-7 col-xs-12" required
                                                     <?= (isset($order_detls[0]['active_status']) && in_array($order_detls[0]['active_status'], ['draft', 'awaiting'])) ? 'disabled' : ''; ?>>
 
-                                                    <option value="">Select Delivery Boy</option>
+                                                    <option value="">Select Livreur</option>
                                                     <?php
                                                     foreach ($delivery_res as $row) {
                                                         $selected = (!empty($order_detls[0]['delivery_boy_id']) && $order_detls[0]['delivery_boy_id'] == $row['user_id']) ? 'selected' : '';
@@ -639,7 +639,7 @@
                                 <?php }
                                 } ?>
                                 <tr>
-                                    <th class="w-10px">Payment Method</th>
+                                    <th class="w-10px">Méthode de paiement</th>
                                     <td><?php echo ucwords(str_replace('_', ' ', $order_detls[0]['payment_method'])); ?></td>
                                 </tr>
                                 <?php if (!empty($bank_transfer)) { ?>
@@ -648,7 +648,7 @@
                                         <td>
                                             <div class="col-md-6">
                                                 <?php $status = ["history", "ban", "check"]; ?>
-                                                <a class="btn btn-primary btn-xs mr-1 mb-1 " title="Current Status: Pending"
+                                                <a class="btn btn-primary btn-xs mr-1 mb-1 " title="Current Statut: En attente"
                                                     href="javascript:void(0)" data-id="<?= $order_detls[0]['id']; ?>"><i
                                                         class="fa fa-<?= $status[$bank_transfer[0]['status']] ?>"></i></a>
                                                 <?php $i = 1;
@@ -663,7 +663,7 @@
                                                 <select name="update_receipt_status" id="update_receipt_status"
                                                     class="form-control status" data-id="<?= $order_detls[0]['id']; ?>"
                                                     data-user_id="<?= $order_detls[0]['user_id']; ?>">
-                                                    <option value=''>Select Status</option>
+                                                    <option value=''>Sélectionner le statut</option>
                                                     <option value="1" <?= (isset($bank_transfer[0]['status']) && $bank_transfer[0]['status'] == 1) ? "selected" : ""; ?>>
                                                         Rejected</option>
                                                     <option value="2" <?= (isset($bank_transfer[0]['status']) && $bank_transfer[0]['status'] == 2) ? "selected" : ""; ?>>
@@ -675,22 +675,22 @@
                                 <?php } ?>
                                 <?php if (isset($items[0]['product_type']) && $items[0]['product_type'] != 'digital_product') { ?>
                                     <tr>
-                                        <th class="w-10px">Address</th>
+                                        <th class="w-10px">Adresse</th>
                                         <td><?= $order_detls[0]['address']; ?></td>
                                     </tr>
 
                                     <tr>
-                                        <th class="w-10px">Delivery Date & Time</th>
+                                        <th class="w-10px">Livraison Date & Time</th>
                                         <td><?php echo (!empty($order_detls[0]['delivery_date']) && $order_detls[0]['delivery_date'] != NUll) ? date('d-M-Y', strtotime($order_detls[0]['delivery_date'])) . " - " . $order_detls[0]['delivery_time'] : "Anytime"; ?>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="w-10px">Order Date</th>
+                                        <th class="w-10px">Date de commande</th>
                                         <td><?php echo date('d-M-Y', strtotime($order_detls[0]['date_added'])); ?></td>
                                     </tr>
                                 <?php } ?>
                                 <tr>
-                                    <th>Status</th>
+                                    <th>Statut</th>
                                     <td>
                                         <select name="status" id="status" class="form-control" data-isjson="true"
                                             data-orderid="<?= isset($order_detls[0]['id']) ? $order_detls[0]['id'] : ''; ?>"
@@ -698,40 +698,40 @@
 
                                             <?php if (isset($items[0]['product_type']) && $items[0]['product_type'] == 'digital_product') { ?>
                                                 <option value="awaiting" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'awaiting') ? 'selected' : ''; ?>>
-                                                    Awaiting
+                                                    En attente
                                                 </option>
                                                 <option value="processed" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'processed') ? 'selected' : ''; ?>>
-                                                    Processed
+                                                    Traité
                                                 </option>
                                                 <option value="delivered" <?= (isset($order_detls[0]['active_status']) && strtolower($order_detls[0]['active_status']) == 'delivered') ? 'selected' : ''; ?>>
-                                                    Delivered
+                                                    Livré
                                                 </option>
                                             <?php } else { ?>
                                                 <?php if (isset($order_detls[0]['payment_method']) && $order_detls[0]['payment_method'] != 'bank_transfer') { ?>
                                                     <option value="received" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'received') ? 'selected' : ''; ?>>
-                                                        Received
+                                                        Reçu
                                                     </option>
                                                 <?php } ?>
                                                 <option value="processed" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'processed') ? 'selected' : ''; ?>>
-                                                    Processed
+                                                    Traité
                                                 </option>
                                                 <?php if (isset($order_detls[0]['is_local_pickup']) && $order_detls[0]['is_local_pickup'] == 0) { ?>
                                                     <option value="shipped" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'shipped') ? 'selected' : ''; ?>>
-                                                        Shipped
+                                                        Expédié
                                                     </option>
                                                 <?php } else { ?>
                                                     <option value="ready_to_pickup" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'ready_to_pickup') ? 'selected' : ''; ?>>
-                                                        Ready To Pickup
+                                                        Prêt à être retiré
                                                     </option>
                                                 <?php } ?>
                                                 <option value="delivered" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'delivered') ? 'selected' : ''; ?>>
-                                                    Delivered
+                                                    Livré
                                                 </option>
                                                 <option value="cancelled" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'cancelled') ? 'selected' : ''; ?>>
-                                                    Cancelled
+                                                    Annulé
                                                 </option>
                                                 <option value="returned" <?= (isset($order_detls[0]['active_status']) && $order_detls[0]['active_status'] == 'returned') ? 'selected' : ''; ?>>
-                                                    Returned
+                                                    Retourné
                                                 </option>
                                             <?php } ?>
                                         </select>
@@ -743,7 +743,7 @@
                                 ?>
                                     <tr>
                                         <td colspan="2">
-                                            <h5><b>Local / Store Pickup</b></h5>
+                                            <h5><b>Local / Store Retrait</b></h5>
                                             <hr>
                                             <div class="row">
                                                 <div class="form-group col-md-5">
@@ -753,7 +753,7 @@
                                                         value="<?= $order_detls[0]['seller_notes'] ?>" />
                                                 </div>
                                                 <div class="form-group col-md-5">
-                                                    <label for="">Pickup Time</label>
+                                                    <label for="">Retrait Time</label>
                                                     <?php $dateTime = new DateTime($order_detls[0]['pickup_time']);
                                                     $date = $dateTime->format('Y-m-d');
                                                     $time = $dateTime->format('H:i');
@@ -771,18 +771,18 @@
                                     <td colspan="2">
                                         <div class="form-group">
                                             <a href="https://api.whatsapp.com/send?phone= <?= ($order_detls[0]['mobile'] != '' && isset($order_detls[0]['mobile'])) ? $order_detls[0]['mobile'] : ((!defined('ALLOW_MODIFICATION') && ALLOW_MODIFICATION == 0) ? str_repeat("X", strlen($mobile_data[0]['mobile']) - 3) . substr($mobile_data[0]['mobile'], -3) : $mobile_data[0]['mobile']) ?> &amp;text=Hello <?= $order_detls[0]['uname'] ?>, Your order with ID : <?= $order_detls[0]['order_id'] ?> and is <?= $order_detls[0]['oi_active_status'] ?>. Please take a note of it. If you have further queries feel free to contact us. Thank you."
-                                                target="_blank" title="Send Whatsapp Notification"
+                                                target="_blank" title="Send WhatsApp Notification"
                                                 class="btn btn-success"><ion-icon class="align-bottom fs-3"
-                                                    name="logo-whatsapp"></ion-icon> Send Whatsapp Notification</a>
+                                                    name="logo-whatsapp"></ion-icon> Send WhatsApp Notification</a>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         <div class="form-group">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                             <button type="submit" class="btn btn-success update_order"
-                                                id="submit_btn">Update Order</button>
+                                                id="submit_btn">Mettre à jour Order</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -803,7 +803,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="user_name">Payment Refund</h5>
+                <h5 class="modal-title" id="user_name">Paiement Refund</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                 </button>
@@ -824,12 +824,12 @@
                                 </div>
                                 <div class="card-body pad">
                                     <div class="form-group ">
-                                        <label for="transaction_id">Transaction Id</label>
+                                        <label for="transaction_id">ID Transaction</label>
                                         <input type="text" class="form-control" name="transaction_id"
-                                            id="transaction_id" placeholder="Transaction Id" disabled />
+                                            id="transaction_id" placeholder="ID Transaction" disabled />
                                     </div>
                                     <div class="form-group ">
-                                        <label for="txn_amount">Amount</label>
+                                        <label for="txn_amount">Montant</label>
                                         <input type="text" class="form-control" name="txn_amount" id="txn_amount"
                                             placeholder="Amount" disabled />
                                     </div>
@@ -860,7 +860,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Create Shipprocket Order Parcel</h5>
+                    <h5 class="modal-title">Créer Shipprocket Order Parcel</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                     </button>
@@ -895,19 +895,19 @@
                                                 verified from <a
                                                     href="https://app.shiprocket.in/company-pickup-location?redirect_url="
                                                     target="_blank" class="text-decoration-underline color-white">
-                                                    Shiprocket Dashboard </a> and then in <a
-                                                    href="<?php base_url('admin/Pickup_location/manage-pickup-locations'); ?>"
+                                                    Shiprocket Tableau de bord </a> and then in <a
+                                                    href="<?php base_url('admin/Retrait_location/manage-pickup-locations'); ?>"
                                                     target="_blank" class="text-decoration-underline color-white"> admin
                                                     panel </a>. If it is not verified you will not be able to generate
                                                 AWB later on.</p>
                                         </div>
                                         <div class="form-group row mt-4">
                                             <div class="col-4">
-                                                <label for="txn_amount">Pickup location</label>
+                                                <label for="txn_amount">Retrait location</label>
                                             </div>
                                             <div class="col-8">
                                                 <input type="text" class="form-control" name="pickup_location"
-                                                    id="pickup_location" placeholder="Pickup Location" value=""
+                                                    id="pickup_location" placeholder="Point de retrait" value=""
                                                     readonly />
                                             </div>
                                         </div>
@@ -953,7 +953,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
+                                            data-dismiss="modal">Fermer</button>
                                         <button type="submit" class="btn btn-success create_shiprocket_parcel">Create
                                             Order</button>
                                     </div>
@@ -978,7 +978,7 @@
                 <div class="modal-dialog modal-m ">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Manage Digital Product</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitre">Gérer Produit numérique</h5>
                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                             </button>
@@ -994,7 +994,7 @@
                                     <div class="row form-group">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="product_name">Customer Email-ID </label>
+                                                <label for="product_name">Client E-mail-ID </label>
                                                 <input type="text" class="form-control" id="email" name="email"
                                                     value="<?= $fetched[0]['email'] ?>" readonly>
                                             </div>
@@ -1014,7 +1014,7 @@
                                                     data-input='pro_input_file' data-isremovable='1'
                                                     data-media_type='archive,document'
                                                     data-is-multiple-uploads-allowed='0' data-toggle="modal"
-                                                    data-target="#media-upload-modal" value="Upload Photo"><i
+                                                    data-target="#media-upload-modal" value="Téléverser une photo"><i
                                                         class='fa fa-upload'></i> Upload</a></div>
                                             <div class="container-fluid row image-upload-section">
                                                 <div
@@ -1024,7 +1024,7 @@
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-success mt-3" id="submit_btn"
-                                        value="Save"><?= labels('send_mail', 'Send Mail') ?></button>
+                                        value="Enregistrer"><?= labels('send_mail', 'Envoyer l'e-mail') ?></button>
                                 </div>
                             </form>
                         </div>
@@ -1043,7 +1043,7 @@
             <div class="modal-dialog modal-lg ">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Manage Digital Product</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitre">Gérer Produit numérique</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                         </button>
@@ -1065,7 +1065,7 @@
                                 <div class="row form-group">
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="product_name">Customer Email-ID </label>
+                                            <label for="product_name">Client E-mail-ID </label>
                                             <input type="text" class="form-control" id="email" name="email" value=""
                                                 readonly>
                                         </div>
@@ -1074,15 +1074,15 @@
                                         <div class="form-group">
                                             <label for="subject">Subject </label>
                                             <input type="text" class="form-control" id="subject"
-                                                placeholder="Enter Subject for email" name="subject" value="">
+                                                placeholder="Saisir le sujet de l'e-mail" name="subject" value="">
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="product_name">Message </label>
-                                            <textarea type="text" class="form-control textarea addr_editor" rows="6"
-                                                placeholder="Message for Email" name="message"></textarea>
+                                            <textarea type="text" class="form-control textarea addr_editor" lignes="6"
+                                                placeholder="Message pour l'e-mail" name="message"></textarea>
                                         </div>
                                     </div>
 
@@ -1094,7 +1094,7 @@
                                                 data-input='pro_input_file' data-isremovable='1'
                                                 data-media_type='archive,document' data-is-multiple-uploads-allowed='0'
                                                 data-toggle="modal" data-target="#media-upload-modal"
-                                                value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                                value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
                                         <div class="container-fluid row image-upload-section">
                                             <div
                                                 class="col-md-6 col-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image d-none">
@@ -1103,7 +1103,7 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-success mt-3" id="submit_btn"
-                                    value="Save"><?= labels('send_mail', 'Send Mail') ?></button>
+                                    value="Enregistrer"><?= labels('send_mail', 'Envoyer l'e-mail') ?></button>
                             </div>
                         </form>
                     </div>

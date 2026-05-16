@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
     <link rel="icon" type="image/ico" href="#">
-    <title>Email - <?= $settings['app_name'] ?></title>
+    <title>E-mail - <?= $settings['app_name'] ?></title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
 </head>

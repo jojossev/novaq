@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>Add Seller</h4>
+                    <h4>Ajouter Seller</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Seller</li>
                     </ol>
                 </div>
@@ -24,7 +24,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Categories & Commission(%)</h5>
+                                <h5 class="modal-title">Catégories & Commission(%)</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -34,17 +34,17 @@
 
                                     <div class="card-body row">
                                         <!-- dynamic section here -->
-                                        <label for="Categories" class="col-sm-2 col-form-label">Categories</label>
+                                        <label for="Catégories" class="col-sm-2 col-form-label">Catégories</label>
 
                                         <div id="category_section"> </div>
 
                                         <div class="form-group col-md-12  text-center">
-                                            <button type="button" id="add_category" class="btn btn-primary"> <i class="far fa-plus"></i> Add More Category </button>
+                                            <button type="button" id="add_category" class="btn btn-primary"> <i class="far fa-plus"></i> Ajouter More Catégorie </button>
                                         </div>
                                         <br>
                                         <div class="form-group ">
-                                            <button type="reset" class="btn btn-warning">Reset</button>
-                                            <button type="submit" class="btn btn-success" id="save_btn">Save</button>
+                                            <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                            <button type="submit" class="btn btn-success" id="save_btn">Enregistrer</button>
                                         </div>
                                     </div>
                                 </form>
@@ -66,53 +66,53 @@
                             } ?>
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <textarea cols="20" rows="20" id="cat_data" name="commission_data" class="d-none"></textarea>
-                                    <label for="name" class="col-sm-2 col-form-label">Name <span class='text-danger text-sm'>*</span></label>
+                                    <textarea cols="20" lignes="20" id="cat_data" name="commission_data" class="d-none"></textarea>
+                                    <label for="name" class="col-sm-2 col-form-label">Nom <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" placeholder="Seller Name" name="name" value="<?= @$fetched_data[0]['username'] ?>">
+                                        <input type="text" class="form-control" id="name" placeholder="Seller Nom" name="name" value="<?= @$fetched_data[0]['username'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="mobile" class="col-sm-2 col-form-label">Mobile <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" maxlength="16" oninput="validateNumberInput(this)" class="form-control" id="mobile" placeholder="Enter Mobile" name="mobile" value="<?= @$fetched_data[0]['mobile'] ?>">
+                                        <input type="text" maxlength="16" oninput="validateN°|NuméroInput(this)" class="form-control" id="mobile" placeholder="Entrez le mobile" name="mobile" value="<?= @$fetched_data[0]['mobile'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="email" class="col-sm-2 col-form-label">Email <span class='text-danger text-sm'>*</span></label>
+                                    <label for="email" class="col-sm-2 col-form-label">E-mail <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" value="<?= @$fetched_data[0]['email'] ?>">
+                                        <input type="email" class="form-control" id="email" placeholder="Entrez l'e-mail" name="email" value="<?= @$fetched_data[0]['email'] ?>">
                                     </div>
                                 </div>
                                 <?php
                                 if (!isset($fetched_data[0]['id'])) {
                                 ?>
                                     <div class="form-group row ">
-                                        <label for="password" class="col-sm-2 col-form-label">Password <span class='text-danger text-sm'>*</span></label>
+                                        <label for="password" class="col-sm-2 col-form-label">Mot de passe <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="password" placeholder="Enter Passsword" name="password" value="<?= @$fetched_data[0]['password'] ?>">
-                                            <span class="input-group-text togglePassword" style="cursor: pointer;">
+                                            <input type="password" class="form-control" id="password" placeholder="Entrez le mot de passe" name="password" value="<?= @$fetched_data[0]['password'] ?>">
+                                            <span class="input-group-text toggleMot de passe" style="cursor: pointer;">
                                                 <i class="fa fa-eye"></i>
                                             </span>
                                         </div>
                                     </div>
                                     <div class="form-group row ">
-                                        <label for="confirm_password" class="col-sm-2 col-form-label">Confirm Password <span class='text-danger text-sm'>*</span></label>
+                                        <label for="confirm_password" class="col-sm-2 col-form-label">Confirmer le mot de passe <span class='text-danger text-sm'>*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="confirm_password" placeholder="Enter Confirm Password" name="confirm_password">
+                                            <input type="password" class="form-control" id="confirm_password" placeholder="Confirmez le mot de passe" name="confirm_password">
                                         </div>
                                     </div>
                                 <?php
                                 }
                                 ?>
                                 <div class="form-group row">
-                                    <label for="address" class="col-sm-2 col-form-label">Address <span class='text-danger text-sm'>*</span></label>
+                                    <label for="address" class="col-sm-2 col-form-label">Adresse <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <textarea type="text" class="form-control" id="address" placeholder="Enter Address" name="address"><?= isset($fetched_data[0]['address']) ? @$fetched_data[0]['address'] : ""; ?></textarea>
+                                        <textarea type="text" class="form-control" id="address" placeholder="Entrez l'adresse" name="address"><?= isset($fetched_data[0]['address']) ? @$fetched_data[0]['address'] : ""; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="address_proof" class="col-sm-2 col-form-label">Address Proof <span class='text-danger text-sm'>*</span> </label>
+                                    <label for="address_proof" class="col-sm-2 col-form-label">Adresse Proof <span class='text-danger text-sm'>*</span> </label>
                                     <div class="col-sm-10">
                                         <?php if (isset($fetched_data[0]['address_proof']) && !empty($fetched_data[0]['address_proof'])) { ?>
                                             <span class="text-danger">*Leave blank if there is no change</span>
@@ -135,22 +135,22 @@
                                     <?php
                                     $category_html =  get_categories_option_html($categories);
                                     ?>
-                                    <label for="commission" class="col-sm-8 col-form-label">Choose Categories & Commission(%) <small>(Commission(%) to be given to the Super Admin on order item by Category you select.If you do not set the commission beside category then it will get global commission other wise perticuler category commission will be consider.)</small> </label>
+                                    <label for="commission" class="col-sm-8 col-form-label">Choose Catégories & Commission(%) <small>(Commission(%) to be given to the Super Admin on order item by Catégorie you select.If you do not set the commission beside category then it will get global commission other wise perticuler category commission will be consider.)</small> </label>
                                     <div class="d-none" id="cat_html">
                                         <?= $category_html ?>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-3 offset-2">
-                                        <a href="javascript:void(0)" id="seller_model" data-seller_id="<?= (isset($fetched_data[0]['user_id']) && !empty($fetched_data[0]['user_id'])) ? $fetched_data[0]['user_id'] : ""; ?>" data-cat_ids="<?= (isset($fetched_data[0]['id']) &&  !empty($fetched_data[0]['id'])) ? $fetched_data[0]['category_ids'] : ""; ?>" class=" btn btn-block  btn-outline-primary btn-sm" title="Manage Categories & Commission" data-target="#set_commission_model" data-toggle="modal">Manage</a>
+                                        <a href="javascript:void(0)" id="seller_model" data-seller_id="<?= (isset($fetched_data[0]['user_id']) && !empty($fetched_data[0]['user_id'])) ? $fetched_data[0]['user_id'] : ""; ?>" data-cat_ids="<?= (isset($fetched_data[0]['id']) &&  !empty($fetched_data[0]['id'])) ? $fetched_data[0]['category_ids'] : ""; ?>" class=" btn btn-block  btn-outline-primary btn-sm" title="Gérer les catégories & Commission" data-target="#set_commission_model" data-toggle="modal">Manage</a>
                                     </div>
                                 </div>
                                 <h4>Store Details</h4>
                                 <hr>
                                 <div class="form-group row">
-                                    <label for="store_name" class="col-sm-2 col-form-label">Name <span class='text-danger text-sm'>*</span></label>
+                                    <label for="store_name" class="col-sm-2 col-form-label">Nom <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="store_name" placeholder="Store Name" name="store_name" value="<?= @$fetched_data[0]['store_name'] ?>">
+                                        <input type="text" class="form-control" id="store_name" placeholder="Store Nom" name="store_name" value="<?= @$fetched_data[0]['store_name'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -182,33 +182,33 @@
                                 <h4>Bank Details</h4>
                                 <hr>
                                 <div class="form-group row">
-                                    <label for="account_number" class="col-sm-2 col-form-label">Account Number </label>
+                                    <label for="account_number" class="col-sm-2 col-form-label">Numéro de compte </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="account_number" placeholder="Account Number" name="account_number" value="<?= @$fetched_data[0]['account_number'] ?>">
+                                        <input type="text" class="form-control" id="account_number" placeholder="Numéro de compte" name="account_number" value="<?= @$fetched_data[0]['account_number'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="account_name" class="col-sm-2 col-form-label">Account Name </label>
+                                    <label for="account_name" class="col-sm-2 col-form-label">Nom du compte </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="account_name" placeholder="Account Name" name="account_name" value="<?= @$fetched_data[0]['account_name'] ?>">
+                                        <input type="text" class="form-control" id="account_name" placeholder="Nom du compte" name="account_name" value="<?= @$fetched_data[0]['account_name'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="bank_code" class="col-sm-2 col-form-label">Bank Code</label>
+                                    <label for="bank_code" class="col-sm-2 col-form-label">Code banque</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="bank_code" placeholder="Bank Code" name="bank_code" value="<?= @$fetched_data[0]['bank_code'] ?>">
+                                        <input type="text" class="form-control" id="bank_code" placeholder="Code banque" name="bank_code" value="<?= @$fetched_data[0]['bank_code'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="bank_name" class="col-sm-2 col-form-label">Bank Name </label>
+                                    <label for="bank_name" class="col-sm-2 col-form-label">Nom de la banque </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="bank_name" placeholder="Bank Name" name="bank_name" value="<?= @$fetched_data[0]['bank_name'] ?>">
+                                        <input type="text" class="form-control" id="bank_name" placeholder="Nom de la banque" name="bank_name" value="<?= @$fetched_data[0]['bank_name'] ?>">
                                     </div>
                                 </div>
-                                <h4>Other Details</h4>
+                                <h4>Autre Details</h4>
                                 <hr>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Status <span class='text-danger text-sm'>*</span></label>
+                                    <label class="col-sm-2 col-form-label">Statut <span class='text-danger text-sm'>*</span></label>
                                     <div id="status" class="btn-group col-sm-4">
                                         <label class="btn btn-default" data-toggle-class="btn-default" data-toggle-passive-class="btn-default">
                                             <input type="radio" name="status" value="0" <?= (isset($fetched_data[0]['status']) && $fetched_data[0]['status'] == '0') ? 'Checked' : '' ?>> Deactive
@@ -236,21 +236,21 @@
                                     </div>
                                 <?php } ?>
                                 <div class="form-group row">
-                                    <label for="tax_name" class="col-sm-2 col-form-label">Tax Name <span class='text-danger text-sm'>*</span></label>
+                                    <label for="tax_name" class="col-sm-2 col-form-label">Nom de la taxe <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="tax_name" placeholder="Tax Name" name="tax_name" value="<?= @$fetched_data[0]['tax_name'] ?>">
+                                        <input type="text" class="form-control" id="tax_name" placeholder="Nom de la taxe" name="tax_name" value="<?= @$fetched_data[0]['tax_name'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="tax_number" class="col-sm-2 col-form-label">Tax Number <span class='text-danger text-sm'>*</span></label>
+                                    <label for="tax_number" class="col-sm-2 col-form-label">Numéro de taxe <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="tax_number" placeholder="Tax Number" name="tax_number" value="<?= @$fetched_data[0]['tax_number'] ?>">
+                                        <input type="text" class="form-control" id="tax_number" placeholder="Numéro de taxe" name="tax_number" value="<?= @$fetched_data[0]['tax_number'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="pan_number" class="col-sm-2 col-form-label">Pan Number </label>
+                                    <label for="pan_number" class="col-sm-2 col-form-label">Pan N°|Numéro </label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="pan_number" placeholder="Pan Number" name="pan_number" value="<?= @$fetched_data[0]['pan_number'] ?>">
+                                        <input type="text" class="form-control" id="pan_number" placeholder="Pan N°|Numéro" name="pan_number" value="<?= @$fetched_data[0]['pan_number'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -275,7 +275,7 @@
                                     <div class="col-sm-1">
                                         <input type="checkbox" name="require_products_approval" <?= (isset($permit['require_products_approval']) && $permit['require_products_approval'] == '1') ? 'Checked' : '' ?> data-bootstrap-switch data-off-color="danger" data-on-color="success">
                                     </div>
-                                    <label for="customer_privacy" class="form-label">View Customer's Details? <span class='text-danger text-sm'>*</span></label>
+                                    <label for="customer_privacy" class="form-label">View Client's Details? <span class='text-danger text-sm'>*</span></label>
                                     <div class="col-sm-1">
                                         <input type="checkbox" name="customer_privacy" <?= (isset($permit['customer_privacy']) && $permit['customer_privacy'] == '1') ? 'Checked' : '' ?> data-bootstrap-switch data-off-color="danger" data-on-color="success">
                                     </div>
@@ -290,8 +290,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Seller' : 'Add Seller' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Seller' : 'Ajouter Seller' ?></button>
                                 </div>
                             </div>
                             

@@ -69,7 +69,7 @@
         <a class="nav-link rounded <?= ($current_url == base_url('my-account/tickets')) ? 'active' : '' ?>" id="transaction-details" href="<?= base_url('my-account/tickets') ?>">
             <div class="text-left py-1 px-3 sidebar-text">
                 <h6 class="mb-0">
-                    <i class="fas fa-headset fa-lg left-aside"></i> <?= !empty($this->lang->line('Customer Support')) ? $this->lang->line('Customer Support') : 'Customer Support' ?>
+                    <i class="fas fa-headset fa-lg left-aside"></i> <?= !empty($this->lang->line('Client Support')) ? $this->lang->line('Client Support') : 'Client Support' ?>
                 </h6>
             </div>
         </a>
@@ -79,7 +79,7 @@
         <a class="nav-link rounded <?= ($current_url == base_url('my-account/delete_user')) ? 'active' : '' ?>" id="transaction-details" href="<?= base_url('my-account/delete_user') ?>">
             <div class="text-left py-1 px-3 sidebar-text">
                 <h6 class="mb-0">
-                    <i class="fas fa-trash fa-lg left-aside"></i> <?= !empty($this->lang->line('Delete Account')) ? $this->lang->line('Delete Account') : 'Delete Account' ?>
+                    <i class="fas fa-trash fa-lg left-aside"></i> <?= !empty($this->lang->line('Supprimer Account')) ? $this->lang->line('Supprimer Account') : 'Supprimer Account' ?>
                 </h6>
             </div>
         </a>

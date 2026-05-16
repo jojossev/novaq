@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">About Us</li>
                     </ol>
                 </div>
@@ -25,11 +25,11 @@
                             <div class="card-body pad">
                                 <label for="other_images"> About Us </label>
                                 <div class="mb-3">
-                                    <textarea name="about_us_input_description" class="textarea addr_editor" placeholder="Place some text here">  <?= output_escaping(str_replace('\r\n', '&#13;&#10;', @$about_us)) ?></textarea>
+                                    <textarea name="about_us_input_description" class="textarea addr_editor" placeholder="Saisissez votre texte ici">  <?= output_escaping(str_replace('\r\n', '&#13;&#10;', @$about_us)) ?></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success" id="submit_btn">Update About Us</button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success" id="submit_btn">Mettre à jour About Us</button>
                                 </div>
                             </div>
                            

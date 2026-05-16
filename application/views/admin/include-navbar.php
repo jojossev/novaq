@@ -27,7 +27,7 @@
 
     <!-- GOOGLE TRANSLATE (Only ONE ID) -->
     <li class="nav-item mx-2">
-        <div id="google_translate_element"></div>
+        <!-- Google Translate supprimé -->
     </li>
 
     <!-- NOTIFICATIONS -->
@@ -58,11 +58,11 @@
                 </a>
 
                 <a class="dropdown-item">
-                    <i class="fas fa-user-circle mr-2 fa-lg"></i> Profile
+                    <i class="fas fa-user-circle mr-2 fa-lg"></i> Profil
                 </a>
 
                 <a href="<?= base_url('admin/home/logout') ?>" class="dropdown-item">
-                    <i class="fa fa-sign-out-alt mr-2 fa-lg"></i> Log Out
+                    <i class="fa fa-sign-out-alt mr-2 fa-lg"></i> Déconnexion
                 </a>
 
             <?php } else { ?>
@@ -72,11 +72,11 @@
                 </a>
 
                 <a href="<?= base_url('delivery_boy/home/profile') ?>" class="dropdown-item">
-                    <i class="fas fa-user mr-2"></i> Profile
+                    <i class="fas fa-user mr-2"></i> Profil
                 </a>
 
                 <a href="<?= base_url('delivery_boy/home/logout') ?>" class="dropdown-item">
-                    <i class="fa fa-sign-out-alt mr-2"></i> Log Out
+                    <i class="fa fa-sign-out-alt mr-2"></i> Déconnexion
                 </a>
 
             <?php } ?>
@@ -88,13 +88,13 @@
         <a class="nav-link" data-toggle="dropdown" href="#">
             <div class="form-control mr-sm-2 d-flex p-0">
                 <div class="avatar avatar-online">
-                    <img src="<?= base_url('/assets/admin/img/avatars/Admin_Profile.png') ?>"
+                    <img src="<?= base_url('/assets/admin/img/avatars/Admin_Profil.png') ?>"
                          class="w-px-40 h-auto rounded-circle avatar avatar-online" />
                 </div>
 
                 <b>
                     <p class="image-text">
-                        Hi, <?= ucfirst($this->ion_auth->user()->row()->username) ?>
+                        Bonjour, <?= ucfirst($this->ion_auth->user()->row()->username) ?>
                     </p>
                 </b>
             </div>
@@ -108,7 +108,7 @@
                     <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                                <img src="<?= base_url('/assets/admin/img/avatars/Admin_Profile.png') ?>"
+                                <img src="<?= base_url('/assets/admin/img/avatars/Admin_Profil.png') ?>"
                                      class="w-px-40 h-auto rounded-circle avatar avatar-online" />
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                         <div class="flex-grow-1 p-2">
                             <?php $username = $this->ion_auth->user()->row()->username; ?>
                             <p class="image-text" title="<?= ucfirst($username) ?>">
-                                Hi, <?= ucfirst(strlen($username) > 15 ? substr($username, 0, 12) . '...' : $username) ?>
+                                Bonjour, <?= ucfirst(strlen($username) > 15 ? substr($username, 0, 12) . '...' : $username) ?>
                             </p>
                         </div>
                     </div>
@@ -125,11 +125,11 @@
                 <div class="dropdown-divider"></div>
 
                 <a href="<?= base_url('admin/home/profile') ?>" class="dropdown-item">
-                    <i class="fas fa-user-circle mr-2 fa-lg"></i> Profile
+                    <i class="fas fa-user-circle mr-2 fa-lg"></i> Profil
                 </a>
 
                 <a href="<?= base_url('admin/home/logout') ?>" class="dropdown-item">
-                    <i class="fa fa-sign-out-alt mr-2 fa-lg"></i> Log Out
+                    <i class="fa fa-sign-out-alt mr-2 fa-lg"></i> Déconnexion
                 </a>
 
             <?php } else { ?>
@@ -139,11 +139,11 @@
                 </a>
 
                 <a href="<?= base_url('delivery_boy/home/profile') ?>" class="dropdown-item">
-                    <i class="fas fa-user mr-2"></i> Profile
+                    <i class="fas fa-user mr-2"></i> Profil
                 </a>
 
                 <a href="<?= base_url('delivery_boy/home/logout') ?>" class="dropdown-item">
-                    <i class="fa fa-sign-out-alt mr-2"></i> Log Out
+                    <i class="fa fa-sign-out-alt mr-2"></i> Déconnexion
                 </a>
 
             <?php } ?>

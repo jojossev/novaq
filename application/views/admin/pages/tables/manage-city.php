@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>Manage City</h4>
+                    <h4>Gérer City</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">City</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Ville</li>
                     </ol>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                             <div class="card-body">
                                 <div class="row mt-2">
                                     <div class="form-group col-md-3">
-                                        <label for="city_name" class="mb-2">City Name <span class='text-danger text-sm'>*</span></label>
+                                        <label for="city_name" class="mb-2">City Nom <span class='text-danger text-sm'>*</span></label>
                                     </div>
                                     <div class="form-group col-md-9">
                                         <input type="text" class="form-control" name="city_name" id="city_name" value="<?= (isset($fetched_data[0]['name']) ? $fetched_data[0]['name'] : '') ?>">
@@ -41,7 +41,7 @@
 
                                 <div class="row mt-2">
                                     <div class="form-group col-md-3">
-                                        <label for="minimum_free_delivery_order_amount" class="control-label">Minimum Free Delivery Order Amount <span class='text-danger text-xs'>*</span></label>
+                                        <label for="minimum_free_delivery_order_amount" class="control-label">Minimum Free Livraison Order Amount <span class='text-danger text-xs'>*</span></label>
                                     </div>
                                     <div class="form-group col-md-9">
                                         <input type="number" class="form-control" name="minimum_free_delivery_order_amount" id="minimum_free_delivery_order_amount" min="0" value="<?= (isset($fetched_data[0]['minimum_free_delivery_order_amount']) ? $fetched_data[0]['minimum_free_delivery_order_amount'] : '') ?>">
@@ -50,7 +50,7 @@
 
                                 <div class="row mt-2">
                                     <div class="form-group col-md-3">
-                                        <label for="delivery_charges" class="control-label">Delivery Charges <span class='text-danger text-xs'>*</span></label>
+                                        <label for="delivery_charges" class="control-label">Livraison Charges <span class='text-danger text-xs'>*</span></label>
                                     </div>
                                     <div class="form-group col-md-9">
                                         <input type="number" class="form-control" name="delivery_charges" id="delivery_charges" min="0" value="<?= (isset($fetched_data[0]['delivery_charges']) ? $fetched_data[0]['delivery_charges'] : '') ?>">
@@ -58,8 +58,8 @@
                                 </div>
 
                                 <div class="form-group mt-4">
-                                    <button type="reset" class="btn btn-warning">Reset</button>
-                                    <button type="submit" class="btn btn-success m-2" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update City' : 'Add City' ?></button>
+                                    <button type="reset" class="btn btn-warning">Réinitialiser</button>
+                                    <button type="submit" class="btn btn-success m-2" id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour City' : 'Ajouter City' ?></button>
                                 </div>
                             </div>
 
@@ -71,7 +71,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit City</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitre">Modifier City</h5>
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
 
                                 </button>
@@ -89,15 +89,15 @@
                         <div class="card-innr">
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' data-toggle="table" data-url="<?= base_url('admin/area/view_city') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-export-options='{
-                        "fileName": "city-list",
+                        "fileNom": "city-list",
                         "ignoreColumn": ["operate"] 
                         }' data-query-params="queryParams">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true">ID</th>
-                                        <th data-field="name" data-sortable="false">Name</th>
-                                        <th data-field="minimum_free_delivery_order_amount" data-sortable="false">Minimum Free Delivery Order Amount</th>
-                                        <th data-field="delivery_charges" data-sortable="false">Delivery Charges</th>
+                                        <th data-field="name" data-sortable="false">Nom</th>
+                                        <th data-field="minimum_free_delivery_order_amount" data-sortable="false">Minimum Free Livraison Order Amount</th>
+                                        <th data-field="delivery_charges" data-sortable="false">Livraison Charges</th>
                                         <th data-field="operate" data-sortable="false">Actions</th>
                                     </tr>
                                 </thead>

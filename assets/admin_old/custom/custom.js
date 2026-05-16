@@ -7796,7 +7796,7 @@ $(document).on("click", "#notification_count", function (e) {
   $list.addClass("show").html(`
             <div class="text-center py-4 text-muted">
                 <div class="spinner-border spinner-border-sm me-2"></div>
-                Please wait...
+                Patientez...
             </div>
         `);
 

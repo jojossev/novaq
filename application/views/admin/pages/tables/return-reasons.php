@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2 mt-4">
                 <div class="col-sm-8">
-                    <h4>Manage Return Reasons</h4>
+                    <h4>Gérer les retours Reasons</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="https://eshop.wrteam.co.in/admin/home">Home</a></li>
-                        <li class="breadcrumb-item active">Manage Return Reasons</li>
+                        <li class="breadcrumb-item"><a href="https://eshop.wrteam.co.in/admin/home">Accueil</a></li>
+                        <li class="breadcrumb-item active">Gérer les retours Reasons</li>
                     </ol>
                 </div>
 
@@ -23,7 +23,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Manage Return Reasons</h5>
+                                <h5 class="modal-title">Gérer les retours Reasons</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -38,7 +38,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Add Return Reasons</h5>
+                                    <h5 class="modal-title">Ajouter Return Reasons</h5>
                                     <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true"></span>
                                     </button>
@@ -53,17 +53,17 @@
 
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <label for="">Title <span class='text-danger text-sm'>*</span></label>
+                                                    <label for="">Titre <span class='text-danger text-sm'>*</span></label>
                                                     <input type="text" class="form-control" name="return_reason" id="return_reason" value="">
                                                 </div>
 
                                                 <div class="form-group col-md-12">
-                                                    <label for="image">Main Image <span class='text-danger text-sm'>*</span><small>(Recommended Size : 80 x 80 pixels)</small></label>
+                                                    <label for="image">Image principale <span class='text-danger text-sm'>*</span><small>(Taille recommandée : 80 x 80 pixels)</small></label>
                                                     <div class="col-sm-10">
-                                                        <div class='col-md-5'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Upload Photo"><i class='fa fa-upload'></i> Upload</a></div>
+                                                        <div class='col-md-5'><a class="uploadFile img btn btn-primary text-white btn-sm" data-input='image' data-isremovable='0' data-is-multiple-uploads-allowed='0' data-toggle="modal" data-target="#media-upload-modal" value="Téléverser une photo"><i class='fa fa-upload'></i> Upload</a></div>
 
 
-                                                        <label class="text-danger mt-3 edit_promo_upload_image_note">*Only Choose When Update is necessary</label>
+                                                        <label class="text-danger mt-3 edit_promo_upload_image_note">*Choisir uniquement lorsque la mise à jour est nécessaire</label>
                                                         <div class="container-fluid image-upload-section">
                                                             <div class="col-md-12 col-sm-12 shadow p-3 mb-5 bg-white rounded m-4 text-center grow image">
                                                                 <div class='image-upload-div'>
@@ -78,8 +78,8 @@
 
                                             </div>
                                             <div class="form-group">
-                                                <button type="reset" class="btn btn-warning reset_return_reason">Reset</button>
-                                                <button type="submit" class="btn btn-success save_return_reason" id="submit_btn"><?= (isset($fetched_details[0]['id'])) ? 'Update Return Reason' : 'Add Return Reason' ?></button>
+                                                <button type="reset" class="btn btn-warning reset_return_reason">Réinitialiser</button>
+                                                <button type="submit" class="btn btn-success save_return_reason" id="submit_btn"><?= (isset($fetched_details[0]['id'])) ? 'Mettre à jour Return Reason' : 'Ajouter Return Reason' ?></button>
                                             </div>
                                         </div>
 
@@ -93,14 +93,14 @@
                         <div class="card-header border-0">
                             <div class="card-tools">
                                 <button type="button" class="btn btn-block  btn-outline-primary  add_return_reason_btn" data-toggle="modal" data-target="#add_return_reason">
-                                    Add Return Reasons
+                                    Ajouter Return Reasons
                                 </button>
                             </div>
                         </div>
                         <div class="card-innr">
                             <div class="gaps-1-5x"></div>
                             <table class='table-striped' data-toggle="table" data-url="<?= base_url('admin/return_reasons/view_return_reason') ?>" data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel"]' data-export-options='{
-                            "fileName": "promocode-list",
+                            "fileNom": "promocode-list",
                             "ignoreColumn": ["state"]
                             }' data-query-params="queryParams">
                                 <thead>

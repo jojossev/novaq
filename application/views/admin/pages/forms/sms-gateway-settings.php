@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4>SMS Gateway Settings</h4>
+                    <h4>SMS Gateway Paramètres</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a>
                         </li>
-                        <li class="breadcrumb-item active">SMS Gateway Settings</li>
+                        <li class="breadcrumb-item active">SMS Gateway Paramètres</li>
                     </ol>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="py-3">
-                                                    <h4 class="mb-3">Create Authorization Token </h4>
+                                                    <h4 class="mb-3">Créer Authorization Token </h4>
                                                     <hr>
                                                     <div class="d-flex gap-4 mb-2">
                                                         <div class="col-md-6">
@@ -151,7 +151,7 @@
                                                             <div>
                                                                 <div
                                                                     class="d-flex align-items-center justify-content-between mb-3">
-                                                                    <h6 class="modal-titlen  fw-bold">Add Header data
+                                                                    <h6 class="modal-titlen  fw-bold">Ajouter Header data
                                                                     </h6>
                                                                     <a href="#" id="add_sms_header"
                                                                         class="btn btn-primary btn-sm mx-5">
@@ -192,7 +192,7 @@
                                                             <div>
                                                                 <div
                                                                     class="d-flex align-items-center justify-content-between mb-3">
-                                                                    <h5 class="modal-title">Add Params </h5>
+                                                                    <h5 class="modal-title">Ajouter Params </h5>
                                                                     <a href="#" id="add_sms_params"
                                                                         class="btn btn-primary btn-sm mx-5">
                                                                         <i class="fa fa-plus"></i>
@@ -217,8 +217,8 @@
                                                                             Text</label>
                                                                         <textarea name="text_format_data"
                                                                             class="form-control text_format_data"
-                                                                            rows="6"
-                                                                            placeholder="Place some text here"></textarea>
+                                                                            lignes="6"
+                                                                            placeholder="Saisissez votre texte ici"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -232,12 +232,12 @@
                                                             <div
                                                                 class="d-flex align-items-center justify-content-between mb-3">
                                                                 <h5 class="mb-0 fw-semibold">
-                                                                    Add Body Data Parameters
+                                                                    Ajouter Body Data Parameters
                                                                 </h5>
 
                                                                 <button type="button" id="add_sms_body"
                                                                     class="btn btn-primary btn-sm">
-                                                                    <i class="fa fa-plus me-1"></i> Add
+                                                                    <i class="fa fa-plus me-1"></i> Ajouter
                                                                 </button>
                                                             </div>
 
@@ -245,7 +245,7 @@
                                                             <div class="card">
                                                                 <div class="card-body">
                                                                     <div id="formdata_section" class="row g-3">
-                                                                        <!-- dynamic form rows will append here -->
+                                                                        <!-- dynamic form lignes will append here -->
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -285,9 +285,9 @@
                                                     </div>
 
                                                     <div class="form-group ml-3">
-                                                        <button type="reset" class="btn btn-warning">Reset</button>
+                                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                                         <button class="btn btn-success" id="sms_gateway_submit">Update
-                                                            SMS Gateway Settings</button>
+                                                            SMS Gateway Paramètres</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -400,7 +400,7 @@
                                                                 class='text-danger text-sm'> * </span></label>
                                                         <div class="col-sm-10">
                                                             <select name="type" class="form-control type">
-                                                                <option value=" ">Select Types</option>
+                                                                <option value=" ">Sélectionner le types</option>
                                                                 <?php foreach ($notification_modules as $key => $value) { ?>
                                                                     <option value="<?= $key ?>"
                                                                         <?= (isset($fetched_data[0]['id']) && $fetched_data[0]['type'] == $key) ? "Selected" : "" ?>><?= ucwords(str_replace('_', ' ', $key)) ?>
@@ -412,12 +412,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row mb-3">
-                                                        <label for="title" class="col-sm-2 col-form-label">Title <span
+                                                        <label for="title" class="col-sm-2 col-form-label">Titre <span
                                                                 class='text-danger text-sm'>*</span></label>
                                                         <div class="col-sm-10">
                                                             <input type="text" name="title" id="update_title"
                                                                 class="form-control update_title"
-                                                                placeholder="Title Name"
+                                                                placeholder="Nom du titre"
                                                                 value="<?= (isset($fetched_data[0]['title'])) ? $fetched_data[0]['title'] : ""; ?>" />
                                                         </div>
                                                     </div>
@@ -440,7 +440,7 @@
                                                         <div class="col-sm-10">
                                                             <textarea name="message" id="text-box"
                                                                 class="form-control text-box"
-                                                                placeholder="Place some text here"><?= (isset($fetched_data[0]['id'])) ? $fetched_data[0]['message'] : ''; ?></textarea>
+                                                                placeholder="Saisissez votre texte ici"><?= (isset($fetched_data[0]['id'])) ? $fetched_data[0]['message'] : ''; ?></textarea>
                                                         </div>
                                                     </div>
                                                     <div
@@ -625,9 +625,9 @@
                                                         <?php } ?>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="reset" class="btn btn-warning">Reset</button>
+                                                        <button type="reset" class="btn btn-warning">Réinitialiser</button>
                                                         <button type="submit" class="btn btn-success"
-                                                            id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Update Custom message ' : 'Add Custom message ' ?></button>`
+                                                            id="submit_btn"><?= (isset($fetched_data[0]['id'])) ? 'Mettre à jour Message personnalisé ' : 'Ajouter un message personnalisé ' ?></button>`
                                                     </div>
                                                 </div>
                                             </form>
@@ -637,7 +637,7 @@
                                     <div class="main-content mt-4">
                                         <div class="card content-area p-4">
                                             <div class="card-head">
-                                                <h4 class="card-title">Custom message List</h4>
+                                                <h4 class="card-title">Liste des messages personnalisés</h4>
                                             </div>
                                             <div class="card-innr">
                                                 <div class="gaps-1-5x"></div>
@@ -650,12 +650,12 @@
                                                     data-sort-order="desc" data-mobile-responsive="true" data-toolbar=""
                                                     data-show-export="true" data-maintain-selected="true"
                                                     data-export-types='["txt","excel"]'
-                                                    data-export-options='{ "fileName": "custom-sms-list","ignoreColumn": ["operate"] }'
+                                                    data-export-options='{ "fileNom": "custom-sms-list","ignoreColumn": ["operate"] }'
                                                     data-query-params="queryParams">
                                                     <thead>
                                                         <tr>
                                                             <th data-field="id" data-sortable="true">ID</th>
-                                                            <th data-field="title" data-sortable="false">Title</th>
+                                                            <th data-field="title" data-sortable="false">Titre</th>
                                                             <th data-field="type" data-sortable="true">Type</th>
                                                             <th data-field="message" data-sortable="true">Message</th>
                                                             <th data-field="operate" data-sortable="false">Action</th>
@@ -676,7 +676,7 @@
                                 <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Custom message </h5>
+                                            <h5 class="modal-title" id="exampleModalLongTitre">Message personnalisé </h5>
                                             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                                             </button>
                                         </div>

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h4>System Updater</h4>
+                    <h4>Mise à jour système</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">System Updater</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
+                        <li class="breadcrumb-item active">Mise à jour système</li>
                     </ol>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                                 <div class="dropzone" id="system-update-dropzone">
                                 </div>
                                 <div class="form-group pt-3">
-                                    <button class="btn btn-success system_update" id="system_update_btn" type="submit" >Update The System</button>
+                                    <button class="btn btn-success system_update" id="system_update_btn" type="submit" >Mettre à jour The Système</button>
                                 </div>
 
                             </div>

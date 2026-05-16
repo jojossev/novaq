@@ -4,11 +4,11 @@
         <div class="container-fluid">
             <div class="row mb-2 mt-3">
                 <div class="col-sm-6">
-                    <h4>Manage Products Stock</h4>
+                    <h4>Gérer les produits Stock</h4>
                 </div>
                 <div class="col-sm-6 float-right">
                     <ol class="breadcrumb ">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('admin/home') ?>">Accueil</a></li>
                         <li class="breadcrumb-item active">Product Stock</li>
                     </ol>
                 </div>
@@ -21,9 +21,9 @@
 
                         <div class="row">
                             <div class="col-md-3">
-                                <label for="category_parent" class="col-form-label">Filter By Product Category</label>
+                                <label for="category_parent" class="col-form-label">Filter By Product Catégorie</label>
                                 <select id="category_parent" name="category_parent">
-                                    <option value=""><?= (isset($categories) && empty($categories)) ? 'No Categories Exist' : 'Select Categories' ?>
+                                    <option value=""><?= (isset($categories) && empty($categories)) ? 'No Catégories Exist' : 'Sélectionner une catégorie' ?>
                                     </option>
                                     <?php
                                     echo get_categories_option_html($categories);
@@ -38,12 +38,12 @@
                             data-click-to-select="true" data-side-pagination="server" data-pagination="true" data-page-list="[5, 10, 20, 50, 100, 200]" data-search="true" 
                             data-show-columns="true" data-show-refresh="true" data-trim-on-search="false" data-sort-name="id" data-sort-order="desc" data-mobile-responsive="true" 
                             data-toolbar="" data-show-export="true" data-maintain-selected="true" data-export-types='["txt","excel","csv"]' 
-                            data-export-options='{"fileName": "products-list","ignoreColumn": ["state"] }' data-query-params="stock_query_params">
+                            data-export-options='{"fileNom": "products-list","ignoreColumn": ["state"] }' data-query-params="stock_query_params">
                                 <thead>
                                     <tr>
                                         <th data-field="id" data-sortable="true" data-align='center'>Variant ID</th>
-                                        <th data-field="name" data-sortable="false" data-align='center' class="col-md-2">Name</th>
-                                        <th data-field="category_name" data-sortable="false" data-visible="false">Category</th>
+                                        <th data-field="name" data-sortable="false" data-align='center' class="col-md-2">Nom</th>
+                                        <th data-field="category_name" data-sortable="false" data-visible="false">Catégorie</th>
                                         <th data-field="image" data-sortable="false" data-align='center'>Image</th>
                                         <th data-field="operate" data-sortable="true" data-align='center'>Variants - Stock</th>
                                     </tr>
@@ -60,7 +60,7 @@
     <div class="modal-dialog modal-m">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Manage Stock</h5>
+                <h5 class="modal-title" id="exampleModalLongTitre">Gérer Stock</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-group">
-                                    <label for="quantity"><?= labels('quantity', 'Quantity') ?></label><span class="asterisk text-danger">*</span>
+                                    <label for="quantity"><?= labels('quantity', 'Quantité') ?></label><span class="asterisk text-danger">*</span>
                                     <input type="number" class="form-control" name="quantity" id="quantity" min=1>
                                 </div>
                             </div>
@@ -95,12 +95,12 @@
                                 <div class="form-group">
                                     <label for="type"><?= labels('type', 'Type') ?></label>
                                     <select class="form-control" id="type" name="type">
-                                        <option value='add'><?= labels('add', 'Add') ?></option>
+                                        <option value='add'><?= labels('add', 'Ajouter') ?></option>
                                         <option value='subtract'><?= labels('subtract', 'Subtract') ?></option>
                                     </select>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary col-md-4 mt-4" value="Save"><?= labels('update_stock', 'Update Stock') ?></button>
+                            <button type="submit" class="btn btn-primary col-md-4 mt-4" value="Enregistrer"><?= labels('update_stock', 'Mettre à jour Stock') ?></button>
                         </div>
                     </div>
                 </form>
