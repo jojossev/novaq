@@ -259,6 +259,96 @@ function get_novaq_mobile_money_providers($settings = null)
     return $providers;
 }
 
+/**
+ * Opérateurs Mobile Money pour le pied de page (icônes uniquement, sans numéro requis).
+ *
+ * @return array<int, array{key:string,label:string,url:string,brand:string}>
+ */
+function get_novaq_mobile_money_providers_for_footer($settings = null)
+{
+    if ($settings === null) {
+        $settings = get_novaq_mobile_money_settings();
+    }
+    if (!novaq_mobile_money_is_enabled($settings)) {
+        return [];
+    }
+
+    $catalog = [
+        'mpesa' => [
+            'enabled_key' => 'mpesa_enabled',
+            'label_key' => 'mpesa_label',
+            'url_key' => 'mpesa_url',
+            'brand' => 'mpesa',
+        ],
+        'orange_money' => [
+            'enabled_key' => 'orange_money_enabled',
+            'label_key' => 'orange_money_label',
+            'url_key' => 'orange_money_url',
+            'brand' => 'orange',
+        ],
+        'airtel_money' => [
+            'enabled_key' => 'airtel_money_enabled',
+            'label_key' => 'airtel_money_label',
+            'url_key' => 'airtel_money_url',
+            'brand' => 'airtel',
+        ],
+    ];
+
+    $providers = [];
+    foreach ($catalog as $key => $meta) {
+        if (!isset($settings[$meta['enabled_key']]) || (string) $settings[$meta['enabled_key']] !== '1') {
+            continue;
+        }
+        $providers[] = [
+            'key' => $key,
+            'label' => trim((string) ($settings[$meta['label_key']] ?? '')) ?: ucfirst(str_replace('_', ' ', $key)),
+            'url' => trim((string) ($settings[$meta['url_key']] ?? '')),
+            'brand' => $meta['brand'],
+        ];
+    }
+
+    return $providers;
+}
+
+/**
+ * Icônes de paiement pour le pied de page (Mobile Money + Visa + PayPal).
+ *
+ * @return array<int, array{id:string,label:string,brand:string,url:string,type:string}>
+ */
+function get_novaq_footer_payment_icons()
+{
+    $icons = [];
+    $mm_settings = get_novaq_mobile_money_settings();
+
+    foreach (get_novaq_mobile_money_providers_for_footer($mm_settings) as $provider) {
+        $icons[] = [
+            'id' => $provider['key'],
+            'label' => $provider['label'],
+            'brand' => $provider['brand'],
+            'url' => $provider['url'],
+            'type' => 'mobile_money',
+        ];
+    }
+
+    $icons[] = [
+        'id' => 'visa',
+        'label' => 'Visa',
+        'brand' => 'visa',
+        'url' => 'https://www.visa.com/',
+        'type' => 'card',
+    ];
+
+    $icons[] = [
+        'id' => 'paypal',
+        'label' => 'PayPal',
+        'brand' => 'paypal',
+        'url' => 'https://www.paypal.com/',
+        'type' => 'paypal',
+    ];
+
+    return $icons;
+}
+
 function get_novaq_faqs()
 {
     $t = &get_instance();

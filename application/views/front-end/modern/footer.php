@@ -62,12 +62,6 @@
                     <div class="footer-social-links d-flex flex-wrap align-items-center gap-2">
                         <?php $this->load->view('front-end/shared/social-links', ['theme' => 'modern']); ?>
                     </div>
-                    <?php
-                    $mm_settings = get_novaq_mobile_money_settings();
-                    if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_footer'] ?: '1') == '1') {
-                        $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'footer']);
-                    }
-                    ?>
                 </div>
                 <div class="col-lg-7 col-md-12 footer-text-section">
                     <div class="row justify-content-around ps-md-4">
@@ -93,6 +87,7 @@
                                     <?= !empty($this->lang->line('categories')) ? $this->lang->line('categories') : 'Categories' ?>
                                 </p>
                             </a>
+                            <?php $this->load->view('front-end/shared/novaq-footer-payment-icons'); ?>
                         </div>
                         <div class="col-4 pe-1 default-cursor">
                             <h5><?= label('legal', 'Legal') ?></h5>

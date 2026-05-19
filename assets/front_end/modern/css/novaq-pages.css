@@ -393,10 +393,6 @@
     margin-top: 1rem;
 }
 
-.novaq-mobile-money--footer {
-    max-width: 22rem;
-}
-
 .novaq-mobile-money__list {
     display: flex;
     flex-direction: column;
@@ -441,4 +437,58 @@
 
 #mobile_money_slide {
     margin-top: 1rem;
+}
+
+/* Footer payment icons (compact row) */
+.novaq-footer-payments {
+    margin-top: 1rem;
+    padding-top: 0.25rem;
+}
+
+.novaq-footer-payments__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.novaq-footer-payments__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    border-radius: 0.35rem;
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    line-height: 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.novaq-footer-payments__link:hover,
+.novaq-footer-payments__link:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.novaq-footer-payments__link--static {
+    cursor: default;
+}
+
+.novaq-footer-payments__link--static:hover,
+.novaq-footer-payments__link--static:focus-visible {
+    transform: none;
+    box-shadow: none;
+}
+
+.novaq-footer-payments__icon {
+    display: block;
+    width: auto;
+    height: 1.5rem;
+    max-width: 3.25rem;
+    object-fit: contain;
+}
+
+#dark-footer .novaq-footer-payments__link {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
 }

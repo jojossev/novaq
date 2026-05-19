@@ -62,14 +62,6 @@
 
                             <?php $this->load->view('front-end/shared/social-links', ['theme' => 'classic']); ?>
                         </div>
-                        <?php
-                        $mm_settings = get_novaq_mobile_money_settings();
-                        if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_footer'] ?: '1') == '1') {
-                            echo '<div class="mt-3">';
-                            $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'footer']);
-                            echo '</div>';
-                        }
-                        ?>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 mb-50">
@@ -130,6 +122,7 @@
                                     href="<?= base_url('home/shipping-policy') ?>"><?= !empty($this->lang->line('shipping_policy')) ? $this->lang->line('shipping_policy') : 'Shipping Policy' ?></a>
                             </li>
                         </ul>
+                        <?php $this->load->view('front-end/shared/novaq-footer-payment-icons'); ?>
                     </div>
                 </div>
             </div>
