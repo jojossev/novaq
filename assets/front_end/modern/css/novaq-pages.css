@@ -409,23 +409,13 @@
     border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-.novaq-mobile-money__badge {
-    width: 0.45rem;
-    min-height: 2.5rem;
-    border-radius: 999px;
+.novaq-mobile-money__logo {
+    display: block;
+    width: auto;
+    height: 1.75rem;
+    max-width: 5rem;
+    object-fit: contain;
     flex-shrink: 0;
-}
-
-.novaq-mobile-money__item--mpesa .novaq-mobile-money__badge {
-    background: #00a651;
-}
-
-.novaq-mobile-money__item--orange .novaq-mobile-money__badge {
-    background: #ff7900;
-}
-
-.novaq-mobile-money__item--airtel .novaq-mobile-money__badge {
-    background: #ed1c24;
 }
 
 .novaq-mobile-money--checkout {
@@ -484,7 +474,7 @@
     display: block;
     width: auto;
     height: 1.5rem;
-    max-width: 3.25rem;
+    max-width: 4.75rem;
     object-fit: contain;
 }
 

@@ -11,6 +11,7 @@ $variant = isset($variant) ? $variant : 'compact';
 $title = isset($title) ? $title : label('mobile_money', 'Mobile Money');
 $instructions = trim((string) ($settings['mobile_money_instructions'] ?? ''));
 $show_instructions = $variant === 'checkout' && $instructions !== '';
+$icon_base = base_url('assets/front_end/shared/payment-icons/');
 ?>
 <div class="novaq-mobile-money novaq-mobile-money--<?= html_escape($variant) ?>">
     <?php if ($variant !== 'inline') { ?>
@@ -25,7 +26,14 @@ $show_instructions = $variant === 'checkout' && $instructions !== '';
             $ussd_href = $provider['ussd'] !== '' ? 'tel:' . str_replace('#', '%23', $provider['ussd']) : '';
             ?>
             <li class="novaq-mobile-money__item novaq-mobile-money__item--<?= html_escape($provider['brand']) ?>">
-                <span class="novaq-mobile-money__badge" aria-hidden="true"></span>
+                <img src="<?= html_escape($icon_base . $provider['brand'] . '.svg') ?>"
+                    alt=""
+                    class="novaq-mobile-money__logo"
+                    width="52"
+                    height="28"
+                    loading="lazy"
+                    decoding="async"
+                    aria-hidden="true">
                 <div class="novaq-mobile-money__body">
                     <span class="novaq-mobile-money__label fw-semibold d-block"><?= html_escape($provider['label']) ?></span>
                     <div class="novaq-mobile-money__actions d-flex flex-wrap gap-2 mt-1">
