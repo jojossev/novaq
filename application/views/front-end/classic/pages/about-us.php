@@ -15,9 +15,7 @@
     </div>
     <div class="text-justify">
         <div class="hrDiv">
-            <p>
-                <?= $about_us ?>
-            </p>
+            <?= $about_us ?>
         </div>
     </div>
 </section>

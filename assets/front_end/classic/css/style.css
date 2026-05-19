@@ -806,8 +806,12 @@ button.block:focus {
 }
 
 .clr-facebbok:hover,
+.clr-facebook:hover,
 .clr-twitter:hover,
 .clr-insta:hover,
+.clr-linkedin:hover,
+.clr-tiktok:hover,
+.clr-whatsapp:hover,
 .clr-codepan:hover,
 .clr-github:hover,
 .clr-search:hover,
@@ -845,6 +849,26 @@ button.block:focus {
 
 .clr-youtube {
     background-color: #ff0000 !important;
+}
+
+.clr-facebook {
+    background-color: #1877f2 !important;
+}
+
+.clr-linkedin {
+    background-color: #0a66c2 !important;
+}
+
+.clr-tiktok {
+    background-color: #000000 !important;
+}
+
+.clr-whatsapp {
+    background-color: #25d366 !important;
+}
+
+.footer-social-icon a {
+    margin-right: 8px;
 }
 
 .btn-6-1,

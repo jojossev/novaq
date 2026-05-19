@@ -352,7 +352,7 @@ if (!empty($is_app)) {
                                 class="text-body-emphasis"><?= label('faq', 'FAQs') ?></span>
                         </a>
                     </li>
-                    <li class="d-flex align-items-center language-box">
+                    <li class="d-none language-box">
                         <ion-icon name="language-outline" class="menu-icon"></ion-icon><span class="text-body-emphasis">
                             <div class="dropdown">
                                 <a class="text-decoration-none dropdown-toggle py-0 align-self-center" href="#"

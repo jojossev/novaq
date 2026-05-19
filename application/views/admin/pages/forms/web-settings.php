@@ -160,31 +160,36 @@
                                     </div>
                                 </div>
                                 <hr>
+                                <?php $social_links = get_social_media_links(); ?>
                                 <h4>Liens des réseaux sociaux</h4>
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="twitter_link">Twitter</label>
-                                        <input type="text" class="form-control mb-2 url-link" name="twitter_link" value="<?= (isset($web_settings['twitter_link'])) ? output_escaping($web_settings['twitter_link']) : '' ?>" placeholder="Twitter Link" />
+                                        <label class="mb-2" for="twitter_link"><i class="fab fa-x-twitter me-1"></i> X (Twitter)</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="twitter_link" value="<?= output_escaping($social_links['twitter_link'] ?? '') ?>" placeholder="https://x.com/..." />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="instagram_link">Instagram</label>
-                                        <input type="text" class="form-control mb-2 url-link" name="instagram_link" value="<?= (isset($web_settings['instagram_link'])) ? output_escaping($web_settings['instagram_link']) : '' ?>" placeholder="Instagram Link" />
+                                        <label class="mb-2" for="instagram_link"><i class="fab fa-instagram me-1"></i> Instagram</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="instagram_link" value="<?= output_escaping($social_links['instagram_link'] ?? '') ?>" placeholder="https://www.instagram.com/..." />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="youtube_link">Youtube</label>
-                                        <input type="text" class="form-control mb-2 url-link" name="youtube_link" value="<?= (isset($web_settings['youtube_link'])) ? output_escaping($web_settings['youtube_link']) : '' ?>" placeholder="Youtube Link" />
+                                        <label class="mb-2" for="youtube_link"><i class="fab fa-youtube me-1"></i> YouTube</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="youtube_link" value="<?= output_escaping($social_links['youtube_link'] ?? '') ?>" placeholder="https://www.youtube.com/@..." />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="whatsapp_link">WhatsApp</label>
-                                        <input type="text" class="form-control mb-2 url-link" name="whatsapp_link" value="<?= (isset($web_settings['whatsapp_link'])) ? output_escaping($web_settings['whatsapp_link']) : '' ?>" placeholder="WhatsApp Link" />
+                                        <label class="mb-2" for="whatsapp_link"><i class="fab fa-whatsapp me-1"></i> Chaîne WhatsApp</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="whatsapp_link" value="<?= output_escaping($social_links['whatsapp_link'] ?? '') ?>" placeholder="https://www.whatsapp.com/channel/..." />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="linkedin_link">Linkedin</label>
-                                        <input type="text" class="form-control mb-2 url-link" name="linkedin_link" value="<?= (isset($web_settings['linkedin_link'])) ? output_escaping($web_settings['linkedin_link']) : '' ?>" placeholder="Linkedin Link" />
+                                        <label class="mb-2" for="linkedin_link"><i class="fab fa-linkedin-in me-1"></i> LinkedIn</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="linkedin_link" value="<?= output_escaping($social_links['linkedin_link'] ?? '') ?>" placeholder="https://www.linkedin.com/company/..." />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label class="mb-2" for="tiktok_link">Tiktok</label>
-                                        <input type="text" class="form-control mb-2" name="tiktok_link" value="<?= (isset($web_settings['tiktok_link'])) ? output_escaping($web_settings['tiktok_link']) : '' ?>" placeholder="Tiktok Link" />
+                                        <label class="mb-2" for="tiktok_link"><i class="fab fa-tiktok me-1"></i> TikTok</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="tiktok_link" value="<?= output_escaping($social_links['tiktok_link'] ?? '') ?>" placeholder="https://www.tiktok.com/@..." />
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="mb-2" for="facebook_link"><i class="fab fa-facebook-f me-1"></i> Facebook</label>
+                                        <input type="text" class="form-control mb-2 url-link" name="facebook_link" value="<?= output_escaping($social_links['facebook_link'] ?? '') ?>" placeholder="https://www.facebook.com/..." />
                                     </div>
                                 </div>
                                 <hr>

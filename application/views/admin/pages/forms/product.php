@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-8">
-                    <h4><?= isset($product_details[0]['id']) ? 'Update' : 'Ajouter' ?> Product</h4>
+                    <h4><?= isset($product_details[0]['id']) ? 'Mettre à jour le' : 'Ajouter un' ?> produit</h4>
                 </div>
                 <div class="col-sm-4 d-flex justify-content-end">
                     <ol class="breadcrumb float-sm-right">

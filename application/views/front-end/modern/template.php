@@ -20,7 +20,7 @@ if (!empty($cookie_lang)) {
 $data['is_rtl'] = $is_rtl;
 
 ?>
-<html lang="en" dir="<?= $is_rtl ?>">
+<html lang="fr" dir="<?= $is_rtl ?>">
 
 <head>
     <meta charset="utf-8">

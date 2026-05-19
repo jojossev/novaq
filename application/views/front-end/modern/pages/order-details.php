@@ -103,7 +103,7 @@
                                                     <i class="fas fa-external-link-alt me-1"></i><?= $order['url'] ?>
                                                 </a>
                                             <?php } else { ?>
-                                                <span class="text-muted">Not available</span>
+                                                <span class="text-muted"><?= label('not_available', 'Non disponible') ?></span>
                                             <?php } ?>
                                         </span>
                                     </div>
@@ -115,7 +115,7 @@
                                             <?php if (!empty($order['tracking_id'])) { ?>
                                                 <?= $order['tracking_id'] ?>
                                             <?php } else { ?>
-                                                <span class="text-muted">Not available</span>
+                                                <span class="text-muted"><?= label('not_available', 'Non disponible') ?></span>
                                             <?php } ?>
                                         </span>
                                     </div>
@@ -127,7 +127,7 @@
                                             <?php if (!empty($order['courier_agency'])) { ?>
                                                 <?= $order['courier_agency'] ?>
                                             <?php } else { ?>
-                                                <span class="text-muted">Not available</span>
+                                                <span class="text-muted"><?= label('not_available', 'Non disponible') ?></span>
                                             <?php } ?>
                                         </span>
                                     </div>
@@ -142,7 +142,7 @@
         <!-- Order Items with Status Steppers -->
         <div class="row mb-4">
             <div class="col-12">
-                <h5 class="fw-semibold mb-4">Order Items</h5>
+                <h5 class="fw-semibold mb-4"><?= label('order_items', 'Articles de la commande') ?></h5>
                 <div class="row g-4">
                     <?php foreach ($order['order_items'] as $key => $item) {
                         $status = ["awaiting", "received", "processed", "shipped", "delivered", "cancelled", "returned", "return_request_pending", "return_request_approved"];
@@ -162,7 +162,7 @@
                                                 style="width: 120px; height: 120px;">
                                                 <img class="w-100 h-100 object-fit-contain"
                                                     src="<?= !empty($item['image_sm']) ? $item['image_sm'] : base_url(NO_IMAGE) ?>"
-                                                    alt="Product Image"
+                                                    alt="<?= label('product_image_alt', 'Image du produit') ?>"
                                                     onerror="this.onerror=null;this.src='<?= base_url(NO_IMAGE) ?>';" />
                                             </div>
                                         </div>
@@ -177,10 +177,10 @@
                                             ?>
                                             <div class="mb-3">
                                                 <div class="badge bg-light text-dark mb-1">
-                                                    <i class="fas fa-cube me-1"></i>Qty: <?= $item['quantity'] ?>
+                                                    <i class="fas fa-cube me-1"></i><?= label('qty_label', 'Qté') ?> : <?= $item['quantity'] ?>
                                                 </div>
-                                                <div class="text-muted small">Price: <span class="fw-semibold"><?= $settings['currency'] . ' ' . number_format($unit_price, 2) ?></span></div>
-                                                <div class="text-muted small">Subtotal: <span class="fw-semibold"><?= $settings['currency'] . ' ' . number_format($line_total, 2) ?></span></div>
+                                                <div class="text-muted small"><?= label('price_label', 'Prix') ?> : <span class="fw-semibold"><?= $settings['currency'] . ' ' . number_format($unit_price, 2) ?></span></div>
+                                                <div class="text-muted small"><?= label('subtotal_label', 'Sous-total') ?> : <span class="fw-semibold"><?= $settings['currency'] . ' ' . number_format($line_total, 2) ?></span></div>
                                             </div>
                                             <div class="d-flex gap-2 flex-wrap">
                                                 <?php
@@ -190,13 +190,13 @@
                                                         <i class="fas fa-times me-1"></i><?= label('cancel', 'Cancel') ?>
                                                     </button>
                                                 <?php } elseif ($item['is_already_cancelled']) { ?>
-                                                    <span class="badge bg-danger">Cancelled</span>
+                                                    <span class="badge bg-danger"><?= label('cancelled_badge', 'Annulé') ?></span>
                                                 <?php } elseif ($item['active_status'] == 'return_request_pending') { ?>
-                                                    <span class="badge bg-warning">Return Request Pending</span>
+                                                    <span class="badge bg-warning"><?= label('return_request_pending', 'Demande de retour en attente') ?></span>
                                                 <?php } elseif ($item['active_status'] == 'return_request_approved') { ?>
-                                                    <span class="badge bg-success">Return Approved</span>
+                                                    <span class="badge bg-success"><?= label('return_approved', 'Retour approuvé') ?></span>
                                                 <?php } elseif ($item['active_status'] == 'returned' || $item['is_already_returned']) { ?>
-                                                    <span class="badge bg-danger">Returned</span>
+                                                    <span class="badge bg-danger"><?= label('returned_badge', 'Retourné') ?></span>
                                                 <?php } ?>
 
                                                 <?php

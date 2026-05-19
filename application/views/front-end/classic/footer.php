@@ -60,18 +60,7 @@
                         <div class="footer-social-icon">
                             <span><?= !empty($this->lang->line('follow_us')) ? $this->lang->line('follow_us') : 'Follow us' ?></span>
 
-                            <?php if (isset($web_settings['twitter_link']) && !empty($web_settings['twitter_link'])) { ?>
-                                <a href="<?= $web_settings['twitter_link'] ?>" target="_blank"><i
-                                        class="fab fa-twitter rounded-icon clr-twitter"></i></a>
-                            <?php } ?>
-                            <?php if (isset($web_settings['instagram_link']) && !empty($web_settings['instagram_link'])) { ?>
-                                <a href="<?= $web_settings['instagram_link'] ?>" target="_blank"><i
-                                        class="fab fa-instagram rounded-icon clr-insta"></i></a>
-                            <?php } ?>
-                            <?php if (isset($web_settings['youtube_link']) && !empty($web_settings['youtube_link'])) { ?>
-                                <a href="<?= $web_settings['youtube_link'] ?>" target="_blank"><i
-                                        class="fab fa-youtube rounded-icon clr-youtube"></i></a>
-                            <?php } ?>
+                            <?php $this->load->view('front-end/shared/social-links', ['theme' => 'classic']); ?>
                         </div>
                     </div>
                 </div>
@@ -82,9 +71,7 @@
                             </h3>
                         </div>
                         <div class="footer-text">
-                            <?php if (isset($web_settings['app_short_description'])) { ?>
-                                <p><?= output_escaping($web_settings['app_short_description']) ?></p>
-                            <?php } ?>
+                            <p><?= output_escaping(get_novaq_footer_tagline()) ?></p>
                         </div>
                     </div>
                 </div>

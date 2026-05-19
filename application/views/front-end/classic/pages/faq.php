@@ -26,7 +26,7 @@
                                 </h2>
                             </div>
                             <div id="<?= "c-" . $row['id'] ?>" class="collapse " aria-labelledby="<?= "h-" . $row['id'] ?>" data-parent="#accordionExample">
-                                <div class="card-body"><?= html_escape($row['answer']) ?></div>
+                                <div class="card-body"><?= nl2br(html_escape($row['answer'])) ?></div>
                             </div>
                         </div>
                     <?php } ?>

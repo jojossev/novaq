@@ -124,6 +124,76 @@ function get_settings($type = 'system_settings', $is_json = false)
     }
 }
 
+/**
+ * Liens des réseaux sociaux (Revival Group) fusionnés avec web_settings.
+ */
+function get_social_media_links()
+{
+    $t = &get_instance();
+    $t->config->load('revival_social');
+    $defaults = $t->config->item('social_links');
+    if (!is_array($defaults)) {
+        $defaults = [];
+    }
+    $web = get_settings('web_settings', true);
+    if (!is_array($web)) {
+        $web = [];
+    }
+    return array_merge($web, $defaults);
+}
+
+/**
+ * Contenu des pages légales Novaq (config par défaut, surchargeable en BDD).
+ */
+function get_page_content($key)
+{
+    $t = &get_instance();
+    $t->config->load('novaq_pages');
+    $from_config = $t->config->item($key);
+    if (!empty($from_config)) {
+        return $from_config;
+    }
+    return get_settings($key);
+}
+
+function get_novaq_footer_tagline()
+{
+    $t = &get_instance();
+    $t->config->load('novaq_pages');
+    $tagline = $t->config->item('footer_tagline');
+    $web = get_settings('web_settings', true);
+    if (is_array($web) && !empty($web['app_short_description']) && strlen($web['app_short_description']) > 40) {
+        return $web['app_short_description'];
+    }
+    return $tagline;
+}
+
+function get_novaq_faqs()
+{
+    $t = &get_instance();
+    $t->load->model('faq_model');
+    $faq = $t->faq_model->get_faqs(null, null, null, null);
+    if (!empty($faq['data'])) {
+        return $faq;
+    }
+    $t->config->load('novaq_pages');
+    $items = $t->config->item('faq_items');
+    if (!is_array($items)) {
+        return ['total' => 0, 'data' => []];
+    }
+    $data = [];
+    $id = 1;
+    foreach ($items as $item) {
+        $data[] = [
+            'id' => $id++,
+            'question' => $item['question'],
+            'answer' => $item['answer'],
+            'status' => '1',
+        ];
+    }
+    return ['total' => count($data), 'data' => $data];
+}
+
 function get_logo()
 {
     $t = &get_instance();

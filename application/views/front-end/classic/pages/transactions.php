@@ -40,10 +40,10 @@
         <label>Status</label>
         <select id="status_filter" class="form-control">
             <option value="">All</option>
-            <option value="success">Success</option>
-            <option value="pending">Pending</option>
-            <option value="failed">Failed</option>
-            <option value="processing">Processing</option>
+            <option value="success"><?= label('success_status', 'Réussi') ?></option>
+            <option value="pending"><?= label('pending', 'En attente') ?></option>
+            <option value="failed"><?= label('failed_status', 'Échoué') ?></option>
+            <option value="processing"><?= label('processing', 'En cours') ?></option>
         </select>
     </div>
                 <div class='card border-0'>

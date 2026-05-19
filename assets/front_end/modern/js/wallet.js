@@ -264,7 +264,7 @@ var supported_locals = $('#supported_locals').val();
     }
 
     function onPaymentFailureHandler(response) {
-        alert('Payment Failure');
+        alert('Échec du paiement');
         if (response.status == "failure") {
             location.href = base_url + 'payment/cancel';
         }
@@ -337,7 +337,7 @@ var supported_locals = $('#supported_locals').val();
             handler: {
                 notifyMerchant: function (eventName, data) {
                     if (eventName == 'SESSION_EXPIRED') {
-                        alert('Your session has expired!!')
+                        alert('Votre session a expiré !')
                         location.reload()
                     }
                     if (eventName == 'APP_CLOSED') {
@@ -427,12 +427,12 @@ var supported_locals = $('#supported_locals').val();
             },
             onPending: function (result) {
                 /* You may add your own implementation here */
-                alert('wating your payment!')
+                alert('En attente de votre paiement !')
 
             },
             onError: function (result) {
                 /* You may add your own implementation here */
-                alert('payment failed!')
+                alert('Échec du paiement !')
 
             },
             onClose: function () {

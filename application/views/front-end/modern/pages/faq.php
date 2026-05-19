@@ -2,6 +2,7 @@
     <section class="container home_faq_sec py-4" id="faq_sec">
         <div class="main-content">
             <h3><span class="section-title"><?= !empty($this->lang->line('faq')) ? $this->lang->line('faq') : 'FAQ' ?></span></h3>
+            <p class="text-muted mb-4">Bienvenue dans notre centre d'aide. Retrouvez ici les réponses aux questions les plus fréquentes concernant nos produits, commandes, paiements, livraisons et remboursements.</p>
             <div class="align-items-center d-flex justify-content-between">
                 <div class="home_faq col-md-7">
                     <?php if (!empty($faq['data'])) { ?>
@@ -15,7 +16,7 @@
                                     </h2>
                                     <div id="<?= "c-" . $row['id'] ?>" class="accordion-collapse collapse" aria-labelledby="<?= "h-" . $row['id'] ?>" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
-                                            <?= html_escape($row['answer']) ?>
+                                            <?= nl2br(html_escape($row['answer'])) ?>
                                         </div>
                                     </div>
                                 </div>

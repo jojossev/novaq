@@ -370,6 +370,14 @@ class Setting extends CI_Controller
             );
         }
 
+        if (!empty($this->input->post('facebook_link'))) {
+            $this->form_validation->set_rules(
+                'facebook_link',
+                'Facebook Link',
+                'trim|xss_clean|valid_url'
+            );
+        }
+
         // Shipping mode conditional validation
         if ($this->input->post('shipping_mode') == 'on' || $this->input->post('shipping_mode') == '1') {
             $this->form_validation->set_rules('shipping_title', 'Shipping Title', 'trim|required|xss_clean');

@@ -102,11 +102,16 @@ class MyConfig
     }
 
     function language()
-{
-    $ci = &get_instance();
-    $ci->load->helper(['language']);
-    $ci->lang->load('web_labels_lang', 'french');
-}
+    {
+        $ci = &get_instance();
+        $ci->load->helper(['language']);
+        $ci->lang->load('web_labels_lang', 'french');
+        $ci->input->set_cookie([
+            'name' => 'language',
+            'value' => 'french',
+            'expire' => 86400 * 365,
+        ]);
+    }
 
     function verify_doctor_brown()
     {

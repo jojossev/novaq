@@ -335,32 +335,32 @@ class Home extends CI_Controller
     public function terms_and_conditions()
     {
         $this->data['main_page'] = 'terms-and-conditions';
-        $this->data['title'] = 'Terms & Conditions | ' . $this->data['web_settings']['site_title'];
-        $this->data['keywords'] = 'Terms & Conditions, ' . $this->data['web_settings']['meta_keywords'];
-        $this->data['description'] = 'Terms & Conditions | ' . $this->data['web_settings']['meta_description'];
-        $this->data['meta_description'] = 'Terms & Conditions | ' . $this->data['web_settings']['site_title'];
-        $this->data['terms_and_conditions'] = get_settings('terms_conditions');
+        $this->data['title'] = 'Conditions générales de vente | ' . $this->data['web_settings']['site_title'];
+        $this->data['keywords'] = 'CGV, Novaq App, ' . $this->data['web_settings']['meta_keywords'];
+        $this->data['description'] = 'Conditions générales de vente | ' . $this->data['web_settings']['meta_description'];
+        $this->data['meta_description'] = 'Conditions générales de vente | ' . $this->data['web_settings']['site_title'];
+        $this->data['terms_and_conditions'] = get_page_content('terms_conditions');
         $this->load->view('front-end/' . THEME . '/template', $this->data);
     }
 
     public function privacy_policy()
     {
         $this->data['main_page'] = 'privacy-policy';
-        $this->data['title'] = 'Privacy Policy | ' . $this->data['web_settings']['site_title'];
-        $this->data['keywords'] = 'Privacy Policy, ' . $this->data['web_settings']['meta_keywords'];
-        $this->data['description'] = 'Privacy Policy | ' . $this->data['web_settings']['meta_description'];
-        $this->data['meta_description'] = 'Privacy Policy | ' . $this->data['web_settings']['site_title'];
-        $this->data['privacy_policy'] = get_settings('privacy_policy');
+        $this->data['title'] = 'Politique de confidentialité | ' . $this->data['web_settings']['site_title'];
+        $this->data['keywords'] = 'Confidentialité, Novaq App, ' . $this->data['web_settings']['meta_keywords'];
+        $this->data['description'] = 'Politique de confidentialité | ' . $this->data['web_settings']['meta_description'];
+        $this->data['meta_description'] = 'Politique de confidentialité | ' . $this->data['web_settings']['site_title'];
+        $this->data['privacy_policy'] = get_page_content('privacy_policy');
         $this->load->view('front-end/' . THEME . '/template', $this->data);
     }
     public function about_us()
     {
         $this->data['main_page'] = 'about-us';
-        $this->data['title'] = 'About US | ' . $this->data['web_settings']['site_title'];
-        $this->data['keywords'] = 'About US, ' . $this->data['web_settings']['meta_keywords'];
-        $this->data['description'] = 'About US | ' . $this->data['web_settings']['meta_description'];
-        $this->data['meta_description'] = 'About US | ' . $this->data['web_settings']['site_title'];
-        $this->data['about_us'] = get_settings('about_us');
+        $this->data['title'] = 'À propos de nous | ' . $this->data['web_settings']['site_title'];
+        $this->data['keywords'] = 'À propos, Novaq App, ' . $this->data['web_settings']['meta_keywords'];
+        $this->data['description'] = 'À propos de nous | ' . $this->data['web_settings']['meta_description'];
+        $this->data['meta_description'] = 'À propos de nous | ' . $this->data['web_settings']['site_title'];
+        $this->data['about_us'] = get_page_content('about_us');
         $this->load->view('front-end/' . THEME . '/template', $this->data);
     }
 
@@ -395,7 +395,7 @@ class Home extends CI_Controller
         $this->data['keywords'] = 'FAQ, ' . $this->data['web_settings']['meta_keywords'];
         $this->data['description'] = 'FAQ | ' . $this->data['web_settings']['meta_description'];
         $this->data['meta_description'] = 'FAQ | ' . $this->data['web_settings']['site_title'];
-        $this->data['faq'] = $this->faq_model->get_faqs(null, null, null, null);
+        $this->data['faq'] = get_novaq_faqs();
         $this->load->view('front-end/' . THEME . '/template', $this->data);
     }
 
@@ -486,19 +486,16 @@ class Home extends CI_Controller
 
     public function lang($lang_name = '')
     {
-        if (empty($lang_name)) {
-            redirect(base_url());
-        }
-
+        $lang_name = 'french';
         $language = get_languages(null, $lang_name);
         if (empty($language)) {
             redirect(base_url());
         }
-        $this->lang->load('web_labels_lang', $lang_name);
+        $this->lang->load('web_labels_lang', 'french');
         $cookie = array(
             'name' => 'language',
-            'value' => $lang_name,
-            'expire' => time() + 1000
+            'value' => 'french',
+            'expire' => time() + (86400 * 365)
         );
         $this->input->set_cookie($cookie);
         if (isset($_SERVER['HTTP_REFERER'])) {
@@ -681,21 +678,21 @@ class Home extends CI_Controller
     public function shipping_policy()
     {
         $this->data['main_page'] = 'shipping-policy';
-        $this->data['title'] = 'Shipping Policy | ' . $this->data['web_settings']['site_title'];
-        $this->data['keywords'] = 'Shipping Policy, ' . $this->data['web_settings']['meta_keywords'];
-        $this->data['description'] = 'Shipping Policy | ' . $this->data['web_settings']['meta_description'];
-        $this->data['meta_description'] = 'Shipping Policy | ' . $this->data['web_settings']['site_title'];
-        $this->data['shipping_policy'] = get_settings('shipping_policy');
+        $this->data['title'] = 'Politique de livraison | ' . $this->data['web_settings']['site_title'];
+        $this->data['keywords'] = 'Livraison, Novaq App, ' . $this->data['web_settings']['meta_keywords'];
+        $this->data['description'] = 'Politique de livraison | ' . $this->data['web_settings']['meta_description'];
+        $this->data['meta_description'] = 'Politique de livraison | ' . $this->data['web_settings']['site_title'];
+        $this->data['shipping_policy'] = get_page_content('shipping_policy');
         $this->load->view('front-end/' . THEME . '/template', $this->data);
     }
     public function return_policy()
     {
         $this->data['main_page'] = 'return-policy';
-        $this->data['title'] = 'Return Policy | ' . $this->data['web_settings']['site_title'];
-        $this->data['keywords'] = 'Return Policy, ' . $this->data['web_settings']['meta_keywords'];
-        $this->data['description'] = 'Return Policy | ' . $this->data['web_settings']['meta_description'];
-        $this->data['meta_description'] = 'Return Policy | ' . $this->data['web_settings']['site_title'];
-        $this->data['return_policy'] = get_settings('return_policy');
+        $this->data['title'] = 'Politique de retour | ' . $this->data['web_settings']['site_title'];
+        $this->data['keywords'] = 'Retour, remboursement, Novaq App, ' . $this->data['web_settings']['meta_keywords'];
+        $this->data['description'] = 'Politique de retour | ' . $this->data['web_settings']['meta_description'];
+        $this->data['meta_description'] = 'Politique de retour | ' . $this->data['web_settings']['site_title'];
+        $this->data['return_policy'] = get_page_content('return_policy');
         $this->load->view('front-end/' . THEME . '/template', $this->data);
     }
 

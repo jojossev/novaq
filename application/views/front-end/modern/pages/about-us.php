@@ -11,9 +11,7 @@
         </div>
         <div class="text-justify">
             <div class="hrDiv text-body-secondary">
-                <p>
-                    <?= $about_us ?>
-                </p>
+                <?= $about_us ?>
             </div>
         </div>
     </section>

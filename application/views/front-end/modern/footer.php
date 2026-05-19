@@ -58,37 +58,11 @@
                     <a class="footer-logo pointer" href="<?= base_url() ?>">
                         <img src="<?= base_url($logo) ?>" data-src="<?= base_url($logo) ?>" class="">
                     </a>
-                    <h5 class="fw-bold mx-2 my-3"><?= label('subscribe', 'Subscribe Us') ?></h5>
+                    <p class="text-muted small mx-2 mb-3 footer-tagline"><?= output_escaping(get_novaq_footer_tagline()) ?></p>
 
-                    <?php if (isset($web_settings['twitter_link']) && !empty($web_settings['twitter_link'])) { ?>
-                        <a href="<?= $web_settings['twitter_link'] ?>" class="style-none" target="_blank">
-                            <ion-icon name="logo-twitter" class="social-media-icon pointer"></ion-icon>
-                        </a>
-                    <?php } ?>
-                    <?php if (isset($web_settings['instagram_link']) && !empty($web_settings['instagram_link'])) { ?>
-                        <a href="<?= $web_settings['instagram_link'] ?>" class="style-none" target="_blank">
-                            <ion-icon name="logo-instagram" class="social-media-icon pointer"></ion-icon>
-                        </a>
-                    <?php } ?>
-                    <?php if (isset($web_settings['youtube_link']) && !empty($web_settings['youtube_link'])) { ?>
-                        <a href="<?= $web_settings['youtube_link'] ?>" class="style-none" target="_blank"><ion-icon
-                                name="logo-youtube" class="social-media-icon pointer"></ion-icon></a>
-                    <?php } ?>
-                    <?php if (isset($web_settings['whatsapp_link']) && !empty($web_settings['whatsapp_link'])) { ?>
-                        <a href="<?= $web_settings['whatsapp_link'] ?>" class="style-none" target="_blank">
-                            <ion-icon name="logo-whatsapp" class="social-media-icon pointer"></ion-icon>
-                        </a>
-                    <?php } ?>
-                    <?php if (isset($web_settings['linkedin_link']) && !empty($web_settings['linkedin_link'])) { ?>
-                        <a href="<?= $web_settings['linkedin_link'] ?>" class="style-none" target="_blank">
-                            <ion-icon name="logo-linkedin" class="social-media-icon pointer"></ion-icon>
-                        </a>
-                    <?php } ?>
-                    <?php if (isset($web_settings['tiktok_link']) && !empty($web_settings['tiktok_link'])) { ?>
-                        <a href="<?= $web_settings['tiktok_link'] ?>" class="style-none" target="_blank">
-                            <ion-icon name="logo-tiktok" class="social-media-icon pointer"></ion-icon>
-                        </a>
-                    <?php } ?>
+                    <div class="footer-social-links d-flex flex-wrap align-items-center gap-2">
+                        <?php $this->load->view('front-end/shared/social-links', ['theme' => 'modern']); ?>
+                    </div>
                 </div>
                 <div class="col-lg-7 col-md-12 footer-text-section">
                     <div class="row justify-content-around ps-md-4">

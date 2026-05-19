@@ -32,19 +32,19 @@ $(document).ready(function () {
       },
       onPending: function (result) {
         /* You may add your own implementation here */
-        alert("wating your payment!");
+        alert("En attente de votre paiement !");
         
       },
       onError: function (result) {
         /* You may add your own implementation here */
-        alert("payment failed!");
+        alert("Échec du paiement !");
         $("#place_order_btn").attr("disabled", false).html("Place Order");
        
       },
       onClose: function () {
         /* You may add your own implementation here */
         $("#place_order_btn").attr("disabled", false).html("Place Order");
-        alert("you closed the popup without finishing the payment");
+        alert("Vous avez fermé la fenêtre sans finaliser le paiement");
       },
     });
   }

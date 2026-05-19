@@ -229,7 +229,7 @@
                                                             <?php } ?>
                                                         </small>
                                                     </p>
-                                                    <p class="m-0"><small class="fw-bold text-success">Lowest Price Daily</small></p>
+                                                    <p class="m-0"><small class="fw-bold text-success"><?= label('lowest_price_daily', 'Prix le plus bas du jour') ?></small></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,7 +297,7 @@
                                                             <?php } ?>
                                                         </small>
                                                     </p>
-                                                    <p class="m-0"><small class="fw-bold text-success">Lowest Price Daily</small></p>
+                                                    <p class="m-0"><small class="fw-bold text-success"><?= label('lowest_price_daily', 'Prix le plus bas du jour') ?></small></p>
                                                 </div>
                                             </div>
                                         </div>

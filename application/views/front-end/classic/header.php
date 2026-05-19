@@ -270,18 +270,22 @@ $currency = get_settings('currency');
                 <div class="col-lg-6 col-md-12">
                     <div class="topbar-right text-lg-right">
                         <ul class="list-inline">
-                            <?php if (isset($web_settings['twitter_link']) && !empty($web_settings['twitter_link'])) { ?>
-                                <li><a href="<?= $web_settings['twitter_link'] ?>" target="_blank"><i
-                                            class="fab fa-twitter"></i></a></li>
-                            <?php } ?>
-                            <?php if (isset($web_settings['instagram_link']) && !empty($web_settings['instagram_link'])) { ?>
-                                <li><a href="<?= $web_settings['instagram_link'] ?>" target="_blank"><i
-                                            class="fab fa-instagram"></i></a></li>
-                            <?php } ?>
-                            <?php if (isset($web_settings['youtube_link']) && !empty($web_settings['youtube_link'])) { ?>
-                                <li><a href="<?= $web_settings['youtube_link'] ?>" target="_blank"><i
-                                            class="fab fa-youtube"></i></a></li>
-                            <?php } ?>
+                            <?php
+                            $social_header = get_social_media_links();
+                            $header_networks = [
+                                'linkedin_link'  => 'fa-linkedin-in',
+                                'instagram_link' => 'fa-instagram',
+                                'facebook_link'  => 'fa-facebook-f',
+                                'tiktok_link'    => 'fa-tiktok',
+                                'twitter_link'   => 'fa-x-twitter',
+                                'whatsapp_link'  => 'fa-whatsapp',
+                                'youtube_link'   => 'fa-youtube',
+                            ];
+                            foreach ($header_networks as $key => $icon) {
+                                if (!empty($social_header[$key])) { ?>
+                                    <li><a href="<?= output_escaping($social_header[$key]) ?>" target="_blank" rel="noopener noreferrer"><i class="fab <?= $icon ?>"></i></a></li>
+                            <?php }
+                            } ?>
                             <li><a href="<?= base_url('home/contact-us') ?>"
                                     class="hide-sec"><?= !empty($this->lang->line('contact_us')) ? $this->lang->line('contact_us') : 'CONTACT US' ?></a>
                             </li>

@@ -20,7 +20,7 @@ if ($authentication_settings !== null && is_string($authentication_settings)) {
 }
 
 ?>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
+<html lang="fr" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
     data-assets-path="<?= base_url('assets/admin') ?>" data-template="vertical-menu-template-free">
 
 </html>

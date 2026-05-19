@@ -20,7 +20,7 @@
 
                         <p>the page you are looking for not avaible!</p>
 
-                        <a href="#" onclick="history.back(-1)" class="link_404">Go Back</a>
+                        <a href="#" onclick="history.back(-1)" class="link_404"><?= label('go_back', 'Retour') ?></a>
                     </div>
                 </div>
             </div>

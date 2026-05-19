@@ -435,14 +435,14 @@ $(document).ready(() => {
             location.reload();
             Toast.fire({
               icon: "success",
-              title: "Added to Save For Later",
+              title: "Ajouté pour plus tard",
             });
             return;
           }
           location.reload();
           Toast.fire({
             icon: "success",
-            title: "Remove From Save For Later",
+            title: "Retiré des articles gardés pour plus tard",
           });
           return;
         } else {
@@ -668,7 +668,7 @@ $(document).ready(() => {
 
   $("#delete_rating").on("click", function (e) {
     e.preventDefault();
-    if (confirm("Are you sure want to Delete Rating ?")) {
+    if (confirm("Voulez-vous vraiment supprimer cet avis ?")) {
       var rating_id = $(this).data("rating-id");
       $.ajax({
         type: "POST",
@@ -725,14 +725,14 @@ $(document).ready(() => {
     var compare = localStorage.getItem("compare");
     Toast.fire({
       icon: "success",
-      title: "products added to compare list",
+      title: "Produits ajoutés à la liste de comparaison",
     });
     compare = compare !== null ? JSON.parse(compare) : null;
     if (compare !== null && compare !== undefined) {
       if (compare.find((item) => item.product_id === product_id)) {
         Toast.fire({
           icon: "error",
-          title: "This item is already in your comparison list !",
+          title: "Cet article est déjà dans votre liste de comparaison !",
         });
         return;
       }
@@ -746,7 +746,7 @@ $(document).ready(() => {
     if (compare !== null && compare_count <= 1) {
       Toast.fire({
         icon: "error",
-        title: "Please select 1 more item compare",
+        title: "Veuillez sélectionner un article de plus à comparer",
       });
       return false;
     }
@@ -966,7 +966,7 @@ $(document).ready(() => {
   $(document).on("click", ".remove-compare-item", function (e) {
     e.preventDefault();
     var product_id = $(this).attr("data-product-id");
-    if (confirm("Are you sure want to remove this?")) {
+    if (confirm("Voulez-vous vraiment retirer cet élément ?")) {
       var compare_count = $("#compare_count").text();
       compare_count--;
 
@@ -1354,7 +1354,7 @@ $(document).ready(() => {
 
   $(document).on("click", ".default-address", function (e) {
     e.preventDefault();
-    if (confirm("Are you sure ? You want to set this address as default?")) {
+    if (confirm("Voulez-vous définir cette adresse par défaut ?")) {
       $.ajax({
         type: "POST",
         data: {
@@ -1881,7 +1881,7 @@ $(document).ready(() => {
       if (!product_variant_id) {
         Toast.fire({
           icon: "error",
-          title: "Please select variant",
+          title: "Veuillez sélectionner une variante",
         });
         return;
       }
@@ -1925,7 +1925,7 @@ $(document).ready(() => {
           if (is_loggedin == 0) {
             Toast.fire({
               icon: "success",
-              title: "Item added to cart",
+              title: "Article ajouté au panier",
             });
             var cart_item = {
               product_variant_id: product_variant_id.trim(),
@@ -1949,7 +1949,7 @@ $(document).ready(() => {
               if (existingItemIndex !== -1) {
                 Toast.fire({
                   icon: "error",
-                  title: "Item Already Added in Cart",
+                  title: "Article déjà dans le panier",
                 });
               } else {
                 cart.push(cart_item);
@@ -2044,7 +2044,7 @@ $(document).ready(() => {
             if (response.data && response.data.is_logged_in == 0) {
               Toast.fire({
                 icon: "success",
-                title: "Item added to cart",
+                title: "Article ajouté au panier",
               });
 
               // Create cart item for localStorage
@@ -2085,7 +2085,7 @@ $(document).ready(() => {
                 if (existingItemIndex !== -1) {
                   Toast.fire({
                     icon: "error",
-                    title: "Item Already Added in Cart",
+                    title: "Article déjà dans le panier",
                   });
                   return;
                 } else {
@@ -2112,7 +2112,7 @@ $(document).ready(() => {
           console.error("Error adding to cart:", error);
           Toast.fire({
             icon: "error",
-            title: "Error adding item to cart",
+            title: "Erreur lors de l'ajout au panier",
           });
         },
       });
@@ -2882,13 +2882,13 @@ $(document).ready(() => {
       $(this).val(min);
       Toast.fire({
         icon: "error",
-        title: "Minimum allowed quantity is " + min,
+        title: "Quantité minimale autorisée : " + min,
       });
     } else if (value > max) {
       $(this).val(max);
       Toast.fire({
         icon: "error",
-        title: "Maximum allowed quantity is " + max,
+        title: "Quantité maximale autorisée : " + max,
       });
     }
   });
@@ -2913,7 +2913,7 @@ $(document).ready(() => {
         input.val(min);
         Toast.fire({
           icon: "error",
-          title: "Minimum allowed quantity is " + min,
+          title: "Quantité minimale autorisée : " + min,
         });
       }
     } else {
@@ -2931,7 +2931,7 @@ $(document).ready(() => {
           input.val(max);
           Toast.fire({
             icon: "error",
-            title: "Maximum allowed quantity is " + max,
+            title: "Quantité maximale autorisée : " + max,
           });
         }
       } else {
@@ -3025,7 +3025,7 @@ $(document).ready(() => {
     if (!product_variant_id) {
       Toast.fire({
         icon: "error",
-        title: "Please select variant",
+          title: "Veuillez sélectionner une variante",
       });
       return;
     }
@@ -3103,7 +3103,7 @@ $(document).ready(() => {
               if (existingItemIndex !== -1) {
                 Toast.fire({
                   icon: "error",
-                  title: "Item Already Added in Cart",
+                  title: "Article déjà dans le panier",
                 });
               } else {
                 cart.push(cart_item);
@@ -3117,7 +3117,7 @@ $(document).ready(() => {
             display_cart(cart);
             Toast.fire({
               icon: "success",
-              title: "Item added to cart",
+              title: "Article ajouté au panier",
             });
             return false;
           }
@@ -3528,7 +3528,7 @@ $(document).ready(() => {
 
           Toast.fire({
             icon: "error",
-            title: "Minimum allowed quantity is " + min,
+            title: "Quantité minimale autorisée : " + min,
           });
         }
         updateSubtotal();
@@ -3555,7 +3555,7 @@ $(document).ready(() => {
 
             Toast.fire({
               icon: "error",
-              title: "Maximum allowed quantity is " + max,
+              title: "Quantité maximale autorisée : " + max,
             });
           }
         } else {
@@ -3614,7 +3614,7 @@ $(document).ready(() => {
               removeItem(product);
               Toast.fire({
                 icon: "success",
-                title: "Item Remove From Cart",
+                title: "Article retiré du panier",
               });
             } else {
               Toast.fire({
@@ -4161,13 +4161,13 @@ $(document).ready(() => {
 
     var password = $("#password").val();
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Êtes-vous sûr ?",
+      text: "Cette action est irréversible !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Delete My Account!",
+      confirmButtonText: "Oui, supprimer mon compte !",
     }).then((result) => {
       if (result.isConfirmed) {
         $.ajax({
@@ -4211,19 +4211,19 @@ $(document).ready(() => {
     if (!email || !password) {
       Toast.fire({
         icon: "error",
-        title: "Veuillez entrer both email and password",
+        title: "Veuillez saisir l'e-mail et le mot de passe",
       });
       return;
     }
 
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this! This will permanently delete your account.",
+      title: "Êtes-vous sûr ?",
+      text: "Cette action est irréversible ! Votre compte sera supprimé définitivement.",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, Delete My Account!",
+      confirmButtonText: "Oui, supprimer mon compte !",
     }).then((result) => {
       if (result.isConfirmed) {
         $.ajax({
@@ -4308,8 +4308,8 @@ $(document).ready(() => {
   $(".update-order-item").on("click", function (e) {
     e.preventDefault();
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Êtes-vous sûr ?",
+      text: "Cette action est irréversible !",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -4383,7 +4383,7 @@ $(document).ready(() => {
     } else {
       temp = "Return";
     }
-    if (confirm("Are you sure you want to " + temp + " this order ?")) {
+    if (confirm("Voulez-vous vraiment " + temp + " cette commande ?")) {
       var t = $(this);
       var btn_text = t.text();
       formdata.append(csrfName, csrfHash);
@@ -4451,7 +4451,7 @@ $(document).ready(() => {
         .show();
       Toast.fire({
         icon: "error",
-        title: "Please complete the CAPTCHA verification.",
+        title: "Veuillez compléter la vérification CAPTCHA.",
       });
       return;
     }
@@ -4832,7 +4832,7 @@ $(document).ready(() => {
     if (password !== confirmPassword) {
       Toast.fire({
         icon: "error",
-        title: "Password and Confirm Password do not match.",
+        title: "Le mot de passe et la confirmation ne correspondent pas.",
       });
       return;
     }
@@ -6407,7 +6407,7 @@ $(document).on("click", ".confirmReturn", function (e) {
   if (!selectedReason) {
     Toast.fire({
       icon: "error",
-      title: "Please select a return reason.",
+      title: "Veuillez sélectionner un motif de retour.",
     });
     return;
   }
@@ -6495,7 +6495,7 @@ $(document).ready(function () {
   $(".logout-link").click(function (e) {
     e.preventDefault();
     Swal.fire({
-      title: "Are you sure?",
+      title: "Êtes-vous sûr ?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -6535,8 +6535,8 @@ $("#send_bank_receipt_form").on("submit", function (e) {
   var formdata = new FormData(this);
   formdata.append(csrfName, csrfHash);
   Swal.fire({
-    title: "Are you sure?",
-    text: "You are about to upload a bank payment receipt. Do you want to proceed?",
+    title: "Êtes-vous sûr ?",
+    text: "Vous allez téléverser un reçu de paiement bancaire. Voulez-vous continuer ?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -6911,7 +6911,7 @@ $(document).ready(() => {
             new_qty = max;
             Toast.fire({
               icon: "error",
-              title: "Maximum allowed quantity is " + max,
+              title: "Quantité maximale autorisée : " + max,
             });
           }
         } else if ($(this).hasClass("minus-btn")) {
@@ -6920,7 +6920,7 @@ $(document).ready(() => {
             new_qty = min;
             Toast.fire({
               icon: "error",
-              title: "Minimum allowed quantity is " + min,
+              title: "Quantité minimale autorisée : " + min,
             });
           }
         }
@@ -7026,14 +7026,14 @@ $(document).ready(() => {
       input.val(new_qty);
       Toast.fire({
         icon: "error",
-        title: "Minimum allowed quantity is " + min,
+        title: "Quantité minimale autorisée : " + min,
       });
     } else if (max > 0 && new_qty > max) {
       new_qty = max;
       input.val(new_qty);
       Toast.fire({
         icon: "error",
-        title: "Maximum allowed quantity is " + max,
+        title: "Quantité maximale autorisée : " + max,
       });
     }
     if (is_loggedin == 1) {
@@ -7325,17 +7325,17 @@ window.downloadInvoicePDF = function (orderId) {
           .save()
           .catch(function (error) {
             console.error("PDF generation error:", error);
-            alert("Error generating PDF. Please try again.");
+            alert("Erreur lors de la génération du PDF. Veuillez réessayer.");
           });
       } else {
-        alert("Invoice content not found");
+        alert("Contenu de la facture introuvable");
       }
     } else {
-      alert("Error loading invoice. Please try again.");
+      alert("Erreur lors du chargement de la facture. Veuillez réessayer.");
     }
   };
   xhr.onerror = function () {
-    alert("Error loading invoice page. Please try again.");
+    alert("Erreur lors du chargement de la page de facture. Veuillez réessayer.");
   };
   xhr.send();
 }

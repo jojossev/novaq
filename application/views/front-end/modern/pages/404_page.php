@@ -8,7 +8,7 @@
             <div class="contant_box_404">
                 <h3 class="section-title">Look like you're lost</h3>
                 <p class="text-body-secondary">the page you are looking for not avaible!</p>
-                <a href="#" onclick="history.back(-1)" class="btn btn-primary link_404">Go Back</a>
+                <a href="#" onclick="history.back(-1)" class="btn btn-primary link_404"><?= label('go_back', 'Retour') ?></a>
             </div>
         </div>
     </section>

@@ -90,13 +90,13 @@
                                             <p class="text-danger"><?= $deliverable_error_msg ?></p>
                                         <?php }
                                     } else { ?>
-                                        <p class="text-danger">Please select address.</p>
+                                        <p class="text-danger"><?= label('please_select_address', 'Veuillez sélectionner une adresse.') ?></p>
                                     <?php } ?>
                                 </div>
                             <?php } ?>
                             <?php if (in_array(0, array($cart['download_allowed'])) && $cart[0]['type'] == 'digital_product') { ?>
                                 <div class="input-group mt-3">
-                                    <input name="email" type="email" class="form-control" placeholder="Please enter your email ID ">
+                                    <input name="email" type="email" class="form-control" placeholder="<?= label('enter_email_placeholder', 'Veuillez saisir votre adresse e-mail') ?>">
                                 </div>
                             <?php } ?>
                             <input type="hidden" name="address_id" id="address_id" value="<?= isset($default_address) && !empty($default_address) ? $default_address[0]['id'] : '' ?>" />
@@ -118,7 +118,7 @@
                                 <input type="hidden" name="is_time_slots_enabled" id="is_time_slots_enabled" value="<?= (isset($time_slot_config['is_time_slots_enabled']) && $time_slot_config['is_time_slots_enabled'] == 1) ? 1 : 0 ?>">
                             <?php  } ?>   
                             <div class="input-group py-3 border-top">
-                                <input type="text" class="form-control" placeholder="Special Note for Order" name="order_note" id="order_note">
+                                <input type="text" class="form-control" placeholder="<?= label('special_note_order', 'Note spéciale pour la commande') ?>" name="order_note" id="order_note">
                             </div>
                             <?php if (isset($time_slot_config['is_time_slots_enabled']) && $time_slot_config['is_time_slots_enabled'] == 1) {
                                 if($cart[0]['type'] != 'digital_product') {
@@ -160,11 +160,11 @@
 
                                     //If Allow Upload Attachments On
                             ?>
-                                    <h5 class="pt-3">Upload Order Attachments if you have any(Only images and docs are allowded)</h5>
+                                    <h5 class="pt-3"><?= label('upload_attachments_title', 'Téléverser des pièces jointes de commande si vous en avez (images et documents uniquement)') ?></h5>
                                     <div class="input-group">
                                         <input type="file" class="form-controls" name="documents[]" multiple id="documents">
                                     </div>
-                                    <span class="text-danger">Attachments are required</span>
+                                    <span class="text-danger"><?= label('attachments_required', 'Les pièces jointes sont obligatoires') ?></span>
                         <?php }
                             }
                         ?>

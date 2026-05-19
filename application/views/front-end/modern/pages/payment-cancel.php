@@ -6,7 +6,7 @@
                     <div class="tab-pane fade bg-white show active shadow rounded p-4 text-center" id="dash" role="tabpanel" aria-labelledby="dashboard">
                         <i class="fas fa-exclamation-triangle fa-4x text-warning"></i>
                         <h4 class="h4 text-danger"><?= label('payment_cancelled', 'Payment Cancelled') ?> / <?= label('failed', 'Failed') ?></h4>
-                        <p>It seems like payment process is failed or cancelled. Please Try again.</p>
+                        <p><?= label('payment_cancelled_message', 'Le paiement semble avoir échoué ou avoir été annulé. Veuillez réessayer.') ?></p>
                         <a class="btn btn-primary" href="<?= base_url('cart/checkout') ?>">Try Again</a>
                     </div>
                 </div>

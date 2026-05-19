@@ -291,19 +291,19 @@ $(document).ready(function () {
       },
       onPending: function (result) {
         /* You may add your own implementation here */
-        alert("wating your payment!");
+        alert("En attente de votre paiement !");
         
       },
       onError: function (result) {
         /* You may add your own implementation here */
-        alert("payment failed!");
+        alert("Échec du paiement !");
         $("#place_order_btn").attr("disabled", false).html("Place Order");
         
       },
       onClose: function () {
         /* You may add your own implementation here */
         $("#place_order_btn").attr("disabled", false).html("Place Order");
-        alert("you closed the popup without finishing the payment");
+        alert("Vous avez fermé la fenêtre sans finaliser le paiement");
       },
     });
   }
@@ -609,7 +609,7 @@ $(document).ready(function () {
       handler: {
         notifyMerchant: function (eventName, data) {
           if (eventName == "SESSION_EXPIRED") {
-            alert("Your session has expired!!");
+            alert("Votre session a expiré !");
             location.reload();
           }
           if (eventName == "APP_CLOSED") {
@@ -1836,7 +1836,7 @@ $(document).ready(function () {
   }
 
   function onPaymentFailureHandler(response) {
-    alert("Payment Failure");
+    alert("Échec du paiement");
     if (response.status == "failure") {
       location.href = base_url + "payment/cancel";
     }
