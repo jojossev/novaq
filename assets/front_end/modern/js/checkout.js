@@ -798,8 +798,14 @@ $(document).ready(function () {
       if (payment_method == "Direct Bank Transfer") {
         $("#bank_transfer_slide").slideDown();
         $("#account_data").removeClass("d-none");
+        $("#mobile_money_slide").slideUp();
+      } else if (payment_method == "Mobile Money") {
+        $("#mobile_money_slide").slideDown();
+        $("#bank_transfer_slide").slideUp();
+        $("#account_data").addClass("d-none");
       } else {
         $("#bank_transfer_slide").slideUp();
+        $("#mobile_money_slide").slideUp();
         $("#account_data").addClass("d-none");
       }
       
@@ -1769,7 +1775,8 @@ $(document).ready(function () {
       flutterwave_payment();
     } else if (
       payment_methods == "COD" ||
-      payment_methods == "Direct Bank Transfer"
+      payment_methods == "Direct Bank Transfer" ||
+      payment_methods == "Mobile Money"
     ) {
       place_order().done(function (result) {
         if (result.data.error == false) {

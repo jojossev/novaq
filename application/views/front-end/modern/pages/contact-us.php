@@ -56,6 +56,14 @@
     </button>
 
 </form>
+<?php
+$mm_settings = get_novaq_mobile_money_settings();
+if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_contact'] ?: '1') == '1') {
+    echo '<div class="mt-4 pt-3 border-top">';
+    $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'contact']);
+    echo '</div>';
+}
+?>
 
                     </div>
                 <?php if (isset($web_settings['map_iframe']) && !empty($web_settings['map_iframe'])) { ?>

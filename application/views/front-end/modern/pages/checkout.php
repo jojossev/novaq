@@ -301,6 +301,20 @@
                                         </div>
                                     </label>
                                 <?php } ?>
+                                <?php
+                                $mm_settings = get_novaq_mobile_money_settings();
+                                if (
+                                    novaq_mobile_money_is_enabled($mm_settings)
+                                    && (@$mm_settings['mobile_money_checkout_as_payment'] ?: '1') == '1'
+                                    && !empty(get_novaq_mobile_money_providers($mm_settings))
+                                ) { ?>
+                                    <label class="form-check-label" for="mobile_money" title="Mobile Money">
+                                        <input class="form-check-input" id="mobile_money" name="payment_method" type="radio" value="<?= MOBILE_MONEY ?>" required>
+                                        <div class="payment-type-img-box d-flex align-items-center justify-content-center">
+                                            <span class="small fw-bold text-center px-1">Mobile<br>Money</span>
+                                        </div>
+                                    </label>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -318,6 +332,14 @@
                         </div>
                         <p id="card-error" role="alert"></p>
                         <p class="result-message hidden"></p>
+                    </div>
+                    <div id="mobile_money_slide" style="display: none;">
+                        <?php
+                        $mm_settings = get_novaq_mobile_money_settings();
+                        if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_checkout'] ?: '1') == '1') {
+                            $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'checkout']);
+                        }
+                        ?>
                     </div>
                     <div id="bank_transfer_slide" style="display: none;">
                         <div id="account_data" class="d-none">

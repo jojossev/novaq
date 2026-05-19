@@ -669,7 +669,8 @@ $(document).ready(function () {
       flutterwave_payment(delivery_type);
     } else if (
       payment_methods == "COD" ||
-      payment_methods == "Direct Bank Transfer"
+      payment_methods == "Direct Bank Transfer" ||
+      payment_methods == "Mobile Money"
     ) {
       place_order().done(function (result) {
         if (result.error == false) {
@@ -2159,9 +2160,15 @@ $("input[name='payment_method']").on("change", function (e) {
   if (payment_method == "Direct Bank Transfer") {
     $("#account_data").show();
     $("#bank_transfer_slide").slideDown();
+    $("#mobile_money_slide").slideUp();
+  } else if (payment_method == "Mobile Money") {
+    $("#mobile_money_slide").slideDown();
+    $("#bank_transfer_slide").slideUp();
+    $("#account_data").hide();
   } else {
     $("#account_data").hide();
     $("#bank_transfer_slide").slideUp();
+    $("#mobile_money_slide").slideUp();
   }
 });
 

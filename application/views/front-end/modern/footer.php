@@ -55,13 +55,19 @@
             <div class="row overflow-hidden pt-5">
                 <div class="col-lg-5 col-md-12 footer-icons-section">
                     <a class="footer-logo pointer" href="<?= base_url() ?>">
-                        <img src="<?= get_brand_logo_url() ?>" data-src="<?= get_brand_logo_url() ?>" class="" alt="Logo">
+                        <img <?= brand_logo_img_attrs('Logo') ?> class="">
                     </a>
                     <p class="text-muted small mx-2 mb-3 footer-tagline"><?= output_escaping(get_novaq_footer_tagline()) ?></p>
 
                     <div class="footer-social-links d-flex flex-wrap align-items-center gap-2">
                         <?php $this->load->view('front-end/shared/social-links', ['theme' => 'modern']); ?>
                     </div>
+                    <?php
+                    $mm_settings = get_novaq_mobile_money_settings();
+                    if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_footer'] ?: '1') == '1') {
+                        $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'footer']);
+                    }
+                    ?>
                 </div>
                 <div class="col-lg-7 col-md-12 footer-text-section">
                     <div class="row justify-content-around ps-md-4">

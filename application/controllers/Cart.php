@@ -1021,6 +1021,12 @@ class Cart extends CI_Controller
                 $data['status'] = "awaiting";
                 $data['txn_id'] = null;
                 $data['message'] = null;
+            } elseif ($_POST['payment_method'] == MOBILE_MONEY) {
+                $_POST['payment_method'] = "bank_transfer";
+                $_POST['active_status'] = "awaiting";
+                $data['status'] = "awaiting";
+                $data['txn_id'] = null;
+                $data['message'] = null;
             } elseif ($_POST['payment_method'] == "my_fatoorah") {
                 $_POST['active_status'] = "awaiting";
                 $data['status'] = "success";

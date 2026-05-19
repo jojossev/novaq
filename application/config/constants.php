@@ -138,6 +138,7 @@ define('REOPEN', '5');
 // direct bank transfer
 
 define('BANK_TRANSFER', 'Direct Bank Transfer');
+define('MOBILE_MONEY', 'Mobile Money');
 defined("WORD_LIMIT") || define("WORD_LIMIT", 25);
 
 // pincode delivarable type

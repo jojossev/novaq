@@ -393,6 +393,23 @@
                                             </td>
                                         </tr>
                                     <?php } ?>
+                                    <?php
+                                    $mm_settings = get_novaq_mobile_money_settings();
+                                    if (
+                                        novaq_mobile_money_is_enabled($mm_settings)
+                                        && (@$mm_settings['mobile_money_checkout_as_payment'] ?: '1') == '1'
+                                        && !empty(get_novaq_mobile_money_providers($mm_settings))
+                                    ) { ?>
+                                        <tr>
+                                            <td>
+                                                <label for="mobile_money">
+                                                    <input id="mobile_money" name="payment_method" type="radio" value="<?= MOBILE_MONEY ?>" required>
+                                                </label>
+                                            </td>
+                                            <td><label for="mobile_money"><i class="fas fa-mobile-alt fa-2x text-success"></i></label></td>
+                                            <td><label for="mobile_money">Mobile Money</label></td>
+                                        </tr>
+                                    <?php } ?>
                                     <?php if (isset($payment_methods['midtrans_payment_method']) && $payment_methods['midtrans_payment_method'] == 1) { ?>
                                         <tr>
                                             <td>
@@ -471,6 +488,14 @@
                         </div>
                         <p id="card-error" role="alert"></p>
                         <p class="result-message hidden"></p>
+                    </div>
+                    <div id="mobile_money_slide" style="display: none;">
+                        <?php
+                        $mm_settings = get_novaq_mobile_money_settings();
+                        if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_checkout'] ?: '1') == '1') {
+                            $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'checkout']);
+                        }
+                        ?>
                     </div>
                     <div id="bank_transfer_slide">
                         <div id="account_data" class="d-none">

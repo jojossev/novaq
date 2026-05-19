@@ -387,3 +387,58 @@
         font-size: 1.75rem;
     }
 }
+
+/* Mobile Money (RDC) */
+.novaq-mobile-money {
+    margin-top: 1rem;
+}
+
+.novaq-mobile-money--footer {
+    max-width: 22rem;
+}
+
+.novaq-mobile-money__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.novaq-mobile-money__item {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.65rem;
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.novaq-mobile-money__badge {
+    width: 0.45rem;
+    min-height: 2.5rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+.novaq-mobile-money__item--mpesa .novaq-mobile-money__badge {
+    background: #00a651;
+}
+
+.novaq-mobile-money__item--orange .novaq-mobile-money__badge {
+    background: #ff7900;
+}
+
+.novaq-mobile-money__item--airtel .novaq-mobile-money__badge {
+    background: #ed1c24;
+}
+
+.novaq-mobile-money--checkout {
+    padding: 1rem;
+    border-radius: var(--novaq-radius, 1rem);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+#mobile_money_slide {
+    margin-top: 1rem;
+}

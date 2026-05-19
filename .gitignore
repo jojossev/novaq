@@ -1,4 +1,8 @@
 uploads/*
+!uploads/.gitkeep
+!uploads/media/
+uploads/media/*
+!uploads/media/.gitkeep
 vendor/*
 application/logs/*
 assets/front_end/modern/demo/*
@@ -10,3 +14,9 @@ Updates/
 system/
 sneat/
 /node_modules/
+# Android WebView wrapper (do not commit build outputs or local SDK paths)
+android.zip
+android/**/.gradle/
+android/**/build/
+android/**/.kotlin/
+android/**/local.properties

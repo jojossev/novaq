@@ -116,6 +116,11 @@ class Payment_settings extends CI_Controller
             }
 
 
+            $mobile_money_method = $this->input->post('mobile_money_method', true);
+            if (isset($mobile_money_method)) {
+                $this->form_validation->set_rules('mobile_money_instructions', 'Mobile Money Instructions', 'trim|xss_clean');
+            }
+
             $direct_bank_transfer = $this->input->post('direct_bank_transfer', true);
             if (isset($direct_bank_transfer)) {
                 $this->form_validation->set_rules('account_name', 'Account Name', 'trim|required|xss_clean');
@@ -158,7 +163,8 @@ class Payment_settings extends CI_Controller
                     'direct_bank_transfer',
                     'cod_payment_method',
                     'instamojo_payment_method',
-                    'phonepe_payment_method'
+                    'phonepe_payment_method',
+                    'mobile_money_method'
                 ];
                 
                 $at_least_one_enabled = false;

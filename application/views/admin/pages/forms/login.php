@@ -20,7 +20,7 @@
                     <?php } ?>
                     <!-- Logo -->
                     <div class="login-logo">
-                        <a href="<?= base_url() . 'admin/login' ?>"><img src="<?= get_brand_logo_url() ?>" alt="Logo"></a>
+                        <a href="<?= base_url() . 'admin/login' ?>"><img <?= brand_logo_img_attrs('Logo') ?> class="img-fluid" style="max-height:80px;width:auto;"></a>
                     </div>
                     <!-- /Logo -->
                     <h4>

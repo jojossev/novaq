@@ -357,6 +357,31 @@ class Setting_model extends CI_Model
 
         $payment_data['cod_method'] = isset($post['cod_method']) ? '1' : '0';
 
+        $payment_data['mobile_money_method'] = isset($post['mobile_money_method']) ? '1' : '0';
+        $payment_data['mobile_money_show_footer'] = isset($post['mobile_money_show_footer']) ? '1' : '0';
+        $payment_data['mobile_money_show_contact'] = isset($post['mobile_money_show_contact']) ? '1' : '0';
+        $payment_data['mobile_money_show_checkout'] = isset($post['mobile_money_show_checkout']) ? '1' : '0';
+        $payment_data['mobile_money_checkout_as_payment'] = isset($post['mobile_money_checkout_as_payment']) ? '1' : '0';
+        $payment_data['mobile_money_instructions'] = isset($post['mobile_money_instructions']) && !empty($post['mobile_money_instructions']) ? $post['mobile_money_instructions'] : '';
+
+        $payment_data['mpesa_enabled'] = isset($post['mpesa_enabled']) ? '1' : '0';
+        $payment_data['mpesa_label'] = isset($post['mpesa_label']) && !empty($post['mpesa_label']) ? $post['mpesa_label'] : '';
+        $payment_data['mpesa_number'] = isset($post['mpesa_number']) && !empty($post['mpesa_number']) ? $post['mpesa_number'] : '';
+        $payment_data['mpesa_url'] = isset($post['mpesa_url']) && !empty($post['mpesa_url']) ? $post['mpesa_url'] : '';
+        $payment_data['mpesa_ussd'] = isset($post['mpesa_ussd']) && !empty($post['mpesa_ussd']) ? $post['mpesa_ussd'] : '';
+
+        $payment_data['orange_money_enabled'] = isset($post['orange_money_enabled']) ? '1' : '0';
+        $payment_data['orange_money_label'] = isset($post['orange_money_label']) && !empty($post['orange_money_label']) ? $post['orange_money_label'] : '';
+        $payment_data['orange_money_number'] = isset($post['orange_money_number']) && !empty($post['orange_money_number']) ? $post['orange_money_number'] : '';
+        $payment_data['orange_money_url'] = isset($post['orange_money_url']) && !empty($post['orange_money_url']) ? $post['orange_money_url'] : '';
+        $payment_data['orange_money_ussd'] = isset($post['orange_money_ussd']) && !empty($post['orange_money_ussd']) ? $post['orange_money_ussd'] : '';
+
+        $payment_data['airtel_money_enabled'] = isset($post['airtel_money_enabled']) ? '1' : '0';
+        $payment_data['airtel_money_label'] = isset($post['airtel_money_label']) && !empty($post['airtel_money_label']) ? $post['airtel_money_label'] : '';
+        $payment_data['airtel_money_number'] = isset($post['airtel_money_number']) && !empty($post['airtel_money_number']) ? $post['airtel_money_number'] : '';
+        $payment_data['airtel_money_url'] = isset($post['airtel_money_url']) && !empty($post['airtel_money_url']) ? $post['airtel_money_url'] : '';
+        $payment_data['airtel_money_ussd'] = isset($post['airtel_money_ussd']) && !empty($post['airtel_money_ussd']) ? $post['airtel_money_ussd'] : '';
+
         $payment_data = json_encode($payment_data);
 
         $query = $this->db->get_where('settings', array(

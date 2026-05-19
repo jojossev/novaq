@@ -42,6 +42,14 @@
                     </div>
                     <button id="contact-us-submit-btn" class="block btn-5"><?= !empty($this->lang->line('send_message')) ? $this->lang->line('send_message') : 'Send Message' ?></button>
                 </form>
+                <?php
+                $mm_settings = get_novaq_mobile_money_settings();
+                if (novaq_mobile_money_is_enabled($mm_settings) && (@$mm_settings['mobile_money_show_contact'] ?: '1') == '1') {
+                    echo '<div class="mt-4 pt-3 border-top">';
+                    $this->load->view('front-end/shared/novaq-mobile-money', ['variant' => 'contact']);
+                    echo '</div>';
+                }
+                ?>
             </div>
         </div>
         <div class="row col-mb-50 mt-5">

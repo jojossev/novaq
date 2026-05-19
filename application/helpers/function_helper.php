@@ -168,6 +168,97 @@ function get_novaq_footer_tagline()
     return $tagline;
 }
 
+/**
+ * Paramètres Mobile Money (admin + défauts RDC).
+ */
+function get_novaq_mobile_money_settings()
+{
+    $t = &get_instance();
+    $t->config->load('novaq_mobile_money');
+    $defaults = $t->config->item('novaq_mobile_money_defaults');
+    if (!is_array($defaults)) {
+        $defaults = [];
+    }
+    $saved = get_settings('payment_method', true);
+    if (!is_array($saved)) {
+        $saved = [];
+    }
+    return array_merge($defaults, $saved);
+}
+
+function novaq_mobile_money_is_enabled($settings = null)
+{
+    if ($settings === null) {
+        $settings = get_novaq_mobile_money_settings();
+    }
+    return isset($settings['mobile_money_method']) && (string) $settings['mobile_money_method'] === '1';
+}
+
+/**
+ * Opérateurs Mobile Money actifs (M-Pesa, Orange Money, Airtel Money).
+ *
+ * @return array<int, array{key:string,label:string,number:string,url:string,ussd:string,brand:string}>
+ */
+function get_novaq_mobile_money_providers($settings = null)
+{
+    if ($settings === null) {
+        $settings = get_novaq_mobile_money_settings();
+    }
+    if (!novaq_mobile_money_is_enabled($settings)) {
+        return [];
+    }
+
+    $catalog = [
+        'mpesa' => [
+            'enabled_key' => 'mpesa_enabled',
+            'label_key' => 'mpesa_label',
+            'number_key' => 'mpesa_number',
+            'url_key' => 'mpesa_url',
+            'ussd_key' => 'mpesa_ussd',
+            'brand' => 'mpesa',
+        ],
+        'orange_money' => [
+            'enabled_key' => 'orange_money_enabled',
+            'label_key' => 'orange_money_label',
+            'number_key' => 'orange_money_number',
+            'url_key' => 'orange_money_url',
+            'ussd_key' => 'orange_money_ussd',
+            'brand' => 'orange',
+        ],
+        'airtel_money' => [
+            'enabled_key' => 'airtel_money_enabled',
+            'label_key' => 'airtel_money_label',
+            'number_key' => 'airtel_money_number',
+            'url_key' => 'airtel_money_url',
+            'ussd_key' => 'airtel_money_ussd',
+            'brand' => 'airtel',
+        ],
+    ];
+
+    $providers = [];
+    foreach ($catalog as $key => $meta) {
+        if (!isset($settings[$meta['enabled_key']]) || (string) $settings[$meta['enabled_key']] !== '1') {
+            continue;
+        }
+        $number = trim((string) ($settings[$meta['number_key']] ?? ''));
+        $url = trim((string) ($settings[$meta['url_key']] ?? ''));
+        $ussd = trim((string) ($settings[$meta['ussd_key']] ?? ''));
+        if ($number === '' && $url === '' && $ussd === '') {
+            continue;
+        }
+        $providers[] = [
+            'key' => $key,
+            'label' => trim((string) ($settings[$meta['label_key']] ?? '')) ?: ucfirst(str_replace('_', ' ', $key)),
+            'number' => $number,
+            'url' => $url,
+            'ussd' => $ussd,
+            'brand' => $meta['brand'],
+        ];
+    }
+
+    return $providers;
+}
+
 function get_novaq_faqs()
 {
     $t = &get_instance();
@@ -217,29 +308,69 @@ function brand_logo_setting_keys()
 }
 
 /**
- * Relative media path or absolute URL for the brand logo; falls back to NO_IMAGE.
+ * Normalize a logo path from settings (relative path, or same-host absolute URL).
+ */
+function normalize_brand_logo_setting_value($path)
+{
+    $path = trim((string) $path);
+    if ($path === '') {
+        return '';
+    }
+
+    $path = html_entity_decode($path, ENT_QUOTES, 'UTF-8');
+
+    if (preg_match('#^https?://#i', $path)) {
+        $parts = parse_url($path);
+        $current = parse_url(base_url());
+        if (empty($parts['path'])) {
+            return '';
+        }
+        if (!empty($parts['host']) && !empty($current['host']) && strcasecmp($parts['host'], $current['host']) !== 0) {
+            return '';
+        }
+        $path = ltrim($parts['path'], '/');
+        if (!empty($current['path']) && $current['path'] !== '/') {
+            $prefix = trim($current['path'], '/');
+            if ($prefix !== '' && stripos($path, $prefix . '/') === 0) {
+                $path = substr($path, strlen($prefix) + 1);
+            }
+        }
+    } else {
+        $base = rtrim(base_url(), '/');
+        if (stripos($path, $base) === 0) {
+            $path = substr($path, strlen($base));
+        }
+    }
+
+    return ltrim(str_replace('\\', '/', $path), '/');
+}
+
+/**
+ * Whether a normalized relative path points at a real file under the web root.
+ */
+function brand_logo_file_exists($relative)
+{
+    if ($relative === '') {
+        return false;
+    }
+    $full = FCPATH . str_replace('/', DIRECTORY_SEPARATOR, $relative);
+    return is_file($full) && filesize($full) > 0;
+}
+
+/**
+ * Relative media path for the brand logo; falls back to NO_IMAGE.
  */
 function get_brand_logo_path()
 {
     foreach (brand_logo_setting_keys() as $key) {
-        $path = get_settings($key);
-        if ($path === null || $path === '' || $path === false) {
+        $raw = get_settings($key);
+        if ($raw === null || $raw === '' || $raw === false) {
             continue;
         }
-        $path = trim((string) $path);
-        if (preg_match('#^https?://#i', $path)) {
-            return $path;
-        }
-        $relative = ltrim(str_replace('\\', '/', $path), '/');
-        $full = FCPATH . str_replace('/', DIRECTORY_SEPARATOR, $relative);
-        if (is_file($full)) {
+        $relative = normalize_brand_logo_setting_value($raw);
+        if ($relative !== '' && brand_logo_file_exists($relative)) {
             return $relative;
         }
-    }
-
-    $fallback = ltrim(NO_IMAGE, '/');
-    if (is_file(FCPATH . str_replace('/', DIRECTORY_SEPARATOR, $fallback))) {
-        return NO_IMAGE;
     }
 
     return NO_IMAGE;
@@ -250,11 +381,27 @@ function get_brand_logo_path()
  */
 function get_brand_logo_url()
 {
-    $path = get_brand_logo_path();
-    if (preg_match('#^https?://#i', $path)) {
-        return $path;
-    }
-    return base_url($path);
+    return base_url(get_brand_logo_path());
+}
+
+/**
+ * Fallback logo URL for img onerror handlers.
+ */
+function get_brand_logo_fallback_url()
+{
+    return base_url(NO_IMAGE);
+}
+
+/**
+ * Safe img attributes for brand logos (src + onerror fallback).
+ */
+function brand_logo_img_attrs($alt = 'Logo')
+{
+    $src = htmlspecialchars(get_brand_logo_url(), ENT_QUOTES, 'UTF-8');
+    $fallback = htmlspecialchars(get_brand_logo_fallback_url(), ENT_QUOTES, 'UTF-8');
+    $alt = htmlspecialchars($alt, ENT_QUOTES, 'UTF-8');
+
+    return 'src="' . $src . '" alt="' . $alt . '" onerror="this.onerror=null;this.src=\'' . $fallback . '\'"';
 }
 
 function fetch_details($table, $where = NULL, $fields = '*', $limit = '', $offset = '', $sort = '', $order = '', $where_in_key = '', $where_in_value = '')

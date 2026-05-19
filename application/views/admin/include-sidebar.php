@@ -32,7 +32,7 @@ if ($authentication_settings !== null && is_string($authentication_settings)) {
     <div class="app-brand demo px-3 ms-1">
         <a href="<?= base_url('admin/home') ?>" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <img src="<?= get_brand_logo_url() ?>" class="brand-image" alt="<?= html_escape(isset($settings['app_name']) ? $settings['app_name'] : 'Logo') ?>">
+                <img <?= brand_logo_img_attrs(isset($settings['app_name']) ? $settings['app_name'] : 'Logo') ?> class="brand-image" style="max-height:38px;width:auto;">
             </span>
         </a>
 

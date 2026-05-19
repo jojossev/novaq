@@ -63,6 +63,9 @@
                                     <a class="nav-link " data-toggle="tab" href="#phonepe">TéléphonePe</a>
                                 </li>
                                 <li class="nav-item ">
+                                    <a class="nav-link " data-toggle="tab" href="#mobile_money">Mobile Money (RDC)</a>
+                                </li>
+                                <li class="nav-item ">
                                     <a class="nav-link " data-toggle="tab" href="#cash_on_delivery">Paiement à la livraison</a>
                                 </li>
                             </ul>
@@ -1632,6 +1635,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <?php $this->load->view('admin/pages/forms/payment-settings-mobile-money'); ?>
 
                     <div id="cash_on_delivery" class="tab-pane">
                         <div>
