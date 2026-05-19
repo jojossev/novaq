@@ -35,6 +35,7 @@ if (!empty($is_app)) {
         $app_name = isset($app_name['app_name']) ? $app_name['app_name'] : '';
     }
 }
+$brand_logo_url = get_brand_logo_url();
 ?>
 <input type="hidden" id="baseUrl" value="<?= base_url() ?>">
 <input type="hidden" id="currency" value="<?= $currency ?>">
@@ -59,10 +60,9 @@ if (!empty($is_app)) {
 <div class="bg-white top-nav">
     <div class="container d-none d-xl-block d-xxl-block">
         <nav class="navbar navbar-expand-xl navbar-light bg-white ">
-            <?php $logo = get_settings('web_logo'); ?>
             <a class="company-logo" href="<?= base_url() ?>">
-                <img src="<?= base_url($logo) ?>" data-src="<?= base_url($logo) ?>"
-                    class="me-3v pointer brand-logo-link">
+                <img src="<?= $brand_logo_url ?>" data-src="<?= $brand_logo_url ?>"
+                    class="me-3v pointer brand-logo-link" alt="<?= html_escape(isset($web_settings['site_title']) ? $web_settings['site_title'] : 'Logo') ?>">
             </a>
             <form class="searchcontainer mx-5 searchbar">
                 <select class=" me-2 search_product opacity-0" type="text" aria-label="Search">search</select>
@@ -378,7 +378,7 @@ if (!empty($is_app)) {
             </div>
         </div>
         <a class="company-logo" href="<?= base_url() ?>">
-            <img src="<?= base_url($logo) ?>" data-src="<?= base_url($logo) ?>" class="me-3v pointer brand-logo-link">
+            <img src="<?= $brand_logo_url ?>" data-src="<?= $brand_logo_url ?>" class="me-3v pointer brand-logo-link" alt="<?= html_escape(isset($web_settings['site_title']) ? $web_settings['site_title'] : 'Logo') ?>">
         </a>
         <!-- <ul class=" d-flex list-unstyled align-items-center fw-bold m-0 me-1">
             <li class="me-2 pointer color-primary position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartmodal" aria-controls="offcanvasRight">

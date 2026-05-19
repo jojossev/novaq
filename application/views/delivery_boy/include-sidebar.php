@@ -2,7 +2,7 @@
 <aside class="main-sidebar elevation-2 sidebar-dark-indigo">
     <!-- Brand Logo -->
     <a href="<?= base_url('delivery_boy/home') ?>" class="brand-link">
-        <img src="<?= base_url() . get_settings('favicon') ?>" alt="<?= $settings['app_name']; ?>" title="<?= $settings['app_name']; ?>" class="brand-image">
+        <img src="<?= get_brand_logo_url() ?>" alt="<?= $settings['app_name']; ?>" title="<?= $settings['app_name']; ?>" class="brand-image">
         <span class="brand-text font-weight-light small" style="color: #eeeeee;"><?= $settings['app_name']; ?></span>
     </a>
 

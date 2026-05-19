@@ -208,6 +208,55 @@ function get_logo()
     return $logo;
 }
 
+/**
+ * Setting keys tried in order for site brand images (admin logo, web logo, favicons).
+ */
+function brand_logo_setting_keys()
+{
+    return ['logo', 'web_logo', 'favicon', 'web_favicon'];
+}
+
+/**
+ * Relative media path or absolute URL for the brand logo; falls back to NO_IMAGE.
+ */
+function get_brand_logo_path()
+{
+    foreach (brand_logo_setting_keys() as $key) {
+        $path = get_settings($key);
+        if ($path === null || $path === '' || $path === false) {
+            continue;
+        }
+        $path = trim((string) $path);
+        if (preg_match('#^https?://#i', $path)) {
+            return $path;
+        }
+        $relative = ltrim(str_replace('\\', '/', $path), '/');
+        $full = FCPATH . str_replace('/', DIRECTORY_SEPARATOR, $relative);
+        if (is_file($full)) {
+            return $relative;
+        }
+    }
+
+    $fallback = ltrim(NO_IMAGE, '/');
+    if (is_file(FCPATH . str_replace('/', DIRECTORY_SEPARATOR, $fallback))) {
+        return NO_IMAGE;
+    }
+
+    return NO_IMAGE;
+}
+
+/**
+ * Full URL for the brand logo (header, admin sidebar, login, etc.).
+ */
+function get_brand_logo_url()
+{
+    $path = get_brand_logo_path();
+    if (preg_match('#^https?://#i', $path)) {
+        return $path;
+    }
+    return base_url($path);
+}
+
 function fetch_details($table, $where = NULL, $fields = '*', $limit = '', $offset = '', $sort = '', $order = '', $where_in_key = '', $where_in_value = '')
 {
 

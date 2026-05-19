@@ -54,9 +54,8 @@
             </div>
             <div class="row overflow-hidden pt-5">
                 <div class="col-lg-5 col-md-12 footer-icons-section">
-                    <?php $logo = get_settings('web_logo'); ?>
                     <a class="footer-logo pointer" href="<?= base_url() ?>">
-                        <img src="<?= base_url($logo) ?>" data-src="<?= base_url($logo) ?>" class="">
+                        <img src="<?= get_brand_logo_url() ?>" data-src="<?= get_brand_logo_url() ?>" class="" alt="Logo">
                     </a>
                     <p class="text-muted small mx-2 mb-3 footer-tagline"><?= output_escaping(get_novaq_footer_tagline()) ?></p>
 
