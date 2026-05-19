@@ -1,10 +1,8 @@
-<main>
-    <section class="container py-4">
-        <div class="text-center">
-            <h4 class="section-title"><?= !empty($this->lang->line('terms_and_condition')) ? $this->lang->line('terms_and_condition') : 'Terms & Conditions' ?></h4>
-        </div>
-        <div class="text-justify">
-            <?= $terms_and_conditions ?>
-        </div>
-    </section>
-</main>
+<?php
+$this->load->view('front-end/shared/novaq-legal-page-modern', [
+    'novaq_page_title'       => label('terms_and_condition', 'Conditions générales de vente'),
+    'novaq_page_content'     => $terms_and_conditions,
+    'novaq_page_icon'        => 'document-text-outline',
+    'novaq_page_subtitle'    => 'Les règles qui encadrent vos achats sur Novaq App.',
+    'novaq_breadcrumb_label' => label('terms_and_condition', 'CGV'),
+]);

@@ -1,4 +1,5 @@
 <script src="<?= THEME_ASSETS_URL . 'js/eshop-bundle-js.js' ?>"></script>
+<script src="<?= base_url('assets/front_end/modern/js/novaq-pages.js') ?>"></script>
 
 <!-- Firebase.js -->
 <script src="<?= THEME_ASSETS_URL . 'js/firebase-app.js' ?>"></script>

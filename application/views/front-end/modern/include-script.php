@@ -20,6 +20,7 @@
 
 <!-- Custom Js -->
 <!-- <script type="module" src="<?//= base_url('assets/front_end/modern/js/custom.js') ?>"></script> -->
+<script src="<?= base_url('assets/front_end/modern/js/novaq-pages.js') ?>"></script>
 <script>
 const Toast = Swal.mixin({
     toast: true,

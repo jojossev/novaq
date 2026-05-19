@@ -1,20 +1,8 @@
-<section class="breadcrumb-title-bar colored-breadcrumb">
-    <div class="main-content responsive-breadcrumb">
-        <h2><?= !empty($this->lang->line('terms_and_condition')) ? $this->lang->line('terms_and_condition') : 'Terms & Condition' ?></h2>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?= base_url() ?>"><?= !empty($this->lang->line('home')) ? $this->lang->line('home') : 'Home' ?></a></li>
-                <li class="breadcrumb-item active"><?= !empty($this->lang->line('terms_and_condition')) ? $this->lang->line('terms_and_condition') : 'Terms & Condition' ?></li>
-            </ol>
-        </nav>
-    </div>
-</section>
-<section class="main-content py-5 my-4 bg-white">
-    <div class="text-center">
-        <h1 class="h4"><?= !empty($this->lang->line('terms_and_condition')) ? $this->lang->line('terms_and_condition') : 'Terms & Conditions' ?></h1>
-    </div>
-
-    <div class="text-justify">
-        <?= $terms_and_conditions ?>
-    </div>
-</section>
+<?php
+$this->load->view('front-end/shared/novaq-legal-page-classic', [
+    'novaq_page_title'       => label('terms_and_condition', 'Conditions générales de vente'),
+    'novaq_page_content'     => $terms_and_conditions,
+    'novaq_page_icon_fa'     => 'fa-file-contract',
+    'novaq_page_subtitle'    => 'Les règles qui encadrent vos achats sur Novaq App.',
+    'novaq_breadcrumb_label' => label('terms_and_condition', 'CGV'),
+]);

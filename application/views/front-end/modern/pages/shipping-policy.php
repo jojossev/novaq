@@ -1,18 +1,8 @@
-<section class="container main-content mb-15 my-4">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= base_url() ?>"><?= !empty($this->lang->line('home')) ? $this->lang->line('home') : 'Home' ?></a></li>
-            <li class="breadcrumb-item active text-muted" aria-current="page"><?= !empty($this->lang->line('shipping_policy')) ? $this->lang->line('shipping_policy') : 'Shipping Policy' ?></li>
-        </ol>
-    </nav>
-    <div class="text-center">
-        <h1 class="section-title"><?= !empty($this->lang->line('shipping_policy')) ? $this->lang->line('shipping_policy') : 'Shipping Policy' ?></h1>
-    </div>
-    <div class="text-justify">
-        <div class="hrDiv">
-            <p>
-                <?= $shipping_policy ?>
-            </p>
-        </div>
-    </div>
-</section>
+<?php
+$this->load->view('front-end/shared/novaq-legal-page-modern', [
+    'novaq_page_title'       => label('shipping_policy', 'Politique de livraison'),
+    'novaq_page_content'     => $shipping_policy,
+    'novaq_page_icon'        => 'car-outline',
+    'novaq_page_subtitle'    => 'Délais, zones desservies et suivi de vos colis.',
+    'novaq_breadcrumb_label' => label('shipping_policy', 'Livraison'),
+]);

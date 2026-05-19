@@ -40,3 +40,4 @@
     csrfHash = "<?= $this->security->get_csrf_hash() ?>";
 </script>
 <!-- <link rel="stylesheet" href="<?//= base_url('assets/front_end/modern/css/custom.css') ?>"> -->
+<link rel="stylesheet" href="<?= base_url('assets/front_end/modern/css/novaq-pages.css') ?>">

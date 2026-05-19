@@ -1,18 +1,8 @@
-<section class="container main-content mb-15 my-4">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= base_url() ?>"><?= !empty($this->lang->line('home')) ? $this->lang->line('home') : 'Home' ?></a></li>
-            <li class="breadcrumb-item active text-muted" aria-current="page"><?= !empty($this->lang->line('return_policy')) ? $this->lang->line('return_policy') : 'Return Policy' ?></li>
-        </ol>
-    </nav>
-    <div class="text-center">
-        <h1 class="section-title text-center pb-3"><?= !empty($this->lang->line('return_policy')) ? $this->lang->line('return_policy') : 'Return Policy' ?></h1>
-    </div>
-    <div class="text-justify">
-        <div class="hrDiv">
-            <p>
-                <?= $return_policy ?>
-            </p>
-        </div>
-    </div>
-</section>
+<?php
+$this->load->view('front-end/shared/novaq-legal-page-modern', [
+    'novaq_page_title'       => label('return_policy', 'Politique de retour'),
+    'novaq_page_content'     => $return_policy,
+    'novaq_page_icon'        => 'return-down-back-outline',
+    'novaq_page_subtitle'    => 'Retours, échanges et remboursements en toute transparence.',
+    'novaq_breadcrumb_label' => label('return_policy', 'Retours'),
+]);

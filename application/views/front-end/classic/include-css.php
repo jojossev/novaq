@@ -23,6 +23,7 @@ $path = ($is_rtl == 1) ? 'rtl/' : "";
 
 <!-- Color CSS -->
 <link rel="stylesheet" href="<?= THEME_ASSETS_URL . 'css/colors/peach.css' ?>" id="color-switcher">
+<link rel="stylesheet" href="<?= base_url('assets/front_end/modern/css/novaq-pages.css') ?>">
 
 
 <script type="text/javascript">

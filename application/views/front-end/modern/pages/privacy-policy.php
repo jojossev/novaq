@@ -1,10 +1,8 @@
-<main>
-    <section class="container py-4">
-        <div class="text-center">
-            <h3 class="section-title"><?= !empty($this->lang->line('privacy_policy')) ? $this->lang->line('privacy_policy') : 'Privacy Policy' ?></h3>
-        </div>
-        <div class="text-justify">
-            <?= $privacy_policy ?>
-        </div>
-    </section>
-</main>
+<?php
+$this->load->view('front-end/shared/novaq-legal-page-modern', [
+    'novaq_page_title'       => label('privacy_policy', 'Politique de confidentialité'),
+    'novaq_page_content'     => $privacy_policy,
+    'novaq_page_icon'        => 'shield-checkmark-outline',
+    'novaq_page_subtitle'    => 'Comment nous protégeons et utilisons vos données personnelles.',
+    'novaq_breadcrumb_label' => label('privacy_policy', 'Confidentialité'),
+]);
